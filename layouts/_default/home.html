@@ -3,17 +3,16 @@
 {{ end }}
 
 {{ define "main" }}
-    {{partial "logo.html" .}}
     <h2>{{.Title}}</h2>
+    {{partial "logo.html" .}}
 
     {{ if .Param "display_toc" }}
       {{ .TableOfContents }}
     {{ end }}
 
     {{ .Content }}
-
 {{ end }}
 
 {{ define "footer" }}
-    using single template
+    using home template
 {{ end }}

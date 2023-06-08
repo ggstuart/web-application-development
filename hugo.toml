@@ -1,12 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'CTEC3905: Front-end web development'
-markup.highlight.noClasses=false
+markup.highlight.noClasses = false
 [params]
     moduleName = 'Front-end web development'
     moduleCode = 'CTEC3905'
-
-[taxonomies]
-  category = 'categories'
-  element = 'elements'
-  tag = 'tags'

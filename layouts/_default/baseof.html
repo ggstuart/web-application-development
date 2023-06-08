@@ -16,9 +16,8 @@
     <header>
         <a href="/">{{ partial "logo.html" .}}</a>
         <h1>
-            {{ .Site.Params.ModuleCode }}<span class="optional">:
-                {{ .Site.Params.ModuleName }}
-            </span>
+            <span class="optional">{{ .Site.Params.ModuleCode }}:</span>
+            {{ .Site.Params.ModuleName }}
         </h1>
         <nav>
             <a href="test">test</a>

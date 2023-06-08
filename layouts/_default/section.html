@@ -1,5 +1,4 @@
 {{ define "main" }}
-section.html
 
     {{ .Content }}
     <ul class="contents">
@@ -11,4 +10,8 @@ section.html
         {{ end }}
     </ul>
     {{/*  {{ partial "pagination.html" . }}  */}}
+{{ end }}
+
+{{ define "footer" }}
+    using section template
 {{ end }}

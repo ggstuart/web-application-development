@@ -1,6 +1,5 @@
 ---
 title: 'display: block'
-category: 'display'
 ---
 
 
