@@ -1,0 +1,21 @@
+{{ define "title" }}
+    {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+    single.html
+    {{partial "logo.html" .}}
+    <h2>{{.Title}}</h2>
+
+    {{ if .Param "display_toc" }}
+      {{ .TableOfContents }}
+    {{ end }}
+
+    {{ .Content }}
+    <h2>Tag list</h2>
+    <ul>
+        {{ range (.GetTerms "tags") }}
+            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+    </ul>
+{{ end }}
