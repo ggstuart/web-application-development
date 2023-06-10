@@ -22,8 +22,14 @@
             <span class="optional">{{ .Site.Params.ModuleCode }}:</span>
             {{ .Site.Params.ModuleName }}
         </h1>
+        <label for="toggler">
+        </label>
+        <input id="toggler" type="checkbox" aria-label="menu toggler">
         <nav>
-            <a href="test">test</a>
+            <a href="index.html">Home</a>
+            {{range .CurrentSection.RegularPages}}
+            <a href="{{.RelPermalink}}">{{.Title}}</a>            
+            {{end}}
         </nav>
     </header>
     {{ partial "breadcrumbs.html" .}}
