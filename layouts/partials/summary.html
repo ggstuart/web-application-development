@@ -1,3 +1,9 @@
-<article>
-    This is a summary of  {{.Title}}
+<article class="summary">
+    <a href="{{.RelPermalink}}">    
+        <h3>{{ .Title }}</h3>
+        <p>
+            {{ .Summary }}
+        </p>
+    </a>
 </article>
+
