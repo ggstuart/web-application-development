@@ -1,0 +1,5 @@
+<section class="mainmenu grid">
+    {{ range .Page.CurrentSection.Sections}}
+    {{ partial "summary.html" .}}
+    {{ end }}
+</section>
