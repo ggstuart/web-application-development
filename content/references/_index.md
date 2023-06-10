@@ -1,5 +1,5 @@
 ---
-title: Index of references
+title: List of snippets
 ---
 
 Some references.
