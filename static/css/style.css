@@ -1,39 +1,175 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:wght@300;400;500;700&display=swap');
 
+:root {
+    --clr-text: hsl(0, 70%, 10%);
+    --clr-background: hsl(0, 20%, 95%);
+    --clr-background-transparent: hsla(0, 20%, 95%, 0.5);
+    --clr-primary-button: hsl(150, 50%, 60%);
+    --clr-secondary-button: hsl(150, 30%, 30%);
+    --clr-accent: hsl(250, 50%, 60%);
+    --clr-accent2: hsl(250, 30%, 40%)
+}
+
 body {
     font-family: "ubuntu";
     font-weight: 300;
-    font-size: 1.4em;
     margin: 0;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
 }
 header {
-    background-color: orange;
     overflow: auto;
-    padding-block: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
     gap: 1rem;
+    flex-wrap: wrap;
+    grid-template-columns: auto 1fr auto;
 }
-
-header, main, footer {
-    padding-inline: 1rem;
-}
-
 header h1 {
     font-size: 1em;
     margin: 0;
     flex-grow: 1;
 }
+header nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 2em;
+    right: 0;
+    align-items: flex-end;
+    translate: 100dvw;
+    transition: translate 0.4s;
+    gap: 0.75rem;
+    z-index: 10;
+    background: var(--clr-background-transparent);
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--clr-text);
+    padding: 1rem;
+}
+header nav a:hover {
+    filter: brightness(0.5);
+}
+header label {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 0.6em 0.4em;
+    background-color: var(--clr-accent);
+    border-radius: 5px;
+}
+header label::before, header label::after {
+    content: "";
+    background-color: white;
+    border-radius: 2px;
+    width: 1em;
+    height: 5px;
+    transition: rotate 0.5s, translate 0.5s;
+}
+header:has(input:checked) label::before {
+    rotate: 45deg;
+    translate: 0 0.25rem; 
+}
+header:has(input:checked) label::after {
+    rotate: 135deg;
+    translate: 0 -0.25rem; 
+}
+header input {
+    display: none;
+}
+header input:checked + nav {
+    translate: none;
+}
 
 main {
     max-width: 1000px;
     margin-inline: auto;
-    padding-block: 1rem;
+    padding: 1rem;
 }
 
 h1, h2, h3 {
     font-weight: 400;
+}
+
+a {
+    color: var(--clr-text)
+}
+:not(p) a {
+    text-decoration: none;
+}
+a:hover {
+    filter: brightness(0.5);
+}
+
+header, footer, nav, blockquote, article {
+    padding: 0.5rem;
+}
+
+blockquote {
+    background-color: var(--clr-accent);
+    color: var(--clr-background);
+    border-radius: 0 5px 5px 0;
+    border-left: 5px solid var(--clr-accent2);
+}
+
+article {
+    background-color: var(--clr-primary-button);
+    border-radius: 0 5px 5px 0;
+}
+
+blockquote {
+    margin: 0;
+}
+
+article.summary {
+    font-size: 0.7em;
+    display: flex;
+    border-left: 5px solid var(--clr-secondary-button);
+    transition: 0.25s;
+}
+article.summary a {
+    color: inherit;
+}
+article.summary:hover {
+    scale: 1.05;
+    filter: drop-shadow(0 0 5px black);
+}
+
+
+pre {
+    border-radius: 3px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.grid.wider {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+nav.breadcrumbs {
+    font-size: 0.8em;
+    display: flex;
+    overflow: hidden;
+    /* --link-color: var(--clr-background);
+    background-color: var(--clr-accent); */
+}
+
+nav.breadcrumbs a {
+    text-decoration: none;
+    color: var(--link-color);
+    padding-left: 0.25em;
+}
+nav.breadcrumbs a:not(:last-child)::after {
+    content: " >";
+}
+nav.breadcrumbs a:hover {
+    filter: hue-rotate(50deg);
 }
 
 ul.contents {
@@ -47,7 +183,7 @@ ul.contents {
 
 .logo {
     display: grid;
-    max-width: 400px;
+    max-width: 600px;
     margin-inline: auto;
     padding: 5%;
     box-sizing: border-box;
@@ -62,11 +198,20 @@ ul.contents {
 .logo img:nth-child(3) { grid-column: 3/5; transform: rotate(10deg); }
 
 .draft {
-    padding: 1em;
-    margin-block: 1em;
-    font-weight: 600;
-    background-color: yellow;
-    border: 0.5em solid red;
+    backdrop-filter: brightness(0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.draft::before {
+    content: "draft";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 10em;
+    opacity: 0.2;
+    rotate: 0.125turn;
 }
 
 .chroma {
@@ -76,6 +221,11 @@ ul.contents {
 
 
 @media (width >= 430px) {
+
+    body {
+        font-size: 1.4em;
+    }
+
     .optional {
         display: initial;
     }
