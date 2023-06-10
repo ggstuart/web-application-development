@@ -1,15 +1,11 @@
 {{ define "main" }}
-
+    <h2>{{.Title}}</h2>
     {{ .Content }}
-    <ul class="contents">
+    <section class="grid wider">
         {{ range .Paginator.Pages }}
-            <li>
-                <h2>{{ .Title }}</h2>
-                {{ partial "summary.html" . }}
-            </li>
+        {{partial "summary.html" .}}
         {{ end }}
-    </ul>
-    {{/*  {{ partial "pagination.html" . }}  */}}
+    </section>
 {{ end }}
 
 {{ define "footer" }}
