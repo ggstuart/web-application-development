@@ -1,5 +1,6 @@
 ---
 title: 'Introduction to GIT and GitHub'
+order: 3
 ---
 
 In this lab session we will consolidate what we have learned about the basic usage of GIT and we will introduce `remote` repositories using github.
