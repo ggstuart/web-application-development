@@ -12,8 +12,13 @@
     </title>
     <link rel="stylesheet" href="/css/onedark.css">
     <link rel="stylesheet" href="/css/style.css">
+    {{ block "css" . }}{{end}}
+    {{ range .Resources.Match "*.css" }}
+        <link rel="stylesheet" href="{{.RelPermalink}}">
+    {{ end }}
+    {{ block "javascript" . }}{{end}}
 </head>
-<body>
+<body{{ block "bodyAttributes" . }}{{end}}>
     <header>
         <a href="/">
 {{ partial "logo.html" .}}
@@ -26,7 +31,7 @@
         </label>
         <input id="toggler" type="checkbox" aria-label="menu toggler">
         <nav>
-            <a href="index.html">Home</a>
+            <a href="/index.html">Home</a>
             {{range .CurrentSection.RegularPages}}
             <a href="{{.RelPermalink}}">{{.Title}}</a>            
             {{end}}

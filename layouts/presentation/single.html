@@ -1,0 +1,29 @@
+{{define "css"}}
+<link rel="stylesheet" href="/css/presentation.css">
+{{end}}
+
+{{define "javascript"}}
+<script src="/js/presentation.js" type="module"></script>
+{{end}}
+
+{{define "bodyAttributes"}} class="presentation"{{end}}
+
+{{ define "main" }}
+  <article class="slide current">
+    <h2>{{.Title}}</h2>
+    {{partial "logo.html" .}}
+    {{ .Content }}
+  </article>
+
+  {{ range .Resources.Match "*.md" }}
+  <article class="slide {{ delimit .Params.Classes " " }}">
+    <h2>{{.Title}}</h2>    
+    {{ .Content }}
+  </article>
+  {{ end }}
+
+{{ end }}
+
+{{ define "footer" }}
+    using proper presentation template
+{{ end }}

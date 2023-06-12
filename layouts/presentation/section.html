@@ -3,11 +3,11 @@
     {{ .Content }}
     <section class="grid wider">
         {{ range (.Pages.ByParam "order") }}
-        {{partial "summary.html" .}}
+        {{partial "presentation_summary.html" .}}
         {{ end }}
     </section>
 {{ end }}
 
 {{ define "footer" }}
-    using section template
+    using presentation list template
 {{ end }}

@@ -220,6 +220,26 @@ ul.contents {
 }
 
 
+article.slide {
+    font-size: 0.9em;
+    background: linear-gradient(145deg, white, 10%, var(--clr-background), 90%, grey);
+    border-radius: 0.25em;
+    filter: drop-shadow(0 0 3px var(--clr-text));
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+}
+.grid article.slide:hover {
+    filter: drop-shadow(0 0 5px var(--clr-text));
+
+}
+
+.grid article.slide a {
+    background-color: transparent;
+    display: block;
+    padding: 1rem;
+}
+
 @media (width >= 430px) {
 
     body {
