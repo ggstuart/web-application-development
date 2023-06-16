@@ -2,6 +2,7 @@
 title: 'A bit more of everything'
 date: 2023-06-08T16:17:20+00:00
 order: 2
+week: 2
 ---
 
 In this exercise we will continue with a gradual introduction to CSS layout and introduce JavaScript event handling.

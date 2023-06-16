@@ -1,5 +1,7 @@
 ---
 title: Working with user input
+order: 5
+week: 3
 ---
 
 User input is handled mostly by the `<form>` and `<input>` elements.

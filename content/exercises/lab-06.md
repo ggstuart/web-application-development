@@ -1,5 +1,6 @@
 ---
 title: Working with data
+order: 6
 ---
 
 In the following lab exercises, we will learn how to create, insert and remove DOM nodes.

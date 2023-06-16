@@ -1,5 +1,6 @@
 ---
 title: Animations
+order: 8
 ---
 
 In this lab session we will look at ways to animate your content.

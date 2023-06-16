@@ -1,5 +1,6 @@
 ---
 title: Working with APIs
+order: 7
 ---
 
 In this week's lab we will build a fully featured web application.

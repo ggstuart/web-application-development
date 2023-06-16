@@ -1,5 +1,7 @@
 ---
 title: A responsive menu
+order: 4
+week: 3
 ---
 
 In this exercise we will create a responsive menu.
