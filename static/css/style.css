@@ -238,6 +238,29 @@ ul.contents {
     padding: 0;
     list-style: none;
 }
+#TableOfContents {
+    background: var(--accent-gradient);
+    border-radius: 3px;
+}
+#TableOfContents ul {
+    padding: 0;
+}
+#TableOfContents li {
+    margin: 0;
+    background: var(--clr-accent);
+    padding: 0.25rem 0;
+    list-style-position: inside;
+}
+#TableOfContents > ul > li::marker {
+    content: "- "
+}
+
+#TableOfContents li:hover {
+    filter: brightness(1.1);
+}
+#TableOfContents a {
+    text-decoration: none;
+}
 
 .optional {
     display: none;
