@@ -1,6 +1,7 @@
 ---
 title: Animations
 order: 8
+type: exercise
 ---
 
 In this lab session we will look at ways to animate your content.

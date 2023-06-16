@@ -1,6 +1,7 @@
 ---
 title: Working with user input
 order: 5
+type: exercise
 week: 3
 ---
 

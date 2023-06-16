@@ -1,6 +1,7 @@
 ---
 title: 'Introduction to GIT and GitHub'
 order: 3
+type: exercise
 week: 2
 ---
 
