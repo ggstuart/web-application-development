@@ -1,8 +1,15 @@
-const slides = document.querySelectorAll('.presentation .slide')
+const slides = Array.from(document.querySelectorAll('.presentation .slide'));
 
-activateSlide(document.querySelector('.presentation .slide:first-of-type'))
+const params = new URLSearchParams(document.location.search);
+
+if(params.has("slide")) {
+    activateSlide(document.querySelector(`.presentation .slide:nth-of-type(${params.get("slide", 0)})`));
+}
 
 function activateSlide(slide) {
+    const slide_number = slides.indexOf(slide) + 1;
+	params.set('slide', slide_number);
+	window.history.replaceState({}, "", `${window.location.origin}${window.location.pathname}?${params.toString()}`);
     document.querySelectorAll('.presentation .slide.current').forEach(s => s.classList.remove('current'));
     document.querySelectorAll('.presentation .slide.next').forEach(s => s.classList.remove('next'));
     document.querySelectorAll('.presentation .slide.prev').forEach(s => s.classList.remove('prev'));;
@@ -40,4 +47,21 @@ document.addEventListener('keydown', ev => {
             prevSlide();
             break;
     }
-})
+});
+
+let touchX;
+document.addEventListener('touchstart', ev => {
+	touchX = ev.touches[0].clientX;
+});
+document.addEventListener('touchmove', ev => {
+	if(touchX) {
+		let moveX = touchX - ev.touches[0].clientX;
+		if (moveX < -50) {
+			prevSlide();
+			touchX = null;
+		}	else if (moveX > 50) {
+			nextSlide();
+			touchX = null;
+		}
+	}
+});
