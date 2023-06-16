@@ -41,8 +41,9 @@
         {{ block "main" .}}{{ end }}
     </main>
     <footer>
-        <p>This is in every footer</p>
-        {{ block "footer" .}}{{ end }}
+        {{ block "footer" .}}
+        <p>This is the default footer</p>
+        {{ end }}
     </footer>
 </body>
 </html>
