@@ -178,8 +178,6 @@ a {
     filter: brightness(0.9);
     transition: filter 0.2s;
 }
-:not(p) a {
-}
 a:hover {
     filter: brightness(1.2) saturate(2);
 }
@@ -205,7 +203,6 @@ article.summary {
     border: 1px solid var(--clr-secondary-button);
     border-left-width: 0.5em;
     transition: 0.25s;
-    box-sizing: border-box;
 }
 article.summary:hover {
     scale: 1.01;
@@ -247,7 +244,7 @@ ul.contents {
 .logo {
     max-width: 600px;
     margin-inline: auto;
-    box-sizing: border-box;
+    display: block;
 }
 img.logo {
     min-height: 1.2em;
