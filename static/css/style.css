@@ -55,13 +55,18 @@ body.hero header {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+    padding-bottom: 2em;
 }
 body.hero header h1 {
     font-size: 2.5em;
 }
 body.hero header .logo {
     /* font-size: 15em; */
-    width: 35ch;
+    width: 100%;
+    padding: 1em;
+}
+body.hero header a:has(.logo) {
+    width: 100%;
 }
 header nav {
     position: fixed;
