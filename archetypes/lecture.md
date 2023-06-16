@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-type: presentation
+type: lecture
 draft: true
 ---
