@@ -4,26 +4,32 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr auto;
-    background: linear-gradient(45deg, var(--clr-background), var(--clr-background2)), url(/images/module-logo.svg);
-    background-blend-mode: hue;
-    background-size: cover, 200px;
-    background-repeat: no-repeat;
-    background-position: bottom right;
 }
 
+header {
+    padding: 0.5rem;
+    width: 100dvw;
+}
 main {
     position: relative;
     max-width: initial;
     margin: initial;
     overflow: hidden;
+    background: var(--background-gradient);
+    background-blend-mode: hue;
+    background-size: cover, 200px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
-
+footer {
+    padding: 0.5rem;
+}
 article.slide {
     padding: 2rem;
     position: absolute; 
     inset: 0;
     max-width: 1200px;
-    margin-inline: auto; 
+    margin: 0.5rem auto; 
     transition: opacity 0.75s, translate 0.75s;
     opacity: 0;
     display: grid;
