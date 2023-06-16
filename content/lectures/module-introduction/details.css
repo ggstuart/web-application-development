@@ -1,0 +1,104 @@
+article.slide.hypertext {
+    grid-template-areas:
+    "header header"
+    "quote quote"
+    "image image";
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+    background: hsl(100, 25%, 50%);
+}
+article.slide.hypertext h2 {
+    grid-area: header;
+}
+article.slide.hypertext blockquote {
+    grid-area: quote;
+}
+article.slide.hypertext img {
+    grid-area: image;
+}
+
+article.slide.timbl img {
+    width: 400px;
+}
+article.slide.first {
+    grid-template-rows: auto 1fr;
+    place-items: start center;
+    background: linear-gradient(0deg, white, 20%, black, 80%, white), url(www1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-blend-mode: screen;
+    font-size: 2em;
+    place-items: center;
+}
+article.slide.first > * {
+    grid-column: 0;
+    grid-row: 0;
+    /* color: white; */
+    backdrop-filter: blur(5px) brightness(0.9);
+    padding: 3rem;
+    border-radius: 5px;
+    border: 5px solid var(--clr-slide-text);
+}
+
+
+article.slide.nexus {
+    grid-template-areas:
+    "title"
+    "text"
+    "figure";
+    grid-template-rows: auto auto auto;
+}
+
+article.slide.nexus h2 {
+    grid-area: title;
+}
+article.slide.nexus blockquote {
+    grid-area: text;
+}
+article.slide.nexus figure {
+    grid-area: figure;
+}
+
+@media (width >= 600px) {
+    article.slide.hypertext {
+        grid-template-areas:
+        "header header"
+        "quote quote"
+        "image1 image2";
+    }
+    article.slide.hypertext img:first-of-type {
+        grid-area: image1;
+    }
+    article.slide.hypertext img:nth-of-type(2) {
+        grid-area: image2;
+    }
+    article.slide.nexus {
+        grid-template-areas:
+        "title title"
+        "text figure";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 2fr 3fr;
+    }
+    article.slide.history {
+        grid-template-areas:
+        "title title"
+        "figure text"
+        "quote quote";
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto minmax(20ch, 1fr);
+    }
+    article.slide.history h2 { grid-area: title;}
+    article.slide.history p { grid-area: text;}
+    article.slide.history blockquote { grid-area: quote;}
+    article.slide.standards img { max-height: 30dvh;}
+}
+@media (width >= 800px) {
+    article.slide.standards {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto minmax(20ch, 30ch);
+    }
+    article.slide.standards h2,
+    article.slide.standards p {grid-column: span 2;}
+    article.slide.standards img { max-height: 45dvh;}
+}
