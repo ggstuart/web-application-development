@@ -1,5 +1,4 @@
 {{ define "main" }}
-    {{partial "logo.html" .}}
     {{ if .Param "display_toc" }}
         {{ .TableOfContents }}
     {{ end }}
@@ -30,7 +29,3 @@
 {{ define "footer" }}
     using proper week template
 {{ end }}
-
-{{/*  {{ with .Site.GetPage (.Get `presentations/{{.}}`) }}
-{{.Name}}
-{{end}}  */}}
