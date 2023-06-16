@@ -1,22 +1,16 @@
 ---
-title: "Home"
+title: "Welcome to CTEC2712"
 date: 2023-06-08T16:17:20+00:00
 display_toc: true
 ---
 
 This module introduces the technologies involved in building an **accessible** and **responsive** website with **dynamic** content.
 
+{{< bquote class="test">}}
+
 ## How is the module organised?
 
-The module materials are organised as a series of interlinked web pages containing lecture slides, introductory materials, example code and exercises which you should attempt.
-You will find the same pages are linked multiple times, often as reminders of the basic concepts.
+The content is presented as week-by-week collections to be completed over the six weeks of the block.
+The module materials include lecture slides, introductory materials, example code and exercises which you should complete each week.
 
-{{< mainMenu >}}
-
-## section 2
-
-### section 2.1
-
-{{< bquote class="test" >}}
-This is a blockquote with **bold** stuff.
 {{< /bquote >}}
