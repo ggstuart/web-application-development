@@ -4,16 +4,12 @@
     <h2>{{.Title}}</h2>
     {{ .Content }}
 
-    <section class="mainmenu wider grid">
-
     {{ range (.GetPage "weeks").Pages}}
-        {{ partial "summary.html" .}}
-    {{ end }}
-    </section>
-    
+        {{.Render "overview"}}
+    {{ end }}    
 {{ end }}
 
 
 {{ define "footer" }}
-    using home template!
+    Put some details here (fat footer?)
 {{ end }}
