@@ -14,8 +14,8 @@
     {{partial "logo.html" .}}
     {{ .Content }}
   </article>
-
-  {{ range .Resources.Match "*.md" }}
+  {{ $slides := .Resources.Match "*.md" }}
+  {{ range sort $slides "Params.Order" "asc" }}
   <article class="slide {{ delimit .Params.Classes " " }}">
     <h2>{{.Title}}</h2>    
     {{ .Content }}
@@ -25,5 +25,5 @@
 {{ end }}
 
 {{ define "footer" }}
-    using proper presentation template
+  <small id="instructions">Use arrow keys or swipe left and right to navigate</small>
 {{ end }}

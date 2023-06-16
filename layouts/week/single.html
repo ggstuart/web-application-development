@@ -1,0 +1,36 @@
+{{ define "main" }}
+    {{partial "logo.html" .}}
+    {{ if .Param "display_toc" }}
+        {{ .TableOfContents }}
+    {{ end }}
+    <h2>Week {{.Params.Week}}: {{.Title}}</h2>
+    {{ .Content }}
+
+    
+    <h3 id="lectures-heading">Lectures</h3>
+    <section class="grid wider" aria-labelled-by="lectures-heading">
+        {{with .GetPage "/lectures"}}
+            {{ range (.Pages.ByParam "week") }}
+                {{partial "presentation_summary.html" .}}
+            {{ end }}
+        {{end}}
+    </section>
+
+    <h3 id="exercises-heading">Exercises</h3>
+    <section class="grid wider" aria-labelledby="exercises-heading">
+        {{with .GetPage "/exercises"}}
+            {{ range (.Pages.ByParam "week") }}
+                {{partial "summary.html" .}}
+            {{ end }}
+        {{end}}
+    </section>
+
+{{ end }}
+
+{{ define "footer" }}
+    using proper week template
+{{ end }}
+
+{{/*  {{ with .Site.GetPage (.Get `presentations/{{.}}`) }}
+{{.Name}}
+{{end}}  */}}

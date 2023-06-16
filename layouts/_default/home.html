@@ -1,14 +1,19 @@
+{{define "bodyAttributes"}} class="hero"{{end}}
+
 {{ define "main" }}
-    {{partial "logo.html" .}}
     <h2>{{.Title}}</h2>
-
-    {{ if .Param "display_toc" }}
-      {{ .TableOfContents }}
-    {{ end }}
-
     {{ .Content }}
+
+    <section class="mainmenu wider grid">
+
+    {{ range (.GetPage "weeks").Pages}}
+        {{ partial "summary.html" .}}
+    {{ end }}
+    </section>
+    
 {{ end }}
 
+
 {{ define "footer" }}
-    using home template
+    using home template!
 {{ end }}

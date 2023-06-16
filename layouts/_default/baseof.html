@@ -24,11 +24,10 @@
 {{ partial "logo.html" .}}
         </a>
         <h1>
-            <span class="optional">{{ .Site.Params.ModuleCode }}:</span>
+            <span class="optional with-colon">{{ .Site.Params.ModuleCode }}</span>
             {{ .Site.Params.ModuleName }}
         </h1>
-        <label for="toggler">
-        </label>
+        <label for="toggler" aria-label="menu toggler"></label>
         <input id="toggler" type="checkbox" aria-label="menu toggler">
         <nav>
             <a href="/index.html">Home</a>
@@ -42,6 +41,7 @@
         {{ block "main" .}}{{ end }}
     </main>
     <footer>
+        <p>This is in every footer</p>
         {{ block "footer" .}}{{ end }}
     </footer>
 </body>
