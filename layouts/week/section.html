@@ -3,8 +3,7 @@
     {{ .Content }}
     <section class="grid wider">
         {{ range (.Pages.ByParam "week") }}
-        {{/*  {{partial "summary.html" .}}  */}}
-        {{ .Render "summary" }}
+            {{ .Render "summary" }}
         {{ end }}
     </section>
 {{ end }}
