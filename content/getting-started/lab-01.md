@@ -3,10 +3,8 @@ title: 'Getting started'
 date: 2023-06-08T16:17:20+00:00
 tags: ['introduction', 'developer tools', 'animation', 'validation']
 type: exercise
-order: 1
-week: 1
+order: 2
 ---
-
 In this lab session we introduce the three software tools that will be used in this module.
 
 <!--more-->
