@@ -19,7 +19,7 @@
     <section class="grid wider" aria-labelledby="exercises-heading">
         {{with .GetPage "/exercises"}}
             {{ range (.Pages.ByParam "week") }}
-                {{partial "summary.html" .}}
+                {{.Render "summary"}}
             {{ end }}
         {{end}}
     </section>
