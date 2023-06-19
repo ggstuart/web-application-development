@@ -1,6 +1,6 @@
 ---
-title: Exercises
-type: exercise
+title: Other Exercises
+type: week
 ---
 
 Gaining experience working with web technologies is a critical part of the learning in this module. 
