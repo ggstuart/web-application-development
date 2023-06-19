@@ -3,7 +3,7 @@
     {{ .Content }}
     <section class="grid wider">
         {{ range (.Pages.ByParam "order") }}
-        {{partial "presentation_summary.html" .}}
+        {{.Render "summary"}}
         {{ end }}
     </section>
 {{ end }}
