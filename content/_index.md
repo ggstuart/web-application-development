@@ -14,3 +14,5 @@ The content is presented as week-by-week collections to be completed over the si
 The module materials include lecture slides, introductory materials, example code and exercises which you should complete each week.
 
 {{< /bquote >}}
+
+Each week there will be three lectures introducing concepts and three labs where you will get your hands dirty. 
