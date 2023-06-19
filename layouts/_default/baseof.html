@@ -27,9 +27,9 @@
             <span class="optional with-colon">{{ .Site.Params.ModuleCode }}</span>
             {{ .Site.Params.ModuleName }}
         </h1>
-        <label for="toggler" aria-label="menu toggler"></label>
-        <input id="toggler" type="checkbox" aria-label="menu toggler">
         <nav>
+            <label for="toggler" aria-label="menu toggler"></label>
+            <input id="toggler" type="checkbox" aria-label="menu toggler">
             <a href="/index.html">Home</a>
             {{range .CurrentSection.RegularPages}}
             <a href="{{.RelPermalink}}">{{.Title}}</a>            

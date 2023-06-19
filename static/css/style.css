@@ -17,6 +17,11 @@
     --accent-gradient: linear-gradient(45deg, var(--clr-accent), 70%, var(--clr-accent2));
     --background-gradient: linear-gradient(180deg, var(--clr-background), 70%, var(--clr-background2));
 }
+@media (width >= 800px) {
+    :root {
+        --global-padding: 1.5rem;
+    }
+}
 
 body {
     font-family: "ubuntu";
@@ -27,20 +32,21 @@ body {
     min-height: 100dvh;
 }
 
-header, footer, blockquote, article, nav.breadcrumbs {
+header, 
+footer, 
+blockquote, 
+article, 
+nav.breadcrumbs, 
+nav#TableOfContents {
     padding: var(--global-padding);
 }
 
 header {
-    overflow: auto;
     display: grid;
     gap: 1rem;
-    flex-wrap: wrap;
     grid-template-columns: auto 1fr;
+    overflow: auto;
     background: var(--background-gradient);
-    /* background: var(--clr-background2); */
-    padding-right: 3rem;
-    /* max-width: 1000px; */
     margin-inline: auto;
 }
 
@@ -68,63 +74,73 @@ body.hero header .logo {
 body.hero header a:has(.logo) {
     width: 100%;
 }
+
+
+
+/* Menu */
+
 header nav {
+    --button-size: 2rem;
     position: fixed;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     text-align: right;
     top: 0;
-    height: 100%;
+    height: 100dvh;
     right: 0;
-    translate: 100dvw;
+    translate: calc(100% - calc(var(--button-size) + var(--global-padding)));
     transition: translate 0.4s;
     z-index: 10;
-    /* background: var(--clr-background2); */
     backdrop-filter: brightness(0.7) blur(5px);
-    /* border: 2px solid var(--clr-text); */
-    padding: 4rem var(--global-padding);
+    padding: 4rem var(--global-padding) 12rem 4rem;
 }
+header nav:has(input#toggler:checked) {
+    translate: none;
+}
+
 header nav a {
     padding: 0.25em 0.5em;
     background: linear-gradient(var(--clr-primary-button), var(--clr-secondary-button));
     text-decoration: none;
 }
-/* header nav a:hover {
-    background-color: white;
-} */
 
-/* THE TOGGLER LABEL */
-
-header label {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    right: var(--global-padding);
-    z-index: 11;
-    padding: 0.4em;
-    background: var(--accent-gradient);
-    border-radius: 5px;
-}
 @media (width>=1000px) {
     header {
         padding: var(--global-padding) calc(calc(50% - 500px)  + var(--global-padding));
     }
     nav.breadcrumbs {
-        padding: 0 calc(calc(50% - 500px));
+        padding: 0 calc(calc(50% - 500px)  + var(--global-padding));
     }
     header label {
-        right: calc(calc(50% - 500px) + var(--global-padding));
+        /* right: calc(calc(50% - 500px) + var(--global-padding)); */
     }
+}
+
+/* THE TOGGLER LABEL */
+
+header nav label {
+    position: absolute;
+    top: var(--global-padding);
+    left: var(--global-padding);
+    width: var(--button-size);
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--button-size) * 0.15);
+    padding: calc(var(--button-size) * 0.3) calc(var(--button-size) * 0.2);
+    background: var(--accent-gradient);
+    border-radius: 3px;
+    z-index: 11;
 }
 header label::before, header label::after {
     content: "";
     background-color: white;
     border-radius: 2px;
-    width: 1em;
-    height: 5px;
+    width: 100%;
+    height: 3px;
     transition: rotate 0.5s, translate 0.5s;
+    transition-delay: 0.25s;
 }
 header:has(input#toggler:checked) label::before {
     rotate: 45deg;
@@ -137,9 +153,7 @@ header:has(input#toggler:checked) label::after {
 header input#toggler {
     display: none;
 }
-header input#toggler:checked + nav {
-    translate: none;
-}
+
 
 /* BREADCRUMBS */
 
@@ -149,14 +163,14 @@ nav.breadcrumbs {
     overflow: hidden;
     /* --link-color: var(--clr-background); */
     /* background-color: var(--clr-accent); */
-    background: var(--clr-background);
+    /* background: var(--accent-gradient); */
 }
 
 nav.breadcrumbs a {
     text-decoration: none;
     color: var(--link-color);
     padding: 0.125em;
-    border-radius: 1px;
+    border-radius: 3px;
 }
 nav.breadcrumbs a:not(:last-child)::after {
     content: " >";
