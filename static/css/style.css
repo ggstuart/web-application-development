@@ -89,11 +89,11 @@ header nav {
     top: 0;
     height: 100dvh;
     right: 0;
-    translate: calc(100% - calc(var(--button-size) + var(--global-padding)));
+    translate: 100%;
     transition: translate 0.4s;
     z-index: 10;
     backdrop-filter: brightness(0.7) blur(5px);
-    padding: 4rem var(--global-padding) 12rem 4rem;
+    padding: 4rem var(--global-padding);
 }
 header nav:has(input#toggler:checked) {
     translate: none;
@@ -122,7 +122,8 @@ header nav a {
 header nav label {
     position: absolute;
     top: var(--global-padding);
-    left: var(--global-padding);
+    /* left: var(--global-padding); */
+    left: calc(-1 * calc(var(--global-padding) + var(--button-size)));
     width: var(--button-size);
     aspect-ratio: 1/1;
     display: flex;
@@ -132,6 +133,10 @@ header nav label {
     background: var(--accent-gradient);
     border-radius: 3px;
     z-index: 11;
+    transition: left 0.5s;
+}
+header:has(input#toggler:checked) label {
+    left: var(--global-padding);
 }
 header label::before, header label::after {
     content: "";
@@ -150,6 +155,7 @@ header:has(input#toggler:checked) label::after {
     rotate: 135deg;
     translate: 0 -0.25rem; 
 }
+
 header input#toggler {
     display: none;
 }
