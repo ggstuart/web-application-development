@@ -7,6 +7,6 @@ order: 1
 >
 ><cite>**Ted Nelson**, "Brief Words on the Hypertext", 23 January 1967</cite>
 
-![a diagram of a hypertext document](hypertext.svg)
+![a diagram of a hypertext document](images/hypertext.svg)
 
-![Ted Nelson](ted-nelson.jpg)
+![Ted Nelson](images/ted-nelson.jpg)

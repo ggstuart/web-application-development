@@ -11,5 +11,5 @@ order: 4
 >
 >See a demo [here](https://www.youtube.com/watch?v=3c3Rt6QbHDw&feature=youtu.be).
 
-{{< figure src="nexus.png" caption="'An exercise in global information availability'">}}
+{{< figure src="images/nexus.png" caption="'An exercise in global information availability'">}}
 

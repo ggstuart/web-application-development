@@ -4,7 +4,7 @@ classes: ['standards']
 order: 6
 ---
 
-The World Wide Web Consortium, founded in October 1994, develop web standards.
+The World Wide Web Consortium, founded in October 1994, develops web standards.
 
 {{<figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/W3C%C2%AE_Icon.svg/440px-W3C%C2%AE_Icon.svg.png"
 caption="The World Wide Web Consortium"

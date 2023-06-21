@@ -4,7 +4,7 @@ classes: ['convergence']
 order: 8
 ---
 
-{{<figure src="browser-war2.svg" caption="The second browser war">}}
+{{<figure src="images/browser-war2.svg" caption="The second browser war">}}
 
 >The Mozilla foundation created the open-source phoenix browser which became firebird and then **firefox**.
 >
