@@ -34,22 +34,46 @@ article.slide.hypertext > p:first-of-type {display: none;}
     article.slide.hypertext {grid-template-columns: 4fr auto 5fr;}
     }
 
-    article.slide.hypertext img:first-of-type {
-        grid-area: image1;
-    }
+/* TIMBL */
 
-    article.slide.hypertext img:nth-of-type(2) {
-        grid-area: image2;
-    }
-}
-article.slide.timbl p:has(img) {
-    width: 100%;
+article.slide.timbl {
+    grid-template-rows: auto auto 1fr;
 }
 article.slide.timbl img {
     width: 100%;
-    max-width: 700px;
+    height: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: right;
+}
+article.slide.timbl p:first-of-type {
+    display: none;
+    }
+
+@media (width >=850px) {
+    article.slide.timbl img {
+        /* width: initial; */
+    }
+    article.slide.timbl p:first-of-type {
+        display: initial;
+        grid-row: span 2;
+    }
+    article.slide.timbl {
+        grid-template-columns: minmax(20ch, 1fr) auto;
+        grid-template-rows: auto auto 1fr;
+    }
+    article.slide.timbl h2 {
+        grid-column: span 2;
+    }
+}
+
+@media (width >=850px) and (max-aspect-ratio: 1/1) {
+    article.slide.timbl p:first-of-type img {
+        object-position: center;
+}
+
+    article.slide.timbl {
+        grid-template-columns: minmax(20ch, 1fr) 1fr;
+    }
 }
 
 /* FIRST WEBSITE */
