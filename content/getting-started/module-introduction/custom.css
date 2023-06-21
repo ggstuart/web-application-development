@@ -1,0 +1,177 @@
+article.slide {
+    grid-template-areas:
+        "title"
+        "stuff";
+    grid-template-rows: auto 1fr;
+}
+article.slide h2 {
+    grid-area: title;
+}
+
+article.slide.hypertext {
+    grid-template-areas:
+    "title title"
+    "quote quote"
+    "image image";
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+    background: hsl(100, 25%, 50%);
+}
+article.slide.hypertext blockquote {
+    grid-area: quote;
+}
+article.slide.hypertext img {
+    grid-area: image;
+}
+@media (width >=600px) {
+    article.slide.hypertext {
+        grid-template-areas:
+            "title title"
+            "quote quote"
+            "image1 image2";
+    }
+
+    article.slide.hypertext img:first-of-type {
+        grid-area: image1;
+    }
+
+    article.slide.hypertext img:nth-of-type(2) {
+        grid-area: image2;
+    }
+}
+article.slide.timbl p:has(img) {
+    width: 100%;
+}
+article.slide.timbl img {
+    width: 100%;
+    max-width: 700px;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* FIRST WEBSITE */
+
+article.slide.first {
+    grid-template-rows: auto 1fr;
+    place-items: center;
+    background: linear-gradient(0deg, white, 20%, black, 80%, white), url(www1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-blend-mode: screen;
+}
+article.slide.first > * {
+    backdrop-filter: blur(5px) brightness(0.9);
+    padding: 3rem;
+    border-radius: 5px;
+    border: 5px solid var(--clr-slide-text);
+}
+
+/* NEXUS */
+
+article.slide.nexus {
+    grid-template-areas: "title"
+                         "text"
+                         "figure";
+    grid-template-rows: auto auto 1fr;
+}
+article.slide.nexus blockquote {
+    grid-area: text;
+    min-width: 20ch;
+    max-width: 50ch;
+}
+article.slide.nexus figure {
+    grid-area: figure;
+    max-width: 400px;
+    margin: 0;
+}
+@media (width >= 800px) {
+    article.slide.nexus figure {
+        max-width: none;
+    }
+    article.slide.nexus {
+        grid-template-areas:
+            "title title"
+            "text figure";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr auto;
+    }
+}
+
+@media (width >= 600px) {
+    article.slide.history {
+        grid-template-areas:
+        "title title"
+        "figure text"
+        "quote quote";
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto minmax(20ch, 1fr);
+    }
+    article.slide.history h2 { grid-area: title;}
+    article.slide.history p { grid-area: text;}
+    article.slide.history blockquote { grid-area: quote;}
+
+}
+
+article.slide.standards figure img,
+article.slide.standards figure {
+    width: 100%;
+}
+@media (width >= 800px) {
+    article.slide.standards {
+        grid-template-rows: auto auto auto 1fr;
+        grid-template-columns: auto 30ch;
+        place-items: center;
+    }
+    article.slide.standards h2,
+    article.slide.standards p {grid-column: span 2;}
+    article.slide.standards blockquote {
+        place-self: stretch;
+        display: grid;
+        place-items: center;
+    }
+}
+
+/* DIVERGENCE */
+
+@media (width >=600px) {
+    article.slide.divergence {
+        grid-template-areas: "title title"
+                            "intro intro"
+                            "image comment";
+        grid-template-columns: auto minmax(20ch, 1fr);
+    }
+    article.slide.divergence img {
+        min-width: 300px;
+    }
+    article.slide.divergence h2 {
+        grid-area: title;
+    }
+    article.slide.divergence p:first-of-type {
+        grid-area: intro;
+    }
+    article.slide.divergence p:nth-of-type(2) {
+        text-align: left;
+    }
+}
+
+@media (width >=600px) {
+    article.slide.convergence {
+        grid-template-areas: "title title"
+            "image comment";
+        grid-template-columns: auto 25ch;
+    }
+}
+article.slide.now figure {
+    width: 30%;
+    display: inline-block;
+    border-width: 0;
+    background-color: inherit;
+    margin: 0;
+}
+article.slide.now figcaption {
+}
+article.slide.now figure img {
+    width: 100%;
+    aspect-ratio: auto;
+}
