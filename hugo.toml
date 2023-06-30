@@ -1,7 +1,9 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-markup.highlight.noClasses = false
 theme = 'module'
+
+[markup]
+    highlight.noClasses = false
 
 [params]
     moduleName = 'Web application development'
