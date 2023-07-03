@@ -1,5 +1,5 @@
 ---
-title: "HTML and CSS"
+title: "Week 2: HTML and CSS"
 date: 2023-06-19T12:32:45+01:00
 type: week
 draft: false
