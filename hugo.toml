@@ -2,8 +2,8 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 theme = 'module'
 
-[markup]
-    highlight.noClasses = false
+[markup.highlight]
+    _merge = "shallow"
 
 [params]
     moduleName = 'Web application development'
