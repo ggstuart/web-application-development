@@ -99,6 +99,8 @@ Within the `<html>` element there is a `<head>` element.
 The `<head>` element is not visible on the page, it contains information *about* the document.
 In this case, it contains only a `<title>` element.
 
+> The content of the `<title>` element is not visible on the page, but it will typically appear in the browser tab when viewing the document.
+
 ```html {linenos=true, hl_lines="3-5"}
 <!DOCTYPE html>
 <html>
