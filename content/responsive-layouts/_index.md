@@ -1,5 +1,5 @@
 ---
-title: "Responsive layouts"
+title: "Week 3: Responsive layouts"
 date: 2023-06-19T12:39:17+01:00
 type: week
 weight: 30
