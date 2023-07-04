@@ -49,7 +49,7 @@ Now we we need to add some semantic page structure inside the `<body>` element.
 
 Add the following into the file.
 
-```html {linenos=true,hl_lines=["12-20"]}
+```html {hl_lines=["12-20"]}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,7 +98,7 @@ By default, each item in the list will have a bullet point.
 
 > for numbered (ordered) lists, we could use a `<ol>` element. 
 
-```html {linenos=true,hl_lines=["17-19"]}
+```html {hl_lines=["17-19"]}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,7 +142,7 @@ Inside our `<ul>`, we can add `<li>` elements for each *todo-list*.
 
 Insert five copies of the above pattern into our template as follows
 
-```html {linenos=true,hl_lines=["18-32"]}
+```html {hl_lines=["18-32"]}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -212,3 +212,55 @@ Although it doesn't link to a database yet, it does meet one of the user stories
 
 ## Adding some styles
 
+To add some styles we need to link to a CSS file.
+
+The easiest way to do this is to rely on emmet.
+Simply type the word "link" into the `<head>` element of your document and choose the CSS option from the list that appears.
+
+{{<figure src="images/link-css-emmet.png" caption="using emmet to add a `<link>` to a css file">}}
+
+We will accept the default file name, This should add a `<link>` element like this.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Lists</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TODO Lists</h1>
+    </header>
+
+    <main>
+        <ul>
+            <li class="todo-list">
+                <h2 class="title">This is a todo-list</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">This is another todo-list</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">A third todo-list</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">list 4</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">The fifth todo-list</h2>
+            </li>
+        </ul>
+    </main>
+
+    <footer>&copy; Graeme Stuart 2023</footer>
+
+</body>
+
+</html>
+```

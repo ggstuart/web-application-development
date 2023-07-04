@@ -22,7 +22,7 @@ We do this by wrapping content in HTML tags.
 
 Try this as an example. 
 
-```html {linenos=true, hl_lines="9-14"}
+```html {hl_lines="9-14"}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,7 +71,7 @@ Since the `<body>` element is also a *block* element, it also takes the full wid
 We can add more paragraphs like this.
 
 
-```html {linenos=true, hl_lines="9-21"}
+```html {hl_lines="9-21"}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,7 +143,7 @@ Now we can go back to VSCode (using *Alt + Tab* here is convenient) and add some
 
 Try an `<h1>` and an `<img>` as in the below example.
 
-```html {linenos=true, hl_lines="9 23"}
+```html {hl_lines="9 23"}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,7 +190,7 @@ A typical HTML document should have some aria landmarks and a heading structure 
 
 Let's upgrade the site with some semantic structure.
 
-```html {linenos=true, hl_lines="11 13-16 30-32 37-39 41"}
+```html {hl_lines="11 13-16 30-32 37-39 41"}
 <!DOCTYPE html>
 <html lang="en">
 

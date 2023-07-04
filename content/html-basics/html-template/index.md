@@ -2,6 +2,7 @@
 title: An HTML template
 type: exercise
 weight: 10
+author: Dr Graeme Stuart
 ---
 
 This is a brief explanation of an empty HTML template and how to quickly generate one in VSCode.
@@ -54,7 +55,7 @@ The minimum HTML template looks something like this.
 At the top of every HTML file, we need to provide something called a *doctype*.
 This is a declaration that software can read to understand that the file should be interpreted as HTML (and crucially, which *version* of the HTML standard to use).
 
-```html {linenos=true, hl_lines="1"}
+```html {hl_lines="1"}
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +82,7 @@ A valid HTML document consists of a doctype and an `<html>` element.
 
 >There should be **nothing else in the file**.
 
-```html {linenos=true, hl_lines="2-9"}
+```html {hl_lines="2-9"}
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,7 +102,7 @@ In this case, it contains only a `<title>` element.
 
 > The content of the `<title>` element is not visible on the page, but it will typically appear in the browser tab when viewing the document.
 
-```html {linenos=true, hl_lines="3-5"}
+```html {hl_lines="3-5"}
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,7 +118,7 @@ In this case, it contains only a `<title>` element.
 
 The `<body>` element is where we will add all the visible parts of the document.
 
-```html {linenos=true, hl_lines="6-8"}
+```html {hl_lines="6-8"}
 <!DOCTYPE html>
 <html>
 <head>
