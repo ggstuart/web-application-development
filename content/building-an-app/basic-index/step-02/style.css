@@ -1,0 +1,10 @@
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+}
+ul {
+    background-color: hsl(200 50% 50%);
+}
+li {
+    backdrop-filter: brightness(0.6);
+}

@@ -1,7 +1,7 @@
 ---
-title: A basic index template
+title: A basic interface
 type: exercise
-weight: 30
+weight: 10
 ---
 
 We need to build an accessible set of HTML templates for our application.
@@ -68,7 +68,9 @@ Add the following into the file.
     <main>
     </main>
 
-    <footer>&copy; Graeme Stuart 2023</footer>
+    <footer>
+        <p>&copy; Graeme Stuart 2023</p>
+    </footer>
 
 </body>
 
@@ -78,7 +80,7 @@ Add the following into the file.
 Inside the header we have added a simple `<h1>` element with our page title.
 This will be visible in the page, unlike the `<title>` element.
 
-We've also added a copyright notice to the footer, it's also a good place for additional links.
+We've also added a paragraph with a copyright notice to the footer, it's also a good place for additional links.
 
 > The header and footer content will be repeated on every page of our app.
 
@@ -120,7 +122,9 @@ By default, each item in the list will have a bullet point.
         </ul>
     </main>
 
-    <footer>&copy; Graeme Stuart 2023</footer>
+    <footer>
+        <p>&copy; Graeme Stuart 2023</p>
+    </footer>
 
 </body>
 
@@ -178,7 +182,9 @@ Insert five copies of the above pattern into our template as follows
         </ul>
     </main>
 
-    <footer>&copy; Graeme Stuart 2023</footer>
+    <footer>
+        <p>&copy; Graeme Stuart 2023</p>
+    </footer>
 
 </body>
 
@@ -200,12 +206,14 @@ Insert five copies of the above pattern into our template as follows
 
 Start the *live server* extension to view the document in the browser if you have not already done so.
 
+You should see something like this.
+
 {{<figure caption="a basic index page" src="images/step-01.png">}}
 
+It should look exactly like [this page](step-01)
 
-You should see something like this.
 It's not fancy of course, but the list is functional.
-Although it doesn't link to a database yet, it does meet one of the user stories.
+Although it doesn't link to a database yet, it is a first step towards meeting one of the user stories.
 
 > As a user, I need to **view** all the available *todo-lists*
 
@@ -219,9 +227,9 @@ Simply type the word "link" into the `<head>` element of your document and choos
 
 {{<figure src="images/link-css-emmet.png" caption="using emmet to add a `<link>` to a css file">}}
 
-We will accept the default file name, This should add a `<link>` element like this.
+We will accept the default file name **style.css**, it should add a `<link>` element like this.
 
-```html
+```html {hl_lines="8"}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -258,9 +266,336 @@ We will accept the default file name, This should add a `<link>` element like th
         </ul>
     </main>
 
-    <footer>&copy; Graeme Stuart 2023</footer>
+    <footer>
+        <p>&copy; Graeme Stuart 2023</p>
+    </footer>
 
 </body>
 
 </html>
 ```
+
+So, we must also create the CSS file, **style.css**. 
+
+> At this point, to ensure a mobile-first design, we should open the device toolbar in the developer tools and set the viewport to a narrow, mobile size.
+
+We can start by adding some color, just to check we are *plumbed in* correctly.
+
+```css
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+}
+
+ul {
+    background-color: hsl(200 50% 50%);
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+```
+
+> Remember you can use the devTools to tick and untick individual style rules to see their impact.
+
+Again, view the document in the browser to check everything is working correctly.
+
+You should see something like this.
+
+{{<figure src="images/step-02.png" caption="adding some colour">}}
+
+Here's a [live version of the page](step-02).
+Yours should look similar.
+
+> choose your own colours, but keep contrast in mind. 
+> i.e. avoid having dark text on a dark background, mak sure it's clearly readable for people with visual impairments.
+
+Looking closely, our changes have revealed some of the default styles more clearly.
+
+- The `<body>` element has a margin which separates the `<ul>` from the edge of the viewport
+- The `<ul>` also has left padding which makes room for the bullet points.
+- The `<h2>` elements have margin which is *overflowing* the `<li>` elements (and the `<ul>`).
+
+In addition, we can discover the following by using the devTools.
+
+- The `<ul>` has a margin which is *overflowing* the `<main>` element.
+- The `<h1>` has a margin which is *overflowing* the `<header>` element.
+
+> Understanding all of the above is a great start when trying to get to grips with styling.
+
+### Some minor CSS resetting
+
+It's definitely worthwhile becoming familiar with the default styles that elements are given.
+However, to handle these situations in a simple way, we are going to remove some of the default styles from *all* elements.
+We will also remove the list markers (though they are now hidden anyway).
+
+```css {hl_lines="1-4 12"}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+```
+
+removing the margins makes all the content bunch up together.
+
+{{<figure caption="CSS reset" src="images/step-03.png">}}
+
+You should see something identical to [step-03](step-03).
+
+### Giving elements some space
+
+Now we can set about adding space back into the page and choosing the layout more carefully.
+
+We will start with some inline (i.e. left/right) padding on all the elements with content.
+This will keep the content away from the edge of the viewport.
+
+```css {hl_lines="19-25"}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+
+header,
+li,
+footer {
+    padding-inline: 0.5rem;
+}
+```
+
+> We use `rem` units because these are independent of the font size and so everything lines up.
+
+Then we can also add some block (i.e. top/bottom) margin to the headings and paragraph to make some breathing room.
+
+```css {hl_lines="25-30"}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+
+header,
+li,
+footer {
+    padding-inline: 0.5rem;
+}
+
+h1,
+h2,
+p {
+    margin-block: 0.5em;
+}
+```
+
+> We use `em` units here because they will be relative to the font size.
+Larger fonts in the `<h1>` and `<h2>` get more room than smaller fonts in the `<p>`.
+
+Finally, we need to make sure the `<header>` and `<li>` elements contain the margins of their contents by setting them to `overflow: auto`.
+
+> If your not sure what this does, check the impact in the devTools.
+
+```css {hl_lines="31-36"}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+
+header,
+li,
+footer {
+    padding-inline: 0.5rem;
+}
+
+h1,
+h2,
+p {
+    margin-block: 0.5em;
+}
+
+header,
+li {
+    overflow: auto;
+}
+```
+
+{{<figure caption="Everything now has room to breathe" src="images/step-04.png">}}
+
+The site is now looking more intentional and notice how all the elements line up vertically because they are all `0.5rem` from the left edge.
+
+The [live page](step-04) is beginning to look respectable.
+
+### Make it a bit fancier
+
+Now we will add some final tweaks.
+
+Starting with a custom font (you choose a different one as you like).
+
+```css {hl_lines="1 11-12 15-21"}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+    font-family: "Roboto";
+    font-weight: 200;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+
+header,
+li,
+footer {
+    padding-inline: 0.5rem;
+}
+
+h1,
+h2,
+p {
+    margin-block: 0.5em;
+}
+
+header,
+li {
+    overflow: auto;
+}
+```
+
+> In the above code, we have used the [Roboto font](https://fonts.google.com/specimen/Roboto) with thinner font weights than normal (200, 300 and 400).
+
+To make the list items stand out we are setting the `<ul>` to `display: grid` and giving the grid a `gap`.
+We also put the footer on the right using a simple `text-align`.
+
+```css {hl_lines="26-27 51-53"}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+    font-family: "Roboto";
+    font-weight: 200;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+    display: grid;
+    gap: 1px;
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+
+header,
+li,
+footer {
+    padding-inline: 0.5rem;
+}
+
+h1,
+h2,
+p {
+    margin-block: 0.5em;
+}
+
+header,
+li {
+    overflow: auto;
+}
+
+footer {
+    text-align: right;
+}
+```
+
+Checkout [the result](step-05).
+This is now looking fine. 
+
+{{<figure caption="OK, this looks good enough" src="images/step-05.png">}}
