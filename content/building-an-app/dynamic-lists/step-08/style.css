@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(100 50% 30%);
+    color: hsl(100 50% 90%);
+    font-family: "Roboto";
+    font-weight: 200;
+    background-image: url(to-do-list.svg);
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    min-height: 100dvh;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+main {
+    display: grid;
+    gap: 1rem;
+}
+
+form {
+    display: grid;
+}
+
+input, button {
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: none;
+    background-color: hsl(200 50% 50%);
+    display: grid;
+    gap: 1px;
+}
+
+li {
+    backdrop-filter: brightness(0.6);
+}
+
+header,
+input,
+button,
+li,
+footer {
+    padding-inline: 0.5rem;
+}
+
+h1,
+h2,
+p {
+    margin-block: 0.5em;
+}
+
+header,
+li {
+    overflow: auto;
+}
+
+main,
+h1,
+footer p {
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+@media (width>=420px) {
+    form {
+        grid-template-columns: 1fr auto;
+    }
+}
+
+@media (width>=800px) {
+    main {
+        padding: 1rem;
+        background: linear-gradient(45deg, hsl(0 0% 100% / 0.1), hsl(0 0% 0% / 0.1));
+        border-radius: 5px;
+        box-shadow: 0 0 15px hsl(0 0% 0% / 0.2);
+    }
+}
+
+footer {
+    text-align: right;
+}

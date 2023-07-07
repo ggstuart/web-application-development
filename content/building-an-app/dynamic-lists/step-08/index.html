@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Lists</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TODO Lists</h1>
+    </header>
+
+    <main>
+        <form id="create-todo-list" aria-label="create a new todo list" action="create-todo-list.php" method="post">
+            <input type="text" name="name" placeholder="new list" aria-label="todo list name">
+            <button>create</button>
+        </form>
+        <ul>
+            <li class="todo-list">
+                <h2 class="title">This is a todo-list</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">This is another todo-list</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">A third todo-list</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">list 4</h2>
+            </li>
+            <li class="todo-list">
+                <h2 class="title">The fifth todo-list</h2>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; Graeme Stuart 2023</p>
+    </footer>
+
+</body>
+
+</html>
