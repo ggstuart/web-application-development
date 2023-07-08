@@ -1,0 +1,14 @@
+:root {
+    --clr-background: #bbb;
+    --clr-background2: #eee;
+    --clr-text: #000;
+    --clr-slide-background: #fff;
+    --clr-slide-text: #000;
+    /* --clr-primary-button: #00a;
+    --clr-secondary-button: #00f;
+    --clr-button-text: #fff; */
+    --clr-accent: #a00;
+    --clr-accent2: #f00;
+    --clr-accent-text: #fff;
+    --main-width: 800px;
+}
