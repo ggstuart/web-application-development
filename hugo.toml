@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://ggstuart.github.io/web-application-development'
 languageCode = 'en-us'
 theme = 'module'
 
