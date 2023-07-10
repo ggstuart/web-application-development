@@ -1,8 +1,7 @@
 ---
 title: 'Module Introduction'
 type: lecture
-date: 2023-06-01T09:00:00+00:00
-order: 0
+weight: 5
 author: 'Dr Graeme Stuart'
 ---
 

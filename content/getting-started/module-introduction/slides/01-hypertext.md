@@ -1,12 +1,13 @@
 ---
 title: Hypertext
-classes: ['hypertext']
+type: slide
 order: 1
+classes: []
 ---
->"(...)'Hypertext' is a recent coinage. 'Hyper-' is used in the mathematical sense of extension and generality (as in 'hyperspace,' 'hypercube') rather than the medical sense of 'excessive' ('hyperactivity'). There is no implication about size— a hypertext could contain only 500 words or so. 'Hyper-' refers to structure and not size."
->
-><cite>**Ted Nelson**, "Brief Words on the Hypertext", 23 January 1967</cite>
 
-![a diagram of a hypertext document](images/hypertext.svg)
+>**Hypertext** is a recent coinage. *Hyper-* is used in the mathematical sense of extension and generality (as in *hyperspace*, *hypercube*) rather than the medical sense of excessive (*hyperactivity*).
 
 ![Ted Nelson](images/ted-nelson.jpg)
+![a diagram of a hypertext document](images/hypertext.svg)
+
+>**Ted Nelson**, "Brief Words on the Hypertext", 23 January 1967

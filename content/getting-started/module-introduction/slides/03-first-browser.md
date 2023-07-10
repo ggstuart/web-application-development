@@ -1,6 +1,7 @@
 ---
 title: The first browser
-classes: ['nexus']
+type: slide
+classes: []
 order: 3
 ---
 
@@ -8,7 +9,6 @@ order: 3
 >[Nexus](http://digital-archaeology.org/the-nexus-browser/), *An exercise in global information availability*, was created by Tim Berners-Lee. Originally named **WorldWideWeb**, the name was changed to avoid confusion.
 
 ![Tim Berners-Lee](images/timbl-avatar.png)
-
 ![The nexus browser](images/nexus.png)
 
 

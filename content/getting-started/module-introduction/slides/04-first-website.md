@@ -1,5 +1,6 @@
 ---
 title: The first website(?)
+type: slide
 classes: ['first']
 order: 4
 ---

@@ -1,14 +1,15 @@
 ---
-title: The first browser war - divergence
-classes: ['divergence']
+title: The browser wars
+type: slide
+classes: ['charts']
 order: 7
 ---
 
-Computing giant **Microsoft** creates <strong>Internet Explorer</strong> and makes it available for free in 1995.
+> Computing giant **Microsoft** creates **Internet Explorer** and makes it available for free in 1995.
 **Netscape Navigator** struggled to remain viable (only free for home and educational use).
 
-{{<figure src="images/browser-war1.png" caption="The first browser war and the beginning of the second">}}
+![A chart showing browser market share  from 1996 to 2009, Internet Explorer squeezes Netscape out but is subsequently replaced by Firefox](images/browser-war1.png)
+![Another chart, showing the decline of internet explorer from 2009. Both Chrome and mobile browsers dominate to 2016](images/browser-war2.svg)
 
-Many versions of each browser were released including new proprietary (i.e. non-standard) features including **scripting** and **style sheets**. In 2000, **IE 5.0** was the first browser to fully support **CCS1** but had a flawed *box-model* which did not match the standard.
-
------
+>The Mozilla foundation created the *open-source* phoenix browser which became firebird and then **firefox**.
+>Google release **Chrome** with faster *javascript* and an *open-source* version **Chromium**.
