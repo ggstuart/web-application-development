@@ -157,36 +157,27 @@ A *session cookie* is set in the browser so the same user can be identified on e
 
 > As we shall see, the *cookie* can be viewed (and deleted) in the devTools under *application*, *storage*, *cookies*.
 
-Before we get started, we will move our setup code into a new script, **setup.php**.
+### Set up the session
+
+Before we get started, we will introduce a new script, **setup.php**.
 
 Modify your **index.php** as follows:
 
-```phtml {hl_lines="1"}
+```phtml {hl_lines="2"}
 <?php
 include 'setup.php'; 
-include 'views/index.phtml';
-```
-
-Now, in **setup.php**, you can put the original code back in, although we are just about to change this.
-
-```phtml
-<?php
-
 $todoLists = [
     'HTML',
     'CSS',
     'PHP'
 ];
+include 'views/index.phtml';
 ```
-
-This should still work exactly as before.
-
-### Set up the session
 
 To use the session within a script, we need to call the `session_start` function.
 This will either start a new session or resume an existing one.
 
-Update your **setup.php** as follows:
+Create **setup.php** as follows:
 
 ```phtml
 <?php
@@ -195,15 +186,22 @@ session_start();
 if(!isset($_SESSION['lists'])) {
     $_SESSION['lists'] = [];
 }
-
-$todoLists = $_SESSION['lists'];
 ```
 
 We are using the `isset` function to test whether we already have a `'lists'` key in our `$_SESSION` data.
 If the key already exists, then we can leave it alone.
 If it doesn't exist, then we populate it with an empty array.
 
-Finally, we extract our data from the session so it can be used by **index.phtml**.
+Finally, we can modify **index.php** to extract our data from the session rather than from a hard-coded array, so it can be used by **index.phtml**.
+
+```phtml {hl_lines="4"}
+<?php
+include 'setup.php'; 
+
+$todoLists = $_SESSION['lists'];
+
+include 'views/index.phtml';
+```
 
 Reloading the **index.php** file in the browser should lead to an empty list.
 
