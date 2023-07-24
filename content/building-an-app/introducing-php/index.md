@@ -180,17 +180,19 @@ Create a file **views/todo-list-summary.phtml** and add the following content.
 
 ```phtml
 <li class="todo-list">
-    <h2 class="title"><?php echo $title; ?></h2>
+    <h2 class="title"><?= $title; ?></h2>
 </li>
 ```
 > Notice this file has some php code, we have replaced the literal text with a `$title` variable so we can use this template for all of the *todo-lists*.
+>
+> `<?= $title; ?>` is exactly equivalent to `<?php echo $title; ?>`
 
 Now, we can only use this script if we first set the value of the `$title` variable.
 To do this, we need to loop over an array of strings.
 
 In **index.php**, update the file as follows:
 
-```php
+```php {hl_lines="2-8"}
 <?php
 $todoLists = [
     'This is a todo-list',
@@ -205,7 +207,7 @@ include 'views/index.phtml';
 This provides us with an array of strings we can use in our **index.phtml** template.
 We can loop over the array and run our script once for each *todo-list*.
 
-```phtml {hl_lines="1-9 22-26"}
+```phtml {hl_lines="12-16"}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -217,11 +219,11 @@ We can loop over the array and run our script once for each *todo-list*.
 
     <main>
         <ul>
-            <?php
-            foreach($todoLists as $title) {
-                include 'views/todo-list-summary.phtml';
-            }
-            ?>
+        <?php
+        foreach ($todoLists as $title) {
+            include 'views/todo-list-summary.phtml';
+        }
+        ?>
         </ul>
     </main>
 
@@ -238,21 +240,21 @@ The `$title` variable changes for each iteration of the `foreach` loop.
 Reload [the live page](http://localhost:3000/) and you should see that nothing has changed. 
 The resultant HTML file is still identical to our original template.
 
-> Try modifying the `$todoList` data.
-> ```php
+> Try modifying the `$todoList` data in **index.php**.
+> ```php {linenostart=2}
 > $todoLists = [
 >     'HTML',
 >     'CSS',
->     'PHP',
+>     'PHP'
 > ];
 > ```
 > This should be reflected in the output.
 
 > Try modifying the **views/todo-list-summary.phtml** template
-> ```phtml
+> ```phtml {hl_lines="2"}
 > <li class="todo-list">
 >     <span>todo-list</span>
->     <h2 class="title"><?php echo $title; ?></h2>
+>     <h2 class="title"><?= $title; ?></h2>
 > </li>
 > ```
 > You should see all the items change.
