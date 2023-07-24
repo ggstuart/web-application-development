@@ -10,12 +10,12 @@ In this exercise, we will add forms to our application which allow the user to c
 
 ## Creating a form
 
-Create a new template at **forms/create-todo-list.html**.
+Create a new template at **forms/create-todo-list.phtml**.
 The form should look like this:
 
 ```html
 <form id="create-todo-list" aria-label="create a new todo list" action="create-todo-list.php" method="post">
-    <input type="text" name="title" placeholder="the title of your new list" aria-label="name">
+    <input type="text" name="title" placeholder="the title of your new list" aria-label="list title">
     <button>create</button>
 </form>
 ```
@@ -66,11 +66,12 @@ We can insert the form into our **views/index.phtml** template.
 We can add some more styles to make the input and button bigger and to line them up with everything else.
 
 
-```css {linenostart=30}
+```css {linenostart=32}
 main {
     display: grid;
     gap: 0.5em;
 }
+
 form {
     display: grid;
 }
@@ -86,9 +87,11 @@ button {
     font-size: 1.5em;
     padding-inline: 0.5rem;
 }
+
 p.count {
     padding-inline: 0.5rem;
 }
+
 ```
 
 > These should be added to the existing css file which it getting quite long.
@@ -100,16 +103,16 @@ Here's the result.
 ## Handling the request
 
 Enter a title and submit the `<form>`.
-You should get a PHP error page.
-
->**Not Found**
-> The requested resource /create-todo-list.php was not found on this server.
-
 Notice that the browser url has changed.
 The form sent an `HTTP POST` request to load **create-todo-list.php**.
 
-Click the back button to return to the **index.php** page.
+You should get a PHP error page.
 
+{{<figure caption="not found" src="images/not-found.png">}}
+
+> The error is right, there is no **create-todo-list.php** on the server.
+
+Click the back button to return to the **index.php** page.
 Add a file **create-todo-list.php** and simply `var_dump` the `$_POST` data provided by the `<form>`.
 
 ```php
@@ -118,7 +121,7 @@ var_dump($_POST);
 ```
 > We don't need to close the `<?php` tag. It will be closed automatically.
 
-If you now enter a name into the form field and press the *create* button (or press *enter*) then you should be redirected to the **create-todo-list.php** script.
+If you now enter a name into the form field and press the *create* button (or press *enter*) then you should be redirected to the new **create-todo-list.php** script.
 
 It should look something like this.
 
@@ -254,12 +257,12 @@ Create a new file **forms/delete-todo-list.phtml**
 
 ```phtml
 <form id="delete-todo-list" aria-label="delete this todo-list" action="delete-todo-list.php" method="post">
-    <input type="hidden" name="list-id" value="<?php echo $id ?>">
+    <input type="hidden" name="list-id" value="<?= $id ?>">
     <button>&times;</button>
 </form>
 ```
 
-> You can use unicode symbols e.g. **🗑** instead of &times;
+> You can use unicode symbols e.g. **🗑** instead of &times; if you prefer.
 
 We need to identify which *todo-list* we are going to delete.
 To do this, we include a hidden `<input>` element named `list-id` in our form with a `value` set to the php variable `$id`.
@@ -269,8 +272,8 @@ Modify **views/todo-list-summary.phtml** as follows to include the form in each 
 ```phtml {hl_lines="3"}
 <li class="todo-list">
     <span>todo-list</span>
-    <h2 class="title"><?php echo $title ?></h2>
-    <?php include 'views/delete-todo-list.phtml' ?>
+    <h2 class="title"><?= $title; ?></h2>
+    <?php include 'forms/delete-todo-list.phtml' ?>
 </li>
 ```
 
@@ -311,19 +314,23 @@ In **views/index.phtml** we can pass the array index into each iteration of the 
 We also need a few style changes to integrate the new button into our design.
 We will make the *todo-list* list items `display: grid` and control where each element is located.
 
-```css {linenosstart="59"}
+```css {linenostart="67"}
+
 li.todo-list {
     display: grid;
     grid-template-columns: 1fr auto;
 }
+
 li.todo-list h2 {
     grid-column: 1;
 }
+
 li.todo-list form {
     grid-column: 2;
     grid-row: 1/3;
     place-self: center;
 }
+
 li.todo-list form button {
     border: 1px solid white;
     background-color: transparent;
@@ -334,12 +341,13 @@ li.todo-list form button {
     font-size: 2em;
     transition: background-color 250ms;
 }
+
 li.todo-list form button:hover {
     background-color: red;
 }
 ```
 
-Clicking the delete buttons will give you an error.
+Clicking the delete buttons will correctly call the script but will give you an error because the script doesn't exist.
 
 ### Create a simple delete script
 
@@ -362,6 +370,9 @@ This one just removes the item at the given index from the `$_SESSION` data and 
 > We use the `array_splice` method to remove one item at the specified location.
 
 Try it, you should now be able to delete items from the list.
+
+{{<figure src="images/delete-working.png" caption="delete now works!">}}
+
 
 ## Conclusions
 
