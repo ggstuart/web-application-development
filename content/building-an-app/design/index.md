@@ -141,10 +141,10 @@ This is fine for smaller devices but at larger screen sizes it looks a bit weird
 We need to add some responsiveness.
 Its a very simple interface so far so nothing complicated is needed.
 
-We will set a `max-width` on the `<main>`, `<h1>` and the `<p>` inside the `<footer>` with `margin-inline: auto` to keep everything centred.
+We will set a `max-width` on the `<body>` with `margin-inline: auto` to keep everything centred.
 We also put some styles on the `<main>` element to give it some space and make it a bit fancier with a `linear-gradient` and `box-shadow`.
 
-```css {hl_lines="6 52-66"}
+```css {hl_lines="6 14-15 53-66"}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 * {
@@ -158,6 +158,8 @@ body {
     color: hsl(100 50% 90%);
     font-family: "Roboto";
     font-weight: 200;
+    max-width: 800px;
+    margin-inline: auto;
 }
 
 h1 {
@@ -196,13 +198,6 @@ li {
     overflow: auto;
 }
 
-main,
-h1,
-footer p {
-    max-width: 800px;
-    margin-inline: auto;
-}
-
 @media (width>=800px) {
     main {
         padding: 1rem;
@@ -210,12 +205,18 @@ footer p {
         border-radius: 5px;
         box-shadow: 0 0 15px hsl(0 0% 0% / 0.2);
     }
+
+    header,
+    footer {
+        padding-inline: 1.5rem;
+    }
 }
 
 footer {
     text-align: right;
 }
 ```
+We've also added a bit more padding to the header and footer to make all the text line up vertically.
 
 > If you're not sure about any of these additions, try removing them using the devTools.
 > Most of them have a clear effect.
@@ -228,16 +229,24 @@ The result won't win any design awards, but [it's *good enough*](step-06).
 
 Adding background images is a good way to make a site a bit more interesting.
 
-Save [this file](images/to-do-list.svg) to your project folder and update the CSS as follows.
+Save {{<a href="images/to-do-list.svg" download="to-do-list.svg" >}}this file{{< /a >}} to your project folder and update the CSS as follows.
 
-```css {hl_lines="8-13"}
+```css {hl_lines="16-21"}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: hsl(100 50% 30%);
     color: hsl(100 50% 90%);
-    margin: 0;
     font-family: "Roboto";
     font-weight: 200;
+    max-width: 800px;
+    margin-inline: auto;
     background-image: url(to-do-list.svg);
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
@@ -245,51 +254,59 @@ body {
     background-position: bottom center;
     min-height: 100dvh;
 }
-header {
-    backdrop-filter: brightness(0.8);
-    overflow: auto;
-}
-header, footer {
-    padding-inline: 0.5rem;
-}
+
 h1 {
     font-weight: 400;
 }
+
 h2 {
     font-weight: 300;
 }
+
 ul {
     list-style: none;
-    padding: 0;
     background-color: hsl(200 50% 50%);
     display: grid;
     gap: 1px;
-    margin: 0;
 }
-li.todo-list {
+
+li {
     backdrop-filter: brightness(0.6);
-    padding: 0.5rem;
 }
-li.todo-list h2 {
-    margin: 0;
+
+header,
+li,
+footer {
+    padding-inline: 0.5rem;
 }
+
+h1,
+h2,
+p {
+    margin-block: 0.5em;
+}
+
+header,
+li {
+    overflow: auto;
+}
+
+@media (width>=800px) {
+    main {
+        padding: 1rem;
+        background: linear-gradient(45deg, hsl(0 0% 100% / 0.1), hsl(0 0% 0% / 0.1));
+        border-radius: 5px;
+        box-shadow: 0 0 15px hsl(0 0% 0% / 0.2);
+    }
+
+    header,
+    footer {
+        padding-inline: 1.5rem;
+    }
+}
+
 footer {
     text-align: right;
-}
-main, h1, footer {
-    max-width: 500px;
-    margin-inline: auto;
-}
-@media (width >=600px) {
-    main {
-        font-size: 1.1em;
-        padding: 1rem;
-        background: linear-gradient(45deg, hsl(100, 50%, 25%), hsl(100, 50%, 35%));
-        border-radius: 5px;
-        box-shadow: 0 0 15px hsl(0 0% 0% / 0.4);
-        margin: 1rem auto;
-        box-sizing: border-box;
-    }
 }
 ```
 
