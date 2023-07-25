@@ -1,0 +1,26 @@
+
+img[alt="animated HTML5 logo"] {
+    width: 5em;
+    margin: 2em auto;
+    animation-name: spin, move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    translate: -10em;
+}
+
+@keyframes spin {
+    100% {
+        rotate: 1turn;
+    }
+}
+
+@keyframes move {
+    0% {
+        translate: -200%;
+    }
+    100% {
+        translate: 200%;
+    }
+}
