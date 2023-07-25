@@ -1,13 +1,13 @@
 :root {
-    --clr-background: #bbc;
-    --clr-background2: #eef;
-    --clr-text: #000;
+    --clr-background: hsl(0, 0%, 95%);
+    --clr-background2: hsl(0, 0%, 90%);
+    --clr-text: #222;
     --clr-slide-background: #fff;
     --clr-slide-text: #000;
-    --clr-primary-button: #006;
-    --clr-secondary-button: #00b;
-    --clr-button-text: #fff;
-    --clr-accent: #a00;
-    --clr-accent2: #f00;
-    --clr-accent-text: #fff;
+    --clr-primary-button: hsl(200, 80%, 40%);
+    --clr-secondary-button: hsl(200, 80%, 50%);
+    --clr-button-text: hsl(200, 80%, 100%);
+    --clr-accent: hsl(0, 80%, 55%);
+    --clr-accent2: hsl(0, 80%, 65%);
+    --clr-accent-text: hsl(0, 80%, 100%);
 }
