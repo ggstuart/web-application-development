@@ -10,7 +10,7 @@ In this exercise we will experiment with adding some basic content into an HTML 
 
 Starting with the basic VSCode template, you should have something like this.
 
-{{<figure caption="starting point" src="starting-point.png">}}
+{{<figure caption="starting point" src="images/starting-point.png">}}
 
 ## Basic content
 
@@ -50,7 +50,7 @@ You can add the text all in one line if you want.
 The result is a single line of text (see [step-01.html](examples/step-01.html)) that will wrap to multiple lines if there isn't enough room.
 Any spaces, tabs or new line characters have been reduced to a single space.
 
-{{<figure caption="this is a paragraph element" src="step-01.png">}}
+{{<figure caption="this is a paragraph element" src="images/step-01.png">}}
 
 
 To view your own code in a browser you can simply open the file directly.
@@ -58,9 +58,9 @@ However, its much more convenient to install [the live server extension](https:/
 
 > On the left side of your VSCode window, select the square icon (usually the bottom icon) and search for "live server".
 > Click the "install" button and wait a few moments.
-{{<figure caption="the live server extension" src="live-server.png">}}
+{{<figure caption="the live server extension" src="images/live-server.png">}}
 > Once installed you should see a small "Go Live" button has appeared at the bottom of your VSCode window.
-{{<figure caption="the 'Go Live' button" src="go-live.png">}}
+{{<figure caption="the 'Go Live' button" src="images/go-live.png">}}
 > Clicking this will start up a web server pointing to the top level folder and open a browser tab to serve your project.
 
 The `<p>` element is a *block* element.
@@ -110,24 +110,17 @@ The live example ([step-02.html](examples/step-02.html)) shows that the height o
 When the text (inline) wraps within the paragraph, the paragraph height increases automatically.
 This is best viewed using the devTools.
 
-## The browser developer tools
+## The Document Object Model
 
 The Chrome DevTools provide a developers view of an HTML document and the browser state.
 In particular, we will be using the "elements" panel to inspect the *Document Object Model*.
 
 > The *Document Object Model* or *DOM* is a representation of the page that is created when the browser parses and interprets your HTML file. 
 
-Open the developer tools in your browser (you should be using Google Chrome).
-
-> To open devTools I usually use *F12* on linux, others use *ctrl+shift+I* or right-click and choose 'inspect'.
-> There are loads of ways to open them.
-> Here's a video about that.
-> {{< youtube id="X65TAP8a530" class="youtube" title="advice on opening devTools">}}
-
 With the developer tools open on the "elements" panel you should see the DOM representation with your three paragraphs.
 Selecting one of the paragraphs (by hovering over it with your cursor) will show something like this.
 
-{{<figure caption="using the browser developer tools" src="developer-tools.png">}}
+{{<figure caption="using the browser developer tools" src="images/developer-tools.png">}}
 
 Notice the text is highlighted with a blue rectangle.
 This is the **content** of the element.
@@ -173,7 +166,7 @@ Try an `<h1>` and an `<img>` as in the below example.
 
 Inspecting [step-03.html](examples/step-03.html) shows that `<h1>` elements are also *block* elements, and they have some default styles too.
 
-{{<figure caption="multi-media!" src="step-03.png">}}
+{{<figure caption="multi-media!" src="images/step-03.png">}}
 
 OK, great. 
 This should be pretty simple.
