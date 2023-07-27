@@ -42,16 +42,17 @@ Try this as an example.
 ```
 
 We have added a paragraph of text using a `<p>` element.
-I also changed the content of the `<title>` element, which is good practice.
-
 I like to put one sentence on each line inside `<p>` elements.
 You can add the text all in one line if you want.
+
+I also changed the content of the `<title>` element, which is good practice.
 
 The result is a single line of text (see [step-01.html](examples/step-01.html)) that will wrap to multiple lines if there isn't enough room.
 Any spaces, tabs or new line characters have been reduced to a single space.
 
-{{<figure caption="this is a paragraph element" src="images/step-01.png">}}
+<!-- {{<figure caption="this is a paragraph element" src="images/step-01.png">}} -->
 
+{{<iframe src="examples/step-01.html" width="800" height="200">}}{{</iframe>}}
 
 To view your own code in a browser you can simply open the file directly.
 However, its much more convenient to install [the live server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VSCode.
@@ -107,7 +108,11 @@ Also notice that the `<em>` element (emphasis) added *italics* to its content.
 > The differences between *block* and *inline* elements is critical to understand.
 
 The live example ([step-02.html](examples/step-02.html)) shows that the height of each paragraph is determined by its contents.
+
+{{<iframe src="examples/step-02.html" width="800" height="200">}}{{</iframe>}}
+
 When the text (inline) wraps within the paragraph, the paragraph height increases automatically.
+
 This is best viewed using the devTools.
 
 ## The Document Object Model
@@ -129,6 +134,8 @@ The orange bands above and below the paragraph indicate that `<p>` elements have
 > It is these **margins** that create the gaps between our paragraphs.
 > If you study the three paragraphs you will notice that the margins overlap.
 > We will talk about margins when we introduce the CSS box model.
+>
+>You can see a diagram in the bottom panel of the devTools showing the values for the *box model* parameters (*margin*, *border*, *padding*, *width* and *height*).
 
 ## More elements
 
@@ -164,26 +171,33 @@ Try an `<h1>` and an `<img>` as in the below example.
 </html>
 ```
 
-Inspecting [step-03.html](examples/step-03.html) shows that `<h1>` elements are also *block* elements, and they have some default styles too.
+[The result](examples/step-03.html) is still pretty basic, but we can see how different element types produce different results
+
+{{<iframe src="examples/step-03.html" width="800" height="500">}}{{</iframe>}}
+
+>You may see a different image, it's a random kitten from [placekitten.com](http://www.placekitten.com).
+
+Inspecting the site in the devTools shows that `<h1>` elements are also *block* elements, and they have some default styles too.
 
 {{<figure caption="multi-media!" src="images/step-03.png">}}
 
 OK, great. 
 This should be pretty simple.
 We can add elements and they appear in the browser because they have been added to the DOM.
-
 We can view the DOM in the devTools and see exactly how an element is being rendered in the viewport.
 
 ## Adding semantic structure
 
 Having an `<h1>` element is good. 
-It adds meaning to the document.
+It adds meaning to the document, as a visual equivalent to the `<title>` element.
+Every page should have an `<h1>` element, and preferably [only one per page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page).
+
 But we can do a lot better than this.
-A typical HTML document should have some aria landmarks and a heading structure to help assistive technologies understand where stuff is and support navigation.
+A typical HTML document should have some [aria landmarks](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) and [a heading structure](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) to help assistive technologies understand where stuff is and support navigation.
 
 Let's upgrade the site with some semantic structure.
 
-```html {hl_lines="11 13-16 30-32 37-39 41"}
+```html {hl_lines="11 13-16 30-32 34-39 41"}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -232,3 +246,7 @@ Let's upgrade the site with some semantic structure.
 
 > The addition of headings helps all users to navigate the content.
 > This kind of structure is very helpful for users of screen readers as it allows sections to be listed and skipped etc.
+
+The [new page](examples/step-04.html) looks like this.
+
+{{<iframe src="examples/step-04.html" width="800" height="600">}}{{</iframe>}}
