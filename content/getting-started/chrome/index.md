@@ -1,6 +1,7 @@
 ---
-title: The chrome developer tools
+title: Google Chrome
 type: exercise
+weight: 10
 ---
 
 In this exercise, we will look at the developer tools in chrome which we will make use of extensively in this module.
@@ -11,25 +12,32 @@ Web browsers have two primary functions.
 1. They communicate with *web servers* using **HTTP** requests.
 1. They render *HTML documents* and related content.
 
->In this module we will use [Google Chrome](https://www.google.com/intl/en_uk/chrome/).
->The main reason for this is that *it is the most popular browser* and very likely will be used by the majority of your users.
-> You may want to **set Chrome as your default browser** for the duration of this module if it isn't already.
+They also have a secondary function, to act as platforms for developers to *debug and inspect* the inner workings of complex documents.
+
 
 ## Google Chrome
 
+In this module we will use [Google Chrome](https://www.google.com/intl/en_uk/chrome/).
+The main reason for this is that *it is the most popular browser* and very likely will be used by the majority of your users.
+
 You should already have Google Chrome open and be viewing this web page.
+
+> You may want to **set Chrome as your default browser** for the duration of this module if it isn't already.
 
 It looks something like this:
 
 {{<figure src="images/chrome.png" caption="Google Chrome, showing this page under development">}}
+
 
 Almost all the window is taken up by the content of the page.
 The window includes tabs at the top to open multiple pages at once and a thin toolbar with the url and a few buttons like *back*, *forward* and *reload* etc..
 
 > If you want to remove this then pressing *F11* should toggle full screen mode on and off.
 
-
 Scroll around the page from a users perspective.
+
+> You can also view this site on a mobile device, notice the differences.
+
 Notice the structure.
 There is a header at the top with the module title.
 There's a navigation menu under the module title.
@@ -45,6 +53,7 @@ The main content for this page includes a series of headings with paragraphs and
 >Some of the paragraphs are highlighted like this.
 
 Now we will inspect the structure of the page from a developers perspective.
+
 
 ## The browser developer tools
 
@@ -140,3 +149,122 @@ You should see the animation now takes place much faster, taking only one second
 
 > You can learn more about CSS animations [in the MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
 
+## The JavaScript console
+
+The *console* panel provides access to the javascript environment within the browser.
+It provides a convenient mechanism for debugging your JavaScript code.
+
+Find the console tab and open the console.
+
+> You may see errors as in the figure, these are actually caused by the embedded youtube video above and the associated code.
+
+{{<figure src="images/console.png" caption="The JavaScript console">}}
+
+> You may see a smaller console (the so-called *console drawer*) at the bottom of your devTools panel.
+This can be toggled on and off by pressing *escape*.
+
+Through the console it is possible to interact with the browser.
+In particular, we are interested in interacting with the *document object model* using the browsers *document* API.
+
+> In this module, we won't dig deep into JavaScript.
+> We only want to introduce the most basic concepts.
+
+The console is a REPL system, a *Read, Evaluate, Print Loop*.
+Typing valid javascript expressions into the console will result in the code being evaluated and any return values being printed out as output.
+
+### Simple experiments
+
+Type the following lines into the console.
+
+```js
+a = 1;
+a += 1;
+a + 1;
+a;
+```
+
+{{<figure src="images/simple-experiment.png" caption="A simple experiment">}}
+
+The code is...
+
+1. declaring a variable `a` and assigning it a value.
+The expression evaluates to the value, `1`.
+1. Incrementing the value by one, which evaluates to the new value, `2`.
+1. Evaluating an expression with no side-effect, this outputs `3`.
+1. Proving that `a` still equals `2`.
+
+You should see at each stage that the output is displayed in the console.
+
+> Make sure you understand this.
+> Ask your lab tutor if you want any clarification.
+
+### Querying the DOM
+
+Often we want to access elements in the document and manipulate them.
+*DOM manipulation* is a common use of JavaScript.
+
+Type the following into the console.
+
+```js {linenos=false}
+document.querySelectorAll('p')
+```
+
+The above line is calling the `querySelectorAll` method of the global `document` object.
+This method looks through the entire DOM and finds all elements that match your query.
+In this case, we are looking for all the `<p>` elements in the page.
+
+> The query syntax is exactly the same as CSS selectors, we will introduce selectors in future exercises.
+
+You should see the result is a `NodeList` object which contains lots of `p` objects.
+We can access the individual `node` items using square bracket notation.
+
+For example, this code will extract the first paragraph from the page.
+
+```js {linenos=false}
+paragraphs = document.querySelectorAll('p');
+p = paragraphs[0];
+```
+
+This can be reduced to the following: 
+
+```js {linenos=false}
+p = document.querySelectorAll('p')[0];
+```
+
+or, for accessing *the first matching element*, simply use `querySelector`.
+
+```js {linenos=false}
+p = document.querySelector('p');
+```
+
+Either way, you should see a specific paragraph element has been extracted from the page.
+
+Scroll to the top of the page to find the first paragraph, then try the following code.
+
+```js
+p = document.querySelector('p');
+p.textContent = "We can modify the content and the style of any element in the page using JavaScript";
+p.style.backgroundColor = "grey";
+p.style.padding = "100px";
+```
+
+You should see that the page responds to each line of code in turn. 
+
+{{<figure src="images/dom-manipulation.png" caption="DOM manipulation">}}
+
+
+## Conclusions
+
+We have seen that the developer tools provide a window into the details of how a document is put together.
+They can also be used to make temporary changes to the *document object model* within the browser.
+
+These tools are **critical** when working on front end web development.
+
+>Take 10 minutes to...
+>
+>- Explore the entire website through the devTools, try to understand how it is structured.
+>- Locate the *network* panel and reload the page (what is all this stuff?).
+>- Explore the developer tools more widely, see what you can find in there.
+>- Ask questions if you have them.
+>
+> Some of this will be outside the scope of this module, but we will be happy to receive your questions.
