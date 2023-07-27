@@ -1,5 +1,5 @@
 ---
-title: "Welcome to CTEC2712"
+title: Web Application development
 date: 2023-06-08T16:17:20+00:00
 display_toc: true
 ---
