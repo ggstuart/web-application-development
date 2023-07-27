@@ -164,8 +164,18 @@ Notice a few upgrades to our template above.
 
 There's a `lang` attribute on the `<html>` element.
 
-```html
+```html {hl_lines="2"}
+<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 ```
 
 This allows browsers to know the primary language of the page.
@@ -175,8 +185,18 @@ This supports tools such as search engines and browser-based translation.
 
 Inside the `<head>` element we also have a `<meta>` tag (it has no closing tag because it is a `void` element) declaring the character set for the document.
 
-```html
+```html {hl_lines="4"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 ```
 
 Typically declaring a `UTF-8` character set is good for most documents. 
@@ -192,8 +212,18 @@ This one is for the viewport.
 >
 > This additional tag is now necessary to tell the browser that the viewport should be the real device width and should not be zoomed out.
 
-```html
+```html {hl_lines="5"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 ```
 
 It tells mobile browsers not to mess with the viewport.
