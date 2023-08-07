@@ -4,7 +4,7 @@ type: exercise
 weight: 10
 ---
 
-In this exercise, we will look at the developer tools in chrome which we will make use of extensively in this module.
+In this exercise, we will use the developer tools in chrome to provide a developers view of a website.
 
 <!--more-->
 
