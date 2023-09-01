@@ -721,7 +721,7 @@ body {
 }
 ```
 
-> *Combinators* allow us to combine selectors to pinpoint more specific elements.
+> [Combinators](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators) allow us to combine selectors to pinpoint more specific elements.
 > The space in `#output p` selector is known as the *decendant combinator*.
 > `#output p` selects all `p` elements which are decendants of (i.e. are inside) the `#output` element.
 
