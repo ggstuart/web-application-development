@@ -1,0 +1,21 @@
+body {
+    max-width: 75ch;
+    margin-inline: auto;
+}
+
+figure {
+    margin: 2rem 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    margin-left: 1rem;
+    padding: 0.25rem 0;
+}

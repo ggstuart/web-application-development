@@ -8,5 +8,5 @@ theme = 'module'
 [params]
     moduleName = 'Web application development'
     moduleCode = 'CTEC2712'
-    customcss = ['colours.css']
+    customcss = ['colours.css', 'mdn.css']
 

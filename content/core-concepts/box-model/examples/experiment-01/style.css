@@ -1,0 +1,35 @@
+body {
+    max-width: 75ch;
+    margin-inline: auto;
+    background: lightgray;
+}
+
+figure {
+    margin: 1rem 0;
+    border: 2px solid black;
+    background: white;
+}
+
+figcaption {
+    background: black;
+    color: white;
+    padding: 1rem;
+}
+
+img {
+    background: darkgray;
+}
+
+figure.margin img {
+    margin: 1rem;
+}
+figure.padding img {
+    padding: 1rem;
+}
+figure.margin.padding img {
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+figure.border img {
+    border: 2px solid black;
+}

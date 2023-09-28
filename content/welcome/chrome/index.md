@@ -71,8 +71,7 @@ Open the developer tools in your browser (you should be using Google Chrome).
 > {{< youtube id="X65TAP8a530" class="youtube" title="advice on opening devTools">}}
 >
 > **Wait. Don't watch videos during the timetabled lab sessions!**
->
->You can watch this later.
+>You can watch it later, and have a look at [this playlist of dev tools videos](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAcezfL8q0rjt13ufKseL5X) from [the google chrome developers channel](https://www.youtube.com/@ChromeDevs), which has some good content.
 
 Through the developer tools panel, you can view and edit the HTML and CSS which make up the site and you can execute JavaScript on the page.
 
@@ -147,7 +146,7 @@ You will find the image inside a paragraph.
 Select the *animation-duration* rule and change the value from `5s` to `1s`.
 You should see the animation now takes place much faster, taking only one second to complete in each of the alternating directions.
 
-> You can learn more about CSS animations [in the MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
+> You can learn more about [CSS animations in the Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)  documentation
 
 ## The JavaScript console
 

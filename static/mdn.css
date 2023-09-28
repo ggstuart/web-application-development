@@ -1,0 +1,7 @@
+a[href*="developer.mozilla.org"]::after {
+    /* background: yellow; */
+    font-size: 0.7em;
+    content: "(MDN)";
+    margin-left: 0.5ch;
+    opacity: 0.5;
+}

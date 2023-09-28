@@ -33,6 +33,7 @@ Maybe call it **vscode-experiment** or similar.
 
 Open your new folder in VSCode and create a file **index.html**.
 
+
 ```markdown {linenos=false}
  CTEC2712
    └─ exercises
@@ -41,6 +42,7 @@ Open your new folder in VSCode and create a file **index.html**.
 ```
 
 > It is crucial that you open the **folder** in VSCode, not the file.
+
 
 Add the following, minimal content to the file.
 
@@ -60,36 +62,37 @@ It should look something like this.
 
 {{<figure src="images/experiment.png" caption="A minimal HTML document">}}
 
+The document includes a [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) in the [`<head>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head) element and a [paragraph](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p) in the [`<body>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body) of the document.
+
+
 It's important that the top-level folder in the VSCode explorer window is your new folder.
 This will become the root folder for the *live server* extension.
 Remember, you can start the *live server* extension by clicking the *go live* button.
 
 >![go live](images/go-live-2.png)
 >
->You should always use this, we won't remind you again.
+>You should always use this to view your site, we won't remind you again.
 
 The site should open in your browser, looking something like this:
 
 {{<iframe src="examples/step-01" width="1200" height="200">}}{{</iframe>}}
 
-> Note that the **index.html** file is picked automatically as this is the default name for the index file.
-Try renaming the file and you should get a very different response.
+Admittedly its not that impressive, but we are only just beginning.
 
-The content we added includes a `<title>` in the `<head>` of the document and a paragraph (`<p>`) in the `<body>` of the document.
-You should see the title appears only in the browser tab above the page, not as part of the visible page itself.
-The entire page content is our simple paragraph.
+> Note that the **index.html** file is loaded automatically.
+> *index.html* is a special filename that is often used as the default page which will be served when the user requests a url that points to a directory.
+
+You should see that the `<title>` appears in the browser tab above the page, not as part of the visible page itself.
+The entire page content is made up of our simple `<p>` paragraph element.
+
+The docstring and all the other elements (`<html>`, `<head>` and `<body>`) are providing structure for the document.
 
 Obviously, this is a very simple document.
 We have to start somewhere.
 
 ## More content
 
-Try experimenting by making a second file with different content.
-Add links to each file to allow the user to navigate between them.  
-
-Something like this:
-
-### index.html
+We will add a hyperlink to *index.html* to allow the user to navigate to *about.html*.  
 
 ```html {hl_lines="8"}
 <!DOCTYPE html>
@@ -108,23 +111,21 @@ We have added a second paragraph (`<p>`) containing some text and a hyperlink (a
 The content of the hyperlink element is the clickable text.
 
 > `<a>` tags are *inline* elements. 
-This essentially means they can be inserted into text.
->
+> This essentially means they are treated like text.
 
-### about.html
+Now create the *about.html* file.
 
-Create the *about.html* file.
-
-```markdown {linenos=false, hl_lines="4"}
- CTEC2712
-   └─ exercises
-        └─ vscode-experiment
-             ├─ about.html
-             └─ index.html
-```
+> The two files must be in the same folder.
+>```markdown {linenos=false, hl_lines="4"}
+> CTEC2712
+>   └─ exercises
+>        └─ vscode-experiment
+>             ├─ about.html
+>             └─ index.html
+>```
 
 
-Add the following content.
+Add the following content to *about.html*.
 
 ```html
 <!DOCTYPE html>
@@ -141,18 +142,18 @@ Add the following content.
 
 It is very similar to *index.html*, but the hyperlink points back to the original *index.html* file.
 
->The two files must be in the same folder.
-
-The result is a two-page website.
-
+The result is a minimal two-page website.
 
 {{<iframe src="examples/step-02" width="1200" height="200">}}{{</iframe>}}
 
+Clicking on the links allows the user to navigate between the two pages.
 
-> Try creating another few pages with different content.
-Make sure all the pages can be accessed.
-Notice how the pages can be linked in a web.
-This is what we mean by a *hypertext* document.
+> Each click generates an HTTP request to the server (the *live server* extension within VSCode).
+> The server responds with an HTML document which the browser parses and renders.
+> You can view the requests in the *network* panel of the developer tools.
+
+Try adding a second link to an extra page. 
+Make sure your users don't get stranded on the new page (add a link back).
 
 ## Adding styles
 
@@ -167,8 +168,8 @@ Update *index.html* as follows.
     <title>VSCode experiment</title>
     <style>
         body {
-            background-color: red;
-            color: white;
+            background-color: pink;
+            font-size: 1.4em;
         }
     </style>
 </head>
@@ -223,11 +224,11 @@ Create a new file *style.css* and add the following content:
 body {
     background-color: orange;
     font-size: 1.4em;
-    font-family: cursive;
+    font-family: monospace;
 }
 ```
 
-Now we can remove the `<style>` elements (and all their content) from our html documents and replace it with the following line.
+Now we can remove the `<style>` elements (and all their content) from our html documents and replace them with the following line (in all files).
 
 ```html {hl_lines="5"}
 <!DOCTYPE html>
@@ -245,7 +246,7 @@ Now we can remove the `<style>` elements (and all their content) from our html d
 
 > This is a `<link>` element.
 It represents a link to another file.
-In this case, the *relationship* to this document is a *stylesheet*.
+In this case, the **rel**(ationship) to this document is a *stylesheet*.
 This tells the browser that the file will contain *CSS ruleset* information that should be applied to the document.
 
 Now *all* our pages can have a consistent style, any changes we make to the *style.css* file will be applied to *all* our pages.
@@ -331,7 +332,7 @@ However, if we want to build JavaScript into our HTML document, we need to inclu
 
 In our *index.html* file, we can add a `<script>` element and put our code inside it.
 
-```html
+```html {hl_lines="10-14"}
 <!DOCTYPE html>
 <html>
 <head>
@@ -377,7 +378,7 @@ document.body.append(element);
 Now we can remove the code from the `<script>` element and simply point to it with the `src="script.js"` attribute.
 This keeps the HTML document simple and separates the content from the behaviour, just like the CSS file separates the presentation.
 
-```html
+```html {hl_lines="10"}
 <!DOCTYPE html>
 <html>
 <head>
@@ -397,8 +398,12 @@ This keeps the HTML document simple and separates the content from the behaviour
 ### Script location
 
 Notice that the two *hard-coded* paragraphs are loaded into the *DOM* **before** the script is executed.
+If we move the script, the DOM will be in a different state when it executes. 
 
-Move the `<script>` element up so it is in between the two paragraphs.
+>Moving a line of code can be achieved easily with *Alt + up arrow* and *Alt + down arrow*.
+> See more keyboard shortcuts for [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf), [MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf) and [Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf).
+
+Move the `<script>` element *up* so it is in between the two paragraphs.
 
 ```html {hl_lines="9"}
 <!DOCTYPE html>
@@ -527,6 +532,8 @@ Or we can declare the script to be a JavaScript *module* by setting the `type="m
 
 > JavaScript modules provide a number of advantages, in particular they allow for splitting code over multiple files and using `import` and `export` statements within our code.
 > This is only important when a javascript project becomes larger and more complex.
+> For us, we get the same benefit as `defer` but we also force the script to be interpreted in [*strict mode*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#changes_in_strict_mode) (rather than the default [*sloppy mode*](https://developer.mozilla.org/en-US/docs/Glossary/Sloppy_mode)).
+> This is always good and will help us with debugging.
 
 ## Creating a function
 
@@ -596,10 +603,10 @@ Let's add a button into *index.html*.
 ```
 
 But clicking the button does nothing.
-We need to tell the browser to listen for the buttons `click` event and call our function whenever it is triggered.
+We need to tell the browser to listen for the button's `click` event and call our function whenever it is triggered.
 
 Notice, we added an `id="my-btn"` attribute to the button.
-This allows us to easily pinpoint the specific element using JavaScript.
+This allows us to easily pinpoint the specific element using JavaScript using the `getElementById` method of the `document` object.
 
 ```js {hl_lines="1-2"}
 const btn = document.getElementById('my-btn');
@@ -615,7 +622,7 @@ insertParagraph();
 insertParagraph();
 ```
 
-Now, we can add an `EventListener` to the button, passing two arguments, the event type we want to listen for and the function to call when the event triggers.
+Now, we can add an `EventListener` to the button, passing two arguments, the event type we want to listen for (the `'click'` event) and the function to call (our `insertParagraph` function) when the event fires.
 
 ```js {hl_lines="9"}
 const btn = document.getElementById('my-btn');
@@ -632,6 +639,8 @@ btn.addEventListener('click', insertParagraph);
 Now clicking the button should add a paragraph into the page.
 
 {{<iframe src="examples/step-06" width="1200" height="500">}}{{</iframe>}}
+
+Make sure your code works just like the above example.
 
 ## A final tweak
 
@@ -755,20 +764,23 @@ body {
 }
 ```
 
+This gives the content (the text **"hello"**) a bit more space *within* the paragraph.
+
 ![paragraph padding](images/step-07-2.png)
 
 ### Modify the formatting context
 
 Now we will change the [formatting context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts) of the `<div>` by setting it's `display` property to `flex`.
 
-The `display` property can completely change our `<div>` layout.
+The `display` property can completely change our `#output` element layout.
 So the elements follow different rules from the default `block` formatting context.
 
 By setting it to `flex`, we implicitly make all its direct children (i.e. all the `<p>` elements) into `flex-items`, changing their behaviour drastically.
 
 Essentially, this means they will position themselves horizontally.
+We can add a few more rules to put space between the elements and position them in the center.
 
-```css {hl_lines="9-13 19"}
+```css {hl_lines="9-12 19"}
 body {
     background-color: orange;
     font-size: 1.4em;
@@ -797,14 +809,16 @@ The result is clearly a major change.
 
 
 > We also set the `flex-wrap` property.
-This prevents the `<p>` elements from overflowing the page and allows them to wrap a bit like `inline` elements.
+This prevents the `<p>` elements from overflowing the page and allows them to wrap, a bit like text and `inline` elements.
 
 Try adding lots of elements.
 
 {{<iframe src="examples/step-07" width="1200" height="350">}}{{</iframe>}}
 
 Remember, all we did was change the CSS. 
-The elements within the *DOM* are exactly the same.
+The elements within the *DOM* are still exactly the same as they were before.
+
+> Make sure you use the developer tools in *Chrome* to view the site from a developers perspective.
 
 ## Conclusions
 
@@ -815,6 +829,4 @@ In this exercise we have seen that we can use *VSCode* and the *Chrome* browser 
 1. We added *hyperlinks* to allow us to navigate between pages.
 1. We added *CSS rulesets* to provide different styles on each page.
 1. We added JavaScript code to modify the *DOM* in response to user interaction.
-1. We saw how changes to the *CSS* can make drastic changes to how the content are presented in the browser.
-
-We can now use the developer tools in *Chrome* to view the site from a developers perspective.
+1. We saw how changes to the *CSS* can make drastic changes to how the content are presented in the browser, including how elements are positioned.

@@ -1,0 +1,31 @@
+* {
+    outline: 0.5px solid black;
+    background-color: hsl(50, 100%, 40%, 0.1);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 75ch;
+    margin-inline: auto;
+}
+
+p {
+    padding: 1rem;
+    background-color: hsl(250, 100%, 80%, 0.6);
+}
+
+figure {
+    background-color: hsl(100, 100%, 80%);
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+li {
+    margin-left: 1rem;
+    padding: 0.25rem 0;
+    background-color: hsl(0, 100%, 80%);
+}
