@@ -241,9 +241,11 @@ However, there are many cases where you might want to prevent this overflow.
 
 ### Preventing margin overflow
 
-A common way to prevent this is to set the parent *overflow* property to *auto*.
+A modern way to prevent this overflow is to set the *display* property of the parent element to *flow-root*.
+> This creates a new *formatting context*, a top-level container for a new hierarchy.
 In which case, the parent element will increase in size to contain the top/bottom margins of all its children.
  
+
 ```css {hl_lines="12-15"}
 * {
     outline: 0.5px solid black;
@@ -258,9 +260,11 @@ p {
 }
 
 header, main {
-    overflow: auto;
+    display: flow-root;
 }
 ```
+> An older way to prevent this was to set the parent *overflow* property to *auto*.
+> This is now discouraged as it has other side-effects.
 
 Doing this in our case adds extra space between the top two paragraphs.
 

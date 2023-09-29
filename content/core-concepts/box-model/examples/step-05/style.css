@@ -11,5 +11,5 @@ p {
 }
 
 header, main {
-    overflow: auto;
+    display: flow-root;
 }
