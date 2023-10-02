@@ -400,7 +400,7 @@ This has the effect of placing the `<h1>` and `<nav>` in a single row.
 
 > It also brings the `<h1>` margins inside the `<header>`.
 
-{{<iframe src="examples/menu/step-09" width="1000" height="150">}}{{</iframe>}}
+{{<iframe src="examples/menu/step-09" width="1000" height="200">}}{{</iframe>}}
 
 There are two important observations we can make:
 
@@ -452,35 +452,36 @@ nav a:hover {
 
 The result is pretty neat considering how little code we added.
 
-{{<iframe src="examples/menu/step-10" width="1000" height="150">}}{{</iframe>}}
+{{<iframe src="examples/menu/step-10" width="1000" height="200">}}{{</iframe>}}
 
 Be careful to understand that we have two nested *flex* elements which we can control independently. 
 
 1. The `<a>` links are being positioned by the rules we add to the `<nav>` element.
 1. The `<h1>` and the `<nav>` are being positioned by the rules we add to the `<header>` element.
 
-## final tweaks
+### final tweaks
 
 Now we have the basic positioning as we want it, we can make a few final adjustments to the styles.
 The code will be presented at the end.
 
 Firstly, we can remove the transparency from all the elements and give the `<header>` a basic colour scheme.
 
-{{<iframe src="examples/menu/step-11" width="1000" height="150">}}{{</iframe>}}
+{{<iframe src="examples/menu/step-11" width="1000" height="200">}}{{</iframe>}}
 
 Now we are getting to the final few minor tweaks which can elevate a design significantly.
 Notice that the text in the `<h1>` is very close to the edge of the viewport and the height of the `<header>` is being controlled by the default *margin* on the `<h1>`.
 
 To fix this, we can remove the *margin* from the `<h1>` element and add some *padding* around the `<header>`.
 
-{{<iframe src="examples/menu/step-12" width="1000" height="150">}}{{</iframe>}}
+{{<iframe src="examples/menu/step-12" width="1000" height="200">}}{{</iframe>}}
 
 Finally (and optionally) we can remove the *gap* from the `<nav>` because the links have *padding* which keeps them separate and we can add rounded corners to the `<a>` elements.
 
-{{<iframe src="examples/menu/step-13" width="1000" height="150">}}{{</iframe>}}
+{{<iframe src="examples/menu/step-13" width="1000" height="200">}}{{</iframe>}}
 
-What a nice result.
-This is the code:
+What a nice result &#128526;.
+
+These are the code changes:
 
 ```css {hl_lines="11-13 16-19 30"}
 body {
@@ -531,6 +532,8 @@ Try playing [flexbox defense](http://www.flexboxdefense.com/), [flexbox froggy](
 
 ### Spread the links out
 
+> Make a backup of the code before doing any damage
+
 Research [flex-grow](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_flex-grow_property) and adjust the menu so that the `<nav>` is allowed to grow.
 This should place all the additional space inside the `<nav>` element.
 
@@ -545,9 +548,15 @@ This can prevent one kind of problem, but it introduces another.
 
 See how adding [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#multi-line_flex_containers_with_flex-wrap) to the `<header>` allows the `<nav>` to slip underneath when there's no room for it.
 
-### Add a list to the menu
+{{<iframe src="examples/menu/spread-out" width="700" height="200">}}{{</iframe>}}
 
-> Make a backup of the code before doing any damage
+### Make it your own
+
+You wouldn't make a menu that looked like this.
+Make a backup of *style.css* and redesign the entire header in a way that you prefer.
+
+
+### Add a list to the menu
 
 Our menu has some good accessibility features baked in because we use the `<nav>` element. 
 However, some developers like to add an unordered list element into menus because this will allow screen readers to announce how many links there are and it also supports nested menus.
@@ -569,11 +578,6 @@ This is easily achieved by adding a `<ul>` inside the `<nav>` with `<li>` elemen
 
 Of course, this will mess up the page. 
 Use what you have learned to upgrade the styles to handle this markup.
-
-### Make it your own
-
-You wouldn't make a menu that looked like this.
-Make a backup of *style.css* and redesign the entire header in a way that you prefer.
 
 ### Complete the document
 
