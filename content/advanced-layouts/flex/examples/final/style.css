@@ -1,0 +1,78 @@
+* {
+    /* outline: 1px solid red; */
+}
+
+body {
+    font-family: system-ui;
+    margin: 0 auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100svh;
+}
+header, footer {
+    background-color: hsl(0, 50%, 50%);
+    color: white;
+}
+
+header, main, footer {
+    display: flow-root;
+    padding-inline: 1rem;
+}
+
+header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+footer {
+    font-size: 0.9em;
+}
+
+p {
+    line-height: 1.5;
+}
+
+h1 {
+    flex-grow: 1;
+}
+
+main {
+    background: hsl(0, 50%, 80%);
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+nav a {
+    /* background-color: hsl(0, 50%, 30%); */
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    align-items: flex-start;
+    /* gap: 1rem; */
+    background-color: hsl(0, 50%, 30%);
+    color: white;
+}
+.card {
+    padding: 0.5rem 1rem;
+}
+
+.flex img {
+    /* object-fit: cover; */
+}
+
+.hero {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    color: hsl(180, 50%, 80%);
+    margin-block: 2rem;
+    background-color: hsl(180, 50%, 20%);
+}

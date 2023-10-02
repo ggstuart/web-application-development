@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex rows</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            gap: 1rem;
+            justify-content: space-around;
+        }
+        article {
+            background-color: yellow;
+            padding: 0.25rem;
+            border: 0.5px solid black;
+            display: flex;
+            gap: 0.25rem;
+        }
+        .row, .column {
+            display: flex;
+            gap: 0.25rem;
+            justify-content: space-between;
+            width: 250px;
+            aspect-ratio: 1;
+        }
+        .row {
+            flex-direction: column;
+        }
+        .column article {
+            flex-direction: column;
+        }
+        div:not(.row, .column) {
+            background-color: red;
+            color: red;
+            border: 0.5px solid black;
+            width: 30px;
+            aspect-ratio: 1;
+        }
+        div.row, div.column {
+            background-color: transparent;
+            /* border: none; */
+        }
+        article:nth-child(2) {
+            justify-content: center;
+        }
+        article:nth-child(3) {
+            justify-content: flex-end;
+        }
+        article:nth-child(4) {
+            justify-content: space-between;
+        }
+        article:nth-child(5) {
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <code>flex-direction: row</code>.
+        </p>
+        <div class="row">
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>flex-direction: column</code>.
+        </p>
+        <div class="column">
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+        </div>
+    </section>
+
+</body>
+</html>
