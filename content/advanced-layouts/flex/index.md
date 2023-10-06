@@ -548,7 +548,10 @@ This can prevent one kind of problem, but it introduces another.
 
 See how adding [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#multi-line_flex_containers_with_flex-wrap) to the `<header>` allows the `<nav>` to slip underneath when there's no room for it.
 
+
 {{<iframe src="examples/menu/spread-out" width="700" height="200">}}{{</iframe>}}
+
+> Designs that *just work* for different viewport sizes are known as *intrinsic* designs.
 
 ### Make it your own
 
