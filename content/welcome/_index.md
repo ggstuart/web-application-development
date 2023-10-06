@@ -1,5 +1,5 @@
 ---
-title: welcome to the front-end
+title: welcome
 type: unit
 weight: 5
 ---

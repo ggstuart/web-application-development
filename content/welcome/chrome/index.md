@@ -37,6 +37,9 @@ The window includes tabs at the top to open multiple pages at once and a thin to
 Scroll around the page from a users perspective.
 
 > You can also view this site on a mobile device, notice the differences.
+>
+>{{<iframe src="https://ggstuart.github.io/web-application-development/welcome/chrome/#google-chrome" width="400" height="600">}}{{</iframe>}}
+
 
 Notice the structure.
 There is a header at the top with the module title.
@@ -100,6 +103,9 @@ The blockquote has *margins* which are highlighted in orange.
 The lower *styles* panel shows that *blockquote* elements have their *margin* property set to `2rem 0`.
 This means the top and bottom margins (known as the *block* margins) are set to `2rem` and the left and right margins (known as the *inline* margins) are set to zero.
 
+> These are the custom styles applied to this page.
+Later on, we will look at the default styles applied by the browser.
+
 ### Editing the DOM
 
 Notice that the browser *DOM* is editable.
@@ -118,6 +124,7 @@ Your changes are not permanent.
 >```html {linenos=false}
 ><img src="http://www.placekitten.com/600/200" alt="a random kitten">
 >```
+> Remember to press *F2* to apply the change. 
 > You should see an image of a random kitten from [placekitten.com](http://www.placekitten.com).
 
 ### Editing style rules
