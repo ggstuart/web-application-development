@@ -1,0 +1,11 @@
+main {
+    display: grid;
+    background: red;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px;
+}
+
+div {
+    background: yellow;
+    padding: 0.25rem;
+}

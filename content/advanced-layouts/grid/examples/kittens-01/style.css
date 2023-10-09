@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    /* max-height: 100svh; */
+}
+main {
+    background: hsl(50, 50%, 50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    place-items: center;
+    width: 800px;
+    aspect-ratio: 1.5;
+    /* border: 5px solid black; */
+    /* border-radius: 50px; */
+    /* overflow: hidden; */
+    box-sizing: border-box;
+}
+
+img {
+    border: 1px solid black;
+    background: hsl(150, 50%, 50%);
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+    object-fit: contain;
+}

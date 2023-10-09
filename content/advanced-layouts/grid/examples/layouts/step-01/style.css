@@ -1,0 +1,54 @@
+/* Google Chrome. No other browser is acceptable. I teach front-end web development and this includes details about the use of the developer tools which are different between browsers. We use Chrome because it is THE most popular browser by a long way and has always been on the lab machines. Students need to build websites and test/inspect them in Chrome. VSCode. Again,
+I can't use anything else. VSCode has been THE most popular developers editor in the world for many years running and for good reason. It' s industry standard and miles ahead of all the alternatives with excellent auto-completion and emmet shortcuts plus extensions for virtually every possible language and tools such as servers which make development very smooth and simple. */
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100svh;
+}
+
+header, section {
+    padding: 2rem 1rem;
+}
+
+h1 {margin: 0;}
+
+footer {
+    padding: 1rem;
+    text-align: right;
+}
+
+section {
+    display: flow-root;
+}
+
+header {
+    background: hsl(150, 50%, 10%);
+    color: white;
+}
+
+main {
+    background: hsl(330, 50%, 90%)
+}
+
+footer {
+    background: hsl(150, 50%, 60%)
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+}
+
+article div {
+    background: hsl(330, 50%, 30%);
+    color: hsl(330, 50%, 90%);
+    padding: 0.5rem;
+}
+
+section:nth-of-type(even) {
+    background: hsl(150, 50%, 30%);
+    color: hsl(150, 50%, 90%);
+}

@@ -1,0 +1,29 @@
+main {
+    display: grid;
+    background: red;
+    grid-template-columns: 1fr 2fr 4fr;
+    grid-template-rows: 1fr 2fr 3fr 4fr 5fr;
+    height: 340px;
+}
+
+div {
+    background: yellow;
+    padding: 0.25rem;
+}
+
+main > :nth-child(1) {
+    background: palegreen;
+    grid-row: 3;
+    grid-column: 2;
+    place-self: center;
+}
+
+main > :nth-child(2) {
+    background: orange;
+    grid-column: span 2;
+}
+
+main > :nth-child(4) {
+    background: lightblue;
+    grid-row: span 4;
+}
