@@ -13,8 +13,6 @@ It is extremely useful for many basic tasks and provides a comprehensive (and **
 Flexbox is often used together with *grid* layout which we shall explore in the next exercise.
 
 
-
-
 ## What is flexbox?
 
 Consider how *block* elements behave in the default *flow* layout. 
@@ -25,6 +23,10 @@ The only way to make something flow into the page horizontally is to use inline 
 
 {{<iframe src="examples/demo/block.html" width="1000" height="400">}}{{</iframe>}}
 
+> Not strictly true. 
+> We can also use the *float* property to make this happen.
+> This was common practice for a long time, but it's not very flexible and it causes side effects. 
+> Now flex is available, we can stick to using [*float*](https://developer.mozilla.org/en-US/docs/Web/CSS/float) for pulling elements out of the normal flow.
 
 Flex allows us to place elements next to each other, in a row.
 Though it can also be used to organise elements in a column.
@@ -588,3 +590,10 @@ Expand the HTML and CSS to create something like this.
 
 {{<iframe src="examples/final" width="800" height="1400">}}{{</iframe>}}
 
+### Learn more
+
+Keep playing and researching.
+
+If you're not clear on what's going on, try [Kevin Powell's youtube channel](https://www.youtube.com/@KevinPowell), in particular, this video covers flexbox nicely.
+
+{{<youtube u044iM9xsWU>}}
