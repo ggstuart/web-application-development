@@ -1,0 +1,11 @@
+body {
+    font-family: system-ui;
+    background: oklch(10% 20% 0);
+    color: oklch(90% 20% 0);
+}
+nav a {
+    color: inherit;
+    background: lch(20% 70% 0);
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+}

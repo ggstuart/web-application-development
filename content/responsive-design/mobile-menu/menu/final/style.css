@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: system-ui;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: oklch(50%, 100%, 0);
+    color: oklch(90%, 10%, 0);
+    padding: 1rem;
+}
+h1 {
+    margin: 0;
+}
+input {
+    display: none;
+}
+label {
+    width: 1.5rem;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+label > span {
+    background-color: white;
+    aspect-ratio: 8;
+    border-radius: 3px;
+    transition: 400ms 650ms;
+}
+
+header:has(input:checked) label>span:nth-child(1) {
+    scale:1.41 1;
+    translate: 0 0.65rem;
+    rotate: 0.125turn;
+}
+header:has(input:checked) label>span:nth-child(2) {
+    opacity: 0;
+}
+header:has(input:checked) label>span:nth-child(3) {
+    scale: 1.41 1;
+    translate: 0 -0.65rem;
+    rotate: -0.125turn;
+}
+nav {
+    position: fixed;
+    inset: 0;
+    background: oklch(50% 50 0 / 0.8);
+    display: flex;
+    flex-direction: column; 
+    padding: 1rem;
+    gap: 1rem;
+    transition: translate 600ms;
+}
+nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 2em;
+}
+input:not(:checked) + nav {
+    translate: 100dvw;
+}
