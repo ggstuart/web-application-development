@@ -1,0 +1,8 @@
+p {
+    font-size: 2em;
+}
+
+span {
+    background: hsl(50, 80%, 50%, 0.2);
+    border: 0.5px solid hsl(50, 80%, 50%);
+}
