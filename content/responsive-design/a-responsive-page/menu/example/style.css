@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: system-ui;
+    background-color: hsl(100, 50%, 90%);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100svh;
+}
+
+header {
+    font-family: "Cabin Sketch";
+    font-size: 1.2em;
+    background-color: hsl(100, 50%, 30%);
+    color: hsl(100, 50%, 90%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+h1 {
+    margin: 0; 
+}
+
+main {
+    padding-inline: 0.5rem;
+}
+
+#menu {
+    display: flex;
+    gap: 0.25rem;
+}
+
+#menu a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+}
+
+@media (width >= 500px) {
+    #menu {
+        border-radius: 5px;
+        background-color: hsl(100, 50%, 40%);
+    }
+}
+
+@media (width < 500px) {
+    #menu {
+        flex-direction: column;
+        background-color: hsl(100, 50%, 30%);
+        position: fixed;
+        inset: 0;
+        font-size: 1.6em;
+    }
+}

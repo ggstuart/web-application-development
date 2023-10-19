@@ -1,0 +1,49 @@
+body {
+    display: grid;
+    margin: 0;
+    font-family: system-ui;
+}
+
+header {
+    background-color: hsl(100, 50%, 30%);
+    color: hsl(100, 50%, 90%);
+    font-size: 0.9em;
+}
+
+@media (width>=600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+header,
+main {
+    padding-inline: 0.5rem;
+}
+
+h1 {
+    margin-block: 0.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+    padding-block: 0.5rem;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    display: grid; 
+    place-items: center;
+}
+
+p {
+    max-width: 65ch;
+    line-height: 1.5em;
+}
