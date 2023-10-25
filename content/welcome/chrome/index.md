@@ -9,13 +9,13 @@ In this exercise, we will use the developer tools in chrome to provide a develop
 <!--more-->
 
 Web browsers have two primary functions.
+
 1. They communicate with *web servers* using **HTTP** requests.
 1. They render *HTML documents* and related content.
 
 They also have a secondary function, to act as platforms for developers to *debug and inspect* the inner workings of complex documents.
 
-
-## Google Chrome
+## Choosing a browser
 
 In this module we will use [Google Chrome](https://www.google.com/intl/en_uk/chrome/).
 The main reason for this is that *it is the most popular browser* and very likely will be used by the majority of your users.
@@ -35,13 +35,8 @@ The window includes tabs at the top to open multiple pages at once and a thin to
 > If you want to remove this then pressing *F11* should toggle full screen mode on and off.
 
 Scroll around the page from a users perspective.
-
-> You can also view this site on a mobile device, notice the differences.
->
->{{<iframe src="https://ggstuart.github.io/web-application-development/welcome/chrome/#google-chrome" width="400" height="600">}}{{</iframe>}}
-
-
 Notice the structure.
+
 There is a header at the top with the module title.
 There's a navigation menu under the module title.
 At the end of the page, there is a footer with some additional links.
@@ -51,9 +46,16 @@ Also notice the button in the top-right corner which controls a navigation menu.
 This button doesn't scroll with the rest of the page.
 Pressing it opens a menu which also doesn't scroll.
 
+> Pressing the *m* key toggles the menu
+
 The main content for this page includes a series of headings with paragraphs and images.
 
 >Some of the paragraphs are highlighted like this.
+
+You can also try viewing this site on a mobile device, notice the differences.
+
+{{<iframe src="https://ggstuart.github.io/web-application-development/welcome" width="400" height="600">}}{{</iframe>}}
+
 
 Now we will inspect the structure of the page from a developers perspective.
 
@@ -61,33 +63,30 @@ Now we will inspect the structure of the page from a developers perspective.
 ## The browser developer tools
 
 The Chrome DevTools provide a developers view of an HTML document and the browser state.
-In particular, we will be using the *Elements* panel to inspect the *Document Object Model*.
-
-> The *Document Object Model* or *DOM* is a representation of the page that is created when the browser parses and interprets your HTML file. 
+When developing a site, you should be regularly checking the developer tools to inspect the site, to try alternative solutions, to make sure you understand how the browser is interpreting your code and to emulate different devices.
 
 Open the developer tools in your browser (you should be using Google Chrome).
+To open devTools I usually use *F12* on linux, others use *ctrl+shift+I* or right-click and choose 'inspect'.
+Alternatively, in the Chrome menu, select *more tools* and *developer tools*.
 
-> To open devTools I usually use *F12* on linux, others use *ctrl+shift+I* or right-click and choose 'inspect'.
-> Alternatively, in the Chrome menu, select *more tools* and *developer tools*.
-> There are loads of ways to open them.
+> There are loads of ways to open the devTools.
 > Here's a video about that.
 > {{< youtube id="X65TAP8a530" class="youtube" title="advice on opening devTools">}}
 >
 > **Wait. Don't watch videos during the timetabled lab sessions!**
 >You can watch it later, and have a look at [this playlist of dev tools videos](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAcezfL8q0rjt13ufKseL5X) from [the google chrome developers channel](https://www.youtube.com/@ChromeDevs), which has some good content.
 
-Through the developer tools panel, you can view and edit the HTML and CSS which make up the site and you can execute JavaScript on the page.
-
-> You will be expected to use the developer tools as you go through the lab materials and develop your site.
-> In fact, when developing a site, you should nearly **always** have the developer tools open.
-> So get used to opening the tools to inspect how a page is put together.
-
 ### Viewing the DOM
 
-Under the *Elements* panel, within the developer tools panel you should find a nested structure containing all the elements of the page.
-This is a developers representation of the *Document Object Model*.
+Through the developer tools panel, you can view and edit the HTML and CSS which make up the site and you can execute JavaScript on the page.
+In particular, we will be using the *Elements* panel to inspect the *Document Object Model*.
 
-Try to find elements within the nested structure that correspond to the visible parts of the page.
+> The *Elements* panel shows the *Document Object Model* (or *DOM*) as a nested structure containing all the elements of the page.
+> The *DOM* is a representation of the page that is created when the browser parses and interprets your HTML file. 
+
+{{<figure src="images/devtools-blockquote.png" caption="the page has changed since I took this screenshot">}}
+
+Try to find the following element within the nested structure.
 
 >This element is a `<blockquote>`.
 You should see that it contains two `<p>` elements. 
@@ -95,16 +94,13 @@ You should see that it contains two `<p>` elements.
 >The `<p>` elements are paragraphs and they are separated by top and bottom margins.
 
 Notice that when elements are selected in the developer tools, they are highlighted on the page.
-Also notice that the style rules of the selected element are also provided.
+Also notice that the style rules of the selected element are provided in the lower panel.
 
-{{<figure src="images/devtools-blockquote.png" caption="find the blockquote in the *DOM*">}}
+In the figure, the blockquote *margins* are highlighted in orange.
+The *styles* panel shows that *blockquote* elements have their *margin* property set to *'2rem 0'*.
+This means the top and bottom margins (known as the *block* margins) are set to *'2rem'* and the left and right margins (known as the *inline* margins) are set to zero.
 
-The blockquote has *margins* which are highlighted in orange.
-The lower *styles* panel shows that *blockquote* elements have their *margin* property set to `2rem 0`.
-This means the top and bottom margins (known as the *block* margins) are set to `2rem` and the left and right margins (known as the *inline* margins) are set to zero.
-
-> These are the custom styles applied to this page.
-Later on, we will look at the default styles applied by the browser.
+> These are custom styles applied to this page.
 
 ### Editing the DOM
 
@@ -258,6 +254,16 @@ You should see that the page responds to each line of code in turn.
 
 {{<figure src="images/dom-manipulation.png" caption="DOM manipulation">}}
 
+## Challenges
+
+Take 10 minutes to...
+
+- Explore the entire website through the devTools, try to understand how it is structured.
+- Locate the *network* panel and reload the page (what is all this stuff?).
+- Explore the developer tools more widely, see what you can find in there.
+- Ask questions if you have them.
+
+> Some of this will be outside the scope of this module, but we will be happy to receive your questions.
 
 ## Conclusions
 
@@ -266,11 +272,3 @@ They can also be used to make temporary changes to the *document object model* w
 
 These tools are **critical** when working on front end web development.
 
->Take 10 minutes to...
->
->- Explore the entire website through the devTools, try to understand how it is structured.
->- Locate the *network* panel and reload the page (what is all this stuff?).
->- Explore the developer tools more widely, see what you can find in there.
->- Ask questions if you have them.
->
-> Some of this will be outside the scope of this module, but we will be happy to receive your questions.
