@@ -1,7 +1,7 @@
 ---
 title: Google Chrome
 type: exercise
-weight: 10
+weight: 20
 ---
 
 In this exercise, we will use the developer tools in chrome to provide a developers view of a website.

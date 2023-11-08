@@ -1,7 +1,7 @@
 ---
 title: Visual studio code
 type: exercise
-weight: 20
+weight: 10
 ---
 
 In this module we will be using the *VSCode* text editor to create and edit code files.
@@ -24,7 +24,16 @@ So let's do something very simple.
 
 ## Creating our first HTML document
 
+Hypertext Markup Language (*HTML*) is the backbone of the web.
+*HTML* is an open standard and was one of the core technologies originally developed by Tim Berners-Lee.
+When we browse to a website, the browser requests an *HTML* document from the server. 
+*HTML* documents are the starting point for defining the core content of a website.
+
+*HTML* documents are simple text files.
+We wrap content with *HTML* tags to indicate the meaning of the content.
 In this exercise we will create a very basic HTML template using VSCode.
+We will cover the basics, assuming you know nothing about HTML.
+
 We will see that *even a blank document* requires a number of core elements and meta data to be valid.
 The blank template provided in this exercise will serve as a solid beginning to every document we create in this module.
 
@@ -39,7 +48,7 @@ You should see something like this.
 
 Open a new folder in VSCode.
 When you have opened a folder, you should see the file explorer panel that you can use to manage your project.
-It can be toggled on and off using the top-left icon or *Ctrl + B*.
+It can be toggled on and off using the top-left icon or *Ctrl&nbsp;+&nbsp;B*.
 
 > It's *always* preferable to open a folder rather than a file since most projects are managed as a set of multiple files within a folder.
 

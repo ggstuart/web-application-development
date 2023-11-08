@@ -1,7 +1,7 @@
 ---
 title: welcome
 type: unit
-weight: 5
+weight: 10
 ---
 
 This unit introduces some context and includes a few simple exercises to get you started with the front-end technologies.

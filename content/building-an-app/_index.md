@@ -1,7 +1,7 @@
 ---
 title: Building an application
 type: unit
-weight: 50
+weight: 70
 ---
 
 In this series of exercises we will build a simple application from scratch.
