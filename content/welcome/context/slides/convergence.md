@@ -2,7 +2,7 @@
 title: Convergence
 type: slide
 classes: [charts, contain]
-order: 14
+order: 17
 ---
 
 > Instead of touting proprietary extensions to gain market share, browsers are marketed based on [standards compliance](https://upload.wikimedia.org/wikipedia/commons/transcoded/2/22/CSS_Standardization_-_The_State_of_the_Web.webm/CSS_Standardization_-_The_State_of_the_Web.webm.480p.vp9.webm) and open source implementations.

@@ -1,7 +1,7 @@
 ---
 title: Resilient by design
 type: slide
-order: 15
+order: 18
 classes: [resilient]
 ---
 
@@ -16,6 +16,8 @@ classes: [resilient]
 ```
 
 > The above HTML was valid in 1989 and remains valid now.
+> The below code includes a few newer elements.
+> Older browsers will simply ignore them.
 
 ```html
 <header>
@@ -28,5 +30,3 @@ classes: [resilient]
     <p>Moreover, <a href="another.html">other documents</a> can link back to me.<p>
 </main>
 ```
-> This code includes a few newer elements.
-> Older browsers will simply ignore them.

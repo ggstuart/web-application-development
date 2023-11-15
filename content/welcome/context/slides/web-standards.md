@@ -2,7 +2,7 @@
 title: Web standards
 type: slide
 classes: [wide-narrow]
-order: 13
+order: 16
 ---
 
 > The World Wide Web Consortium (*W3C*) publishes recommendations, that are considered [web standards](https://www.w3.org/standards/).

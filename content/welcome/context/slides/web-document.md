@@ -2,7 +2,7 @@
 title: Web document
 type: slide
 classes: [narrow-wide]
-order: 6
+order: 7
 ---
 
 > HTML documents are the core structure which brings together content which may be served from all over the web.

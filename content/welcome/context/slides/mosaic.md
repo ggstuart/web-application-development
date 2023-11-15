@@ -2,7 +2,7 @@
 title: The Mosaic browser
 type: slide
 classes: [mozilla]
-order: 10
+order: 11
 ---
 
 > In 1994, the **Mosaic browser** was released and was an instant success.

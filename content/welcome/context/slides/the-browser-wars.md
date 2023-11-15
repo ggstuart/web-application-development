@@ -2,7 +2,7 @@
 title: The browser wars
 type: slide
 classes: [contain, padded]
-order: 11
+order: 12
 ---
 
 > Computing giant *Microsoft* creates *Internet Explorer* and makes it available for free in 1995.

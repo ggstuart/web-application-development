@@ -2,7 +2,7 @@
 title: The line mode browser
 type: slide
 classes: [nicola]
-order: 9
+order: 10
 ---
 
 > The *Line mode browser* or *LMB* was the second ever browser created

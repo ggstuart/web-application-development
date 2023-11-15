@@ -2,7 +2,7 @@
 title: Cascading Style Sheets
 type: slide
 classes: []
-order: 12
+order: 14
 ---
 
 > CSS was proposed in 1994 by *Håkon Wium Lie* whilst working at *CERN*.
