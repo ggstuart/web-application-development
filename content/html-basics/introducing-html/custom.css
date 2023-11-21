@@ -12,14 +12,22 @@ article.slide p img {
     width: 100%;
     object-fit: cover;
     object-position: center;
-    aspect-ratio: 2;
+    aspect-ratio: 6;
+}
+
+article.slide .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
 }
 
 /* elements */
 
-article.slide.elements img {
+article.slide.contain img {
     object-fit: contain;
-    aspect-ratio: auto;
+}
+article.slide.black img {
+    background-color: #1f1f1f;
 }
 
 /* TWIN */
@@ -63,26 +71,31 @@ article.slide.anchors .content>p {
 
 article.slide.headings .content {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content min-content min-content min-content min-content;
+    /* grid-template-rows: min-content min-content min-content min-content min-content; */
     /* gap: 0.5rem 3px; */
 }
-
-article.slide.headings .content>p,
-article.slide.headings .content>h1,
-article.slide.headings .content>h2,
-article.slide.headings .content>h3 {
+article.slide.headings .content>* {
     grid-column: span 2;
 }
+article.slide.headings .highlight,
+article.slide.headings .highlight + blockquote {
+    grid-column: span 1;
+}
+
 
 
 /* lists */
 article.slide.lists .content {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto 1fr;
+    /* grid-template-rows: auto auto auto 1fr; */
 }
 
-article.slide.lists .content>p:first-of-type {
-    grid-column: 1/3;
+article.slide.lists .content>* {
+    grid-column: span 1;
+}
+article.slide.lists .content>*:first-child,
+article.slide.lists .content>*:last-child {
+    grid-column: span 2;
 }
 
 article.slide.lists .content ul,
@@ -92,12 +105,18 @@ article.slide.lists .content ol {
 }
 
 /* images */
+article.slide.images .content {
+    grid-template-rows: auto auto 1fr auto;
+}
+
 article.slide.images p:has(img) {
     display: block;
     margin-block: 1rem;
 }
 article.slide.images img {
-    max-height: 10rem;
+    height: auto;
+    max-height: 4rem;
+    vertical-align: bottom;
     width: auto;
     display: inline-block;
     aspect-ratio: auto;
@@ -105,7 +124,21 @@ article.slide.images img {
     /* padding-top: 0.75rem; */
     border: 1px solid #ddd;
 }
-
+@media (width>=500px) {
+    article.slide.images img {
+        max-height: 8rem;
+    }
+}
+@media (width>=700px) {
+    article.slide.images img {
+        max-height: 12rem;
+    }
+}
+@media (width>=1000px) {
+    article.slide.images img {
+        max-height: 14rem;
+    }
+}
 /* validators */
 
 article.slide.validators img {

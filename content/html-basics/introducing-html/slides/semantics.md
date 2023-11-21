@@ -2,7 +2,7 @@
 title: Semantic elements
 type: slide
 order: 11
-classes: ['simple', 'twin']
+classes: [twin]
 ---
 
 >Semantic elements add *meaning* to your document structure and provide **accessibility** advantages.
@@ -38,3 +38,5 @@ classes: ['simple', 'twin']
 </main>
 <footer></footer>
 ```
+
+> Semantic documents can be understood more fully by the browser and by other software because the various elements have been given *meaning*.

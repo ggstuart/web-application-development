@@ -2,19 +2,19 @@
 title: Anchors (hyperlinks)
 type: slide
 order: 6
-classes: ['simple', 'anchors']
+classes: ['anchors']
 ---
 
 Anchor elements require a *hypertext reference* (an `href` attribute) pointing to the link destination.
 There are three main kinds of link.
 > another element
-```html
+```html {class=large}
 <a href="#my-element">
     that element
 </a>
 ```
 > another document
-```html
+```html {class=large}
 <a href="another-page.html">
     that document
 </a>
@@ -26,4 +26,4 @@ There are three main kinds of link.
 </a>
 ```
 
-The content will become [a clickable link](?slide=6).
+The content will become [a clickable link](#).

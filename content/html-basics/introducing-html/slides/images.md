@@ -2,11 +2,10 @@
 title: Images
 type: slide
 order: 9
-classes: ['simple', 'images']
+classes: [images]
 ---
 
-The *void* `<img>` element includes a `src` attribute specifying the path to the source image file.
-
+>The *void* `<img>` element includes a `src` attribute specifying the path to the source image file.
 
 ```html
 <img alt="a red html5 shield" src="images/html.svg">

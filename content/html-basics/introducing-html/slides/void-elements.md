@@ -2,15 +2,14 @@
 title: Void elements
 type: slide
 order: 4
-classes: ['simple']
+classes: []
 ---
 
-Void elements such as `<br>`, `<img>` and `<input>` are not allowed to contain content. 
+>Void elements such as `<br>`, `<img>` and `<input>` are not allowed to contain content. 
 These elements do not require closing tags.
 
 ```html
-<!-- line breaks are very simple -->
-<br>
+<br> <!-- line breaks are very simple -->
 
 <!-- images require 'src' and 'alt' attributes -->
 <img src="path/to/image" alt="alternative text">
@@ -19,10 +18,12 @@ These elements do not require closing tags.
 <input type="text" value="default">
 ```
 
-The link and meta elements are also void
+>The `<input>` element has a value attribute rather than content.
+
 ```html
 <head>
     <link rel="stylesheet" href="path/to/styles.css">
     <meta charset="utf-8">
 </head>
 ```
+>The `<link>` and `<meta>` elements are also void
