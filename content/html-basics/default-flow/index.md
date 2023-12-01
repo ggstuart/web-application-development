@@ -54,7 +54,6 @@ To view your document in a browser you can install [the live server extension](h
 
 >**Live server**
 >
->
 > On the left side of your VSCode window, select the *extensions* icon (usually the bottom icon) or press *Ctrl + Shift + X*.
 >
 > Search for "live server" and click the "install" button.
@@ -234,7 +233,7 @@ The web isn't only about text, we can also add *multi-media* images and video.
 >The above image is served by [placekitten.com](http://placekitten.com), a service that can be used like *lorem ipsum* text to include placeholder images into page designs before the 'real' images are available.
 
 Images are *inline* elements but they don't behave quite the same as other *inline* elements.
-This is because they are so-called [replaced element](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) and somewhat special rules apply.
+This is because images are so-called [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) and somewhat special rules apply.
 Images have very similar behaviour to an *inline-block* element, a kind of mixture between *inline* and *block* elements.
 They will stack horizontally, a bit like *inline* elements, however, unlike *inline* elements, they *do* conform to the *box model* and can be given margins and padding etc.
 
@@ -271,10 +270,11 @@ What happens if we add multiple `<img>` elements between our `<span>` elements?
 
 > In a real situation, the `alt` attributes would briefly describe the image.
 
-The result is that the images are placed in the flow of the text.
+The result is that the images are placed in the flow of the text but since they are much taller than the text, they are creating extra space between the lines.
 
 {{<iframe src="examples/step-04.html" width="800" height="220">}}{{</iframe>}}
 
+The text continues to respond to changes to the viewport size.
 
 {{<figure caption="Inline images" src="images/step-04.png">}}
 
@@ -445,7 +445,9 @@ However, you should see that the *accessibility tree* now has some extra top-lev
 Hopefully you have been experimenting as you worked through the exercises.
 Take 30 minutes to **make the nicest, most attractive and interesting page you can**, taking images and text from the web or using lorem ipsum text but *without adding any style information*.
 
-If you are struggling, then work together with a class-mate.
+> If you are struggling, then work together with a class-mate.
+
+Pass your code through the [online HTML validator](https://validator.w3.org/#validate_by_input) to check your site is valid.
 
 See how your site appears in the DOM and the accessibilty tree.
 
