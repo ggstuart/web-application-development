@@ -17,7 +17,7 @@ classes: [resilient]
 
 > The above HTML was valid in 1989 and remains valid now.
 > The below code includes a few newer elements.
-> Older browsers will simply ignore them.
+> Older browsers will simply ignore them (see https://caniuse.com/).
 
 ```html
 <header>
