@@ -15,16 +15,6 @@ article.slide p:has(img) {
     width: 100%;
     max-width: 100%;
 }
-article.slide.wide-narrow-wide p:has(img) {
-    grid-template-columns: 2fr 1fr 3fr;
-}
-article.slide.narrow-wide p:has(img) {
-    grid-template-columns: 2fr 3fr;
-}
-article.slide.wide-narrow p:has(img) {
-    grid-template-columns: 2fr 1fr;
-}
-
 article.slide p img {
     height: 100%;
     width: 100%;
@@ -37,6 +27,15 @@ article.slide.contain p img {
     object-fit: contain;
 }
 
+article.slide.wide-narrow-wide p:has(img) {
+    grid-template-columns: 2fr 1fr 3fr;
+}
+article.slide.narrow-wide p:has(img) {
+    grid-template-columns: 2fr 3fr;
+}
+article.slide.wide-narrow p:has(img) {
+    grid-template-columns: 2fr 1fr;
+}
 
 /* mosaic */
 article.slide.mozilla p:has(img) {
