@@ -5,7 +5,8 @@ classes: [wide-narrow]
 order: 16
 ---
 
-> The World Wide Web Consortium (*W3C*) publishes recommendations, that are considered [web standards](https://www.w3.org/standards/).
+> The World Wide Web Consortium (*W3C*) was founded in 1994 by Tim Berners-Lee. 
+It publishes recommendations, that are considered [web standards](https://www.w3.org/standards/).
 
 ![The World Wide Web Consortium](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/W3C%C2%AE_Icon.svg/440px-W3C%C2%AE_Icon.svg.png)
 ![The Web Hypertext Application Technology Working Group](https://upload.wikimedia.org/wikipedia/commons/a/a1/WHATWG_logo.svg)
