@@ -1,6 +1,7 @@
 ---
 title: CSS fonts
 type: exercise
+weight: 20
 ---
 
 This is a quick demonstration of how to work with fonts.
