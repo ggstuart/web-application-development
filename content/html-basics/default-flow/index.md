@@ -13,7 +13,6 @@ Some elements are given additional styles by the browser.
 These styles can then be overridden and expanded by adding CSS rules.
 
 Let's take a few moments to see how various elements behave by default, without any additional style information.
-
 Starting with the basic VSCode template, you should have something like this.
 
 {{<figure caption="starting point" src="images/starting-point.png">}}
@@ -23,7 +22,7 @@ Starting with the basic VSCode template, you should have something like this.
 The most basic content is just text, without any tags.
 Try adding just some text, directly inside the `<body>` element. 
 
-> This was added using the emmet commend `lorem5*5` to produce five lines of *lorem ipsum* text, each line being five words long.
+> This was added using the emmet command `lorem5*5` to produce five lines of *lorem ipsum* text, each line being five words long.
 
 ```html {hl_lines="6 9-13"}
 <!DOCTYPE html>
