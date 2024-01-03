@@ -345,7 +345,7 @@ So far it looks like this:
 We can add a media query to keep this configuration below *900px* and add some new rules only for larger viewports.
 In side the media query, we can specify a complex grid template for the `<main>` element.
 
-```css
+```css { hl_lines="52-81" }
 body {
     display: grid;
     margin: 0;
