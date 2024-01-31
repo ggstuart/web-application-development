@@ -1,11 +1,11 @@
 ---
 title: Headings
 type: slide
-order: 7
-classes: [headings]
+order: 4
+classes: []
 ---
 
-Headings come in six levels from `<h1>` to `<h6>`.
+> Headings come in six levels from `<h1>` to `<h6>`.
 Headings provide accessibility landmarks for assistive technologies.
 
 ```html {class=large}
@@ -15,7 +15,6 @@ Headings provide accessibility landmarks for assistive technologies.
 <h3>Level 3</h3>
  
 ```
-> There should usually only be one `<h1>` element providing a visual title for the whole document.
 
 # Level 1
 ## Level 2

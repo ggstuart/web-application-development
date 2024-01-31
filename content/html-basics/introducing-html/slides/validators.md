@@ -2,7 +2,7 @@
 title: HTML validation
 type: slide
 order: 13
-classes: ['simple', 'validators']
+classes: [validators]
 ---
 
 > Validate your HTML!

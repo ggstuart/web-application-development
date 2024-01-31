@@ -1,15 +1,15 @@
 ---
 title: Lists
 type: slide
-order: 8
-classes: ['lists']
+order: 5
+classes: [lists]
 ---
 
-Lists are collections of list items (`<li>`) which contain the actual content. List items are wrapped in containers that come in two main forms.
+> Lists are collections of list items (`<li>`) which contain the actual content. List items are wrapped in containers that come in two main forms.
 
-> Unordered lists (`<ul>`) generate bullet points and should be used when order doesn't matter (e.g. ingredient list).
+Unordered lists (`<ul>`) generate bullet points and should be used when order doesn't matter (e.g. ingredient list).
 
-> Ordered lists (`<ol>`) generate numbered lists and should only be used when order matters (e.g recipe steps).
+Ordered lists (`<ol>`) generate numbered lists and should only be used when order matters (e.g recipe steps).
 
 ```html
 <ul>
@@ -27,12 +27,13 @@ Lists are collections of list items (`<li>`) which contain the actual content. L
 </ol>
 ```
 
->- Unordered one
->- Unordered two
->- Unordered three
+- Unordered one
+- Unordered two
+- Unordered three
 
->1. Ordered one
->1. Ordered two
->1. Ordered three
+1. Ordered one
+1. Ordered two
+1. Ordered three
 
-Using lists provide screen reader users with a much nicer experience. 
+> Using lists provide screen reader users with a much nicer experience. 
+Even if the numbers or bullets are removed with styling.

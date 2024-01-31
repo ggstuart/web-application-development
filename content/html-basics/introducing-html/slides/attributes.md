@@ -1,7 +1,7 @@
 ---
 title: Elements can have attributes
 type: slide
-order: 3
+order: 6
 classes: []
 ---
 

@@ -1,13 +1,14 @@
 ---
 title: Semantic elements
 type: slide
-order: 11
+order: 10
 classes: [twin]
 ---
 
->Semantic elements add *meaning* to your document structure and provide **accessibility** advantages.
+> Semantic elements add *meaning* to your document structure and provide **accessibility** advantages.
+> Choosing *semantic elements* in preference to meaningless elements such as `<div>` and `<span>` adds **meaning**.
 
-```html{linenos="false"}
+```html
 <!-- bad -->
 
 <div id="myheader"></div>
@@ -23,7 +24,7 @@ classes: [twin]
 <div id="the-footer"></div>
 ```
 
-```html{linenos="false"}
+```html
 <!-- good -->
 
 <header></header>
