@@ -2,7 +2,7 @@
 title: documentation
 type: slide
 classes: []
-order: 100
+order: 10
 ---
 
 > Documentation is usually excellent via MDN.

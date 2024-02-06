@@ -2,7 +2,7 @@
 title: Specificity
 type: slide
 classes: []
-order: 100
+order: 8
 ---
 
 > The order of styles is important, but styles are not simply applied in order. 
