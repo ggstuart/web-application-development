@@ -57,9 +57,6 @@ article.slide.twin .content {
     article.slide.twin .content blockquote {
         grid-column: span 2;
     }
-    article.slide.twin .content .highlight {
-        /* font-size: 1em; */
-    }
 }
 
 /* anchors */
