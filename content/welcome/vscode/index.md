@@ -4,6 +4,7 @@ type: exercise
 weight: 10
 ---
 
+
 In this module we will be using the *VSCode* text editor to create and edit code files.
 
 <!--more-->
