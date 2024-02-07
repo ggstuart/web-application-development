@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility examples</title>
+</head>
+
+<body>
+    <header>
+        <h1>Accessibility examples</h1>
+    </header>
+    <main>
+        <p>
+            Images are a good example of content where accessibility concerns are an important factor.
+        </p>
+        <section>
+            <h2>An example of poor accessibility</h2>
+            <p>
+                The following image is essentially invisible to a screen reader.
+                We can tell there is an image, but we have no idea what it is showing.
+            </p>
+            <img src="http://www.placekitten.com/200">
+        </section>
+
+        <section>
+            <h2>A hidden image</h2>
+            <p>
+                This next image has an empty <em>alt attribute</em>.
+                Notice the impact this has on the screen reader.
+            </p>
+            <img src="http://www.placekitten.com/200" alt="">
+        </section>
+
+
+        <section>
+            <h2>An example of good accessibility</h2>
+            <p>
+                This next image is much better because it has a non-empty <em>alt attribute</em>. 
+                The alternative text briefly describes the image for users who cannot see it.
+            </p>
+            <img src="http://www.placekitten.com/200" alt="a random kitten, looking cute">
+        </section>
+
+        <section>
+            <h2>An even better example?</h2>
+            <p>
+                Using a figure with a caption might be even better in some cases.
+                The <em>alt attribute</em> should still describe the image for those who cannot see it.
+                Adding a <em>caption</em> provides a description which is clearly tied to the image.
+                The caption is accessible to all users.
+            </p>
+            <figure>
+                <img src="http://www.placekitten.com/200" alt="the same random kitten, still cute">
+                <figcaption>
+                    Figure captions are associated with the figure content.
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+
+</body>
+
+</html>

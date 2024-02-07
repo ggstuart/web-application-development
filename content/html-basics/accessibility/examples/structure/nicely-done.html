@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible document structure</title>
+</head>
+<body>
+
+    <header>
+        <h1>Accessible document structure</h1>
+        <p>
+            This document is nicely accessible with labelled sections and a clear structure.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Labelling landmarks</h2>
+            <p>Sections are automatically</p>
+        </section>
+
+        <div role="application" aria-labelledby="p123" aria-describedby="info">
+            <h1 id="p123">Calendar</h1>
+            <p id="info">
+                This calendar shows the game schedule for the Boston Red Sox.
+            </p>
+            <div role="grid">
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        learn more about accessibility on <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles">MDN</a>
+    </footer>
+
+</body>
+</html>
