@@ -64,6 +64,17 @@ There are three very common cases where accessibility concerns impact your choic
 
 We will now attempt to use a screen reader to demonstrate the impact of using the correct semantic elements and adding the necessary attributes. 
 
+> **Screen reader on ubuntu**
+>
+> On ubuntu the screen reader can be accessed from the accessibility menu
+>
+> ![accessibility menu on ubuntu](images/ubuntu-screen-reader.png)
+>
+> The accessibility menu can be activated in settings under accessibility
+
+> **Screen reader on windows**
+>
+> The windows screen reader is called [narrator](https://support.microsoft.com/en-gb/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) and can be started like any programme.
 
 ### Images and alternative text
 
@@ -368,10 +379,5 @@ Sadly, assistive technologies will not be able to link the text with the input.
 Using `<input>` elements is a large subject and we will cover more detail later. 
 For now, we will explore ways to provide labels which will be associated with inputs.  
 
-
-
-## Using a screen reader
-
-This is going to be a noisy lab session.
 
 ## Conclusions
