@@ -300,14 +300,6 @@ By knowing which elements are *inline* and which are *block* we can get somethin
     <title>Adding content</title>
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adding content</title>
-</head>
-<body>
     <h1>Lorem ipsum dolor sit</h1>
     <p>Lorem ipsum dolor sit amet <strong>consectetur adipisicing elit</strong>. Fugit eveniet, cum omnis illum enim, fuga magnam explicabo sunt voluptates harum, atque aliquid ad tempora sed? Quod blanditiis delectus quam eligendi quo pariatur reiciendis nesciunt, hic reprehenderit, aperiam sequi cum praesentium.</p>    
     <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
