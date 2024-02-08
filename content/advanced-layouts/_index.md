@@ -1,7 +1,7 @@
 ---
 title: Advanced layouts
 type: unit
-weight: 50
+weight: 40
 ---
 
 This unit will cover *flex* and *grid*, the two major alternative ways to arrange elements on a page.
