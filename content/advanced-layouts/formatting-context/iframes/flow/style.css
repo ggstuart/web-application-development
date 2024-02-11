@@ -1,0 +1,8 @@
+body {
+    font-size: 1.4em;
+}
+body * {
+    outline: 2px solid hsla(0, 50%, 50%, 0.2);
+    background: hsla(0, 50%, 50%, 0.1);
+    padding-inline: 0.25rem;
+}

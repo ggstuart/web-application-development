@@ -1,0 +1,31 @@
+article.slide:not(.title) {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+article.slide .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+}
+
+article.slide p:has(img) {
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+}
+
+article.slide p img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 6;
+}
+
+article.slide.contain p img {
+    object-fit: contain;
+}

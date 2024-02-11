@@ -1,0 +1,32 @@
+body {
+    font-size: 1.4em;
+}
+body * {
+    outline: 2px solid hsla(0, 50%, 50%, 0.2);
+    background: hsla(0, 50%, 50%, 0.1);
+    padding-inline: 0.25rem;
+}
+
+.down-left {
+    outline: 2px solid hsla(200, 50%, 50%, 0.2);
+    background: hsla(200, 50%, 50%, 0.1);
+    position: relative;
+    top: 0.5em;
+    left: -0.5em;
+}
+.down-left-abs {
+    outline: 2px solid hsla(100, 50%, 50%, 0.2);
+    background: hsla(100, 50%, 50%, 0.1);
+    position: absolute;
+    top: 0.5em;
+    left: -0.5em;
+}
+.rel {
+    position: relative;
+    height: 5em;
+}
+.rel > * { position: absolute; }
+.rel > :nth-child(1) { top: 0; left: 0; }
+.rel > :nth-child(2) { top: 0; right: 0; }
+.rel > :nth-child(3) { bottom: 0; left: 0; }
+.rel > :nth-child(4) { bottom: 0; right: 0; }
