@@ -60,8 +60,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
@@ -69,7 +69,9 @@ h1 {
 }
 ```
 
-> I'm using the new [*oklch*](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) colour space because *why not?*
+> I'm using the new [*oklch*](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) colour space because *why not?*.
+>
+> Notice that there are no commas in the oklch syntax.
 
 The result is that the checkbox is placed in the location where we might normally see a menu toggler.
 
@@ -96,8 +98,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
@@ -156,8 +158,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
@@ -226,8 +228,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
@@ -294,8 +296,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
@@ -390,8 +392,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
@@ -462,8 +464,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {

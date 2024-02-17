@@ -6,8 +6,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: oklch(50%, 100%, 0);
-    color: oklch(90%, 10%, 0);
+    background: oklch(50% 100% 0);
+    color: oklch(90% 10% 0);
     padding: 1rem;
 }
 h1 {
