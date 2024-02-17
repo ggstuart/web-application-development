@@ -394,7 +394,7 @@ Sites should always use headings to assist navigation.
 
 But we can do a lot better than this.
 A typical HTML document should also provide a set of basic [ARIA landmarks](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) to help assistive technologies understand where stuff is and to support navigation.
-We can do this by using semantic elements such as `<section>`, `<nav>`, or `<main>`.
+We can do this by using [sectioning elements](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html) such as `<section>`, `<nav>`, or `<main>`.
 
 In the developer tools, inside the *elements panel* you should see the *toggle accessibility tree* button:
 
@@ -403,7 +403,7 @@ In the developer tools, inside the *elements panel* you should see the *toggle a
 Clicking it will toggle the *accessibility tree*.
 
 > Other browsers may have a slightly different way to access the accessibility tree. 
-For example [Microsoft Edge has a section to the right of the styles tab](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/test-accessibility-tree).  
+> For example [Microsoft Edge has a section to the right of the styles tab](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/test-accessibility-tree).  
 
 The accessibility tree is a view of the site structure as seen by assistive technologies such as screen readers (which will *announce* the site verbally).
 

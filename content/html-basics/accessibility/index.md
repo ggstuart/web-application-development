@@ -106,11 +106,16 @@ Create the following document and load it in the browser.
 </html>
 ```
 
-In the browser, the image shows perfectly normally, but the document is actually invalid.
+In the browser, the image shows perfectly normally.
 
 {{<iframe src="examples/images/step-01.html" width="600" height="500">}}{{</iframe>}}
 
+However, the document is actually invalid.
+Try it in an [HTML validator](https://validator.w3.org/#validate_by_input) and you should get an error and a link to [the W3C images tutorial](https://www.w3.org/WAI/tutorials/images/).
+
 For a valid document and for accessibility, `<img>` elements must have an `alt` attribute which provides a text description that can be used as an alternative to the image for those who cannot see it.
+
+> The [W3C images tutorial](https://www.w3.org/WAI/tutorials/images/) contains lots of good examples of alternative text for various types of images.
 
 The alternative text will be *announced* by a screen reader.
 An image with no `alt` attribute will be announced as **"unlabelled image"** within the flow of the document.
@@ -347,7 +352,7 @@ The additional elements can also be used for styling the page with CSS.
 
 > We will investigate styling in a lot more detail in upcoming exercises
 
-### Labelling inputs
+### Accessible inputs
 
 The `<input>` element is used to receive user input.
 Adding an input element is as simple as this.
@@ -361,19 +366,146 @@ Adding an input element is as simple as this.
     <title>Basic</title>
 </head>
 <body>
-    Enter your name: <input>
+    Enter your name: <input><br>
+    Enter your age: <input><br>
 </body>
 </html>
 ```
 
 The result is a box which allows users to enter a name.
 
-{{<iframe src="examples/inputs/basic.html" width="600" height="100">}}{{</iframe>}}
+{{<iframe src="examples/inputs/00-basic.html" width="600" height="100">}}{{</iframe>}}
 
-Sadly, assistive technologies will not be able to link the text with the input.
+> Try navigating the simple page with your keyboard.
+> Using the tab key will enter the next field.
+> Holding shift and pressing the tab key will enter the previous field.
 
-Using `<input>` elements is a large subject and we will cover more detail later. 
-For now, we will explore ways to provide labels which will be associated with inputs.  
+Assistive technologies are often smart enough to guess that the text should be linked with the input.
 
+
+However, using a `<label>` element and associating it directly with the input provides more assurance and gives benefits such as increasing the clickable area.
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+</head>
+<body>
+    <label for="name">Enter your name:</label>
+    <input id="name"><br>
+    <label for="age">Enter your age:</label>
+    <input id="age">
+</body>
+</html>
+```
+
+In more complex scenarios, accessibility can be very poor indeed.
+For example, if we want to add text to the left of a radio button like this.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poor</title>
+</head>
+
+<body>
+    <span>Red</span>
+    <input type="radio" name="colour"><br>
+    <span>Green</span>
+    <input type="radio" name="colour"><br>
+    <span>Blue</span>
+    <input type="radio" name="colour"><br>
+</body>
+
+</html>
+```
+
+The result can be very confusing for screen reader users because the assumption is that text will com after a radio button.
+
+{{<iframe src="examples/inputs/01-poor.html" width="600" height="150">}}{{</iframe>}}
+
+> Using a screen reader, select the radio button set with tab and then use the up and down arrow keys to navigate the options.
+> Use the space bar to select an option.
+> Notice a problem?
+
+We can improve things by labelling each of the inputs more explicitly.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OK</title>
+</head>
+
+<body>
+    <label for="red">Red</label>
+    <input type="radio" name="colour" id="red"><br>
+    <label for="green">Green</label>
+    <input type="radio" name="colour" id="green"><br>
+    <label for="blue">Blue</label>
+    <input type="radio" name="colour" id="blue"><br>
+</body>
+
+</html>
+```
+
+To a typical browser user, there is no visible change.
+However, the impact of this upgrade is massive in terms of making sense to software.
+The relationships between the labels and the radio buttons has been made explicit.
+
+
+{{<iframe src="examples/inputs/02-ok.html" width="600" height="150">}}{{</iframe>}}
+
+> Make sure you try this with a screen reader.
+
+We can make a further improvement by labelling the entire group with a `<fieldset>`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Colour</legend>
+        <label for="red">Red</label>
+        <input type="radio" name="colour" id="red"><br>
+        <label for="green">Green</label>
+        <input type="radio" name="colour" id="green"><br>
+        <label for="blue">Blue</label>
+        <input type="radio" name="colour" id="blue"><br>
+    </fieldset>
+</body>
+
+</html>
+```
+
+Now, when the user navigates around the options, the screen reader knows exactly what its doing.
+
+{{<iframe src="examples/inputs/03-good.html" width="600" height="150">}}{{</iframe>}}
+
+
+This time, the addition also makes a visible difference, arguably an improvement.
 
 ## Conclusions
+
+We have seen that the structure of your HTML document determines how well the document can be interpreted by software such as browsers and screen readers. 
+Taking care to provide a high quality structure to your HTML, independent of any styling considerations, can produce a much better user experience, not only for users of assistive technology, but also to users who e.g. prefer to use the keyboard for navigation.
+
+> Now take some time to build out your own HTML documents taking care to consider accessibility.
