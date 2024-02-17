@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User input</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>User input</h1>
+        <section id="search" role="search">
+            <input placeholder="&#128269; search" id="myQuery" aria-label="search" type="search">
+            <button id="searchButton">search</button>
+        </section>
+    </header>
+    <main>
+        <section>
+            <h2>Basic input</h2>
+            <label for="myName">Enter your name</label>
+            <input id="myName">
+        </section>
+        <section>
+            <h2>Numbers</h2>
+            <label for="myAge">Enter your age: </label>
+            <input id="myAge" type="number" max="150">
+        </section>
+        <section class="relative">
+            <h2>Ranges</h2>
+            <label for="myHeight">Element height: </label>
+            <input id="myHeight" type="range" value="50">
+            <div id="heightTarget"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Nunito", system-ui;
+}
+
+header {
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 70%, 40%);
+    color: hsl(0, 70%, 80%);
+}
+
+main section {
+    padding: 1em;
+    border-bottom: 0.5px dotted hsl(0, 70%, 80%);
+}
+
+input:invalid {
+    background-color: hsl(0, 70%, 70%);
+    border-color: hsl(0, 100%, 70%)
+}
+
+@media screen and (min-width: 420px) {
+    header {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    header,
+    main section {
+        padding: 1em 25vw;
+    }
+}
+
