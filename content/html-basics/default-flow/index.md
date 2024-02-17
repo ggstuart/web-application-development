@@ -254,9 +254,11 @@ Notice that hyperlinks are *inline* elements, so they flow with text.
 
 The web isn't only about text, we can also add *multi-media* images and video.
 
-{{<figure caption="Here's an image from [placekitten.com](https://placekitten.com)" src="https://placekitten.com/800/300">}}
+{{<figure caption="Here's a placeholder image from [lorem picsum](https://picsum.photos/)" src="https://picsum.photos/id/25/1200/600">}}
 
->The above image is served by [placekitten.com](https://placekitten.com), a service that can be used like *lorem ipsum* text to include placeholder images into page designs before the 'real' images are available.
+>The above image is served by [lorem picsum](https://picsum.photos/), a service that can be used like *lorem ipsum* text to include placeholder images into page designs before the 'real' images are available.
+>
+> There are many similar sites, we will use [placekitten.com](https://placekitten.com) for the remainder of this exercise,
 
 Images are *inline* elements but they don't behave quite the same as other *inline* elements.
 This is because images are so-called [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) and somewhat special rules apply.
