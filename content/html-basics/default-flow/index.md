@@ -384,11 +384,14 @@ Having `<h1>` and `<h2>` elements is good.
 It adds semantic structure to the document.
 Every page should have an `<h1>` element (preferably [only one per page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page)) as a visual equivalent to the `<title>` element.
 
-The `<h2>` element provides an [ARIA heading role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) which helps define a navigable structure for assistive technologies.
+The `<h1>` to `<h6>` elements provide an [ARIA heading role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) which helps define a navigable structure for assistive technologies.
 Sites should always use headings to assist navigation.
 
+> It's rare that you would use anything beyond `<h3>`.
+> Also, never use headings simply because you want bolder or larger text, headings are meaningful and can create confusion if they are used for anything other than to provide document structure.
+
 But we can do a lot better than this.
-A typical HTML document can also provide [ARIA landmarks](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) to help assistive technologies understand where stuff is and support navigation.
+A typical HTML document should also provide a set of basic [ARIA landmarks](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) to help assistive technologies understand where stuff is and to support navigation.
 We can do this by using semantic elements such as `<section>`, `<nav>`, or `<main>`.
 
 In the developer tools, inside the *elements panel* you should see the *toggle accessibility tree* button:
@@ -397,7 +400,10 @@ In the developer tools, inside the *elements panel* you should see the *toggle a
 
 Clicking it will toggle the *accessibility tree*.
 
-This is a view of the site structure as seen by assistive technologies such as screen readers (which will *announce* the site verbally).
+> Other browsers may have a slightly different way to access the accessibility tree. 
+For example [Microsoft Edge has a section to the right of the styles tab](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/test-accessibility-tree).  
+
+The accessibility tree is a view of the site structure as seen by assistive technologies such as screen readers (which will *announce* the site verbally).
 
 Notice that the tree is fairly chaotic. 
 All the content is there, but its basically just a great long list of content.
