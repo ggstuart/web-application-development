@@ -97,7 +97,6 @@ Selecting an element in the *elements panel* will highlight the element location
 Subsequently, clicking on any element in the page will highlight it in the *elements panel*.
 
 In this case we have selected the `<body>` element which wraps the entire page.
-
 Notice the text is highlighted with a blue rectangle.
 This is the **content** of the element.
 The orange border around the text indicates that the `<body>` element has a **margin**.
@@ -105,7 +104,11 @@ The orange border around the text indicates that the `<body>` element has a **ma
 The diagram in the styles panel also shows the size of the content (*width* x *height*) and the size, on each of the four sides (*top*, *bottom*, *left* and *right*) of the various *box properties* (*padding*, *border* and *margin*).
 In this case, we can see that each side of the `<body>` element has *8px* of margin only.
 
-Above the diagram, we can see that there are *styles* applied to the `<body>` element
+Above the diagram, we can see that there are *styles* applied to the `<body>` element.
+This is part of the *user agent stylesheet* applied by the browser, by default.
+
+This is where the 8px *margin* comes from.
+It also sets the *display* property to *block*.
 
 ```css
 body {
@@ -114,26 +117,22 @@ body {
 }
 ```
 
-This explains the 8px *margin*.
-It also sets the *display* property to *block*.
-
-This is the *user agent stylesheet* applied by the browser, by default.
-Different elements will have different default styles.
-
+> Different elements will have different default styles.
 > [The Chrome default stylesheet](https://chromium.googlesource.com/chromium/src/third_party/+/master/blink/renderer/core/html/resources/html.css) includes hundreds of CSS rules. 
+
+
 
 ## *block* elements
 
 All elements have a *display* property which determines how the element will behave.
 The *display* property is set to *inline* by default (which we will see later), but the browser sets this value to *block* for many common elements.
 
-> The difference between *block* and *inline* elements is critical to understand.
-
 The `<body>` element is a so-called [*block*](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) element.
-Importantly, this means it will take up the full width of its container. 
-In this case, the viewport itself is the container (or the `<html>` element, strictly speaking).
-
+Importantly, this means it will take up the full width of its container.
+In this case, the browser viewport is the container (or the `<html>` element, strictly speaking).
 The default `margin` on the `<body>` element creates the *8px* gap between the text and the edge of the viewport.
+
+> The difference between *block* and *inline* elements is critical to understand.
 
 A basic example of a *block* element is a `<div>`, these elements don't have any semantic meaning and they are often used to control layout, as we shall see in later exercises.
 Since *block* elements take up the full width of their container, what would happen if we wrapped each chunk of text in a `<div>` element?
@@ -159,25 +158,30 @@ Let's try it.
 ```
 
 The result shouldn't be a surprise.
-Each of our `<div>` elements takes up the full width of the `<body>` and so each `<div>` starts a new line.
+Each of our `<div>` elements takes up the full width of the `<body>` and each `<div>` starts a new line so they stack on top of each other.
+This is classic *block* element behaviour.
 
 {{<iframe src="examples/step-02.html" width="800" height="200">}}{{</iframe>}}
 
-We can see the only style which is applied to our `<div>` elements is to set the *display* property to *block*.
+In the elements panel of the developer tools we can see the only style which is applied to our `<div>` elements is to set the *display* property to *block*.
 They have no *margin*.
 
 {{<figure caption="`<div>` elements" src="images/step-02.png">}}
 
 If we reduce the viewport width then the text within each `<div>` wraps independently.
+Each `<div>` will always take up the full width of the viewport, preventing the text from merging across elements.
 
 {{<iframe src="examples/step-02.html" width="250" height="200">}}{{</iframe>}}
 
-> Try using `<p>` elements (paragraphs) instead. 
-Notice that they are *block* elements and have a *top/bottom margin*.
+> Make sure you understand this behaviour as it will be crucial to understanding how to control the layout of your documents.
+
+Try using `<p>` elements (paragraphs) instead. 
+Replace the `<div>` and `</div>` tags with `<p>` and `</p>` tags.
+Notice that they are *block* elements and behave just like `<div>` elements except they also have a *top/bottom margin* which creates space between them.
 
 ## *inline* elements
 
-Elements where the *display* property is left as *inline* will flow like text. 
+Elements where the *display* property is left as the default *inline* will flow like text. 
 A basic example of an [*inline*](https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content) element is a `<span>`.
 Just like `<div>` elements, `<span>` elements don't have any semantic meaning and they are often used to control specific pieces of text, as we shall see in later exercises.
 
@@ -197,7 +201,7 @@ Let's try it.
     <span>Lorem ipsum dolor sit amet.</span>
     <span>Enim nulla molestias pariatur corrupti.</span>
     <span>Dicta vero quasi atque veritatis.</span>
-    <span>Quaerat sunt similique laudantium architecto.</span>
+    <a href="#">Quaerat sunt similique laudantium architecto.</a>
     <span>Ut sunt voluptates molestiae eos?</span>
 </body>
 </html>
@@ -218,10 +222,33 @@ In [the HTML specification](https://drafts.csswg.org/css-display/#the-display-pr
 
 However, the `<span>` does allow us to apply styles to specific bits of text. 
 
-> Try changing one span to an `<a>` element (a hyperlink). 
-> You will need to link to somewhere with an *href* attribute.
+Try changing one span to an `<a>` element (an anchor or hyperlink). 
+You will need to link to somewhere with an *href* attribute.
+
+```html {hl_lines="12"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding content</title>
+</head>
+<body>
+    <span>Lorem ipsum dolor sit amet.</span>
+    <span>Enim nulla molestias pariatur corrupti.</span>
+    <span>Dicta vero quasi atque veritatis.</span>
+    <a href="#">Quaerat sunt similique laudantium architecto.</a>
+    <span>Ut sunt voluptates molestiae eos?</span>
+</body>
+</html>
+```
+
 Notice that hyperlinks are *inline* elements, so they flow with text.
-They also have a few other styles which change their *color*, *cursor* and *text-decoration* properties.
+
+
+{{<iframe src="examples/step-03.5.html" width="800" height="100">}}{{</iframe>}}
+
+> Anchor tags also have a few other styles which change their *color*, *cursor* and *text-decoration* properties.
 
 ## Images
 
@@ -259,7 +286,7 @@ What happens if we add multiple `<img>` elements between our `<span>` elements?
     <span>Dicta vero quasi atque veritatis.</span>
     <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
     <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
-    <span>Quaerat sunt similique laudantium architecto.</span>
+    <a href="#">Quaerat sunt similique laudantium architecto.</a>
     <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
     <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
     <span>Ut sunt voluptates molestiae eos?</span>
@@ -321,7 +348,7 @@ By knowing which elements are *inline* and which are *block* we can get somethin
     </ul>
     <p>Dolores nesciunt quisquam quis eaque at <em>aliquid inventore corporis debitis sunt</em>, iure doloribus ullam minus in voluptatem odit dolorem eligendi mollitia quaerat ea. Asperiores nostrum laborum, assumenda perferendis, odio similique totam perspiciatis, fuga vero saepe explicabo et! Illum, magni ut?</p>
     <form>
-        <label for="input">Lorem</label> <input id="input" type="text"> <button>ipsum</button>
+        <label for="input">Lorem</label> <input id="input" type="text" name="lorem"> <button>ipsum</button>
     </form>
 </body>
 </html>
@@ -414,7 +441,7 @@ Let's upgrade the site with some semantic structure.
     <footer>
         <p>Dolores nesciunt quisquam quis eaque at <em>aliquid inventore corporis debitis sunt</em>, iure doloribus ullam minus in voluptatem odit dolorem eligendi mollitia quaerat ea. Asperiores nostrum laborum, assumenda perferendis, odio similique totam perspiciatis, fuga vero saepe explicabo et! Illum, magni ut?</p>
         <form>
-            <label for="input">Lorem</label> <input id="input" type="text"> <button>ipsum</button>
+            <label for="input">Lorem</label> <input id="input" type="text" name="lorem"> <button>ipsum</button>
         </form>
     </footer>
 </body>

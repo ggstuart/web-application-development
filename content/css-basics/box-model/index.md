@@ -60,7 +60,7 @@ Adding the following `<style>` element into the head, with a single rule.
     <footer>
         <p>Dolores nesciunt quisquam quis eaque at <em>aliquid inventore corporis debitis sunt</em>, iure doloribus ullam minus in voluptatem odit dolorem eligendi mollitia quaerat ea. Asperiores nostrum laborum, assumenda perferendis, odio similique totam perspiciatis, fuga vero saepe explicabo et! Illum, magni ut?</p>
         <form>
-            <label for="input">Lorem</label> <input id="input" type="text"> <button>ipsum</button>
+            <label for="input">Lorem</label> <input id="input" type="text" name="lorem"> <button>ipsum</button>
         </form>
     </footer>
 </body>
@@ -132,7 +132,7 @@ Now, before we continue, we should replace the `<style>` element with a `<link>`
     <footer>
         <p>Dolores nesciunt quisquam quis eaque at <em>aliquid inventore corporis debitis sunt</em>, iure doloribus ullam minus in voluptatem odit dolorem eligendi mollitia quaerat ea. Asperiores nostrum laborum, assumenda perferendis, odio similique totam perspiciatis, fuga vero saepe explicabo et! Illum, magni ut?</p>
         <form>
-            <label for="input">Lorem</label> <input id="input" type="text"> <button>ipsum</button>
+            <label for="input">Lorem</label> <input id="input" type="text" name="lorem"> <button>ipsum</button>
         </form>
     </footer>
 </body>
