@@ -52,9 +52,16 @@ For the most part, using semantic HTML elements (e.g. `<header>`, `<ul>` or `<se
 
 ## Examples
 
-> To explore these examples in detail you will need to activate screen reader software.
-> Windows has a built in screen reader known as 'narrator'.
-> There is also a screen reader installed on the linux (ubuntu) image in the labs.
+To explore these examples in detail you will need to activate screen reader software.
+
+> Windows has a built in screen reader known as [narrator](https://support.microsoft.com/en-gb/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) which can be started like any other programme.
+>
+> On ubuntu the screen reader can be accessed from the accessibility menu.
+>
+> ![accessibility menu on ubuntu](images/ubuntu-screen-reader.png)
+>
+> The accessibility menu can be activated in **settings** under *accessibility*.
+
 
 There are three very common cases where accessibility concerns impact your choice of HTML code directly.
 
@@ -64,17 +71,6 @@ There are three very common cases where accessibility concerns impact your choic
 
 We will now attempt to use a screen reader to demonstrate the impact of using the correct semantic elements and adding the necessary attributes. 
 
-> **Screen reader on ubuntu**
->
-> On ubuntu the screen reader can be accessed from the accessibility menu
->
-> ![accessibility menu on ubuntu](images/ubuntu-screen-reader.png)
->
-> The accessibility menu can be activated in settings under accessibility
-
-> **Screen reader on windows**
->
-> The windows screen reader is called [narrator](https://support.microsoft.com/en-gb/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) and can be started like any programme.
 
 ### Images and alternative text
 
