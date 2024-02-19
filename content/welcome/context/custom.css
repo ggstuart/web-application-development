@@ -108,3 +108,20 @@ article.slide.first h2 {
 article.slide.charts img:nth-child(2) {
     padding: 1rem;
 }
+
+ul {
+    place-self: center;
+    max-width: 80%;
+    font-size: 1.2em;
+    list-style-position: outside;
+    font-family: system-ui;
+}
+
+article.slide.exercises .content {
+    /* grid-template-rows: 1fr 1fr; */
+    grid-template-columns: 2fr 1fr;
+}
+
+article.slide.exercises .content blockquote {
+    grid-column: span 2;
+}
