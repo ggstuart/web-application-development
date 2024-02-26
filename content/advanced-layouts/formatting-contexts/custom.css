@@ -29,3 +29,40 @@ article.slide p img {
 article.slide.contain p img {
     object-fit: contain;
 }
+
+article.slide.float .content {
+    grid-template-columns: 1fr 1fr;
+}
+
+article.slide.float .content :not(.highlight) {
+    grid-column: span 2;
+}
+
+article.slide.flex .content {
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+article.slide.flex .content blockquote {
+    grid-column: span 2;
+}
+
+article.slide.css-grid .content {
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: repeat(5, min-content);
+    gap: 1px;
+    font-size: 0.9em;
+}
+
+article.slide.css-grid .content p {
+    grid-column: span 2;
+}
+
+article.slide.exercises .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 5em;
+}
+
+article.slide.exercises .content blockquote {
+    grid-column: span 2;
+}

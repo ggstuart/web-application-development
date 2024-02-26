@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+}
+section {
+    --hue: 0;
+    background: hsl(var(--hue, 0), 50%, 50%);
+}
+
+section:nth-of-type(2)  { --hue: 30;  }
+section:nth-of-type(3)  { --hue: 60;  }
+section:nth-of-type(4)  { --hue: 90;  }
+section:nth-of-type(5)  { --hue: 120; }
+section:nth-of-type(6)  { --hue: 150; }
+section:nth-of-type(7)  { --hue: 180; }
+section:nth-of-type(8)  { --hue: 210; }
+section:nth-of-type(9)  { --hue: 240; }
+section:nth-of-type(10) { --hue: 270; }
+section:nth-of-type(11) { --hue: 300; }
+section:nth-of-type(12) { --hue: 330; }
