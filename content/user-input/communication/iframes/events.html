@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="three">
+        <label for="inputInput">Input event</label>
+        <input type="range" id="inputInput">
+        <output id="inputOutput">50</output>
+        <label for="changeInput">Change event</label>
+        <input type="range" id="changeInput">
+        <output id="changeOutput">50</output>
+    </form>
+    <script>
+        const inputInput = document.getElementById('inputInput');
+        const changeInput = document.getElementById('changeInput');
+        const inputOutput = document.getElementById('inputOutput');
+        const changeOutput = document.getElementById('changeOutput');
+        inputInput.addEventListener('input', ev => {
+            inputOutput.textContent = inputInput.value;
+        })
+        changeInput.addEventListener('change', ev => {
+            changeOutput.textContent = changeInput.value;
+        })
+    </script>
+</body>
+</html>

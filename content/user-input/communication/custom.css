@@ -1,0 +1,35 @@
+article.slide .content {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+article.slide.two .content {
+    grid-template-columns: 2fr 1fr;
+    gap: 3px;
+}
+
+article.slide.two .content blockquote {
+    grid-column: span 2;
+}
+
+article.slide.two-in-middle .content {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: min-content 1fr 1fr min-content;
+    gap: 3px;
+}
+article.slide.two-in-middle .content :first-child,
+article.slide.two-in-middle .content :last-child {
+    grid-column: span 2;
+}
+
+
+article.slide.three-in-middle .content {
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: min-content 1fr 1fr min-content;
+    gap: 2px;
+}
+
+article.slide.three-in-middle .content :first-child,
+article.slide.three-in-middle .content :last-child {
+    grid-column: span 3;
+}
