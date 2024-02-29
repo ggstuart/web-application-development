@@ -1,0 +1,35 @@
+article.slide .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+article.slide img {
+    max-height: 50vh;
+    width: 100%;
+}
+
+article.slide .content p:has(img) {
+    max-width: none;
+    margin-inline: 0;
+}
+
+article.slide .content p img {
+    object-fit: contain;
+}
+
+article.slide.two-in-middle .content {
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: min-content 1fr 1fr min-content;
+    gap: 3px;
+}
+
+article.slide.two-in-middle.one .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    gap: 3px;
+}
+
+article.slide.two-in-middle .content :first-child,
+article.slide.two-in-middle .content :last-child {
+    grid-column: span 2;
+}
