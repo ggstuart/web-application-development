@@ -16,7 +16,7 @@ nav {
 }
 
 /* applied only when screen orientation is landscape */
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   nav {
     flex-direction: row;
   }

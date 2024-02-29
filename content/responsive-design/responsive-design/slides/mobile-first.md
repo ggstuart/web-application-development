@@ -15,14 +15,14 @@ nav {
 }
 
 /* For larger devices there is room for a horizontal menu */
-@media screen and (min-width: 600px) { 
+@media (min-width: 600px) { 
   nav {
     flex-direction: row;
   }
 }
 
 /* When the device is very large, we can use a bigger font */
-@media screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   nav {
     font-size: 1.2em;
   }

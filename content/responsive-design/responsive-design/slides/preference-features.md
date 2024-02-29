@@ -28,7 +28,7 @@ body {
 > Then specify different colours if the user prefers a dark colour scheme.
 
 ```css
-@media screen and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     body {
         --bg-color: #333;
         --text-color: #eee;
