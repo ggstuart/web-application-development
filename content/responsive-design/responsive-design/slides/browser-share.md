@@ -5,6 +5,8 @@ classes: []
 order: 1
 ---
 
-Globally, more traffic comes from mobile devices than desktop devices.
+> On the web we cannot predict the size of the users viewport
 
 ![Mobile devices are increasingly important](./images/devices-20091-20241.png)
+
+> Globally, more traffic comes from mobile devices than desktop devices.
