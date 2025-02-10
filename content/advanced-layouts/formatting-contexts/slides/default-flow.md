@@ -1,8 +1,6 @@
 ---
 title: Default flow
 type: slide
-order: 1
-classes: []
 ---
 
 > By default, content is arranged in a page according to the flow layout. 

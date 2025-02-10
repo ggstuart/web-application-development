@@ -1,29 +1,32 @@
 body {
+    margin: 0;
+    display: grid;
     font-size: 1.4em;
+    height: 100dvh;
 }
 body * {
-    outline: 2px solid hsla(0, 50%, 50%, 0.2);
-    background: hsla(0, 50%, 50%, 0.1);
+    outline: 2px solid hsla(0, 50%, 50%, 0.1);
+    background: hsla(0, 50%, 50%, 0.05);
     padding-inline: 0.25rem;
 }
 
 .down-left {
     outline: 2px solid hsla(200, 50%, 50%, 0.2);
-    background: hsla(200, 50%, 50%, 0.1);
+    background: hsla(200, 50%, 50%, 0.5);
     position: relative;
     top: 0.5em;
     left: -0.5em;
 }
 .down-left-abs {
     outline: 2px solid hsla(100, 50%, 50%, 0.2);
-    background: hsla(100, 50%, 50%, 0.1);
+    background: hsla(100, 50%, 50%, 0.5);
     position: absolute;
     top: 0.5em;
     left: -0.5em;
 }
 .rel {
     position: relative;
-    height: 5em;
+    /* height: 100dvh; */
 }
 .rel > * { position: absolute; }
 .rel > :nth-child(1) { top: 0; left: 0; }
