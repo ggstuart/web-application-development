@@ -2,8 +2,15 @@ baseURL = 'https://ggstuart.github.io/web-application-development'
 languageCode = 'en-us'
 theme = 'module'
 
-[markup.highlight]
-    _merge = "shallow"
+[markup]
+    [markup.highlight]
+        _merge = "shallow"
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+        [markup.goldmark.renderHooks]
+            [markup.goldmark.renderHooks.link]
+                enableDefault = true
 
 [params]
     moduleName = 'Web application development'
