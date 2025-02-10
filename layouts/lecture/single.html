@@ -1,0 +1,48 @@
+{{define "css"}}
+<link rel="stylesheet" href="{{"css/presentation.css" | absURL}}">
+{{end}}
+
+{{define "javascript"}}
+<script src="{{"js/presentation.js" | absURL}}" type="module"></script>
+{{end}}
+
+{{define "bodyAttributes"}} class="presentation"{{end}}
+
+
+{{ define "main" }}
+  {{ range .Page.Resources.Match "**.html" }}
+    {{ (.Content | resources.FromString .Path).Publish }}
+  {{ end }}
+  <article class="slide title current" aria-label="{{.Title}}">
+    <h2>{{.Title}}</h2>
+    {{partial "logo.html" .}}
+    <h3>{{ .Content }}</h3>
+    {{ with .Params.Author}}<small>{{.}}</small>{{end}}
+  </article>
+
+  {{/*  loop over slides, capture index as well */}}
+  {{ range $index, $slide := .Params.Slides}}
+    {{/*  get the actual slide resource  */}}
+    {{with $.Resources.Get $slide}}
+      {{/*  add one to the index and pass in as slideNumber */}}
+      {{$slideNumber := (add $index 1)}}
+      {{ partial "slide/single.html" (dict "page" . "slideNumber" $slideNumber) }}
+    {{end}}
+  {{ end }}
+
+  <article class="slide title" aria-label="questions?">
+    <h2>{{.Title}}</h2>
+    {{partial "logo.html" .}}
+    <p><strong>If you have any questions, now is a good time to ask.</strong></p>
+    <p>
+      Thanks for listening
+      {{ with .Params.Author}}<br><small>{{.}}</small>{{end}}
+    </p>
+  </article>
+
+{{ end }}
+
+{{ define "footer" }}
+  <div id="slide-progress"><div></div></div>
+  <small id="instructions">Use arrow keys or swipe left and right to navigate</small>
+{{ end }}
