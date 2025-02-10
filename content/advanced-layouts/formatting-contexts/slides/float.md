@@ -12,7 +12,7 @@ classes: [float]
 
 ```html
     <p class="left">
-        <img src="https://placekitten.com/150" alt="">
+        <img src="https://placecats.com/150/150" alt="">
         Lorem ipsum dolor...
     </p>
 ```

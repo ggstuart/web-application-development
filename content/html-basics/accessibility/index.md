@@ -100,7 +100,7 @@ Create the following document and load it in the browser.
             The following image is essentially invisible to a screen reader.
             We can tell there is an image, but we have no idea what it is showing.
         </p>
-        <img src="https://placekitten.com/200">
+        <img src="https://placecats.com/200/200">
     </main>
 </body>
 </html>
@@ -147,7 +147,7 @@ This is an acceptable strategy where images are used as meaningless decoration.
             This image has an empty <em>alt attribute</em>.
             Notice the impact this has on the screen reader.
         </p>
-        <img src="https://placekitten.com/200" alt="">
+        <img src="https://placecats.com/200/200" alt="">
     </main>
 </body>
 </html>
@@ -184,7 +184,7 @@ The description will be announced by the screen reader when the image is reached
             This next image is much better because it has a non-empty <em>alt attribute</em>. 
             The alternative text briefly describes the image for users who cannot see it.
         </p>
-        <img src="https://placekitten.com/200" alt="a random kitten, looking cute">
+        <img src="https://placecats.com/200/200" alt="a random kitten, looking cute">
     </main>
 </body>
 </html>

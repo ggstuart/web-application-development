@@ -41,8 +41,8 @@ Adding the following `<style>` element into the head, with a single rule.
     <main>
         <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
         <figure>
-            <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
-            <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
+            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
+            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
             <figcaption>Two kitten images</figcaption>
         </figure>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
@@ -113,8 +113,8 @@ Now, before we continue, we should replace the `<style>` element with a `<link>`
     <main>
         <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
         <figure>
-            <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
-            <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
+            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
+            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
             <figcaption>Two kitten images</figcaption>
         </figure>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
@@ -626,8 +626,8 @@ Let's increase the image size to *600 x 300px* in our *index.html* file.
 
 ```html {linenostart="16" hl_lines="2-3"}
 <figure>
-    <img src="https://placekitten.com/600/300" alt="A placeholder kitten">
-    <img src="https://placekitten.com/600/300" alt="A placeholder kitten">
+    <img src="https://placecats.com/600/300" alt="A placeholder kitten">
+    <img src="https://placecats.com/600/300" alt="A placeholder kitten">
     <figcaption>Two kitten images</figcaption>
 </figure>
 ```

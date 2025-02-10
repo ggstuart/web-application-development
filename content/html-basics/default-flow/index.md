@@ -258,7 +258,7 @@ The web isn't only about text, we can also add *multi-media* images and video.
 
 >The above image is served by [lorem picsum](https://picsum.photos/), a service that can be used like *lorem ipsum* text to include placeholder images into page designs before the 'real' images are available.
 >
-> There are many similar sites, we will use [placekitten.com](https://placekitten.com) for the remainder of this exercise,
+> There are many similar sites, we will use [placecats.com](https://placecats.com) for the remainder of this exercise,
 
 Images are *inline* elements but they don't behave quite the same as other *inline* elements.
 This is because images are so-called [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) and somewhat special rules apply.
@@ -280,17 +280,17 @@ What happens if we add multiple `<img>` elements between our `<span>` elements?
 </head>
 <body>
     <span>Lorem ipsum dolor sit amet.</span>
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
     <span>Enim nulla molestias pariatur corrupti.</span>
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
     <span>Dicta vero quasi atque veritatis.</span>
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
     <a href="#">Quaerat sunt similique laudantium architecto.</a>
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
-    <img src="https://placekitten.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
     <span>Ut sunt voluptates molestiae eos?</span>
 </body>
 </html>
@@ -312,7 +312,7 @@ Any spaces (or newline characters) between the `<img>` elements are reduced to a
 
 > Try removing the spaces between the elements like this.
 >```html
-> <img src="https://placekitten.com/50/50" alt="A placeholder kitten"><img src="https://placekitten.com/50/50" alt="A placeholder kitten">
+> <img src="https://placecats.com/50/50" alt="A placeholder kitten"><img src="https://placecats.com/50/50" alt="A placeholder kitten">
 >```
 
 ## Composing a 'flow' layout
@@ -333,8 +333,8 @@ By knowing which elements are *inline* and which are *block* we can get somethin
     <p>Lorem ipsum dolor sit amet <strong>consectetur adipisicing elit</strong>. Fugit eveniet, cum omnis illum enim, fuga magnam explicabo sunt voluptates harum, atque aliquid ad tempora sed? Quod blanditiis delectus quam eligendi quo pariatur reiciendis nesciunt, hic reprehenderit, aperiam sequi cum praesentium.</p>    
     <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
     <figure>
-        <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
-        <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
+        <img src="https://placecats.com/200/150" alt="A placeholder kitten">
+        <img src="https://placecats.com/200/150" alt="A placeholder kitten">
         <figcaption>Two kitten images</figcaption>
     </figure>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
@@ -430,8 +430,8 @@ Let's upgrade the site with some semantic structure.
     <main>
         <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
         <figure>
-            <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
-            <img src="https://placekitten.com/200/150" alt="A placeholder kitten">
+            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
+            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
             <figcaption>Two kitten images</figcaption>
         </figure>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
