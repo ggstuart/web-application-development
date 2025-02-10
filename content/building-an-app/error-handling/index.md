@@ -4,6 +4,10 @@ type: exercise
 weight: 50
 ---
 
+Working out Error Handling
+
+<!--more-->
+
 
 ## ERROR HANDLING!!!!
 

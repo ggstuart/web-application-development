@@ -49,7 +49,7 @@ Now we we need to add some semantic page structure inside the `<body>` element.
 
 Add the following into the file.
 
-```html {hl_lines=["12-20"]}
+```html {hl_lines=["12-21"]}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,11 +194,11 @@ Insert five copies of the above pattern into our template as follows
 > It's possible to use emmet to add repeated HTML structures like this.
 >
 > If you want to use emmet, you can try this inside the `<ul>`:
-> ```perl
+> ```perl {linenos=false}
 > li.todo-list*5>h2.title{list title $}
 > ```
 > Or, to recreate the entire `<main>` element:
-> ```perl
+> ```perl {linenos=false}
 > main>ul>li.todo-list*5>h2.title{list title $}
 > ```
 
@@ -208,9 +208,8 @@ Start the *live server* extension to view the document in the browser if you hav
 
 You should see something like this.
 
-{{<figure caption="a basic index page" src="images/step-01.png">}}
+{{<iframe src="step-01" width="1000" height="400">}}{{</iframe>}}   
 
-It should look exactly like [this page](step-01)
 
 It's not fancy of course, but the list is functional.
 Although it doesn't link to a database yet, it is a first step towards meeting one of the user stories.
@@ -302,13 +301,11 @@ Again, view the document in the browser to check everything is working correctly
 
 You should see something like this.
 
-{{<figure src="images/step-02.png" caption="adding some colour">}}
+{{<iframe src="step-02" width="320" height="600">}}{{</iframe>}}   
 
-Here's a [live version of the page](step-02).
-Yours should look similar.
 
 > choose your own colours, but keep contrast in mind. 
-> i.e. avoid having dark text on a dark background, mak sure it's clearly readable for people with visual impairments.
+> i.e. avoid having dark text on a dark background, make sure it's clearly readable for people with visual impairments.
 
 Looking closely, our changes have revealed some of the default styles more clearly.
 
@@ -352,9 +349,8 @@ li {
 
 removing the margins makes all the content bunch up together.
 
-{{<figure caption="CSS reset" src="images/step-03.png">}}
+{{<iframe src="step-03" width="320" height="600">}}{{</iframe>}}   
 
-You should see something identical to [step-03](step-03).
 
 ### Giving elements some space
 
@@ -472,11 +468,9 @@ li {
 }
 ```
 
-{{<figure caption="Everything now has room to breathe" src="images/step-04.png">}}
-
 The site is now looking more intentional and notice how all the elements line up vertically because they are all `0.5rem` from the left edge.
 
-The [live page](step-04) is beginning to look respectable.
+{{<iframe src="step-04" width="320" height="600">}}{{</iframe>}}   
 
 ## Conclusion
 

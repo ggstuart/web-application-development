@@ -126,17 +126,17 @@ footer {
 }
 ```
 
-Checkout [the result](step-05).
-This is now looking fine. 
+This is now looking better. 
+The font makes a huge difference.
 
-{{<figure caption="OK, this looks good enough" src="images/step-05.png">}}
+{{<iframe src="step-05" width="320" height="600">}}{{</iframe>}}   
 
 ## Responsiveness
 
 The interface stretches across the whole viewport.
 This is fine for smaller devices but at larger screen sizes it looks a bit weird.
 
-{{<figure caption="This could do with a few tweaks" src="images/step-05-wide.png">}}
+{{<iframe src="step-05" width="1000" height="600">}}{{</iframe>}}   
 
 We need to add some responsiveness.
 Its a very simple interface so far so nothing complicated is needed.
@@ -221,9 +221,9 @@ We've also added a bit more padding to the header and footer to make all the tex
 > If you're not sure about any of these additions, try removing them using the devTools.
 > Most of them have a clear effect.
 
-The result won't win any design awards, but [it's *good enough*](step-06). 
+The result won't win any design awards, but it's *good enough*. 
 
-{{<figure caption="that's *good enough*" src="images/step-06-wide.png">}}
+{{<iframe src="step-06" width="1000" height="600">}}{{</iframe>}}   
 
 ## Simple graphics
 
@@ -310,10 +310,11 @@ footer {
 }
 ```
 
-The image [sits in the background nicely](step-07).
+The image sits in the background nicely.
 Now it's time to stop playing with the design aspects and move on to adding functionality. 
 
-{{<figure caption="OK, let's stop playing with it now" src="images/step-07-wide.png">}}
+{{<iframe src="step-07" width="1000" height="600">}}{{</iframe>}}   
+
 
 ## Conclusion
 
