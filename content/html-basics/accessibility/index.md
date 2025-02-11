@@ -184,7 +184,7 @@ The description will be announced by the screen reader when the image is reached
             This next image is much better because it has a non-empty <em>alt attribute</em>. 
             The alternative text briefly describes the image for users who cannot see it.
         </p>
-        <img src="https://placecats.com/200/200" alt="a random kitten, looking cute">
+        <img src="https://placecats.com/200/200" alt="a random cat, looking cute">
     </main>
 </body>
 </html>

@@ -118,10 +118,10 @@ Your changes are not permanent.
 
 >Try adding the following HTML into the page
 >```html {linenos=false}
-><img src="https://placecats.com/600/200" alt="a random kitten">
+><img src="https://placecats.com/600/200" alt="a random cat">
 >```
 > Remember to press *F2* to apply the change. 
-> You should see an image of a random kitten from [placecats.com](https://placecats.com).
+> You should see an image of a random cat from [placecats.com](https://placecats.com).
 
 ### Editing style rules
 

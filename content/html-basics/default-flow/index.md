@@ -280,17 +280,17 @@ What happens if we add multiple `<img>` elements between our `<span>` elements?
 </head>
 <body>
     <span>Lorem ipsum dolor sit amet.</span>
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
     <span>Enim nulla molestias pariatur corrupti.</span>
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
     <span>Dicta vero quasi atque veritatis.</span>
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
     <a href="#">Quaerat sunt similique laudantium architecto.</a>
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
-    <img src="https://placecats.com/50/50" alt="A placeholder kitten">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
+    <img src="https://placecats.com/50/50" alt="A placeholder cat">
     <span>Ut sunt voluptates molestiae eos?</span>
 </body>
 </html>
@@ -312,7 +312,7 @@ Any spaces (or newline characters) between the `<img>` elements are reduced to a
 
 > Try removing the spaces between the elements like this.
 >```html
-> <img src="https://placecats.com/50/50" alt="A placeholder kitten"><img src="https://placecats.com/50/50" alt="A placeholder kitten">
+> <img src="https://placecats.com/50/50" alt="A placeholder cat"><img src="https://placecats.com/50/50" alt="A placeholder cat">
 >```
 
 ## Composing a 'flow' layout
@@ -333,9 +333,9 @@ By knowing which elements are *inline* and which are *block* we can get somethin
     <p>Lorem ipsum dolor sit amet <strong>consectetur adipisicing elit</strong>. Fugit eveniet, cum omnis illum enim, fuga magnam explicabo sunt voluptates harum, atque aliquid ad tempora sed? Quod blanditiis delectus quam eligendi quo pariatur reiciendis nesciunt, hic reprehenderit, aperiam sequi cum praesentium.</p>    
     <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
     <figure>
-        <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-        <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-        <figcaption>Two kitten images</figcaption>
+        <img src="https://placecats.com/200/150" alt="A placeholder cat">
+        <img src="https://placecats.com/200/150" alt="A placeholder cat">
+        <figcaption>Two cat images</figcaption>
     </figure>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
     <h2>Lorem ipsum dolor sit amet</h2>
@@ -430,9 +430,9 @@ Let's upgrade the site with some semantic structure.
     <main>
         <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
         <figure>
-            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-            <figcaption>Two kitten images</figcaption>
+            <img src="https://placecats.com/200/150" alt="A placeholder cat">
+            <img src="https://placecats.com/200/150" alt="A placeholder cat">
+            <figcaption>Two cat images</figcaption>
         </figure>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
         <h2>Lorem ipsum dolor sit amet</h2>

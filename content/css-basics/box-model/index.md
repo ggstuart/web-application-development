@@ -41,9 +41,9 @@ Adding the following `<style>` element into the head, with a single rule.
     <main>
         <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
         <figure>
-            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-            <figcaption>Two kitten images</figcaption>
+            <img src="https://placecats.com/200/150" alt="A placeholder cat">
+            <img src="https://placecats.com/200/150" alt="A placeholder cat">
+            <figcaption>Two cat images</figcaption>
         </figure>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
         <h2>Lorem ipsum dolor sit amet</h2>
@@ -113,9 +113,9 @@ Now, before we continue, we should replace the `<style>` element with a `<link>`
     <main>
         <p>Cumque molestias nemo dolor recusandae quos excepturi voluptas alias modi, consequatur atque, dignissimos error reiciendis ullam magni neque enim omnis possimus ea quas. Iure quod iste adipisci nobis odit dolore quae dolorem nisi doloribus, vitae molestiae, sequi illo, vel unde?</p>
         <figure>
-            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-            <img src="https://placecats.com/200/150" alt="A placeholder kitten">
-            <figcaption>Two kitten images</figcaption>
+            <img src="https://placecats.com/200/150" alt="A placeholder cat">
+            <img src="https://placecats.com/200/150" alt="A placeholder cat">
+            <figcaption>Two cat images</figcaption>
         </figure>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi esse odit harum enim perspiciatis. Aliquam corrupti architecto consectetur, neque saepe nulla cumque perspiciatis eaque? Quisquam architecto ab rem, suscipit explicabo voluptas animi, in corrupti ipsa temporibus consectetur doloremque deserunt?</p>
         <h2>Lorem ipsum dolor sit amet</h2>
@@ -567,7 +567,7 @@ So there is zero margin on the left and the element doesn't reach the right side
 We can place the `<body>` element centrally by setting the left and right *margin* properties to *auto*.
 
 
-```css
+```css {hl_lines=10}
 * {
     outline: 0.5px solid black;
     background-color: hsl(50, 100%, 40%, 0.1);
@@ -596,8 +596,8 @@ li {
 }
 ```
 
-> For all the box properties, *margin*, *padding* and *border* there are variations which apply to the top, right, bottom or left only (e.g. *margin-top*, *margin-right*, *margin-bottom*, *margin-left*).
-> There are also variants which apply to the top and bottom sides only (e.g. *margin-block*) and the left and right sides only (e.g. *margin-inline*).
+> For all the box properties, [*margin*], [*padding*] and [*border*] there are variations which apply to the top, right, bottom or left only (e.g. [*margin-top*], [*margin-right*], [*margin-bottom*], [*margin-left*]).
+> There are also variants which apply to the top and bottom sides only (e.g. [*margin-block*]) and the left and right sides only (e.g. [*margin-inline*]).
 
 This divides the available space between the *margin-left* and *margin-right* properties and the `<body>` element is placed in the middle.
 
@@ -626,9 +626,9 @@ Let's increase the image size to *600 x 300px* in our *index.html* file.
 
 ```html {linenostart="16" hl_lines="2-3"}
 <figure>
-    <img src="https://placecats.com/600/300" alt="A placeholder kitten">
-    <img src="https://placecats.com/600/300" alt="A placeholder kitten">
-    <figcaption>Two kitten images</figcaption>
+    <img src="https://placecats.com/600/300" alt="A placeholder cat">
+    <img src="https://placecats.com/600/300" alt="A placeholder cat">
+    <figcaption>Two cat images</figcaption>
 </figure>
 ```
 This produces a serious problem.
@@ -716,3 +716,14 @@ Maybe something like this?
 
 > Look up the [class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) and the  [decendant combinator](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#descendant_combinator).
 > Think about how the example above used these to target images within the different figures.
+
+
+[*margin*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+[*margin-top*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top
+[*margin-right*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right
+[*margin-bottom*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom
+[*margin-left*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left
+[*margin-block*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block
+[*margin-inline*]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline
+[*padding*]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+[*border*]: https://developer.mozilla.org/en-US/docs/Web/CSS/border
