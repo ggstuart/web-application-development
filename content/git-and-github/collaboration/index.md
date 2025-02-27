@@ -1,169 +1,148 @@
 ---
 title: Collaborating on GitHub
 type: exercise
-draft: false
-weight: 20
+draft: true
+weight: 30
+mermaid: true
 ---
 
-Git and GitHub provide a powerful set of tools for collaborating on code.
-In order to demonstrate this, we have created a shared project on which we can practice.
+This exercise will walk you through the process of making a contribution to a third-party repository via a *pull request* on GitHub.
 
 <!--more-->
 
-You can view [the live page] for the project.
+It is assumed that you don't have the right to edit the repository directly, so the only way to make a contribution is via a *pull request*.
+
+In order to demonstrate this, we have created a shared project on which we can practice.
 It currently looks like this:
 
 {{<iframe src="https://web-development-dmu.github.io/i-was-here/" width="1000" height="400">}}{{</iframe>}}
+You can view [the live page] for the project.
 
-Your task is to follow the appropriate workflow to make a pull request to the site.
+Your task is to follow the appropriate workflow to make a simple pull request to the site.
 
 > This website will be created collectively by hundreds of students each making small updates.
 Make your contribution stand out by adding some styles.
+> The module leader reserves the right to reject your contribution if it breaks the rules.
 
-## Setup
+## Setup your repository
 
-Your task is to make an update to the project.
-This will involve some basic set up:
+Before making any contributions, you need to **fork** the repository on GitHub and then **clone** it to your local machine.
 
-1. Create a **fork** of the repository on github.
-1. Create a local **clone** of your fork.
 
-### Forking
+### Fork the *upstream* project
 
-The project lives in the [i-was-here] repository.
-A source project like this is sometimes known as the *upstream* repository and it should be assumed to be constantly updating.
+This step happens in the [i-was-here] repository page on GitHub.
+Since you don’t have direct edit access, you need to create a **fork**, which is your personal copy of the repository.
 
-Since your github user does not have access to edit this repository, it won't be possible to push any code directly to it.
-The only way to make contributions to the code is by *forking* the repository on github and creating a **pull request**.
+Click the **Fork** button at the top right of the [i-was-here] repository page.
+
+> Visit the [i-was-here] repository.
+>There should be a banner in the source repository that should look something like this.
+>
+>![forking interface](images/git-and-github-11a.png)
+>
+> Notice there is a **fork** button.
+> Clicking the button creates a **fork** of the project.
+
+You should be taken to your newly created repository.
+This is a copy of the *upstream* repository, owned by *you*.
+
+>The new repository will belong to your GitHub user account and it should point to the source repository like this.
+>
+>![the fork](images/git-and-github-12.png)
+>
+> Notice it says, *"forked from web-development-DMU/i-was-here"*
+
+With your own copy of the code, you can make commits freely without conflicting with other developers.
+This is where you will publish your changes before submitting them for review.
+
+### Cloning your fork
+
+
+Now that you have a fork, you need to **clone** it to your local machine so you can work with the code.
+
+1. Open VSCode.
+2. Press *Ctrl + Shift + P* to open the command palette.
+3. Type *"clone"* and select **Git: Clone**.
+4. Choose **Clone from GitHub**.
+5. Select your **forked** repository (not the original upstream one).
+6. Pick a folder on your computer to store the project.
+
+> If you have trouble, ensure you are logged into GitHub and that your fork exists.
+
+After cloning, open the project folder in VSCode. Now you’re ready to start contributing!
+
+## Making a contribution
+
+Once you have a local copy of the **i-was-here** project open in VSCode, you can explore the code and run *live server* to review the site.
+
+>**Don't make any changes yet.**
+You **must** keep your *main* branch clean.
+It should **always** reflect the state of the *upstream* repository without any of your local changes.
+>
+> We shall see that our changes can make their way into the *main* branch via github if they are accepted into the *upstream* project.
+
+### Branching
+
+Create a new branch named with your student number.
+
+
+
+> At the bottom of the VSCode window, you should see a git icon with the name of the current branch.
+>
+>![current branch in VSCode](images/git-and-github-13.png)
+>
+>If you click this icon, you should open the branching interface with options to create a new branch.
+>
+>![branching interface in VSCode](images/git-and-github-14.png)
+>
+> Switching between branches is now easy, using this interface.
+
+Creating a new branch for our changes allows our code to diverge from the *main* branch.
+
+With your new branch activated, take some time to make your changes to the HTML and the CSS.
+You should 'go live' and take some time to get the result you want.
+You can add as many commits as you need.
+Make sure its nice and tidy and doesn't break any of the rules.
+
+### Pushing
+
+Once you are happy, make sure everything is committed to your new branch so you have a clean working copy.
+
+Now synchronise your repository with your GitHub fork.
+
+> This will involve publishing the new branch, just press the **Sync Changes** button as before.
+
+This should create a copy of the new branch on your github fork of the project.
+
+### Creating a pull request
+
+The only way to make contributions to the code is by creating a **pull request**.
 
 > A pull request is a link to a version of the code with updates.
 The repository owner(s) can choose to merge a pull request into the code.
 > This is typically how you would make a contribution to an open-source project. 
 
-The first step is to create your own personal **fork** of the *upstream* project on github.
-Visit the [i-was-here] repository and click on the **fork** button in the github interface.
+The first step is to create your own personal **fork** of the *upstream* project on GitHub.
+Visit the [i-was-here] repository and click on the **fork** button in the GitHub interface.
 
->There should be a banner in the source repository that should look something like this.
->
->![forking interface](images/git-and-github-11.png)
->
-> Notice there is a **fork** button.
-
-Clicking the button creates a **fork** of the project.
-You should be taken to your newly created repository.
-
->The new repository will belong to your github user account and it should point to the source repository like this.
->
->![the fork](images/git-and-github-12.png)
->
-With your own copy of the code, you can make commits freely without conflicting with other developers.
-
-Remember that this repository is a copy of the main project, the purpose of this repository is to be a store for your proposed changes.
-
-### Cloning
-
-Now we have our own copy of the repository on github, we can **clone** it onto our local filesystem using VSCode.
-
-> Now carefully follow these instructions
-
-The first thing we need to do is to tell VSCode to clone the repository.
-This involves providing the correct url for your forked project.
-
-Cloning can be convenient within VSCode but the steps are difficult to explain, so read this carefully.
-
-The first step is to trigger the clone operation.
-This can be done in a number of ways.
-
-1. You can open a new VSCode window with no project loaded and there should be a **Clone Repository** button.
-1. Alternatively, press *Ctrl + Shift + P* to open the command palette, type *"clone"* and select *"git: Clone"* from the list of commands.
-
-Once you have triggered the clone operation, complete the following steps:
-
-- Select the **Clone from GitHub** option and wait for the list of available repositories to load
-- Start typing the name of the repository **"i-was-here"** and select it when it appears (make sure you select your **fork**, not the *upstream* version).
-- Choose a location on your filesystem, this is where you want the downloaded **i-was-here** project folder to be saved
-
-> If you have trouble with these steps, make sure you are logged into github and that you have forked the repository correctly.
-
-## Making a contribution
-
-With a local version of the code, you can now make your contribution with the following workflow.
-
-1. Create a **branch** in your local repository for your changes.
-1. Make commits in your **branch**.
-1. **Push** your branch up to your github **fork**.
-1. Create a **pull request** for your **branch** to be merged into the *upstream* project *main* branch.
-
-Once you have a local copy of the **i-was-here** project open in VSCode, you can explore the code and run *live server* to review the site.
-Don't make any changes yet.
-
-### Branching
-
-In order to keep the project *clean* we want to use **branches** to keep our proposed changes separate from the code we pulled from *upstream*.
-All repositories have a default *main* (or sometimes *master*) **branch** which is what we have been working with so far.
-We want this *main* branch to always reflect the state of the *upstream* repository without any of our changes.
-
-> Git is a complex tool and there are many resources which explain branching.
-If you are interested in understanding git more deeply then read about [git branches].
-For a higher-level overview read about [github branches].
->
-> For our purposes, we can think of a git **branch** as a pointer which points to a specific **commit**.
-Every time we make a commit, the currently active **branch** is moved to point to the newly created **commit**.
->
-> Creating a new branch simply creates a new pointer, pointing at the current commit.
-> When we commit, we are committing *to a branch*. 
-> This means that the current branch is moved to point to the new commit.
-> All other branches are left unchanged.
->
-> In this way, branches can diverge.
-
-Creating a new branch for our changes allows our code to diverge from the *main* branch.
-
-At the bottom of the VSCode window, you should see a git icon with the name of the current branch.
-
-![current branch in VSCode](images/git-and-github-13.png)
-
-If you click this icon, you should open the branching interface with options to create a new branch.
-
-Create a new branch named with your student number.
-
-![branching interface in VSCode](images/git-and-github-14.png)
-
-> Switching between branches is now easy, using this interface.
-
-
-
-### Pushing
-
-With your new branch activated, take some time to make your changes to the HTML and the CSS.
-
-> You should 'go live' and take some time to get the result you want.
-
-You can add as many commits as you need.
-
-Make sure its nice and tidy and doesn't break any of the rules.
-Once you are happy, synchronise it with your github fork.
-
-> This will involve publishing the new branch, just press the **Sync Changes** button as before.
-
-### Creating a pull request
 
 Now we are at the final stages of the process.
-Go to github, you should see your updates have been uploaded.
+Go to GitHub, you should see your updates have been uploaded.
 
 > The interface should show you that you have some new changes and give you the option to create a pull request
->
+> 
 > It might be like this:
->
+> 
 >![pull request option](images/git-and-github-15.png)
->
+> 
 > In which case, click the button to start the process.
 > 
 > Or it might be like this:
->
+> 
 >![pull request option](images/git-and-github-18.png)
->
-> In which case, click the **contribute** button and create tHe pull request.
+> 
+> In which case, click the **contribute** button and create the pull request.
 
 Review the pull request, scrolling down the page you should see the diff.
 This is what will be seen by the project owners.
@@ -178,21 +157,32 @@ Once the pull request is accepted and merged, our repositories are left in a mes
 
 We should do some tidying to get ready for another contribution.
 
-1. Update our github fork from *upstream* and delete the remote branch.
+1. Update our GitHub fork from *upstream* and delete the remote branch.
 1. Update our local repository and delete the local copy of the merged branch. 
 
-### Updating our github fork
+### Updating our GitHub fork
 
-Return to your github fork and pull in the changes.
+Return to your GitHub fork and pull in the changes.
 
-> You should see something like this on the *main* branch.
+> You should see a banner on the *main* branch showing that your fork is behind the upstream repository.
 >
 >![synchronise your fork](images/git-and-github-16.png)
 >
-> Choose the **Sync fork** option and **Update branch** to pull the new commits.
+> If the **Sync fork** button is available, click it and then **Update branch** to pull in the latest changes.
+>
+> If you don’t see this button, you can manually sync your fork using the command line:
+> ```sh
+> git remote add upstream https://github.com/web-development-DMU/i-was-here.git
+> git fetch upstream
+> git merge upstream/main
+> git push origin main
+>```
+> This creates a direct link between your local repository and the **upstream** repository. 
 
-You may find that other students have successfully had their pull requests merged too so there may be many changes to pull into our *main* branch. 
-This is why it is a good idea to leave the *main* branch untouched and always make our changes on a fresh branch.
+Keeping your fork updated ensures that you’re working with the latest code. 
+Always sync before starting a new contribution.
+
+This is why it is a good idea to leave the *main* branch untouched and **always** make our changes on a fresh branch.
 This ensures any new commits can always be pulled without any problems and we have a direct copy of the *main* branch from the *upstream* repository.
 
 Finally, we can delete the branch we used for development so we can begin again with a clean set up.
@@ -206,7 +196,7 @@ The interface should be clear enough.
 
 ### Updating our local repository
 
-In VSCode we can now checkout the *main* branch and synchronise it with github, pulling the changes into our local repository.
+In VSCode we can now checkout the *main* branch and synchronise it with GitHub, pulling the changes into our local repository.
 
 We can also delete our development branch to leave us with a clean environment, ready to repeat the process.
 
@@ -235,14 +225,14 @@ A couple of things that you may find helpful.
 
 ### Prune on fetch
 
-By default VSCode will keep a list of old remote branches, even after they are deleted from github.
+By default VSCode will keep a list of old remote branches, even after they are deleted from GitHub.
 There is a command *"Git: Fetch(Prune)"* in the command palette which will prune these branches from the list.
 Doing this occasionally is great.
 However, you can configure your VSCode to do this automatically by checking *"Git: Prune on fetch"* in your settings (*Ctrl + comma*).
 
 ### Link directly to upstream
 
-It can be annoying and slow to pull updates from the upstream repository through our github fork and down to our local repository in VSCode.
+It can be annoying and slow to pull updates from the upstream repository through our GitHub fork and down to our local repository in VSCode.
 If you know what you are doing, then you can add a new *remote* to your local repository using the command palette to find the *"Git: Add Remote..."* command.
 Find the upstream repository and name it *"upstream"* (your fork of this is a remote known as *"origin"*).
 
@@ -260,6 +250,9 @@ Now you can pull directly from upstream into the *main* branch by first selectin
 
 ---
 
+> Git is a complex tool and there are many resources which explain branching.
+If you are interested in understanding git more deeply then read about [git branches].
+For a higher-level overview read about [GitHub branches].
 
 
 ## Create and clone your assignment repository
@@ -269,21 +262,23 @@ Find your P-number from the (sorry, very long) list.
 This will generate a repo with simple starter code.
 
 The repo for your assignment code is private and is owned by the CTEC3905-2022 organisation.
-Your github user has permissions to edit it, so it can be viewed only by you and module staff.
+Your GitHub user has permissions to edit it, so it can be viewed only by you and module staff.
 
 Now **clone this repo to the computer on which you are working**.
 You can now push any work you do on your assignment to this repo.
 
 ## 03 Lab learning outcomes
 
-- Use GIT to clone a repository from github
+
+
+- Use GIT to clone a repository from GitHub
 - use GitHub as a remote source for a local git repository
 - get your assignment code repository set up
 
 [github]: https://github.com/
-[github flow]: https://docs.github.com/en/get-started/using-github/github-flow
+[GitHub flow]: https://docs.github.com/en/get-started/using-github/github-flow
 [i-was-here]: https://github.com/web-development-DMU/i-was-here
 [the live page]: https://web-development-dmu.github.io/i-was-here/
 
 [git branches]: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
-[github branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
+[GitHub branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
