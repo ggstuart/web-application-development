@@ -71,6 +71,9 @@ You should see two files directly in the VSCode explorer panel like this.
 
 {{<figure src="images/git-and-github-01.png" caption="The folder is open in the explorer panel on the left">}}
 
+{{<figure src="images/git-and-github-01-light.png" caption="Light mode equivalent">}}
+
+
 > Notice on the left-hand side the top-level folder is *GIT-EXPERIMENT* in capitals.
 This will be the folder that becomes a git repository in the next step.
 
@@ -82,6 +85,8 @@ To convert our project into a git repository, we first need to open the **source
 
 {{<figure src="images/git-and-github-02.png" caption="The source control panel is indicating that there is no git repository and offering you the chance to create one">}}
 
+{{<figure src="images/git-and-github-02-light.png" caption="Light mode equivalent">}}
+
 Since there is no git repository found in the current folder, we are presented with the option to initialise a new repository. 
 Click the **Initialise Repository** button to create a repository.
 
@@ -91,6 +96,8 @@ You should now see the **source control** panel shows two untracked files under 
 The green **U** next to the filenames indicates that the files are **untracked**, i.e. they are not yet included in the repository.
 
 {{<figure src="images/git-and-github-03.png" caption="The source control panel on the left shows we have two new files, both are *untracked*">}}
+
+{{<figure src="images/git-and-github-03-light.png" caption="Light mode equivalent">}}
 
 
 We have successfully created a git repository.
@@ -108,6 +115,7 @@ However, we do have some code in our **working copy**.
 Select one of the files and you should be presented with a *diff* in two panels just as in the screenshot below. 
 This shows the difference between the current **working copy** of the file compared to the latest version of the code in our repository.
 
+
 On the left side, the panel is blank, indicating that this file doesn't yet exist in the repository.
 On the right side, you are shown the entire content of the file highlighted green, indicating these are all additional lines.
 
@@ -115,6 +123,13 @@ On the right side, you are shown the entire content of the file highlighted gree
 
 With a new file the *diff* isn't very interesting.
 However, we shall see later that this view shows exactly what has changed since the last commit.
+
+> You may not see this for untracked files in newer versions of VSCode
+> In which case, don't worry.
+> When we make a change, you will see a diff.
+
+{{<figure src="images/git-and-github-04-light.png" caption="Newer versions of VSCode will show this (light mode)">}}
+
 
 ### Create our first commit
 
@@ -140,7 +155,12 @@ At this point we can add a commit message to explain what changes were made in t
 
 {{<figure src="images/git-and-github-05.png" caption="The source control panel on the left shows we have staged both files and entered a commit message.">}}
 
-> Notice the message in the screenshot above, it's at the top of the *source control* panel.
+> Again, you may only see one panel as in the below light mode version
+
+{{<figure src="images/git-and-github-05-light.png" caption="Light mode equivalent.">}}
+
+
+> Notice the message in the screenshots above, it's at the top of the *source control* panel.
 >```markdown {linenos=false}
 >Created a basic HTML template with simple styles
 >```
@@ -163,6 +183,11 @@ Now we can edit our **working copy** and see our edits highlighted as *diffs*.
 The icons on the left of the VSCode window are not all as useful as the *source control* and *explorer* panels.
 
 {{<figure src="images/git-and-github-06.png" caption="The *diff* shows the old version of the file next to the new version highlighting exactly what has changed.">}}
+
+> Using the light *high contrast* theme you don't get coloured highlights. 
+So I've switched to the *light modern* theme for this comparison screenshot.
+
+{{<figure src="images/git-and-github-06-light.png" caption="The light mode equivalent shows green highlights for new lines.">}}
 
 
 As before, we can move the files in and out of the *staging area* by clicking the icons next to the file name.
@@ -226,6 +251,8 @@ If you have committed all your changes then you should see a **Publish Branch** 
 
 {{<figure src="images/git-and-github-07.png" caption="The source control panel on the left is inviting you to publish.">}}
 
+{{<figure src="images/git-and-github-07-light.png" caption="Equivalent in light mode.">}}
+
 > If you don't see this button then perhaps you need to commit or revert some uncommitted changes in your **working copy**.
 
 This button will trigger VSCode to make a **clone** of our repository (a full copy, including all the commit history) on *GitHub*.
@@ -256,6 +283,8 @@ Now, back in VSCode, you can make further commits to the local repository and wh
 > This has replaced the **Publish Branch** button.
 
 {{<figure src="images/git-and-github-09.png" caption="The source control panel on the left offers the option to synchronise our changes with GitHub.">}}
+
+{{<figure src="images/git-and-github-09-light.png" caption="Light mode equivalent.">}}
 
 Simply clicking the button will push any new changes to [GitHub].
 
