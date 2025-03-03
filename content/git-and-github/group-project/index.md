@@ -66,6 +66,8 @@ After cloning, open the project folder in VSCode.
 
 {{<figure src="./images/project-in-vscode.png" caption="My project, open in VSCode.">}}
 
+{{<figure src="./images/project-in-vscode-light.png" caption="Using light mode.">}}
+
 
 ## Making contributions
 
@@ -125,10 +127,12 @@ You will choose a better name, such as *feature-view-programme-list* or *feature
 At the bottom of the VSCode window, you should see a git icon with the name of the current branch.
 
 ![current branch in VSCode](images/branch-icon.png)
+<!-- ![current branch in VSCode, light mode](images/branch-icon-light.png) -->
 
 If you click this icon, you should open the branching interface with options to create a new branch.
 
 {{<figure src="./images/branch-interface.png" caption="Switching between branches is easy, using this interface">}}
+{{<figure src="./images/branch-interface-light.png" caption="The light mode version">}}
 
 Select *Create new branch...* and enter your branch name.
 
@@ -142,6 +146,7 @@ Select *Create new branch...* and enter your branch name.
 You can now make changes and commit them to the new branch.
 
 {{<figure src="./images/readme-diff.png" caption="In the process of committing my change.">}}
+{{<figure src="./images/index-diff-light.png" caption="The light version looks similar">}}
 
 Add as many commits as you need in this step.
 
@@ -150,11 +155,14 @@ Add as many commits as you need in this step.
 Once the changes are committed to your feature branch, then you can push the changes to GitHub.
 
 
-{{<figure src="./images/publish-branch.png" caption="Click the button to push the branch to GitHub.">}}
+{{<figure src="./images/publish-branch.png" caption="Click the *publish branch* button to push the branch to GitHub.">}}
 
 > For newly created branches, the interface should include a *Publish branch* button as in the above image.
-Further commits can be added by synchronising (there should be a *Sync Changes* button instead).
+Further commits can be added by synchronising (there should be a *Sync Changes* button instead as in the below image).
 > Avoid working on the same branch as your team mates unless you know precisely what you are doing.
+
+{{<figure src="./images/sync-changes-light.png" caption="Click the *sync changes* button to push additional commits to an existing branch on GitHub (light mode).">}}
+
 
 ### STEP 5: Merge the code via a *pull request*
 
