@@ -171,6 +171,16 @@ The staged changes will create a commit when we press the *commit* button.
 If you haven't done so, stage both files.
 Now enter a message and commit the changes by pressing the *commit* button. 
 
+> At this point you may get an error relating *configuring
+your 'user.name' and your 'user.email' in git*.
+> In which case you need to open a git terminal (e.g. **git bash** on windows, or a **terminal** on linux or mac) and enter the following commands.
+>```bash
+> git config --global user.name "Your Name"
+> git config --global user.email your@email.com
+>```
+> These details are attached to each commit so we know who made each contribution. 
+
+
 ### A second commit
 
 Your *diff* should now show that no changes have been made since the last commit.
