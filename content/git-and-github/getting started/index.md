@@ -69,6 +69,10 @@ Now, make **absolutely sure** that you have opened the *git-experiment* folder i
 **NOT** the parent folder.
 You should see two files directly in the VSCode explorer panel like this.
 
+> The details of these images may be slightly different from what you see. 
+> VSCode releases updates regularly and the UI has even been updated during the creation of this exercise. 
+> I have added dark mode and light mode examples.
+
 {{<figure src="images/git-and-github-01.png" caption="The folder is open in the explorer panel on the left">}}
 
 {{<figure src="images/git-and-github-01-light.png" caption="Light mode equivalent">}}
