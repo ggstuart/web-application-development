@@ -4,25 +4,27 @@ type: lecture
 weight: 5
 author: Dr Graeme Stuart
 slides: 
-    - slides/literacy.md
     - slides/infrastructure.md
+    - slides/literacy.md
     - slides/memex.md
     - slides/hypertext.md
+    - slides/internet.md
     - slides/www.md
-    - slides/birth-of-web.md
-    - slides/web-document.md
     - slides/first-website.md
-    - slides/first-browser.md
-    - slides/line-mode-browser.md
-    - slides/mosaic.md
-    - slides/the-browser-wars.md
-    - slides/battle-of-the-browsers.md
-    - slides/css.md
-    - slides/why-css-was-invented.md
-    - slides/web-standards.md
-    - slides/convergence.md
-    - slides/resilient-web-design.md
-    - slides/exercises.md
+    - slides/url.md
+    - slides/http.md
+    - slides/markup.md
+    - slides/example-html.md
+    - slides/html-documents.md
+    - slides/web-document.md
+    - slides/anatomy.md
+    - slides/html-attributes.md
+    - slides/anchors.md
+    - slides/void-elements.md
+    - slides/semantics.md
+    - slides/accessibility.md
+    - slides/validators.md
+    - slides/birth-of-web.md
 ---
 
 A brief history of web technology
