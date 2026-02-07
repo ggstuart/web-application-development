@@ -3,5 +3,9 @@ title: Web Application development
 display_toc: true
 ---
 
-This part of the module introduces the technologies involved in building an **accessible** and **responsive** website with **dynamic** content.
-Each week there will be three lectures introducing concepts and three lab sessions where you will get your hands dirty.
+In this module we will focus on the core technologies which underpin the web.
+The web is built on standards which are evolving fast.
+Web clients (browsers) continually expand their support for these evolving standards.
+Web server frameworks provide convenient tools that help us to build web servers.
+
+By the end of the module you should be comfortable building a web application from scratch.
