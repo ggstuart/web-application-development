@@ -1,5 +1,5 @@
 ---
-title: Web document
+title: HTML documents
 type: slide
 classes: [narrow-wide]
 order: 7

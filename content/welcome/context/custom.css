@@ -23,7 +23,7 @@ article.slide p img {
     aspect-ratio: 6;
 }
 
-article.slide.contain p img {
+article.slide:not(.title).contain p:has(img) img {
     object-fit: contain;
 }
 
@@ -116,6 +116,11 @@ ul {
     list-style-position: outside;
     font-family: system-ui;
 }
+article.slide .internet {
+    .content p img {
+        max-height: 54dvh;
+    }
+}
 
 article.slide.exercises .content {
     /* grid-template-rows: 1fr 1fr; */
@@ -124,4 +129,41 @@ article.slide.exercises .content {
 
 article.slide.exercises .content blockquote {
     grid-column: span 2;
+}
+
+article.slide:not(.title) {
+    &.http .content p img {
+        object-fit: contain;
+    }
+    &.url {
+        .content {
+            grid-template-columns: 2fr 1fr;
+            p img {
+                object-fit: contain;
+                padding: 1rem 2rem;
+            }
+
+            ul {
+                font-size: 0.8em;
+            }
+
+            > :not(ul, p:not(:has(img))) {
+                grid-column: span 2;
+            }
+        }
+    }
+    &.black {
+        & p:has(img) {
+            background: #1f1f1f;
+            img {
+                background: transparent;
+            }
+        } 
+    }
+    &.anchors .content {
+        grid-template-rows: repeat(6, auto);
+    }
+    &.docs .content {
+        grid-template-rows: 2fr 2fr 3fr;
+    }
 }

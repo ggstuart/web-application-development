@@ -1,0 +1,19 @@
+article.slide {
+    &.two-code .content {
+        grid-template-columns: 1fr 1fr;
+        :not(.highlight) {
+            grid-column: span 2;
+        }
+    }
+
+    &.cascade .content {
+        ul {
+            display: grid;
+            gap: 2.5rem;
+            font-size: 1.3em;
+            place-self: center;
+        }
+    }
+}
+
+

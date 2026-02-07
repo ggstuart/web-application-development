@@ -8,7 +8,6 @@
 
 {{define "bodyAttributes"}} class="presentation"{{end}}
 
-
 {{ define "main" }}
   {{ range .Page.Resources.Match "**.html" }}
     {{ (.Content | resources.FromString .Path).Publish }}
@@ -18,6 +17,17 @@
     {{partial "logo.html" .}}
     <h3>{{ .Content }}</h3>
     {{ with .Params.Author}}<small>{{.}}</small>{{end}}
+  </article>
+  <article class="slide contents current" aria-label="contents">
+    <h2>Contents</h2>
+    {{partial "logo.html" .}}
+    <ol>
+      {{ range $index, $slide := .Params.Slides}}
+        {{with $.Resources.Get $slide}}
+            <li>{{.Title}}</li>
+        {{ end }}
+      {{ end }}
+    </ol>
   </article>
 
   {{/*  loop over slides, capture index as well */}}
