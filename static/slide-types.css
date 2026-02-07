@@ -5,7 +5,7 @@ article.slide:not(.title) {
     &.contents {
         grid-template-rows: auto auto 1fr;
         img.logo {
-            height: 5em;
+            max-height: 7em;
         }
         ol {
             gap: 0.25rem 1rem;
@@ -15,18 +15,16 @@ article.slide:not(.title) {
             padding: 0;
             li {
                 background: var(--background-gradient);
-                border: 0.5px solid black;
+                border: 0.25px solid black;
                 border-radius: 4px;
                 padding: 0.25rem 0.5rem;
-                font-size: 0.8em;
+                font-size: 0.7em;
             }
             &:has(:nth-child(10)) {
-                grid-template-columns: 1fr 1fr;
-                li:nth-child(odd) {
-                    direction: rtl;
-                    text-align: right;
-                    /* padding: 0 1em 0 0; */
-                }
+                grid-template-columns: auto auto;
+            }
+            &:has(:nth-child(21)) {
+                grid-template-columns: auto auto auto;
             }
         }
     }
