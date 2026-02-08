@@ -81,6 +81,14 @@ article.slide:not(.title) {
         max-height: 50vh;
     }
 
+    &.img-40vh p:has(img) img {
+        max-height: 40vh;
+    }
+
+    &.img-25vh p:has(img) img {
+        max-height: 25vh;
+    }
+
     &.even .content {
         grid-template-columns: 1fr 1fr;
     }
@@ -93,6 +101,13 @@ article.slide:not(.title) {
         grid-template-columns: auto auto;
     }
 
+    &.one-two .content {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    &.one-three .content {
+        grid-template-columns: 1fr 3fr;
+    }
     &.two-three .content {
         grid-template-columns: 2fr 3fr;
     }

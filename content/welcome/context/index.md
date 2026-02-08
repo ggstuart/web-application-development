@@ -1,7 +1,7 @@
 ---
 title: Contextualisation
 type: lecture
-weight: 5
+weight: 1
 author: Dr Graeme Stuart
 slides: 
     - slides/infrastructure.md
