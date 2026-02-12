@@ -18,9 +18,9 @@ So, there are three potential values, but only one can be applied.
 Which one is chosen?
 
 ```css
-#this-note { color: red; }  /* selecting an id   - (1, 0, 0) */
-.a-note { color: green; }   /* selecting a class - (0, 1, 0) */
-p { color: blue; }          /* selecting a type  - (0, 0, 1) */
+p { color: blue; }          /* all paragraphs start blue            - (0, 0, 1) */
+.a-note { color: green; }   /* elements with the class become green - (0, 1, 0) */
+#this-note { color: red; }  /* the element with the id become red   - (1, 0, 0) */
 ```
 
 The specificity algorithm counts selector components in each weight category (ID, CLASS, TYPE).
