@@ -47,7 +47,8 @@ article.slide:not(.title) {
             max-height: 54dvh;
             object-fit: cover;
             object-position: center top;
-            background: var(--background-gradient);
+            /* background: var(--background-gradient); */
+            background: white;
         }
     }
 
@@ -79,6 +80,10 @@ article.slide:not(.title) {
 
     &.img-50vh p:has(img) img {
         max-height: 50vh;
+    }
+
+    &.img-center p:has(img) img {
+        object-position: center;
     }
 
     &.img-40vh p:has(img) img {

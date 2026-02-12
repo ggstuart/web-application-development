@@ -1,6 +1,6 @@
 ---
 type: slide
-title: The render tree
+title: Calculating styles
 classes: [contain, burger]
 ---
 
