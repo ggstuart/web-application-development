@@ -9,4 +9,4 @@ order: 11
 
 {{<iframe src="examples/box.html" width="800" height="200">}}{{</iframe>}}
 
-> The **CSS box model** exercise will walk you through these basics
+> The [CSS box model exercise]({{< ref "css-basics/box-model" >}}) will walk you through these basics
