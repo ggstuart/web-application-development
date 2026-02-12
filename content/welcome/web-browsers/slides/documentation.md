@@ -1,8 +1,7 @@
 ---
 title: documentation
 type: slide
-classes: [gap]
-order: 10
+classes: [gap, img-50vh, img-center]
 ---
 
 > Documentation is usually excellent via MDN (add "MDN" to your search).

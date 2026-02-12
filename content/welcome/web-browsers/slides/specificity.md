@@ -1,10 +1,11 @@
 ---
-title: Specificity
+title: Specificity and building the CSSOM
 type: slide
 classes: []
 order: 8
 ---
 
+> Style information are parsed into the CSSOM in a similar way.
 > The order of styles is important, but styles are not simply applied in order. 
 > Styles with higher *specificity* take precedence over those with lower *specificity*.
 
