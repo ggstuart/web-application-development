@@ -13,38 +13,51 @@
             gap: 2em;
             grid-template-columns: max-content auto;
         }
-        section {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            font-size: 0.8em;
-        }
-        p {
+        p, ul {
             max-width: 70ch;
-            word-spacing: 2px;
-            letter-spacing: 1px;
             line-height: 1.5;
             font-size: 1.5em;
+            font-weight: 300;
         }
         div {
             font-size: 1.4em;
             border: 1px dashed black;
             text-align: center;
         }
+        ul {
+            padding: 0;
+        }
+        li {
+            list-style-position: inside;
+            padding-left: 1em;
+        }
+        li:nth-child(1),
         .content {
             background: hsl(200, 50%, 80%);
+        }
+        li:nth-child(2),
+        .padding {
+            background: hsl(120, 50%, 80%);
+        }
+        li:nth-child(3),
+        .border {
+            background: hsl(50, 50%, 80%);
+        }
+        li:nth-child(4),
+        .margin {
+            background: hsla(30, 50%, 60%, 0.5);
+        }
+
+        .content {
             padding-inline: 2em;
         }
         .padding {
-            background: hsl(120, 50%, 80%);
             padding: 1em;
         }
         .border {
-            background: hsl(50, 50%, 80%);
             padding: 0.25em;
         }
         .margin {
-            background: hsla(30, 50%, 60%, 0.5);
             padding: 1em;
         }
         .margin:nth-of-type(2) {
@@ -70,13 +83,16 @@
             </div>
         </div>
     </section>
-    <p>
-        The CSS box model describes every element as a rectangular box consisting of four layers: the content area (width and
-        height set by content or explicit dimensions), surrounded by padding (space between content and border), then the border
-        (which can have thickness, style, and color), and finally margin (outer space separating the element from neighbors).
-        The default box-sizing: content-box means width/height properties apply only to the content area (padding + border add
-        to total size), while box-sizing: border-box includes padding and border within the specified width/height, making
-        layout calculations more predictable.
-    </p>
+    <section>
+        <p>
+            The CSS box model describes every element as a rectangular box consisting of four layers: 
+        </p>
+            <ul>
+                <li>the content itself</li>
+                <li>the padding (space between content and border)</li>
+                <li>the border (which can have thickness, style, and color)</li>
+                <li>the margin (outer space separating the element from neighbors)</li>
+            </ul>
+    </section>
 </body>
 </html>
