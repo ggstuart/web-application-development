@@ -116,6 +116,17 @@ article.slide:not(.title) {
     &.two-three .content {
         grid-template-columns: 2fr 3fr;
     }
+    &.two-one .content {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    &.three-two .content {
+        grid-template-columns: 3fr 2fr;
+    }
+
+    &.three-one .content {
+        grid-template-columns: 3fr 1fr;
+    }
 
     &.three-five .content {
         grid-template-columns: 3fr 5fr;
@@ -148,6 +159,12 @@ article.slide:not(.title) {
         blockquote:first-of-type,
         blockquote:last-of-type {
             grid-column: 1/-1;
+        }
+    }
+
+    &.tight-quotes .content { 
+        blockquote p {
+            margin-block: 0.5em;
         }
     }
 

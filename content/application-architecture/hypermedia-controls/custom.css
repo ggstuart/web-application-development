@@ -1,0 +1,14 @@
+article.slide:not(.title) {
+    &.short-iframes .content {
+        iframe {
+            max-height: 4em;
+        }
+    }
+
+    &.block-span-2 .content {
+        /* grid-template-columns: auto auto; */
+        blockquote {
+            grid-column: span 2;
+        }
+    }
+}
