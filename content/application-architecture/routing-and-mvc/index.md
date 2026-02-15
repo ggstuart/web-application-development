@@ -1,6 +1,8 @@
 ---
 type: lecture
 title: Routing and the MVC pattern
+author: Dr Graeme Stuart
+weight: 2
 slides:
     - slides/javascript-modules.md
     - slides/request-handlers.md

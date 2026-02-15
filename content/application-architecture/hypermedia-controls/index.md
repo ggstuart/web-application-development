@@ -1,6 +1,8 @@
 ---
 type: lecture
 title: Hypermedia controls
+author: Dr Graeme Stuart
+weight: 1
 slides:
     - slides/hypertext.md
     - slides/http.md
