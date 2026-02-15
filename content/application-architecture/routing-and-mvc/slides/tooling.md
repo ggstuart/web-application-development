@@ -35,4 +35,4 @@ export function redirect(location) {
 }
 ```
 
-> They access data from **models** and generate responses by either rendering **views** or redirecting the browser to another route.
+> These can get more complex as necessary as your application grows.

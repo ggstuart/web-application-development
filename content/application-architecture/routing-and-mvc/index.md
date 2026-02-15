@@ -2,18 +2,19 @@
 type: lecture
 title: Routing and the MVC pattern
 slides:
-    - slides/server-architecture.md
-    - slides/deno-tasks.md
     - slides/javascript-modules.md
     - slides/request-handlers.md
-    - slides/sqlite.md
     - slides/routing.md
+    - slides/server-architecture.md
+    - slides/sqlite.md
+    - slides/deno-tasks.md
     - slides/mvc.md
     - slides/models.md
     - slides/views.md
     - slides/tooling.md    
     - slides/controllers.md
-    
+    - slides/url-pattern.md
+    - slides/context-object.md
 ---
 
 Server architecture
