@@ -15,19 +15,15 @@ Our view files encapsulate knowledge of the user interface structure.
 This might mean one file per URL.
 
 ```js
-export function loginForm() {
+const itemToHTML = (item) => `<li>${item.label}</li>`;
+
+export function itemList(items) {
+    const listItems = items.map(itemToHTML);
     return `
-    <form action="/login" method="POST">
-        <label for="username">Username: </label>
-        <input id="username" name="username" required minlength="8">
-        <label for="password">Password: </label>
-        <input id="password" 
-            name="password"
-            type="password"
-            required
-            minlength="12">
-        <button>login</button>
-    </form>`;
+    <section aria-labelledby="item-heading">
+        <h2 id="item-heading">Items</h2>
+        <ul>${listItems.join("")}</ul>
+    </section>`;
 }
 ```
 

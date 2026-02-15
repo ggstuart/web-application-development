@@ -9,9 +9,9 @@ The model, view, controller pattern is a tried and tested approach to maintain a
 > Models are responsible for interfacing with the data persistence mechanism.
 
 ```js
-const items = ["apples", "bananas", "cherries"];
+import { db } from './db.js';
 export function getItems() {
-    return [...items];
+    return db.prepare("SELECT * FROM items;").all();
 }
 ```
 
@@ -19,11 +19,11 @@ export function getItems() {
 In this case that means functions that return HTML strings.
 
 ```js
-const itemToHTML = (item) => `<li>${item}</li>`;
+const itemToHTML = (item) => `<li>${item.label}</li>`;
 
 export function itemList(items) {
     const listItems = items.map(itemToHTML);
-    return `<ul>${listItems.join("")}</ul>
+    return `<ul>${listItems.join("")}</ul>`;
 }
 ```
 
