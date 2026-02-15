@@ -1,7 +1,7 @@
 ---
 title: Formatting contexts
 type: lecture
-weight: 10
+weight: 3
 author: Dr Graeme Stuart
 slides: 
     - slides/default-flow.md

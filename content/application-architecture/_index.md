@@ -1,6 +1,7 @@
 ---
 type: unit
 title: Application Architecture
+weight: 2
 ---
 
 Web application architecture connects the front-end (web browser) to the back-end (web server) via HTTP.
