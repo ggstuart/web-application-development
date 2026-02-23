@@ -1,0 +1,10 @@
+table:not(.lntable) {
+    font-sizE: 1.4em;
+    color: #eee;
+    border-collapse: collapse;
+    th, td {
+        background: linear-gradient(#303030, #393939);
+        padding: 0.5rem;
+        border: 0.5px solid white;
+    }
+}
