@@ -164,7 +164,7 @@ article.slide:not(.title) {
 
     &.tight-quotes .content { 
         blockquote p {
-            margin-block: 0.5em;
+            margin-block: 0.25em;
         }
     }
 
