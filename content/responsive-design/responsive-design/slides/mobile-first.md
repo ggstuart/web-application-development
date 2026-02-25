@@ -1,8 +1,7 @@
 ---
 title: Mobile first
 type: slide
-classes: []
-order: 5
+classes: [tight-quotes]
 ---
 
 > This is a good way to get started and is how we will expect you to structure your media queries for your assignment.
