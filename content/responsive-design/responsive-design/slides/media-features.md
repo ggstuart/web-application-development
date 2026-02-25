@@ -1,7 +1,7 @@
 ---
 title: Media features
 type: slide
-classes: []
+classes: [tight-quotes]
 order: 4
 ---
 

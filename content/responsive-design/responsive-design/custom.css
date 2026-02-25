@@ -33,3 +33,42 @@ article.slide.two-in-middle .content :first-child,
 article.slide.two-in-middle .content :last-child {
     grid-column: span 2;
 }
+
+article.slide.responsive .content {
+    p img {
+        object-fit: contain;
+        object-position: center;
+        background: black;
+    }
+
+    blockquote {
+        place-content: center;
+    }
+
+    @media(width>700px) {
+        grid-template-columns: 3fr 2fr;
+
+        p img {
+            padding-right: 4em;
+        }
+
+        p:has(img) {
+            grid-row: span 2;
+            background: #000;
+        }
+
+        blockquote:last-of-type {
+            grid-column: span 2;
+        }
+    }
+
+    @media(width>1000px) {
+        grid-template-rows: 1fr auto auto;
+
+        p:has(img) {
+            grid-row: span 3;
+        }
+    }
+
+
+}

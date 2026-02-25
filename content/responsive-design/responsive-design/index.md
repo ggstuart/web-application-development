@@ -4,7 +4,7 @@ type: lecture
 weight: 10
 slides:
     - slides/browser-share.md 
-    - slides/amiresponsive.md 
+    - slides/responsive.md
     - slides/media-types.md 
     - slides/an-example.md 
     - slides/media-features.md 
