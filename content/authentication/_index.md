@@ -1,9 +1,11 @@
 ---
 type: unit
 title: Cookies and authentication
+weight: 4
 ---
 
-HTTP is a stateless protocol meaning that each request is processed independently by the server and clients must resend all the context with every request.
+HTTP is a stateless protocol. 
+Each request is processed independently by the server and clients must resend all the context with every request.
 
 
 <!--more-->
