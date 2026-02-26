@@ -82,6 +82,10 @@ article.slide:not(.title) {
         max-height: 50vh;
     }
 
+    &.img-52vh p:has(img) img {
+        max-height: 52vh;
+    }
+
     &.img-center p:has(img) img {
         object-position: center;
     }
@@ -149,8 +153,8 @@ article.slide:not(.title) {
 
     &.burger .content {
 
-        :first-child,
-        :last-child {
+        >:first-child,
+        >:last-child {
             grid-column: 1/-1;
         }
     }

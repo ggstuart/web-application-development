@@ -1,0 +1,6 @@
+article.slide.cookies .content {
+    grid-template-rows: auto 60dvh auto;
+    p:has(img) img {
+        max-height: 60dvh;
+    }
+}
