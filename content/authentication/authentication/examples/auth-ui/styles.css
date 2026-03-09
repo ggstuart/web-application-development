@@ -1,0 +1,23 @@
+section {
+    font-family: system-ui;
+    font-size: 1.4em;
+    text-align: center;
+    form {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 0.5rem;
+        padding: 2rem;
+        place-self: center;
+        background: linear-gradient(#222, #444); 
+        color: #eee;
+        border-radius: 3px;
+        label {
+            text-align: right;
+        }
+        button {
+            grid-column: 2;
+            place-self: end;
+            font-size: inherit;
+        }
+    }
+}

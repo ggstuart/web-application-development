@@ -1,0 +1,23 @@
+table:not(.lntable) {
+    font-size: 1.2em;
+    color: #eee;
+    border-collapse: collapse;
+
+    th, td {
+        background: linear-gradient(#333, #444);
+        padding: 0.25rem 0.5rem;
+        border: 0.5px solid white;
+    }
+    tr {
+        :first-of-type {
+            width: 10ch;
+        }
+        :nth-of-type(2) {
+            width: 320px;
+        }
+    }
+}
+
+p {
+    margin-block: 0.25rem;
+}
