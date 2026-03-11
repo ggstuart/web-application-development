@@ -1,0 +1,41 @@
+body {
+    font-family: system-ui;
+    display: grid;
+    place-items: center;
+    font-size: 1.2em;
+    min-height: 100dvh;
+    margin: 0;
+    background: linear-gradient(45deg, hsl(200, 50%, 90%), hsl(200, 50%, 80%))
+}
+
+* {
+    font: inherit;
+}
+
+form,
+fieldset {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+}
+
+label {
+    text-align: right;
+}
+
+input[type=submit] {
+    grid-column: 2;
+    place-self: end;
+}
+
+form.validation-demo input:invalid {
+    outline: 2px solid red;
+    /* background: pink; */
+}
+form.validation-demo input:not([type=submit]):valid {
+    outline: 2px solid green;
+}
+
+.three {
+    grid-template-columns: auto 1fr 1fr;
+}
