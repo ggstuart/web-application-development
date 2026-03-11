@@ -1,0 +1,40 @@
+article.slide {
+    &.two-code .content {
+        grid-template-columns: 1fr 1fr;
+
+        :not(.highlight) {
+            grid-column: span 2;
+        }
+    }
+}
+
+article.slide.flex .content {
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+article.slide.flex .content blockquote {
+    grid-column: span 2;
+}
+
+article.slide.css-grid .content {
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: repeat(5, min-content);
+    gap: 1px;
+    font-size: 0.9em;
+}
+
+article.slide.css-grid .content p {
+    grid-column: span 2;
+}
+
+article.slide:not(.title) {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+article.slide .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+}

@@ -1,0 +1,36 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 0 2rem;
+    padding: 2rem;
+    font-size: 1.5em;
+    font-family: system-ui;
+    background: #eee;
+}
+div {
+    line-height: 1.4;
+    background: linear-gradient(45deg, white, #eee);
+    padding: 0.5rem;
+    border-radius: 3px;   
+    outline: 1.5px solid #ddd;
+}
+
+section {
+    background: linear-gradient(-45deg, #bbb, #ddd);
+    padding: 1rem;
+}
+
+section.flex {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    gap: 1rem;
+    align-items: center;
+}
+
+section.grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 1rem;
+}
