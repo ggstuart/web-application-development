@@ -1,0 +1,7 @@
+article.slide:not(.title) {
+    &.merge-first-code .content {
+        .highlight:first-of-type {
+            grid-column: span 2;
+        }
+    }
+}
