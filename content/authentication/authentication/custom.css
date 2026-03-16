@@ -19,5 +19,6 @@ table:not(.lntable) {
 }
 
 p {
-    margin-block: 0.25rem;
+    margin-block: 0;
+    align-content: center;
 }
