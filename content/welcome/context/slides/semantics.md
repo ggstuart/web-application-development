@@ -2,7 +2,7 @@
 title: Semantic elements
 type: slide
 order: 10
-classes: [even, burger, gap]
+classes: [even, burger, gap, tight-quotes]
 ---
 
 > Semantic elements add *meaning* to your document structure and provide **accessibility** advantages.
@@ -10,32 +10,38 @@ classes: [even, burger, gap]
 
 ```html
 <!-- bad -->
-
-<div id="myheader"></div>
-<div id="navigation"></div>
+<div id="myheader">
+    <h1>The title</h1>
+    <div id="navigation">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </div>
+</div>
 <div id="main-content">
-    <div class="section">
+    <div class="intro-section">
         <div class="article">
             <h2>This is some content</h2>
         </div>
     </div>
-    <div class="special-section"></div>
 </div>
 <div id="the-footer"></div>
 ```
 
 ```html
 <!-- good -->
-
-<header></header>
-<nav></nav>
+<header>
+    <h1>The title</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+</header>
 <main>
-    <section>
+    <section aria-label="intro">
         <article>
             <h2>This is some content</h2>
         </article>
     </section>
-    <section class="special"></section>
 </main>
 <footer></footer>
 ```
