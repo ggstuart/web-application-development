@@ -1,7 +1,7 @@
 
 {{with .page}}
-<article class="slide {{with .Params.Classes}}{{ delimit . " " }}{{end}}" aria-labelledby="slide-{{.Params.Order}}">
-    <h2 id="slide-{{.Params.Order}}">{{.Title}}</h2>
+<article class="{{ delimit ( .Params.Classes | append "slide" ) " " }}" aria-labelledby="slide-{{$.slideNumber}}">
+    <h2 id="slide-{{$.slideNumber}}">{{.Title}}</h2>
     <div class="content">
         {{ .Content }}
     </div>
