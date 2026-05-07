@@ -1,6 +1,10 @@
 baseURL = 'https://ggstuart.github.io/web-application-development'
-languageCode = 'en-us'
 theme = 'module'
+
+[languages]
+    [languages.en]
+        locale = "en-gb"
+
 
 [markup]
     [markup.highlight]
@@ -10,7 +14,7 @@ theme = 'module'
             unsafe = true
         [markup.goldmark.renderHooks]
             [markup.goldmark.renderHooks.link]
-                enableDefault = true
+                useEmbedded = "fallback"
 
 [params]
     moduleName = 'Web application development'
