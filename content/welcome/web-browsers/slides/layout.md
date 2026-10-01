@@ -1,7 +1,7 @@
 ---
 type: slide
 title: Layout
-classes: [contain]
+classes: [contain, short-img, gap]
 ---
 
 > Layout is the process of applying the render tree to the available viewport.

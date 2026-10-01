@@ -1,7 +1,7 @@
 ---
 title: Some examples
 type: slide
-classes: [auto]
+classes: [auto, gap]
 order: 4
 ---
 

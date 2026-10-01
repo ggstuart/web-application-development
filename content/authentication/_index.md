@@ -1,7 +1,8 @@
 ---
 type: unit
 title: Cookies and authentication
-weight: 4
+weight: 200
+draft: true
 ---
 
 HTTP is a stateless protocol. 

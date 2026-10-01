@@ -1,7 +1,7 @@
 ---
 type: slide
 title: Browser internals
-classes: [contain]
+classes: [contain, short-img]
 ---
 
 > Web browsers are one of the most complex software applications you will use.

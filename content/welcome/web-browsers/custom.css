@@ -1,19 +1,37 @@
-article.slide {
-    &.two-code .content {
-        grid-template-columns: 1fr 1fr;
-        :not(.highlight) {
-            grid-column: span 2;
-        }
+.cascade {
+    ul {
+        display: grid;
+        gap: 2rem;
+        font-size: 1.7em;
+        place-self: center;
+        margin-inline: 5em;
+        list-style-position: outside;
     }
+}
 
-    &.cascade .content {
-        ul {
-            display: grid;
-            gap: 2.5rem;
-            font-size: 1.3em;
-            place-self: center;
-        }
+.two-code .content {
+    grid-template-columns: 1fr 1fr;
+    :not(.highlight) {
+        grid-column: span 2;
     }
+}
+
+.classes .content {
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: max-content auto max-content;
+}
+
+.short-img .content {
+    p:has(img) img { aspect-ratio: 2.8; }
+    p:has(img:nth-of-type(2)) img { aspect-ratio: 1.4; }
+}
+
+.padded-img img {
+    padding-inline: 3em;
+}
+
+article.slide:not(.title) {
+
 
     &.box .content {
         grid-template-rows: min-content 1fr min-content;
@@ -21,6 +39,18 @@ article.slide {
 
     &.two-of-four .content {
         grid-template-rows: min-content 1fr min-content min-content;
+    }
+    &.mosaic .content p:has(img) {
+        grid-template-columns: 4fr 2fr 2fr;
+        img:nth-of-type(2) {
+            object-fit: contain;
+            object-position: center;
+            background: black;
+        }
+    }
+
+    &.css .content p:has(img) {
+        grid-template-columns: 5fr 6fr 5fr;
     }
 }
 

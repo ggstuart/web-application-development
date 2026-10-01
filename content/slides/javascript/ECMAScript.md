@@ -4,7 +4,7 @@ type: slide
 classes: [block-burger, ecma]
 ---
 
-![Brendan in 1995](./images/brendan-eich-1995.jpg)
+![Brendan in 1995](./images/javascript/brendan-eich-1995.jpg)
 
 - European Computer Manufacturers Association (ECMA)
 - Netscape submitted JavaScript to *ECMA International* in November 1996.

@@ -1,32 +1,48 @@
 ---
 title: Specificity and building the CSSOM
 type: slide
-classes: []
+classes: [gap, one-two, burger]
 order: 8
 ---
 
-> Style information are parsed into the CSSOM in a similar way.
-> The order of styles is important, but styles are not simply applied in order. 
-> Styles with higher *specificity* take precedence over those with lower *specificity*.
-
-```html
-<p class="a-note" id="this-note">This is a note</p>
-```
+Styles with higher *specificity* take precedence over those with lower *specificity*.
 
 > The paragraph has a class and an id.
-The style declarations below all try to set the `color` property.
-So, there are three potential values, but only one can be applied.
-Which one is chosen?
 
-```css
-p { color: blue; }          /* all paragraphs start blue            - (0, 0, 1) */
-.a-note { color: green; }   /* elements with the class become green - (0, 1, 0) */
-#this-note { color: red; }  /* the element with the id become red   - (1, 0, 0) */
+```html {linenos=false}
+
+ <p class="a-note" id="this-note">This is a note</p>
 ```
 
-The specificity algorithm counts selector components in each weight category (ID, CLASS, TYPE).
-If competing declarations have the same value, the order in the file will decide.
+> These style declarations all try to set the `color` property.
+So, Which one is chosen?
+>
+> The paragraph is styled **red**.
+But why?
 
-> Note that styles added as inline style attributes will always be applied.
+```css {linenos=false}
 
+ #this-note {
+     color: red;
+ }
+ 
+ p.a-note {
+     color: green;
+ }
+ 
+ p {                  
+     color: blue; 
+ }
+```
 
+>The specificity algorithm counts selector components in each weight category (ID, CLASS, TYPE).
+
+```plaintext {linenos=false}
+
+            (ID, CLASS, TYPE)
+          p ( 0,     0,    1)
+   p.a-note ( 0,     1,    1)
+ #this-note ( 1,     0,    0)
+```
+
+Note that styles added as inline style attributes will always be applied.

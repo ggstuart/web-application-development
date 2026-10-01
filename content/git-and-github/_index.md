@@ -1,8 +1,8 @@
 ---
 title: Git and GitHub
 type: unit
-draft: false
-weight: 100
+draft: true
+weight: 200
 ---
 
 This bonus unit introduces some basic workflows with git and github.

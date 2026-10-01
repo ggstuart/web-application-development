@@ -1,8 +1,7 @@
 ---
 title: Battle of the browsers (1997)
 type: slide
-classes: []
-order: 13
+classes: [gap]
 ---
 
 {{< youtube id="MzVFKzLD0LE" class="youtube" title="Battle of the browsers video">}}

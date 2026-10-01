@@ -1,7 +1,8 @@
 ---
 title: Responsive design
 type: unit
-weight: 60
+weight: 200
+draft: true
 ---
 
 This unit covers responsive web design and media queries.

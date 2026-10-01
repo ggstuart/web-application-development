@@ -6,7 +6,7 @@ classes: [contain, auto-one, burger, img-25vh, gap]
 
 > [Deno](https://deno.com) is a modern (2018) open-source, standards-compliant runtime environment for executing JavaScript without a web browser.
 
-![Ryan Dahl](./images/ryan-dahl.png)
+![Ryan Dahl](./images/javascript/ryan-dahl.png)
 
 
 ```JavaScript

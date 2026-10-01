@@ -4,28 +4,28 @@ type: lecture
 weight: 1
 author: Dr Graeme Stuart
 slides: 
-    - slides/infrastructure.md
-    - slides/literacy.md
-    - slides/memex.md
-    - slides/hypertext.md
-    - slides/internet.md
-    - slides/www.md
-    - slides/birth-of-web.md
-    - slides/first-website.md
-    - slides/url.md
-    - slides/http.md
-    - slides/markup.md
-    - slides/anatomy.md
-    - slides/example-html.md
-    - slides/html-attributes.md
-    - slides/anchors.md
-    - slides/html-documents.md
-    - slides/web-document.md
-    - slides/void-elements.md
-    - slides/semantics.md
-    - slides/accessibility.md
-    - slides/validators.md
-    - slides/developer-tools.md
+    - /slides/welcome/infrastructure.md
+    - /slides/welcome/literacy.md
+    - /slides/welcome/memex.md
+    - /slides/welcome/hypertext.md
+    - /slides/welcome/internet.md
+    - /slides/welcome/www.md
+    - /slides/welcome/birth-of-web.md
+    - /slides/welcome/first-website.md
+    - /slides/welcome/url.md
+    - /slides/welcome/http.md
+    - /slides/welcome/markup.md
+    - /slides/welcome/anatomy.md
+    - /slides/welcome/example-html.md
+    - /slides/welcome/html-attributes.md
+    - /slides/welcome/anchors.md
+    - /slides/welcome/html-documents.md
+    - /slides/welcome/web-document.md
+    - /slides/welcome/void-elements.md
+    - /slides/welcome/semantics.md
+    - /slides/welcome/accessibility.md
+    - /slides/welcome/validators.md
+    - /slides/welcome/developer-tools.md
 ---
 
 A brief history of web technology

@@ -1,11 +1,11 @@
 ---
 title: Convergence
 type: slide
-classes: [contain, img-50vh]
+classes: [contain, img-50vh, gap]
 order: 17
 ---
 
-> Google release *Chrome* with faster *JavaScript* and an *open-source* version *Chromium*.
+> In 2008 Google release *Chrome* with faster *JavaScript* and an *open-source* version *Chromium*.
 
 
 ![Another chart, showing the decline of internet explorer from 2009. Both Chrome and mobile browsers dominate to 2016](images/browser-war2.svg)

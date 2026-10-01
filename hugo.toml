@@ -21,3 +21,17 @@ theme = 'module'
     moduleCode = 'CTEC2712'
     customcss = ['colours.css', 'mdn.css']
 
+[security]
+    allowContent = ["text/html", "text/markdown"]
+
+[outputs]
+    _merge = "deep"
+    home = ["html", "slideLayouts", "examples"]
+[outputFormats]
+    [outputFormats.slideLayouts]
+        mediaType = "text/css"
+        baseName = "css/slide-layouts"
+        isPlainText = true
+    [outputFormats.examples]
+        mediaType = "text/plain"
+        baseName = "examples"

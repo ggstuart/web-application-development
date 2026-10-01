@@ -340,7 +340,7 @@ However, since it has no content, there is not much to see.
 
 It should look something like this...
 
-{{<iframe src="example" width="1000" height="300">}}{{</iframe>}}
+{{<iframe src="/examples/hello-world/example.html" width="1000" height="300">}}{{</iframe>}}
 
 The next exercise will guide you through adding some simple content to your page.
 
@@ -353,7 +353,7 @@ Check [the online validator](https://validator.w3.org/#validate_by_input) to mak
 
 See if you can create something like this.
 
-{{<iframe src="challenge-01" width="1000" height="300">}}{{</iframe>}}
+{{<iframe src="/examples/hello-world/challenge.html" width="1000" height="300">}}{{</iframe>}}
 
 > Use [this basic tutorial](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals) as a reference.
 

@@ -1,7 +1,7 @@
 ---
 title: The line mode browser
 type: slide
-classes: []
+classes: [gap]
 order: 10
 ---
 

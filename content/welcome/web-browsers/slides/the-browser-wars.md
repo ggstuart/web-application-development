@@ -1,7 +1,7 @@
 ---
 title: The browser wars
 type: slide
-classes: [contain, padded]
+classes: [contain, short-img, gap]
 order: 12
 ---
 

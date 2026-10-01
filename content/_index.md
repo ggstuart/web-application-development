@@ -1,6 +1,7 @@
 ---
 title: Web Application development
 display_toc: true
+weight: 200
 ---
 
 In this module we will focus on the core technologies which underpin the web.

@@ -1,7 +1,7 @@
 ---
 title: Cascading Style Sheets
 type: slide
-classes: []
+classes: [gap, burger, css]
 order: 14
 ---
 
@@ -13,4 +13,3 @@ order: 14
 ![CSS Zen Garden](https://resilientwebdesign.com/chapter2/images/large/zengarden.png)
 
 > First implemented in March 2000 by *IE5 on Mac*.
-> [CSS zen garden](https://www.csszengarden.com/pages/alldesigns/) was launched in May 2003.

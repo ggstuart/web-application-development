@@ -1,7 +1,8 @@
 ---
 title: CSS basics
 type: unit
-weight: 30
+weight: 200
+draft: true
 ---
 
 Cascading Stylesheets (CSS) are the main tool for styling the appearance of HTML documents.

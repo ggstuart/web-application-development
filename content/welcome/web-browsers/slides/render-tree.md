@@ -1,12 +1,11 @@
 ---
 type: slide
 title: Calculating styles
-classes: [contain, burger]
+classes: [contain, burger, short-img]
 ---
 
-> Style information are parsed into the CSSOM in a similar way
+> The DOM and CSSOM are merged into the [render tree](https://web.dev/articles/critical-rendering-path/render-tree-construction).
 
 ![The DOM and CSSOM are merged into the renter tree](./images/render-tree.png)
 
-> The DOM and CSSOM are merged into the [render tree](https://web.dev/articles/critical-rendering-path/render-tree-construction).
-Computed styles for all visible elements.
+> With Computed styles for all visible elements, the browser can calculate how the page flows into the viewport.

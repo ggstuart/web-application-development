@@ -4,7 +4,7 @@ type: slide
 classes: [brendan, one-two]
 ---
 
-![Brendan Eich](./images/brendan-eich.jpg)
+![Brendan Eich](./images/javascript/brendan-eich.jpg)
 
 > "**Java** is to *JavaScript* as **car** is to *carpet*" <br>- Chris Heilmann
 

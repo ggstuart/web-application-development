@@ -6,7 +6,7 @@ classes: [contain, live-server]
 
 >JavaScript modules require the [*live server*](https://ggstuart.github.io/web-application-development/welcome/vscode/#using-the-live-server-extension) extension for VSCode (which is recommended anyway).
 
-![live-server](./images/live-server.png)
+![live-server](./images/javascript/live-server.png)
 
 > This allows for the use of [import] and [export] statements.
 

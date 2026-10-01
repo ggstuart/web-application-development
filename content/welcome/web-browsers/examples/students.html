@@ -12,52 +12,54 @@
             font-family: system-ui;
         }
         #students {
-            background-color: #222;
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
 
         .student {
-            margin: 0.5em 0.25em;
-            border: 2px solid #fff;
-            background-color: #333;
-            color: #eee;
-        }
-
-        .student img {
-            object-fit: cover;
-            width: 100%;
-            aspect-ratio: 1.6;
-        }
-
-        figcaption {
             display: grid;
-            place-content: center;
+            grid-template-rows: auto 1fr;
+            margin: 0;
+            border: 2.5px solid #000;
+            filter: brightness(0.8);
+            img {
+                object-fit: cover;
+                width: 100%;
+                aspect-ratio: 1.2;
+            }
+            figcaption {
+                display: grid;
+                place-content: center;
+                background-color: #333;
+                color: #eee;
+            }
+            &:hover {filter: none;}
         }
+
+
     </style>
 </head>
 <body>
     <section id="students">
         <figure class="student">
-            <img src="https://placecats.com/200/100">
+            <img src="https://placecats.com/120/100">
             <figcaption>P12345677</figcaption>
         </figure>
 
         <figure class="student">
-            <img src="https://placecats.com/200/120">
+            <img src="https://placecats.com/240/200">
             <figcaption>P12345678</figcaption>
         </figure>    
 
         <figure class="student">
-            <img src="https://placecats.com/200/140">
+            <img src="https://placecats.com/180/150">
             <figcaption>P12345679</figcaption>
         </figure>
 
         <figure class="student">
-            <img src="https://placecats.com/200/220">
+            <img src="https://placecats.com/300/250">
             <figcaption>P12345680</figcaption>
         </figure>
-
     </section>
 </body>
 </html>

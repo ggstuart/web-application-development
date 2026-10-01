@@ -1,7 +1,7 @@
 ---
 title: CSS is for presentation
 type: slide
-classes: [contain]
+classes: [contain, short-img, gap]
 order: 1
 ---
 
@@ -10,4 +10,4 @@ order: 1
 ![A wireframe page layout design](images/wireframe.png)
 ![CSS zen garden screenshot showing multiple designs for the same HTML document](./images/css-zen-garden.png)
 
-> Spend some time in the [CSS Zen Garden](http://www.csszengarden.com/) for inspiration.
+> [CSS zen garden](https://www.csszengarden.com/pages/alldesigns/) was launched in May 2003.
