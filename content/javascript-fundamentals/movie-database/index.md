@@ -1,6 +1,7 @@
 ---
 title: Building a Movie Database
 type: exercise
+weight: 3
 ---
 
 In this exercise you will explore the core features of modern JavaScript using Deno. 
