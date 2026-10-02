@@ -1,9 +1,0 @@
-body * {
-    outline: 2px dashed hsl(0, 100%, 50%, 0.2);
-    background-color: hsl(0, 100%, 50%, 0.05);
-}
-
-body {
-    font-family: system-ui;
-    margin: 0 auto;
-}

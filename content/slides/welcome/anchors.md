@@ -1,33 +1,34 @@
 ---
 title: Anchors (hyperlinks)
 type: slide
-order: 7
-classes: [auto-one, burger, gap, anchors]
+classes: [burger, gap]
+params: 
+    layout:
+        cols: 1fr 3fr
 ---
 
-Anchor elements require a *hypertext reference* (an `href` attribute) pointing to the link destination as a **U**niform **R**esource **L**ocator (URL).
-There are three main kinds of link.
+Anchor elements require an `href` attribute (a *hypertext reference*) pointing to a **U**niform **R**esource **L**ocator (URL).
 
-> linking to another element
+> linking to another element in the current document.
 ```html
 <a href="#my-element">
     that element
 </a>
 ```
-> linking to another document
+> linking to another document in the current domain.
 ```html
 <a href="another-page.html">
     that document
 </a>
 ```
-> linking to another server
+> linking to another domain.
 ```html
 <a href="https://www.dmu.ac.uk">
     that website
 </a>
 ```
 
-> Combinations are common. 
+> Linking to a specific element within a specific document on another server. 
 ```html
 <a href="https://www.example.com/some-document#section-1">
     an element in a document on another server

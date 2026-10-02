@@ -1,8 +1,10 @@
 ---
 title: HTML documents
 type: slide
-order: 12
-classes: [two-three, docs, gap]
+classes: [gap]
+params: 
+    layout:
+        cols: 2fr 3fr
 ---
 
 >**ALL** HTML5 documents consist of a `<!DOCTYPE html>` and an `<html>` element *only*.
@@ -10,7 +12,9 @@ classes: [two-three, docs, gap]
 
 ```html
 <!DOCTYPE html>
-<html></html>
+<html>
+    <!-- everything goes here -->
+</html>
 ```
 
 
@@ -20,11 +24,14 @@ Nothing else is allowed as a direct child of the `<html>` element.
 ```html
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body></body>
+    <head>
+        <!-- Meta-data goes here -->
+    </head>
+    <body>
+        <!-- Visible content goes here -->
+    </body>
 </html>
 ```
-
 
 >Within the `<head>` element there should be a `<title>` element and `<meta>` element defining the character set.
 You can also add other information about the document, including linked files and scripts.
@@ -36,10 +43,11 @@ You can also add other information about the document, including linked files an
     <head>
         <meta charset="utf-8"> 
         <title>My amazing webpage</title>
+        <!-- More meta-data goes here -->
     </head>
 
     <body>
-        <!-- your document content goes here -->
+        <!-- Visible content goes here -->
     </body>
 </html>
 ```

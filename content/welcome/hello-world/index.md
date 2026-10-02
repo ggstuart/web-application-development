@@ -4,7 +4,7 @@ type: exercise
 weight: 30
 ---
 
-In this exercise we will build a minimal web page to explore the main aspects of *HTML*, *CSS* and *JavaScript*.
+In this exercise we will build a minimal static web page to explore the main aspects of *HTML* and *CSS*.
 
 <!--more-->
 
@@ -27,21 +27,25 @@ You probably need a folder for the entire module with subfolders for each of the
 
 ## An experiment
 
+We are going to build a small site using the *live-server* vscode extension as our web server.
+
+> Later, we will build our own web server using *JavaScript*.
+
 Create a new folder for a small experiment.
 Think about a naming convention that makes sense to you.
-Maybe call it **vscode-experiment** or similar.
+Maybe call it **live-server-experiment** or similar.
 
 Open your new folder in VSCode and create a file **index.html**.
-
 
 ```markdown {linenos=false}
  CTEC2712
    └─ exercises
-        └─ vscode-experiment
+        └─ live-server-experiment
              └─ index.html
 ```
 
 > It is crucial that you open the **folder** in VSCode, not the file.
+The VSCode explorer panel should show your folder contents on the left.
 
 
 Add the following, minimal content to the file.
@@ -75,7 +79,7 @@ Remember, you can start the *live server* extension by clicking the *go live* bu
 
 The site should open in your browser, looking something like this:
 
-{{<iframe src="examples/step-01" width="1200" height="200">}}{{</iframe>}}
+{{<iframe src="./examples/hello-world/step-01" width="1200" height="200">}}{{</iframe>}}
 
 Admittedly its not that impressive, but we are only just beginning.
 
@@ -144,12 +148,12 @@ It is very similar to *index.html*, but the hyperlink points back to the origina
 
 The result is a minimal two-page website.
 
-{{<iframe src="examples/step-02" width="1200" height="200">}}{{</iframe>}}
+{{<iframe src="./examples/hello-world/step-02" width="1200" height="200">}}{{</iframe>}}
 
 Clicking on the links allows the user to navigate between the two pages.
 
 > Each click generates an HTTP request to the server (the *live server* extension within VSCode).
-> The server responds with an HTML document which the browser parses and renders.
+> The server responds with an HTTP response containing an HTML document which the browser parses and renders.
 > You can view the requests in the *network* panel of the developer tools.
 
 Try adding a second link to an extra page. 
@@ -209,7 +213,7 @@ Do something similar to the *about.html* file.
 You should notice the difference in the browser.
 Each page in the site now has a distinct look.
 
-{{<iframe src="examples/step-03/about.html" width="1200" height="200">}}{{</iframe>}}
+{{<iframe src="./examples/hello-world/step-03/about.html" width="1200" height="200">}}{{</iframe>}}
 
 > Try modifying any additional pages you created in similar ways.
 
@@ -251,574 +255,103 @@ This tells the browser that the file will contain *CSS ruleset* information that
 
 Now *all* our pages can have a consistent style, any changes we make to the *style.css* file will be applied to *all* our pages.
 
-{{<iframe src="examples/step-04" width="1200" height="200">}}{{</iframe>}}
-
-
-## Adding JavaScript
-
-Using JavaScript, we can modify the *Document Object Model*.
-For example, we can create new elements and insert them into the page.
-
-Open the developer tools in *Chrome* and select the *JavaScript Console*.
-
-> You can use *Ctrl + Shift + J* to open the JavaScript console.
-
-Here are three lines of code.
-
-```js
-const element = document.createElement("p");
-element.textContent = "hello";
-document.body.append(element);
-```
-
-The above code does three things.
-
-1. Creates a paragraph element.
-1. Adds some text into the paragraph.
-1. Appends the element into the *DOM*. 
-
-Try typing these into the console.
-The first two don't make any difference to the page because the `<p>` element is not yet in the *DOM*.
-You should see that the final line inserts our newly created element into the page.
-
-> Notice that you can do this on any web page.
-It doesn't matter what web page you are viewing.
-However, it's easier to see what's happening if you use your own page.
-
-### Create a paragraph
-
-The first line declares a (constant) variable `element` and assigns it to a newly created paragraph element.
-
-```js {hl_lines="1"}
-const element = document.createElement("p");
-element.textContent = "hello";
-document.body.append(element);
-```
-
-> Variables declared with the `const` keyword cannot be reassigned with `=` later in the code.
-> It's good practice to always use `const` unless you need to reassign, in which case, use the `let` keyword.
-
-### Add some content
-
-The second line modifies the paragraph element by updating its `textContent` property.
-
-```js {hl_lines="2"}
-const element = document.createElement("p");
-element.textContent = "hello";
-document.body.append(element);
-```
-
-> Element objects have many properties and many ways to modify their content. 
-> The `textContent` property is particularly efficient when working with simple text.
-
-### Insert it into the *DOM*
-
-The final line appends the paragraph to the end of the document `<body>` element.
-
-```js {hl_lines="3"}
-const element = document.createElement("p");
-element.textContent = "hello";
-document.body.append(element);
-```
-
-> The `document` is a global object made available by the browser.
-> It provides an extensive API which can be used to interact with the *DOM*.
-> In this case, we are accessing the [document.body](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) property.
-
-## Defining a script
-
-Writing code in the JavaScript console is very useful for experiments and testing. 
-However, if we want to build JavaScript into our HTML document, we need to include a `<script>` element.
-
-In our *index.html* file, we can add a `<script>` element and put our code inside it.
-
-```html {hl_lines="10-14"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-    <script>
-        const element = document.createElement("p");
-        element.textContent = "hello";
-        document.body.append(element);
-    </script>
-</body>
-</html>
-```
-
-
-The browser continuously builds the *DOM* as it parses the file line-by-line.
-Each element is added into the *DOM* as soon as it is encountered.
-The browser will see the `<script>` element and execute our code.
-By default, scripts are executed immediately.
-
-> Simple `<script>` elements like this are often added as *the last element* within the body.
-
-Loading the page shows that the page now has an extra paragraph inserted at the end.
-
-{{<iframe src="examples/step-05" width="1200" height="220">}}{{</iframe>}}
-
-## Separate JavaScript files
-
-Rather than including code directly in the HTML document, our `<script>` element can be given an `src` attribute that points to a file containing the code.
-
-Create a new file *script.js* with our code.
-
-```js
-const element = document.createElement("p");
-element.textContent = "hello";
-document.body.append(element);
-```
-
-Now we can remove the code from the `<script>` element and simply point to it with the `src="script.js"` attribute.
-This keeps the HTML document simple and separates the content from the behaviour, just like the CSS file separates the presentation.
-
-```html {hl_lines="10"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-    <script src="script.js"></script>
-</body>
-</html>
-```
-
-> The page should still work exactly as before.
-
-### Script location
-
-Notice that the two *hard-coded* paragraphs are loaded into the *DOM* **before** the script is executed.
-If we move the script, the DOM will be in a different state when it executes. 
-
->Moving a line of code can be achieved easily with *Alt + up arrow* and *Alt + down arrow*.
-> See more keyboard shortcuts for [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf), [MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf) and [Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf).
-
-Move the `<script>` element *up* so it is in between the two paragraphs.
-
-```html {hl_lines="9"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <script src="script.js"></script>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-</body>
-</html>
-```
-
-The result is that our dynamically generated paragraph is moved up.
-This is because the `<body>` only includes one paragraph when the script is executed.
-
-> Remember, line 3 of the script appends our paragraph to the end of the `<body>` element.
-
-Move the `<script>` element above the two paragraphs.
-
-```html {hl_lines="8"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <script src="script.js"></script>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-</body>
-</html>
-```
-
-Now the `<body>` will be empty when the script is executed.
-
-In each case, the new paragraph is added earlier in the process and the browser continues parsing the file after the script has completed.
-
-### Scripts in the `<head>`
-
-Moving our script into the `<head>` is also allowed.
-
-```html {hl_lines="6"}
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-</body>
-</html>
-```
-
-However, our code causes an error if we move it into the `<head>`.
-
-> The JavaScript console reports this error:
->```markdown {linenos=false}
->Uncaught TypeError: Cannot read properties of null (reading 'append')
->    at script.js:3:15
->```
-> Error messages require careful attention.
-> This one tells us exactly what went wrong.
-> It says we tried to read the `append` property of `null`.
->
-> It reports the error occurred at the 15th character on line 3 of *script.js*
->
-> ```js {hl_lines="3"}
-> const element = document.createElement("p");
-> element.textContent = "hello";
-> document.body.append(element);
-> ```
-> We know that we were trying to call the `append` method of the `<body>` element here.
->
-> Our first task when debugging is to understand *what happened* and *why*.
->
-> Firstly we can be certain that the `body` property of the `document` object has a value of `null`.
-> We should realise that `null` has no `append` method, this is why the error occurred.
->
-> This is important to understand.
-> Error messages tell us exactly where to look and exactly what caused the error.
-
-The reason is that *by default* a `<script>` in the `<head>` of a document will execute *before* the `<body>` element has been added into the page.
-The solution is to mark the script with a `defer` attribute like this:
-
-```html {hl_lines="6"}
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-</body>
-</html>
-```
-
-> The `defer` attribute tells the browser to defer execution of the script until the document has been fully parsed.
-
-Or we can declare the script to be a JavaScript *module* by setting the `type="module"` attribute.
-
-```html {hl_lines="6"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-</body>
-</html>
-```
-
-> JavaScript modules provide a number of advantages, in particular they allow for splitting code over multiple files and using `import` and `export` statements within our code.
-> This is only important when a javascript project becomes larger and more complex.
-> For us, we get the same benefit as `defer` but we also force the script to be interpreted in [*strict mode*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#changes_in_strict_mode) (rather than the default [*sloppy mode*](https://developer.mozilla.org/en-US/docs/Glossary/Sloppy_mode)).
-> This is always good and will help us with debugging.
-
-## Creating a function
-
-Now wrap the three lines of javascript in a function definition.
-
-```js {hl_lines="1 5"}
-function insertParagraph() {
-    const element = document.createElement("p");
-    element.textContent = "hello";
-    document.body.append(element);
-}
-```
-
-We have named our function `insertParagraph`.
-Notice that the code only defines the function.
-We are not executing the function, so the paragraph is no longer added to the page.
-
-However, it is easy to call our function.
-We can now add multiple calls to the function to run the same code multiple times.
-
-```js {hl_lines="6-9"}
-function insertParagraph() {
-    const element = document.createElement("p");
-    element.textContent = "hello";
-    document.body.append(element);
-}
-
-insertParagraph();
-insertParagraph();
-insertParagraph();
-```
-
-You should now see three new paragraphs have been added to the page.
-Our code defines a function and then calls it three times.
-
-## Interaction
-
-You may have noticed that our code is a bit pointless.
-We could easily include three `<p>hello</p>` elements directly in the HTML to get the same result.
-
-To make it more interesting, we will add a button to the page which appends a new item to a list every time it is clicked.
-
-JavaScript is great for making a site interactive.
-There are a few important concepts we need to know.
-
-1. There are things called *events*, which can be triggered by the user.
-1. *Functions* can be used as *event handlers* in response to *events*.
-
-> Events can be triggered in other ways too, but we will focus on the *click* event which occurs when the user clicks a mouse button with the mouse pointer over an element.
-
-Let's add a button into *index.html*.
-
-```html {hl_lines="11"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-    <button id="my-btn">click me</button>
-</body>
-</html>
-```
-
-But clicking the button does nothing.
-We need to tell the browser to listen for the button's `click` event and call our function whenever it is triggered.
-
-Notice, we added an `id="my-btn"` attribute to the button.
-This allows us to easily pinpoint the specific element using JavaScript using the `getElementById` method of the `document` object.
-
-```js {hl_lines="1-2"}
-const btn = document.getElementById('my-btn');
-
-function insertParagraph() {
-    const element = document.createElement("p");
-    element.textContent = "hello";
-    document.body.append(element);
-}
-
-insertParagraph();
-insertParagraph();
-insertParagraph();
-```
-
-Now, we can add an `EventListener` to the button, passing two arguments, the event type we want to listen for (the `'click'` event) and the function to call (our `insertParagraph` function) when the event fires.
-
-```js {hl_lines="9"}
-const btn = document.getElementById('my-btn');
-
-function insertParagraph() {
-    const element = document.createElement("p");
-    element.textContent = "hello";
-    document.body.append(element);
-}
-
-btn.addEventListener('click', insertParagraph);
-```
-
-Now clicking the button should add a paragraph into the page.
-
-{{<iframe src="examples/step-06" width="1200" height="500">}}{{</iframe>}}
-
-Make sure your code works just like the above example.
-
-## A final tweak
-
-Ok, we are nearly finished now.
-We just want to modify how this works by adding a few tweaks to the HTML, CSS and JavaScript.
-
-### Add a container
-
-First, we will add a new `<div id="output">` element into *index.html*.
-This will contain our paragraphs and will ultimately allow us to modify the layout of the paragraphs using CSS.
-
-```html {hl_lines="12"}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VSCode experiment</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
-</head>
-<body>
-    <p>This is an experiment.</p>
-    <p>See the <a href="about.html">about</a> page for more information</p>
-    <button id="my-btn">click me</button>
-    <div id="output"></div>
-</body>
-</html>
-```
-
-### Use the container
-
-Now we can tweak *script.js* to append the new elements to the new element rather than directly into the `<body>`. 
-
-```js {hl_lines="2 7"}
-const btn = document.getElementById('my-btn');
-const output = document.getElementById('output');
-
-function insertParagraph() {
-    const element = document.createElement("p");
-    element.textContent = "hello";
-    output.append(element);
-}
-
-btn.addEventListener('click', insertParagraph);
-```
-
-> Use the *elements* panel in the developer tools to watch what happens to the DOM when you click the button a few times.
-> You should see that the changes we are making to the DOM are very simple.
-> We are adding a new `<p>hello</p>` into the `<div id="output">` element every time we click.
-
-### Style the container
-
-Finally, we can start playing with the way we present the document by modifying *style.css*.
-
-Add a ruleset for the `#output` selector, setting the background colour for the `<div>` to `red`.
-
-
-```css {hl_lines="6-9"}
-body {
-    background-color: orange;
-    font-size: 1.4em;
-    font-family: cursive;
-}
-
-#output {
-    background-color: red;
-}
-```
-
-> CSS selectors allow us to pinpoint elements we want to style.
-> We can select specific ids using the `#id` selector.
-
-Now let's add another ruleset for the `#output p` selector, which will apply to all the paragraph elements *inside* our `<div>`.
-
-```css {hl_lines="10-13"}
-body {
-    background-color: orange;
-    font-size: 1.4em;
-    font-family: cursive;
-}
-
-#output {
-    background-color: red;
-}
-
-#output p {
-    background-color: yellow;
-}
-```
-
-> [Combinators](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators) allow us to combine selectors to pinpoint more specific elements.
-> The space in `#output p` selector is known as the *decendant combinator*.
-> `#output p` selects all `p` elements which are decendants of (i.e. are inside) the `#output` element.
-
-Click the button a few times to see the impact. 
-Make sure you understand what just happened.
-
-![paragraph margins](images/step-07-1.png)
-
-> The *normal* paragraphs, outside of the `#output` element, are unaffected.
-
-Notice that the yellow `<p>` elements are separated by a default top and bottom `margin`.
-This allows us to see the red background of the containing `<div>` between them.
-
-Also, the `<p>` elements themselves provide just enough room for the text content and no more.
-We can add a bit of room by setting the padding.
-
-```css {hl_lines="13"}
-body {
-    background-color: orange;
-    font-size: 1.4em;
-    font-family: cursive;
-}
-
-#output {
-    background-color: red;
-}
-
-#output p {
-    background-color: yellow;
-    padding: 5px 10px;
-}
-```
-
-This gives the content (the text **"hello"**) a bit more space *within* the paragraph.
-
-![paragraph padding](images/step-07-2.png)
-
-### Modify the formatting context
-
-Now we will change the [formatting context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts) of the `<div>` by setting it's `display` property to `flex`.
-
-The `display` property can completely change our `#output` element layout.
-So the elements follow different rules from the default `block` formatting context.
-
-By setting it to `flex`, we implicitly make all its direct children (i.e. all the `<p>` elements) into `flex-items`, changing their behaviour drastically.
-
-Essentially, this means they will position themselves horizontally.
-We can add a few more rules to put space between the elements and position them in the center.
-
-```css {hl_lines="9-12 19"}
-body {
-    background-color: orange;
-    font-size: 1.4em;
-    font-family: cursive;
-}
-
-#output {
-    background-color: red;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
-    padding: 5px 10px;
-}
-
-#output p {
-    background-color: yellow;
-    padding: 5px 10px;
-    margin: 0;
-}
-```
-
-The result is clearly a major change.
-
-![flexbox](images/step-07-3.png)
-
-
-> We also set the `flex-wrap` property.
-This prevents the `<p>` elements from overflowing the page and allows them to wrap, a bit like text and `inline` elements.
-
-Try adding lots of elements.
-
-{{<iframe src="examples/step-07" width="1200" height="350">}}{{</iframe>}}
-
-Remember, all we did was change the CSS. 
-The elements within the *DOM* are still exactly the same as they were before.
+{{<iframe src="./examples/hello-world/step-04" width="1200" height="200">}}{{</iframe>}}
 
 > Make sure you use the developer tools in *Chrome* to view the site from a developers perspective.
+
+## Upgrading the website
+
+We will end by expanding the pages into more complete documents.
+Giving them a sensible structure within the `<body>` element including a shared `<header>` and `<footer>` and placing the unique page content in a `<main>` element.
+
+Convert both files into this structure.
+
+```html {hl_lines=["8-16", "18-21"]}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VSCode experiment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My website</h1>
+        <nav>
+            <a href="index.html" class="current">home</a>
+            <a href="about.html">about</a>
+        </nav>
+    </header>
+    <main>        
+        <h2>This is an experiment.</h2>
+        <p>See the <a href="about.html">about</a> page for more information</p>
+    </main>
+    <footer>
+        &copy; My website developers
+    </footer>
+</body>
+</html>
+```
+
+We've added a navigation element which will create a clickable menu in the same place on both pages.
+This makes the website feel more coherent.
+
+We can also upgrade the stylesheet to create a page layout using grid and flex.
+
+```css
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    background-color: orange;
+    font-size: 1.4em;
+    font-family: monospace;
+    header, main, footer {
+        padding: 1rem;
+    }
+    header {
+        background-color: orangered;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            margin: 0;
+        }
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            padding: 0.25em 0.5em;
+            border-radius: 1em;
+            &:hover {
+                backdrop-filter: brightness(0.9);
+            }
+            &.current {
+                backdrop-filter: brightness(0.8);
+            }
+        }
+    }
+    footer {
+        font-size: 0.7em;
+        text-align: right;
+    }
+}
+```
+
+The body now takes up 100 viewport units (the full height) and has a grid layout leaving the header and footer sized automatically and giving the main element one fraction of any extra space available.
+
+The header has a different background colour and has a flex layout putting additional space between the heading and the nav and keeping them centrally aligned.
+We also now display the navigation links differently for the current page and when they are hovered by the mouse.
+
+The footer text has been reduced in size and aligned to the right.
+
+{{<iframe src="./examples/hello-world/step-05" width="1200" height="600">}}{{</iframe>}}
+
+One thing we should notice here is that if we add more pages to the site, they will all be able to share the CSS file but the HTML for the header and footer and the navigation menu will need to be added to each file. 
+If we want to make a change to any of this common HTML (such as adding a new navigation link), we will need to make the change in every document.
+
+> This problem will be solved when we construct our HTML dynamically on the server using JavaScript.
 
 ## Conclusions
 
@@ -828,5 +361,5 @@ In this exercise we have seen that we can use *VSCode* and the *Chrome* browser 
 1. We have served these documents using the *live server* extension and accessed them via the *Chrome* browser.
 1. We added *hyperlinks* to allow us to navigate between pages.
 1. We added *CSS rulesets* to provide different styles on each page.
-1. We added JavaScript code to modify the *DOM* in response to user interaction.
-1. We saw how changes to the *CSS* can make drastic changes to how the content are presented in the browser, including how elements are positioned.
+1. We saw how linking each page to the same *CSS* file allowed pages to share the same stylesheet.
+1. We saw that more complex websites have many documents that may share common content such as headers and footers.

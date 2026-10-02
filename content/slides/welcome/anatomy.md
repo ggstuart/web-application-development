@@ -2,7 +2,10 @@
 title: Anatomy of an HTML element
 type: slide
 order: 2
-classes: [contain, black]
+classes: [contain, gap]
+params: 
+    layout:
+        rows: auto min-content auto
 ---
 
 > HTML elements consist of content between matching pairs of tags.

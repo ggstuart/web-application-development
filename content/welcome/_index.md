@@ -1,10 +1,10 @@
 ---
 title: welcome
 type: unit
-weight: 1
+weight: 101
 ---
 
-This unit introduces some context and includes a few simple exercises to get you started with the front-end technologies.
+This unit introduces some context and includes a few simple exercises to get you started with the tools we will be using in this module.
 
 <!--more-->
 
@@ -16,7 +16,7 @@ We aim to introduce the major aspects of these tools without going into huge det
 
 > If you already have experience with web technologies then these exercises will be very quick to complete and you may learn a few things.
 
-The unit ends with an exercise in which we build an extremely minimal website.
+The unit ends with an exercise in which we build an extremely minimal static website.
 We will use this exercise to start gaining practical experience with the basic workflows which will be used throughout the rest of the module.
 We will touch lightly on the various technologies involved, hopefully without overloading on the details.
 

@@ -5,15 +5,20 @@ weight: 10
 ---
 
 
-In this module we will be using the *VSCode* text editor to create and edit code files.
+In this module we will be using the *VSCode* text editor to create and edit code files using the languages of the web: *HTML*, *CSS* and *JavaScript*.
+
 
 <!--more-->
 
-[VSCode](https://code.visualstudio.com/) will help us to write in *HTML*, *CSS*, *JavaScript* and *PHP* and will also act as a **server** that can communicate with the web browser over *HTTP* to create a complete development environment for the web.
+>Other code editors are available, but according to the [2023 stackoverflow developer survey](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-integrated-development-environment), VSCode is the most popular text editor with developers by a huge margin.
+
+## What is VScode?
+
+When I wrote this exercise, [VSCode](https://code.visualstudio.com/) looked like this:
 
 {{<figure src="images/vscode.png" caption="My VSCode, I have a few extensions installed">}}
 
->Other code editors are available, but according to the [2023 stackoverflow developer survey](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-integrated-development-environment), VSCode is the most popular text editor with developers by a huge margin.
+It's probably changed a bit, but the core operation will be the same.
 
 ## Installation
 
@@ -219,9 +224,8 @@ You should get something like this.
 </html>
 ```
 
+Notice a few upgrades to our template above including a *lang* attribute and two `<meta>` elements. 
 This is how we recommend starting any new project.
-
-Notice a few upgrades to our template above including a *lang* attribute and two `<meta>` elements.
 
 #### The `lang` attribute
 
@@ -320,6 +324,11 @@ As you gain experience you will find your documents pass validation more and mor
 
 We will install the *live server* extension to run a simple **HTTP server** from within *VSCode*.
 
+> The *live server* extension will act as a simple **static file server**. Our web browser will communicate with VSCode over *HTTP* to create a complete development environment for the web.
+>
+> Later we will write our own web server
+
+
 On the left side of your VSCode window, select the extensions icon (usually the bottom icon) or use *Ctrl + Shift + X* to open the extensions panel and search for "live server" using the search bar at the top of the panel.
 
 Find the *live server* extension, click the "install" button and wait a few moments.
@@ -340,7 +349,7 @@ However, since it has no content, there is not much to see.
 
 It should look something like this...
 
-{{<iframe src="/examples/hello-world/example.html" width="1000" height="300">}}{{</iframe>}}
+{{<iframe src="/examples/vscode/example.html" width="1000" height="300">}}{{</iframe>}}
 
 The next exercise will guide you through adding some simple content to your page.
 
@@ -353,7 +362,7 @@ Check [the online validator](https://validator.w3.org/#validate_by_input) to mak
 
 See if you can create something like this.
 
-{{<iframe src="/examples/hello-world/challenge.html" width="1000" height="300">}}{{</iframe>}}
+{{<iframe src="/examples/vscode/challenge.html" width="1000" height="300">}}{{</iframe>}}
 
 > Use [this basic tutorial](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals) as a reference.
 
@@ -368,7 +377,7 @@ You may be surprised about what you can get away with.
 
 ## Conclusion
 
-VSCode is a powerful editor and will allow you to write code in HTML, CSS, JavaScript, PHP and SQL (as well as many more languages) with full syntax highlighting and *"intellisense"* auto-completion.
+VSCode is a powerful editor and will allow you to write code in HTML, CSS and JavaScript, (as well as many more languages) with full syntax highlighting and *"intellisense"* auto-completion.
 Using extensions (such as a web server), we can extend the functionality to make VSCode a powerful customised tool, specifically for web development.
 
 This exercise has hopefully been pretty straight forward.

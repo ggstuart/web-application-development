@@ -1,7 +1,5 @@
 *.lock
 public
-content/ignore
-content/building-an-app/database.md
-content/building-an-app/php.md
+content/0-*
 .vscode
 .*

@@ -1,7 +1,7 @@
 ---
 type: slide
 title: HTTP
-classes: [http]
+classes: [contain]
 ---
 
 > HyperText Transfer Protocol is the core mechanism for communicating between web clients (browsers) and web servers.

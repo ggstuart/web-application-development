@@ -1,7 +1,7 @@
 ---
 title: The world wide web
 type: slide
-classes: [contain]
+classes: [gap, img-52vh]
 order: 5
 ---
 
@@ -11,5 +11,5 @@ order: 5
 ![Tim Berners-Lee](images/welcome/timbl.png)
 ![A client/server model for a distributed hypertext system.](https://www.w3.org/History/1989/Image2.gif)
 
-> *Timbl* defined standards for and HTTP and HTML.
-> He also wrote a web server and a web client (browser). 
+> *Timbl*  wrote the first web server and a web client (browser).
+> He also defined **standards** for URLs, HTTP and HTML.
