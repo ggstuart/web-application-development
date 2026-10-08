@@ -161,12 +161,16 @@ All this does is lookup the command in **deno.json** and executes it.
 
 The server should be running again. 
 So we can see the result by visiting [http://localhost:8000/](http://localhost:8000/).
-
-> Visiting the link causes your browser to issue an HTTP GET request which will be received by our server and passed into our function.
-
 You should see a completely blank page. 
 No errors. 
 Just a blank page.
+
+{{<iframe src="examples/hello-server/blank.html" width="800" height="200">}}{{</iframe>}}
+
+
+> Visiting the link causes your browser to issue an HTTP GET request which will be received by our server and passed into our function.
+
+To see what happened, we can look a bit deeper.
 
 #### Inspecting the network traffic
 
@@ -227,14 +231,19 @@ Refresh the browser and... nothing happens?
 
 The problem here is that the server is still running the old version of the code. 
 In order to update the server with the new code, we need to stop the programme and restart.
+You can do this with *Ctrl + C* in the terminal and restarting the server with:
 
-You can do this with *Ctrl + C* in the terminal and then press the up arrow to bring up the previous command and press enter to start the server up with the new code. 
+```bash{linenos=false}
+deno task serve
+```
+
+> Hint: press the up arrow in the terminal to bring up previous commands and press enter to execute them. 
 
 However, to make our life easier, we can enable watch mode.
 
 #### Enable watch mode
 
-Watch mode will stop and restart the programme if we change a file.
+Watch mode will stop and restart the server if we change a file.
 To enable it, we need to add the `--watch` flag into our task.
 
 In fact, we can add a new task **dev** for development, in which we switch on the watch flag.
@@ -257,7 +266,7 @@ Now starting the server in developer mode is easy.
 deno task dev
 ```
 
-The **Watcher process started.** in the response indicates that any changes we make will cause the server to restart.
+Any changes we make from now on will cause the server to restart.
 
 ```plaintext {linenos=false}
 Task dev deno --watch --allow-net main.js
@@ -283,6 +292,9 @@ date: Fri, 02 Oct 2026 13:56:21 GMT
 We now have a `content-length` of **11** and a `content-type` of **text/plain;charset=UTF-8**.
 These were added automatically.
 
+> The body of the response can be viewd by switching from the **headers** panel (within the network panel) to the **response** panel.
+You should see the raw plaintext string we returned.
+
 ### An HTML response?
 
 We might think we can just give the browser HTML code and it will render a page for us.
@@ -300,7 +312,11 @@ Deno.serve(server);
 ```
 
 The browser should show that our response body is still being interpreted as plain text.
-We can see the heading tags in the browser viewport and the HTTP response looks like this.
+We can see the heading tags in the browser viewport.
+
+{{<iframe src="examples/hello-server/plaintext.html" width="800" height="200">}}{{</iframe>}}
+
+The HTTP response looks like this.
 
 ```http
 HTTP/1.1 200 OK
@@ -311,7 +327,7 @@ date: Fri, 02 Oct 2026 14:11:32 GMT
 
 Still clearly showing plain text, this time with 20 characters.
 
-### Set the content-type header
+### Setting the **content-type** header
 
 For the browser to understand that the response body should be interpreted as an HTML document, we need to set the **content-type** header to `text/html`.
 We can use the [headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) API for this.
@@ -333,6 +349,10 @@ We then pass the headers object as a property (the "headers" property) on the [o
 > Study the linked MDN documentation for details.
 
 You should now see that the browser is properly interpreting our HTML fragment as an HTML document.
+
+{{<iframe src="examples/hello-server/hello.html" width="800" height="200">}}{{</iframe>}}
+
+
 The response we are giving the browser should indicate the correct headers have been used.
 
 ```http
