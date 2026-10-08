@@ -54,7 +54,7 @@ Add the following, minimal content to the file.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
 </head>
 <body>
     <p>This is an experiment.</p>
@@ -102,7 +102,7 @@ We will add a hyperlink to *index.html* to allow the user to navigate to *about.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
 </head>
 <body>
     <p>This is an experiment.</p>
@@ -135,7 +135,7 @@ Add the following content to *about.html*.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
 </head>
 <body>
     <p>This is the about page.</p>
@@ -169,7 +169,7 @@ Update *index.html* as follows.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
     <style>
         body {
             background-color: pink;
@@ -195,7 +195,7 @@ Do something similar to the *about.html* file.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
     <style>
         body {
             background-color: yellow;
@@ -238,7 +238,7 @@ Now we can remove the `<style>` elements (and all their content) from our html d
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -270,7 +270,7 @@ Convert both files into this structure.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VSCode experiment</title>
+    <title>My website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
