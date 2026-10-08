@@ -19,7 +19,7 @@ theme = 'module'
 [params]
     moduleName = 'Web application development'
     moduleCode = 'CTEC2712'
-    customcss = ['colours.css', 'mdn.css']
+    customcss = ['css/colours.css', 'css/mdn.css']
 
 [security]
     allowContent = ["text/html", "text/markdown"]
