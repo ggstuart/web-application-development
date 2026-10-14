@@ -312,8 +312,8 @@ const movieRatings = ratings.filter(rating => rating.movieId === 1);
 console.log(movieRatings);
 ```
 
-> We are passing a callback function as an argument
-The callback must return true or false
+> We are passing a callback function as an argument.
+> The callback must return true or false.
 
 Using this approach, we can find ratings within our loop and pass them into our function.
 
@@ -382,9 +382,11 @@ Update your `printMovie` function to accept the new data format.
 
 Reduce allows array values to be accumulated.
 
-To calculate a total and average we can add each value to the total, beginning with zero:
+To calculate a total and average we can add each value to the total, beginning with zero.
+Inside your loop, each movie's scores are in its `ratings` array:
 
 ```JavaScript
+const scores = movie.ratings;
 const total = scores.reduce((sum, score) => sum + score, 0);
 const average = total / scores.length;
 ```
@@ -410,7 +412,7 @@ Highest Rating: 10
 Lowest Rating: 8
 ```
 
-## Step 16: Creating a Statistics Function
+## Step 14: Creating a Statistics Function
 
 Let's package this behaviour into a reusable function.
 
@@ -437,7 +439,7 @@ const {
 } = getRatingStatistics(scores);
 ```
 
-## Step 17: Creating Modules
+## Step 15: Creating Modules
 
 As programs grow, we split code into multiple files.
 
@@ -463,7 +465,7 @@ import { getRatingStatistics } from "./statistics.js";
 
 Run the program and confirm that it still works.
 
-## Step 18: Loading JSON Data
+## Step 16: Loading JSON Data
 
 Create a file called movies.json.
 
@@ -492,7 +494,7 @@ Do the same for `ratings.json`.
 
 Now your application separates data from code.
 
-## Step 19: Search Functionality
+## Step 17: Search Functionality
 
 Create a new module: `search.js`
 
@@ -511,12 +513,14 @@ export function searchByTitle(movies, searchTerm) {
 Use prompt():
 
 ```JavaScript
-const searchTerm = prompt("Search for a movie:");
+const searchTerm = prompt("Search for a movie:") ?? "";
 ```
+
+> `prompt()` returns `null` if the user cancels, so we fall back to an empty string.
 
 Display any matches.
 
-## Step 20: Bringing Everything Together
+## Step 18: Bringing Everything Together
 
 Create separate modules:
 ```plaintext
@@ -538,7 +542,7 @@ The application should be able to:
 
 Example output:
 
-```JavaScript
+```plaintext
 ========================================
 MOVIE REPORT
 ========================================
@@ -598,6 +602,6 @@ Average Rating: 8.4
 ## Conclusion
 
 In this exercise you have used modern JavaScript to build a simple movie database application. 
-Along the way you practised object-oriented data structures, destructuring, functions, collection processing,aggregation, modules, and JSON imports. 
+Along the way you practised object-oriented data structures, destructuring, functions, collection processing, aggregation, modules, and JSON imports. 
 These ideas will form the foundation for later exercises where JavaScript is used to build larger
 applications.

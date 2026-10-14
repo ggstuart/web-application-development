@@ -1,5 +1,5 @@
 ---
-title: welcome
+title: Welcome
 type: unit
 weight: 101
 ---
