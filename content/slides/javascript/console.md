@@ -1,7 +1,11 @@
 ---
 title: The JavaScript console
 type: slide
-classes: [even, burger, gap]
+classes: [burger, gap]
+params:
+    layout:
+        cols: 2fr 3fr
+        rows: auto 1fr 1fr 1fr 1fr auto
 ---
 
 There are several methods of the [console API] that we can use.

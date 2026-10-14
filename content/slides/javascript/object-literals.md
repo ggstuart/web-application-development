@@ -1,7 +1,11 @@
 ---
 type: slide
 title: Object literals
-classes: [one-two, gap, p-then-examples]
+classes: [gap, top-bun]
+params:
+    layout: 
+        cols: 1fr 2fr
+        rows: auto 1fr 1fr 1fr 1fr
 ---
 
 Objects can be treated as key/value pairs.

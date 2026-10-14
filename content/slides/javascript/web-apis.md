@@ -1,7 +1,11 @@
 ---
 type: slide
 title: web APIs
-classes: [one-two, burger, gap]
+classes: [burger, gap]
+params:
+    layout:
+        cols: 1fr 2fr
+        rows: auto 1fr 1fr auto
 ---
 
 Web APIs are defined by W3C/WHATWG as standard interfaces built on top of the ECMAScript core language.

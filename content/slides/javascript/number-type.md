@@ -1,10 +1,17 @@
 ---
 title: Numbers
 type: slide
-classes: []
+classes: [gap, burger]
+params:
+    layout:
+        cols: 1fr 2fr
+        rows: auto auto 1fr auto
+
 ---
 
-> All [numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) are floating point. Maths is pretty easy and obvious.
+All [numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) are floating point. 
+
+> Maths is pretty easy and obvious.
 
 ```js
 1 + 2 + 3;   // 6
@@ -25,7 +32,7 @@ Math.ceil(1.001);   // 2
 Math.floor(1.999);  // 1
 ```
 
-> See also: 
+See also: 
 [Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min), 
 [Math.max](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max), 
 [Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow), 

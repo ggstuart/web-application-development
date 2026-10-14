@@ -4,8 +4,7 @@ type: lecture
 weight: 1
 author: Dr Graeme Stuart
 slides:
-    - /slides/javascript/not-java.md
-    - /slides/javascript/ECMAScript.md
+    - /slides/javascript/lore.md
     - /slides/javascript/console.md
     - /slides/javascript/declare-variables.md
     - /slides/javascript/data-types.md

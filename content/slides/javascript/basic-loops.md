@@ -1,7 +1,10 @@
 ---
 title: Basic loops
 type: slide
-classes: [one-two, gap, p-then-examples]
+classes: [gap, top-bun]
+params:
+  layout:
+    cols: 1fr 2fr
 ---
 
 Repeating code multiple times.

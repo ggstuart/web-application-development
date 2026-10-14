@@ -1,7 +1,11 @@
 ---
 type: slide
 title: Maps
-classes: [even, p-then-examples, gap]
+classes: [top-bun, gap]
+params:
+  layout:
+    cols: 1fr 1fr
+    rows: auto auto 1fr 1fr 1fr 1fr 1fr
 ---
 
 A map is an object type which holds *key-value pairs*.

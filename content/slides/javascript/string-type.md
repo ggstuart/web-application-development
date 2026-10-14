@@ -1,7 +1,11 @@
 ---
 title: Strings
 type: slide
-classes: [two-three, burger, gap]
+classes: [burger, gap]
+params:
+    layout:
+        cols: 2fr 3fr
+        rows: auto 1fr 1fr 1fr auto
 ---
 
 [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) *literals* are specified by single or double quotes.

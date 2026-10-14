@@ -1,7 +1,11 @@
 ---
 title: More array methods
 type: slide
-classes: [p-burger, one-two, h-gap, p-then-examples]
+classes: [top-bun, gap]
+params: 
+    layout: 
+        cols: 1fr 2fr
+        rows: auto 1fr 1fr 1fr
 ---
 
 Some really useful methods of the `Array` class take callback functions as the main argument.

@@ -1,7 +1,10 @@
 ---
 title: Looping over iterables
 type: slide
-classes: []
+classes: [gap]
+params:
+    layout: 
+        rows: auto 1fr auto 1fr auto
 ---
 
 > Built-in *iterables* such as [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) follow the [iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#built-in_iterables).

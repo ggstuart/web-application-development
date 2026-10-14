@@ -1,0 +1,98 @@
+body {
+    font-family: system-ui;
+    font-size: 1.2em;
+    font-weight: 300;
+    display: grid;
+    place-items: center stretch;
+    min-height: 100dvh;
+    margin: 0;
+    padding-inline: 1rem;
+    background: linear-gradient(45deg, 
+        hsl(150, 40%, 70%), 
+        hsl(200, 70%, 70%) 30%,
+        hsl(200, 70%, 50%) 70%,
+        hsl(150, 40%, 50%)
+    )
+}
+
+* {
+    font: inherit;
+}
+
+a {
+    color: hsl(200, 70%, 20%);
+}
+
+label {
+    text-align: right;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: brightness(1.2);
+    border: 0.5px solid white;
+    box-shadow: 0 0 0.25rem black;
+    border-radius: 3px;
+    max-width: 70ch;
+    
+    fieldset {
+        border: 0.5px solid hsl(200, 100%, 20%);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem;
+        grid-column: 1 / 3;
+    }
+
+    &:has(input[type="search"]) {
+        grid-template-columns: 1fr auto;
+    }
+    &:not(:has(:nth-child(2))) {
+        grid-template-columns: 1fr;
+    }
+}
+
+button {
+    grid-column: 2;
+    place-self: end;
+}
+
+input {
+    min-width: 10ch;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    min-width: unset;
+    place-self: start;
+}
+
+form.validation-demo {
+    label {
+        position: relative; 
+        padding-right: 1.5ch;
+    }
+    label::after {
+        position: absolute;
+        right: 0;
+        content: "  ";
+    }
+    label:has(+input:user-invalid)::after {
+        content: "✗";
+        color: red;
+    }
+    label:has(+input:user-valid)::after {
+        content: "✔";
+        color: green;
+    }    
+    input:user-invalid {
+        outline: 1px solid red;
+    }
+}
+
+
+.three {
+    grid-template-columns: auto 1fr 1fr;
+}

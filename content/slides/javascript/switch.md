@@ -1,7 +1,10 @@
 ---
 title: Switch statements
 type: slide
-classes: []
+classes: [gap]
+params:
+  layout:
+    rows: auto 1fr auto
 ---
 
 > [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) statements are good when there are many options.

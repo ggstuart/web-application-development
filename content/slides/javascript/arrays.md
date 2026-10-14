@@ -1,7 +1,12 @@
 ---
 title: Arrays
 type: slide
-classes: [one-three, p-then-examples, gap, arrays]
+classes: [top-bun, gap]
+params:
+    layout:
+        cols: 3fr 5fr
+        rows: auto 1fr 1fr 1fr 1fr
+
 ---
 
 [Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) are ordered collections of data.

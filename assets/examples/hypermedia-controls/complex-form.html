@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <form>
+            <fieldset>
+                <legend>User info</legend>
+                <label for="username">Username: </label>
+                <input id="username" name="username" required>
+                <label for="password">Password: </label>
+                <input id="password" name="password" type="password" required>
+                <label for="confirm">Confirm: </label>
+                <input id="confirm" type="password" required>
+            </fieldset>
+            <fieldset>
+                <legend>Options</legend>
+                <label for="colour">Colour:</label>
+                <input id="colour" type="color" name="colour" required>
+                <label for="ok">OK:</label>
+                <input id="ok" type="checkbox" name="OK">
+                <label for="when">When:</label>
+                <input id="when" type="date" name="when" min="01/01/2000" required>
+                <label for="level">Level:</label>
+                <input id="level" type="range" min="0" max="4" name="level">
+            </fieldset>
+            <button>Register</button>
+        </form>
+    </body>
+</html>
+

@@ -1,7 +1,11 @@
 ---
 title: Functions
 type: slide
-classes: [one-two, gap, p-then-examples]
+classes: [gap, top-bun]
+params:
+  layout:
+    cols: 1fr 2fr
+    rows: auto 1fr 1fr 1fr auto
 ---
 
 Functions can help to avoid repetition and make code more readable and more maintainable.

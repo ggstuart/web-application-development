@@ -1,13 +1,16 @@
 ---
 type: slide
 title: Deno
-classes: [contain, auto-one, burger, img-25vh, gap]
+classes: [burger, gap, img-25vh]
+params:
+    layout:
+        cols: auto 1fr
+        rows: auto 25vh auto auto
 ---
 
 > [Deno](https://deno.com) is a modern (2018) open-source, standards-compliant runtime environment for executing JavaScript without a web browser.
 
 ![Ryan Dahl](./images/javascript/ryan-dahl.png)
-
 
 ```JavaScript
 // Run a web server by passing a server function to the non-standard Deno.serve API
@@ -19,7 +22,6 @@ Deno.serve(server)
 // - always returns a response object (in this case, we have two different responses)
 
 ```
-
 
 ![New Deno logo](https://upload.wikimedia.org/wikipedia/commons/c/c3/Deno_Logo_2024.svg)
 
