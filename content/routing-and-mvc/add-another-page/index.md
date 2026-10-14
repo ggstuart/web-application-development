@@ -121,14 +121,14 @@ We don't need all this information but notice a few things.
 
 Each request contains:
 
-    - A method (GET)
-    - A URL
-    - The headers we saw in the browser developer tools.
+- A method (GET)
+- A URL
+- The headers we saw in the browser developer tools.
 
 Loading the page once, results in multiple requests:
 
-    - "http://localhost:8000/"
-    - "http://localhost:8000/favicon.ico"
+- "http://localhost:8000/"
+- "http://localhost:8000/favicon.ico"
 
 > Again, you may not get the same result. 
 > The browser cache can mean some files are only requested occasionally.
@@ -432,7 +432,7 @@ It is clear that our code includes a lot of repetition.
 We will reduce the repetition with a helper function that allows us to generate an HTML response with a given layout and a given view function.
 
 Create a **tools** folder with a file called **render.js**.
-This will be the function we call when we want to render and HTML page.
+This will be the function we call when we want to render an HTML page.
 
 
 **tools/render.js**
@@ -484,7 +484,7 @@ We choose a different view depending on the circumstances.
 Our application is pretty simple, we check the incoming request and render a different view depending on the URL requested.
 We could easily expand this approach to include many simple static pages.
 
-Although our render function is great for rendering HTML pages, but we may want to do more.
+Although our render function is great for rendering HTML pages, we may want to do more.
 
 > e.g. interact with a database before generating a response.
 
@@ -582,7 +582,7 @@ Deno.serve(server);
 
 The controllers themselves represent *things our application can do*.
 
-If you made the changes to all files (make sure they are all saved) then the site should now work and if you visit [a missing page](http://localhost:8000/missing), the notfound view should be rendered with a 404 status code.
+If you made the changes to all files (make sure they are all saved) then the site should now work and if you visit [a missing page](http://localhost:8000/missing), the notFound view should be rendered with a 404 status code.
 
 ![The status code is properly set](/images/notFound.png)
 
@@ -593,7 +593,7 @@ If you made the changes to all files (make sure they are all saved) then the sit
 
 Now we have controllers and views we can introduce a simple version of *the context pattern* as a core part of our server architecture. 
 For our purposes, this means we will create an object which acts as the context for handling a request.
-It will contain all the information we need to generate the request and it will eventually pass though many functions and be updated along the way as we gather more information about the request.
+It will contain all the information we need to generate the response and it will eventually pass through many functions and be updated along the way as we gather more information about the request.
 
 What this means in practice is that our render function can actually take in the context object as its only argument.
 Everything it needs to access, will be available by destructuring the context object.
@@ -613,7 +613,7 @@ Now, our controllers will also take in the same context object.
 To maintain our working system, we need to make sure there is a view and a layout property set on the context.
 Optionally, we can also set a status code.
 
-> Lets assume a default layout is already set.
+> Let's assume a default layout is already set.
 
 **controllers/home.js**
 ```JavaScript {hl_lines=[4, 5, 6]}

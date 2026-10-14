@@ -281,7 +281,7 @@ We have added an important capability to our application.
 We updated the context with a slot for view data and our render function now passes the context through into views so we have a general purpose infrastructure for designing views which can build HTML around our application data.
 
 We have seen how we can create a model to provide access to data from within our controllers.
-Its relatively easy to build a new page which relies on some kind of data.
+It's relatively easy to build a new page which relies on some kind of data.
 However, the simple model we built doesn't allow the user to add, edit or delete items. 
 
 In the next exercise we will look at how to get user input into the application so we can trigger these kinds of actions.

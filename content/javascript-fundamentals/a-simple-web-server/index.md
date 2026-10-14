@@ -28,7 +28,7 @@ Before you start, you should initialise a git repository.
 
 ### Install the Deno Extension
 
-Web servers themselves (programmes which listen for HTTP requests) are not build into JavaScript as a language and there is no web standard for them.
+Web servers themselves (programmes which listen for HTTP requests) are not built into JavaScript as a language and there is no web standard for them.
 However, Deno does provide the non-standard [Deno.serve](https://docs.deno.com/api/deno/http-server/#Deno.serve) API. 
 
 Type **Deno** into your `main.js` file and add a dot.
@@ -49,7 +49,7 @@ We need to install and activate the deno language server for this.
 ### Activate the Deno extension
 
 The Deno extension adds knowledge of the APIs and coding conventions from the deno environment to VSCode.
-However, Installing the deno extension doesn't automatically activate it because if you were writing browser-based JavaScript, you would not want the deno extension activated.
+However, installing the deno extension doesn't automatically activate it because if you were writing browser-based JavaScript, you would not want the deno extension activated.
 
 Activate it by typing **Ctrl + Shift + P** to open the VSCode command palette and search for **Deno: Enable**.
 Select the enable option.
@@ -137,7 +137,7 @@ Notice, you were not prompted for permission because you gave explicit permissio
 
 Deno can be configured by creating a **deno.json** file in the root of the project.
 One of the important uses of this file is to create `tasks` which are essentially shortcuts for complex commands.
-Since we will often ned to start our server, and the command is already quite long (it will get longer) we can create a `serve` task to make life easier. 
+Since we will often need to start our server, and the command is already quite long (it will get longer) we can create a `serve` task to make life easier. 
 
 Create a **deno.json** file and add a task we can use for starting the server.
 
@@ -292,7 +292,7 @@ date: Fri, 02 Oct 2026 13:56:21 GMT
 We now have a `content-length` of **11** and a `content-type` of **text/plain;charset=UTF-8**.
 These were added automatically.
 
-> The body of the response can be viewd by switching from the **headers** panel (within the network panel) to the **response** panel.
+> The body of the response can be viewed by switching from the **headers** panel (within the network panel) to the **response** panel.
 You should see the raw plaintext string we returned.
 
 ### An HTML response?
@@ -345,7 +345,7 @@ We create a headers object and [initialise](https://developer.mozilla.org/en-US/
 We then pass the headers object as a property (the "headers" property) on the [options](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#options) object we pass into the Response constructor as a second argument after our html string which represents the [body](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#body) of the Response.
 
 > Make sure that makes sense to you.
-> Passing an object as a "bag of options" of a common JavaScript pattern.
+> Passing an object as a "bag of options" is a common JavaScript pattern.
 > Study the linked MDN documentation for details.
 
 You should now see that the browser is properly interpreting our HTML fragment as an HTML document.

@@ -74,7 +74,7 @@ You should see a form, but it isn't obvious what it does, especially for assisti
 We can add a label and link it to the input.
 
 > The button already has content inside. 
-If you think it needs more explanation then add an aria-label attribute to the button.
+> If you think it needs more explanation then add an aria-label attribute to the button.
 
 ```JavaScript{hl_lines="8-9"}
 export default function itemsView(ctx) { 
@@ -229,7 +229,7 @@ Submit the form in the browser and you should see the formData object is logged.
 FormData { item: "test" }
 ```
 
-### Add the "item" entry to our model.
+### Add the "item" entry to our model
 
 We can also extract the specific value we want using the [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) API.
 Specifically we will use the [get](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get) method.

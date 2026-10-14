@@ -312,8 +312,8 @@ const movieRatings = ratings.filter(rating => rating.movieId === 1);
 console.log(movieRatings);
 ```
 
-> We are passing a callback function as an argument
-The callback must return true or false
+> We are passing a callback function as an argument.
+> The callback must return true or false.
 
 Using this approach, we can find ratings within our loop and pass them into our function.
 
@@ -542,7 +542,7 @@ The application should be able to:
 
 Example output:
 
-```JavaScript
+```plaintext
 ========================================
 MOVIE REPORT
 ========================================
@@ -602,6 +602,6 @@ Average Rating: 8.4
 ## Conclusion
 
 In this exercise you have used modern JavaScript to build a simple movie database application. 
-Along the way you practised object-oriented data structures, destructuring, functions, collection processing,aggregation, modules, and JSON imports. 
+Along the way you practised object-oriented data structures, destructuring, functions, collection processing, aggregation, modules, and JSON imports. 
 These ideas will form the foundation for later exercises where JavaScript is used to build larger
 applications.

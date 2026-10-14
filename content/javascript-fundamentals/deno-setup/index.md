@@ -1,6 +1,6 @@
 ---
 type: exercise
-title: deno setup
+title: Deno setup
 weight: 2
 author: Dr Graeme Stuart
 ---
@@ -105,4 +105,4 @@ logging cherries
 
 We have installed deno and executed a very simple JavaScript programme.
 
-> Now try writing some simple JavaScript programmes to see what you can do with [while loops] or .
+> Now try writing some simple JavaScript programmes to see what you can do with [while loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while).
