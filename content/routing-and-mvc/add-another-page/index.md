@@ -16,11 +16,11 @@ You should have a working **hello world** page from the [previous exercise]({{< 
 
 - Inspecting the request object
 - basic routing
-- dividing code into modules
+- dividing code into [modules]
 - the context pattern
 - request handlers
 - basic view functions
-- string interpolation with simple template literals
+- string interpolation with simple [template literals]
 
 
 
@@ -47,7 +47,7 @@ If not then start the server with your existing *"dev"* task in your terminal.
 deno task dev
 ```
 
-Make a request to your server by visiting [the home page](http://localhost:8000) in your browser.
+Make a request to your server by visiting [the home page] in your browser.
 
 You should see lots of output in your terminal.
 Notice that each request is a fairly complex object and there are multiple requests for each page load.
@@ -162,7 +162,7 @@ http://localhost:8000/.well-known/appspecific/com.chrome.devtools.json
 
 ### Constructing a URL object
 
-If we want to extract the pathname from the URL, we can use the URL API to do the work for us.
+If we want to extract the pathname from the URL, we can use the [URL API][url api] to do the work for us.
 
 ```JavaScript{hl_lines=[2, 3]}
 function server(request) {
@@ -420,7 +420,7 @@ Deno.serve(server);
 ```
 
 All the errors are now gone.
-Also note that we can visit a missing url such as [http://localhost:8000/missing](http://localhost:8000/missing) and the **Not Found** page will be rendered.
+Also note that we can visit a missing url such as [http://localhost:8000/missing] and the **Not Found** page will be rendered.
 
 > We have not set the response status code to 404. 
 > We will come back to this later.
@@ -548,7 +548,7 @@ export default function render(view, layout, { status } = {}) {
 }
 ```
 
-> We are destructuring the third argument.
+> We are [destructuring] the third argument.
 > We would get an error if the argument was undefined as we cannot destructure undefined.
 > To handle this, we provide an empty object as a default value. 
 > With this default, when no value is provided, the status variable simply becomes undefined.
@@ -582,7 +582,7 @@ Deno.serve(server);
 
 The controllers themselves represent *things our application can do*.
 
-If you made the changes to all files (make sure they are all saved) then the site should now work and if you visit [a missing page](http://localhost:8000/missing), the notFound view should be rendered with a 404 status code.
+If you made the changes to all files (make sure they are all saved) then the site should now work and if you visit [a missing page][http://localhost:8000/missing], the notFound view should be rendered with a 404 status code.
 
 ![The status code is properly set](/images/notFound.png)
 
@@ -694,3 +694,9 @@ We have **view helpers** and a **layout function** which handle the details of c
 However, we are receiving requests for supplementary static files such as an icon and a stylesheet which are not being correctly handled.
 Our server simply returns an HTML response for these requests stating that the files were not found.
 
+[modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[template literals]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+[the home page]: http://localhost:8000
+[url api]: https://developer.mozilla.org/en-US/docs/Web/API/URL
+[http://localhost:8000/missing]: http://localhost:8000/missing
+[destructuring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring

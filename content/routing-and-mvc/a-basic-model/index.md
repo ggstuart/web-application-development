@@ -245,7 +245,7 @@ All we need to do is update our new view to render the attached data.
 
 ### Use the data from within the view
 
-In our items view we extract the items array from the context with a nested destructuring and use the **itemToHTML** helper function to map each item string to an `<li>` element.
+In our items view we extract the items array from the context with a nested destructuring and use the **itemToHTML** helper function to [map] each item string to an `<li>` element.
 The resulting array is joined with some spacing and inserted into a `<ul>` element in the result.
 
 
@@ -285,3 +285,5 @@ In the next exercise we will look at how to get user input into the application 
 
 > We are taking it one step at a time.
 > Eventually, we will connect this simple model with an SQLite database.
+
+[map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map

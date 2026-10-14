@@ -57,7 +57,7 @@ export default function layout(content) {
 
 Create a folder called **public** in which all static files can be stored.
 
-Download [icon.svg](/images/icons/icon.svg) and save it in the folder.
+Download [icon.svg] and save it in the folder.
 
 > Notice that we are requesting "/assets/icon.svg" but the file is located at "public/icon.svg".
 This difference will be handled properly whilst protecting our code from being accessed.
@@ -109,9 +109,9 @@ body {
 
 ## Import the @std/http module from jsr
 
-We will use the [serveDir](https://jsr.io/@std/http/doc/~/serveDir) function from the deno standard library.
+We will use the [serveDir][servedir] function from the deno standard library.
 
-We can add the [@std/http module](https://jsr.io/@std/http) into our application as a dependency using this command in the terminal.
+We can add the [@std/http module] into our application as a dependency using this command in the terminal.
 
 ```bash
 deno add jsr:/@std/http
@@ -214,3 +214,6 @@ You should see that the site now has a stylesheet and icon as expected.
 
 > Sometimes you might need to do a "hard refresh" in your browser with **Ctrl + Shift + R** to force a request for previously missing static files.
 
+[icon.svg]: /images/icons/icon.svg
+[servedir]: https://jsr.io/@std/http/doc/~/serveDir
+[@std/http module]: https://jsr.io/@std/http

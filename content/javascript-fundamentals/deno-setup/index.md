@@ -16,7 +16,7 @@ The first step is to get deno installed.
 We will do this from the integrated terminal within **Visual Studio Code**.  
 
 > The following instructions are suitable for the lab machines running windows.
-General instructions for installing deno can be found at [the deno website](https://deno.com).
+General instructions for installing deno can be found at [the deno website].
 
 Open VSCode and press **Ctrl + @** to open the integrated terminal.
 
@@ -105,4 +105,7 @@ logging cherries
 
 We have installed deno and executed a very simple JavaScript programme.
 
-> Now try writing some simple JavaScript programmes to see what you can do with [while loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while).
+> Now try writing some simple JavaScript programmes to see what you can do with [while loops].
+
+[the deno website]: https://deno.com
+[while loops]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while

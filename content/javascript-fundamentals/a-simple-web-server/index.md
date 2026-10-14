@@ -12,7 +12,7 @@ We will create an HTTP request handler function that accepts a request object an
 
 ## Learning objectives
 
-Primarily, we will be exploring the various ways we can use the [Response constructor](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#syntax) to create [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects that can be returned to the browser.
+Primarily, we will be exploring the various ways we can use the [Response constructor][response constructor] to create [Response][response] objects that can be returned to the browser.
 We will also see how to configure tasks in a deno project and how to put together a very simple web server.
 
 ## Setup
@@ -29,7 +29,7 @@ Before you start, you should initialise a git repository.
 ### Install the Deno Extension
 
 Web servers themselves (programmes which listen for HTTP requests) are not built into JavaScript as a language and there is no web standard for them.
-However, Deno does provide the non-standard [Deno.serve](https://docs.deno.com/api/deno/http-server/#Deno.serve) API. 
+However, Deno does provide the non-standard [Deno.serve][deno.serve] API. 
 
 Type **Deno** into your `main.js` file and add a dot.
 
@@ -72,9 +72,9 @@ You should now have autocompletion activated.
 
 The `Deno.serve` API requires that we pass in a request handler.
 
-> A request handler is a function that takes a standard [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) object as an argument and returns a standard [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object.
+> A request handler is a function that takes a standard [Request][request] object as an argument and returns a standard [Response][response] object.
 > This is exactly what a web server should do.
-Deno implements the standard [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+Deno implements the standard [fetch API][fetch api].
 
 We can begin with the simplest possible valid request handler.
 All we do is return a blank response, every time.
@@ -160,7 +160,7 @@ All this does is lookup the command in **deno.json** and executes it.
 ### Make a request with the browser
 
 The server should be running again. 
-So we can see the result by visiting [http://localhost:8000/](http://localhost:8000/).
+So we can see the result by visiting [http://localhost:8000/][localhost].
 You should see a completely blank page. 
 No errors. 
 Just a blank page.
@@ -217,7 +217,7 @@ We got an **OK** status code with zero content.
 
 ### Change the response
 
-Let's give the browser something more interesting by passing a [body](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#body) to the [Response constructor](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response).
+Let's give the browser something more interesting by passing a [body][response body] to the [Response constructor][response constructor].
 
 ```JavaScript {hl_lines=2}
 function server() { 
@@ -329,8 +329,8 @@ Still clearly showing plain text, this time with 20 characters.
 
 ### Setting the **content-type** header
 
-For the browser to understand that the response body should be interpreted as an HTML document, we need to set the **content-type** header to `text/html`.
-We can use the [headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) API for this.
+For the browser to understand that the response body should be interpreted as an HTML document, we need to set the [**content-type**][content-type] header to `text/html`.
+We can use the [headers] API for this.
 
 ```JavaScript{hl_lines=[2, 3]}
 function server() { 
@@ -341,8 +341,8 @@ function server() {
 Deno.serve(server);
 ```
 
-We create a headers object and [initialise](https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers#init) it with an object literal containing the header data we want.
-We then pass the headers object as a property (the "headers" property) on the [options](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#options) object we pass into the Response constructor as a second argument after our html string which represents the [body](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#body) of the Response.
+We create a headers object and [initialise][headers init] it with an object literal containing the header data we want.
+We then pass the headers object as a property (the "headers" property) on the [options][response options] object we pass into the Response constructor as a second argument after our html string which represents the [body][response body] of the Response.
 
 > Make sure that makes sense to you.
 > Passing an object as a "bag of options" is a common JavaScript pattern.
@@ -365,12 +365,24 @@ date: Fri, 02 Oct 2026 14:21:49 GMT
 ## Challenge: Experiment with status codes
 
 We can also set the status code for the response. 
-Just add a [status](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#status) property to the Response options.
+Just add a [status][response status] property to the Response options.
 
 > We wouldn't normally do this without a good reason, but we are just experimenting.
 
 Try setting the status to various codes:
 - 500 to indicate an unknown server error.
-- [4xx](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status#client_error_responses) to indicate various client errors
+- [4xx] to indicate various client errors
 
-
+[response]: https://developer.mozilla.org/en-US/docs/Web/API/Response
+[deno.serve]: https://docs.deno.com/api/deno/http-server/#Deno.serve
+[request]: https://developer.mozilla.org/en-US/docs/Web/API/Request
+[fetch api]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+[localhost]: http://localhost:8000/
+[response body]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#body
+[response constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
+[content-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type
+[headers]: https://developer.mozilla.org/en-US/docs/Web/API/Headers
+[headers init]: https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers#init
+[response options]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#options
+[response status]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#status
+[4xx]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status#client_error_responses

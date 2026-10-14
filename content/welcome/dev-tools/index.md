@@ -18,7 +18,7 @@ They also have a secondary function, to act as platforms for developers to *debu
 
 ## Choosing a browser
 
-In this module we can use any browser, but the materials will assume one based on [Google Chromium](https://www.chromium.org/Home/) such as [Chrome](https://www.google.com/intl/en_uk/chrome/) or [Edge](https://explore.microsoft.com/en-us/edge).
+In this module we can use any browser, but the materials will assume one based on [Google Chromium][google chromium] such as [Chrome][chrome] or [Edge][edge].
 The main reason for this is that these are *the most popular browsers* and very likely will be used by the majority of your users.
 
 You should already have a Google Chromium-based browser (Chrome or Edge) open and be viewing this web page.
@@ -77,7 +77,7 @@ Alternatively, in the Browser menu, select *more tools* and *developer tools* or
 > {{< youtube id="c0WtSJfUJRQ" class="youtube" title="getting started with devTools">}}
 >
 > **Wait. Don't watch videos during the timetabled lab sessions!**
->You can watch it later, and have a look at [more dev tools videos](https://www.youtube.com/@ChromeDevs/search?query=devtools) from [the google chrome developers channel](https://www.youtube.com/@ChromeDevs), which has some good content.
+>You can watch it later, and have a look at [more dev tools videos] from [the google chrome developers channel], which has some good content.
 >
 
 
@@ -126,7 +126,7 @@ Your changes are not permanent.
 ><img src="https://placecats.com/600/200" alt="a random cat">
 >```
 > Remember to press *F2* to apply the change. 
-> You should see an image of a random cat from [placecats.com](https://placecats.com).
+> You should see an image of a random cat from [placecats.com].
 
 ### Editing style rules
 
@@ -154,7 +154,7 @@ You will find the image inside a paragraph.
 Select the *animation-duration* rule and change the value from `5s` to `1s`.
 You should see the animation now takes place much faster, taking only one second to complete in each of the alternating directions.
 
-> You can learn more about [CSS animations in the Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)  documentation
+> You can learn more about [CSS animations in the Mozilla Developer Network][css animations in the mozilla developer network]  documentation
 
 ## The JavaScript console
 
@@ -221,3 +221,10 @@ They can also be used to make temporary changes to the *document object model* w
 
 These tools are **critical** when working in web development.
 
+[google chromium]: https://www.chromium.org/Home/
+[chrome]: https://www.google.com/intl/en_uk/chrome/
+[edge]: https://explore.microsoft.com/en-us/edge
+[more dev tools videos]: https://www.youtube.com/@ChromeDevs/search?query=devtools
+[the google chrome developers channel]: https://www.youtube.com/@ChromeDevs
+[placecats.com]: https://placecats.com
+[css animations in the mozilla developer network]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations

@@ -10,11 +10,11 @@ In this module we will be using the *VSCode* text editor to create and edit code
 
 <!--more-->
 
->Other code editors are available, but according to the [2023 stackoverflow developer survey](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-integrated-development-environment), VSCode is the most popular text editor with developers by a huge margin.
+>Other code editors are available, but according to the [2023 stackoverflow developer survey], VSCode is the most popular text editor with developers by a huge margin.
 
 ## What is VScode?
 
-When I wrote this exercise, [VSCode](https://code.visualstudio.com/) looked like this:
+When I wrote this exercise, [VSCode][vscode] looked like this:
 
 {{<figure src="images/vscode.png" caption="My VSCode, I have a few extensions installed">}}
 
@@ -22,7 +22,7 @@ It's probably changed a bit, but the core operation will be the same.
 
 ## Installation
 
-Download VSCode [for your platform](https://code.visualstudio.com/Download) and do the normal things.
+Download VSCode [for your platform] and do the normal things.
 Installation should be fairly painless. 
 
 Once installed, the system should already be set up for basic web development.
@@ -110,7 +110,7 @@ This is a declaration that software can read to understand that the file should 
 
 Our template contains a simple, modern *doctype* (`<!DOCTYPE html>`) which indicates the browser should use the current, most modern HTML standards.
 
-> The [doctype](https://www.w3.org/wiki/Doctypes_and_markup_styles) is only really needed for legacy purposes.
+> The [doctype] is only really needed for legacy purposes.
 > Note that an HTML document written in 1992 would look quite different from a modern document, but it will still be rendered correctly by modern browsers if the older doctype is set correctly.
 >
 > These are some older doctypes you may encounter on the web:
@@ -201,7 +201,7 @@ Before we add some content, we should look more closely at the tools provided by
 You may have noticed when you type something into VSCode, the editor offers suggestions and options.
 Some of these are driven by a tool called emmet which is built into VSCode as well as other editors.
 
-> You may find [this emmet cheatsheet](https://docs.emmet.io/cheat-sheet/) useful to save as a reference.
+> You may find [this emmet cheatsheet] useful to save as a reference.
 
 For example, if you delete all the code in **index.html** and place your cursor in the file then you can type a single exclamation mark (!) to trigger the basic HTML5 template.
 
@@ -229,7 +229,7 @@ This is how we recommend starting any new project.
 
 #### The `lang` attribute
 
-There's a [lang attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) on the `<html>` element.
+There's a [lang attribute] on the `<html>` element.
 
 ```html {hl_lines="2"}
 <!DOCTYPE html>
@@ -302,7 +302,7 @@ It essentially tells mobile browsers not to mess with the viewport.
 
 ## Validation
 
-We can validate our code using the [W3C markup validator](https://validator.w3.org/#validate_by_input).
+We can validate our code using the [W3C markup validator][w3c markup validator].
 Simply paste your document into the page and click the *check* button.
 
 This should provide a report with no errors or warnings.
@@ -356,7 +356,7 @@ The next exercise will guide you through adding some simple content to your page
 ## Challenges
 
 Before moving on, try adding some HTML content and see how it is rendered in the browser.
-Check [the online validator](https://validator.w3.org/#validate_by_input) to make sure your code is valid.
+Check [the online validator][w3c markup validator] to make sure your code is valid.
 
 ### Recreate something simple
 
@@ -364,7 +364,7 @@ See if you can create something like this.
 
 {{<iframe src="/examples/vscode/challenge.html" width="1000" height="300">}}{{</iframe>}}
 
-> Use [this basic tutorial](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals) as a reference.
+> Use [this basic tutorial] as a reference.
 
 ### Play with validation
 
@@ -391,10 +391,20 @@ Just be aware that each piece of the default template has a purpose, and that yo
 ## VSCode tutorials
 
 We have only scratched the surface of VSCode in this exercise. 
-Check out the [official VSCode videos](https://code.visualstudio.com/docs/getstarted/introvideos#VSCode). 
+Check out the [official VSCode videos][official vscode videos]. 
 In particular, this video will give you a good start.
 
 {{< youtube B-s71n0dHUk >}}
 
 > For obvious reasons, we would prefer it if you watched video content outside of timetabled lab sessions.
 > You should use the sessions to work through exercises, experiment and to ask questions.
+
+[2023 stackoverflow developer survey]: https://survey.stackoverflow.co/2023/#section-most-popular-technologies-integrated-development-environment
+[vscode]: https://code.visualstudio.com/
+[for your platform]: https://code.visualstudio.com/Download
+[doctype]: https://www.w3.org/wiki/Doctypes_and_markup_styles
+[this emmet cheatsheet]: https://docs.emmet.io/cheat-sheet/
+[lang attribute]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+[w3c markup validator]: https://validator.w3.org/#validate_by_input
+[this basic tutorial]: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals
+[official vscode videos]: https://code.visualstudio.com/docs/getstarted/introvideos#VSCode
