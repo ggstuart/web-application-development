@@ -23,7 +23,7 @@ To handle these requests, all we need to do is grab the correct file and build i
 > The **favicon.ico** file is being requested because the HTML standard says that if no icon is specified by a document, that the browser should make requests for **favicon.ico**. 
 We will add an explicit icon to take control.
 
-Update **layout.js** to include a linked icon at **href="static/icon.svg"** and move the stylesheet to **href="static/style.css"**.
+Update **layout.js** to include a linked icon at **href="/assets/icon.svg"** and move the stylesheet to **href="/assets/styles.css"**.
 
 
 ```JavaScript{hl_lines="7-8"}
@@ -33,8 +33,8 @@ export default function layout(content) {
 <html>
 <head>
     <title>My website</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="icon" href="static/icon.svg">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="icon" href="/assets/icon.svg">
 </head>
 <body>
     <header>
@@ -59,10 +59,10 @@ Create a folder called **public** in which all static files can be stored.
 
 Download [icon.svg](/images/icons/icon.svg) and save it in the folder.
 
-> Notice that we are requesting "/static/icon.svg" but the file is located at "public/icon.svg".
+> Notice that we are requesting "/assets/icon.svg" but the file is located at "public/icon.svg".
 This difference will be handled properly whilst protecting our code from being accessed.
 
-We can also create a stylesheet, using the code from the previous example.
+We can also create a stylesheet **public/styles.css**, using the code from the previous example.
 
 
 ```css
@@ -171,7 +171,7 @@ export function staticController(ctx) {
     const { request } = ctx;
     return serveDir(request, {
         fsRoot: "public",
-        urlRoot: "static"
+        urlRoot: "assets"
     })
 } 
 ```
@@ -192,7 +192,7 @@ export default function server(request) {
     const ctx = { request, url, layout };
     console.log(url.pathname);
 
-    if(url.pathname.startsWith("static/")) {
+    if(url.pathname.startsWith("/assets/")) {
         return staticController(ctx);
     }
 

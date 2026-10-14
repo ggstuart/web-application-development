@@ -199,7 +199,7 @@ export default function layout() {
 <html>
 <head>
     <title>My website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <header>
@@ -247,15 +247,15 @@ Now, when you load the site in the browser, you should see that clicking the lin
 >
 > ```bash{linenos=false}
 > /
-> /style.css
+> /styles.css
 > /.well-known/appspecific/com.chrome.devtools.json
 > /favicon.ico
 > /about
-> /style.css
+> /styles.css
 > /.well-known/appspecific/com.chrome.devtools.json
 > /favicon.ico
 > /
-> /style.css
+> /styles.css
 > /.well-known/appspecific/com.chrome.devtools.json
 > /favicon.ico
 > ```
@@ -279,7 +279,7 @@ export default function layout(content) {
 <html>
 <head>
     <title>My website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <header>
@@ -586,7 +586,7 @@ If you made the changes to all files (make sure they are all saved) then the sit
 
 ![The status code is properly set](/images/notFound.png)
 
-> Notice that the **style.css** request is receiving this HTML response which confuses the browser, but the 404 probably helps. 
+> Notice that the **styles.css** request is receiving this HTML response which confuses the browser, but the 404 probably helps. 
 > We will fix this in the next exercise.
 
 ## The context pattern

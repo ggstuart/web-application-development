@@ -66,7 +66,7 @@ function server(request) {
     console.log(url.pathname);
     const ctx = { request, url, layout, data: {} };
     
-    if (url.pathname.startsWith("/assets")) {        
+    if (url.pathname.startsWith("/assets/")) {        
         return staticController(ctx);
     }
 
@@ -178,7 +178,7 @@ function server(request) {
     console.log(url.pathname);
     const ctx = { request, url, layout, data: {} };
     
-    if (url.pathname.startsWith("/assets")) {        
+    if (url.pathname.startsWith("/assets/")) {        
         return staticController(ctx);
     }
 
