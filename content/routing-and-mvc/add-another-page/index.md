@@ -211,7 +211,7 @@ export default function layout() {
     </header>
     <main>        
         <h2>This is an experiment.</h2>
-        <p>See the <a href="about.html">about</a> page for more information</p>
+        <p>See the <a href="/about">about</a> page for more information</p>
     </main>
     <footer>
         &copy; My website developers

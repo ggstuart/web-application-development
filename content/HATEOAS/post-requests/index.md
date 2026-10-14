@@ -43,7 +43,7 @@ We can test the form in GET mode (the default) before we change it to POST.
 
 At a minimum, we need a form with an input and a button (to submit the form).
 
-```JavaScript{hl_lines="7-11"}
+```JavaScript{hl_lines="7-10"}
 export default function itemsView(ctx) { 
     const { data: { items } } = ctx;
     return `
@@ -76,7 +76,7 @@ We can add a label and link it to the input.
 > The button already has content inside. 
 If you think it needs more explanation then add an aria-label attribute to the button.
 
-```JavaScript{hl_lines="7-11"}
+```JavaScript{hl_lines="8-9"}
 export default function itemsView(ctx) { 
     const { data: { items } } = ctx;
     return `
@@ -142,7 +142,7 @@ Now submitting the form should add the data into the URL as part of the GET requ
 Finally, we need to update the request method to POST.
 This will cause the data to be passed in the request body.
 
-```JavaScript{hl_lines="7-11"}
+```JavaScript{hl_lines=7}
 export default function itemsView(ctx) { 
     const { data: { items } } = ctx;
     return `
@@ -359,10 +359,10 @@ We can simply interrogate the method property of the incoming request.
 
 **main.js**
 
-```JavaScript{hl_lines="26-31"}
+```JavaScript{hl_lines=[3, "26-31"]}
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import { itemsController } from "./controllers/items.js";
+import { createItemController, itemsController } from "./controllers/items.js";
 import { notFoundController } from "./controllers/notFound.js";
 import { staticController } from "./controllers/static.js";
 import layout from "./layout.js";
