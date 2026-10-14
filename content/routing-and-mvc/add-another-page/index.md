@@ -229,7 +229,7 @@ Notice we have used `export default`, so we can import this function into our se
 ```JavaScript{hl_lines=[1, 7, 8]}
 import layout from './layout.js';
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url); 
     console.log(url.pathname);    
     const headers = new Headers({ "content-type": "text/html" }); 
@@ -339,7 +339,7 @@ import layout from './layout.js';
 import aboutView from "./views/about.js";
 import homeView from "./views/home.js";
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url); 
     console.log(url.pathname);    
     const headers = new Headers({ "content-type": "text/html" }); 
@@ -394,7 +394,7 @@ import aboutView from "./views/about.js";
 import homeView from "./views/home.js";
 import notFoundView from "./views/notFound.js";
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url); 
     console.log(url.pathname);    
     const headers = new Headers({ "content-type": "text/html" }); 
@@ -456,7 +456,7 @@ import aboutView from "./views/about.js";
 import homeView from "./views/home.js";
 import notFoundView from "./views/notFound.js";
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url); 
     console.log(url.pathname);    
 
@@ -562,7 +562,7 @@ import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { notFoundController } from "./controllers/notFound.js";
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url);
     console.log(url.pathname);
 
@@ -659,7 +659,7 @@ import { homeController } from "./controllers/home.js";
 import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url);
     const ctx = { request, url, layout };
     console.log(url.pathname);
