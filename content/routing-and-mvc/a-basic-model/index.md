@@ -57,21 +57,21 @@ Import the controller into **main.js** and add a conditional block to serve the 
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { itemsController } from "./controllers/items.js";
-import { notFoundController } from "./controllers/notFound.js";
 import { staticController } from "./controllers/static.js";
+import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
 
 function server(request) {
     const url = new URL(request.url);
-    console.log(url.pathname);
     const ctx = { request, url, layout };
-    
-    if (url.pathname.startsWith("/assets/")) {        
+    console.log(url.pathname);
+
+    if(url.pathname.startsWith("/assets/")) {
         return staticController(ctx);
     }
 
     if (url.pathname == "/") {
-        return homeController(ctx);
+        return homeController(ctx)
     }
 
     if (url.pathname == "/about") {
@@ -83,7 +83,6 @@ function server(request) {
     }
 
     return notFoundController(ctx);
-
 }
 
 Deno.serve(server);
@@ -94,33 +93,32 @@ Deno.serve(server);
 Finally, we can update the page layout to include a new link.
 
 ```JavaScript{hl_lines=16}
-export default function layout(content) { 
-    return `
+export default function layout(content) {
+    return`
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Website</title>
-        <link rel="icon" href="/assets/icon.svg">
-        <link rel="stylesheet" href="/assets/styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>My Website</h1>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/items">Items</a>
-            </nav>
-        </header>
-        <main>
-        ${content}
-        </main>
-        <footer>
-            <p>&copy; the developers</p>
-        </footer>
-    </body>
-</html>
-`;
+<head>
+    <title>My website</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="icon" href="/assets/icon.svg">
+</head>
+<body>
+    <header>
+        <h1>My website</h1>
+        <nav>
+            <a href="/">home</a>
+            <a href="/about">about</a>
+            <a href="/items">items</a>
+        </nav>
+    </header>
+    <main>        
+    ${content}
+    </main>
+    <footer>
+        &copy; My website developers
+    </footer>
+</body>
+</html>`;
 }
 ```
 
@@ -165,25 +163,25 @@ Initialise it with an empty object.
 
 **main.js**
 
-```JavaScript{hl_lines=11}
+```JavaScript{hl_lines=10}
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { itemsController } from "./controllers/items.js";
-import { notFoundController } from "./controllers/notFound.js";
 import { staticController } from "./controllers/static.js";
+import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
 
 function server(request) {
     const url = new URL(request.url);
-    console.log(url.pathname);
     const ctx = { request, url, layout, data: {} };
-    
-    if (url.pathname.startsWith("/assets/")) {        
+    console.log(url.pathname);
+
+    if(url.pathname.startsWith("/assets/")) {
         return staticController(ctx);
     }
 
     if (url.pathname == "/") {
-        return homeController(ctx);
+        return homeController(ctx)
     }
 
     if (url.pathname == "/about") {
@@ -195,7 +193,6 @@ function server(request) {
     }
 
     return notFoundController(ctx);
-
 }
 
 Deno.serve(server);
