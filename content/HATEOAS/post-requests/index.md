@@ -41,7 +41,7 @@ export function getItemById(id) {
 
 export function createItem(label) {
     const item = { id: nextId, label };
-    nextId = nextId + 1;
+    nextId += 1;
     items.push(item);
     return item;
 }
