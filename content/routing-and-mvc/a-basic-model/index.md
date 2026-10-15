@@ -142,11 +142,11 @@ const items = [
 ];
 
 export function getItems() { 
-    return [...items];
+    return items;
 }
 ```
 
-We have initialised some very simple example data and exported a function which gives us access to a copy of the data (preventing users of the function from editing the raw data).
+We have initialised some very simple example data and exported a function which gives us access to the data.
 
 
 ## Integrate the view data
