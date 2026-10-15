@@ -1,6 +1,7 @@
 ---
 title: Post requests
 type: exercise
+weight: 3
 ---
 
 In this exercise we will update our server to handle POST requests which the user can issue by submitting a simple form.
