@@ -412,7 +412,7 @@ Any other error is rethrown, since we don't know how to handle it.
 
 **main.js**
 
-```JavaScript{hl_lines=[7, 16, "37-42"]}
+```JavaScript{hl_lines=[7, 16, "38-44"]}
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { itemController, itemsController } from "./controllers/items.js";
@@ -449,14 +449,14 @@ function server(request) {
             ctx.params = itemPattern.exec(url).pathname.groups;
             return itemController(ctx);
         }
+
+        throw new NotFoundError();
     } catch (error) {
         if (error instanceof NotFoundError) {
             return notFoundController(ctx);
         }
         throw error;
     }
-
-    return notFoundController(ctx);
 }
 
 Deno.serve(server);
@@ -466,7 +466,11 @@ Deno.serve(server);
 >
 > Most of the changes in **main.js** are just indentation.
 
-Now [/items/99][item 99] and */items/abc* should both show the **Not Found** page with a 404 status code.
+Notice that we have also replaced the final `return notFoundController(ctx);` with `throw new NotFoundError();` inside the try block.
+Now every "not found" situation, whether no route matched or the item doesn't exist, is handled in the same place.
+When we build a router, it will throw the same error when no route matches.
+
+Now [/items/99][item 99], */items/abc* and */missing* should all show the **Not Found** page with a 404 status code.
 
 ## Conclusions
 
