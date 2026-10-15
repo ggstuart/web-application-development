@@ -21,7 +21,7 @@ const items = [
 ];
 
 export function getItems() { 
-    return [...items];
+    return items;
 }
 
 export function createItem(item) { 

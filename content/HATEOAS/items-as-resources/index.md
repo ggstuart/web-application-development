@@ -213,7 +213,7 @@ Instead, let's convert each item into an object with an explicit `id` and a `lab
 
 **models/items.js**
 
-```JavaScript{hl_lines=["2-4", 8]}
+```JavaScript{hl_lines=["2-4"]}
 const items = [
     { id: 1, label: "apples" },
     { id: 2, label: "bananas" },
@@ -224,8 +224,6 @@ export function getItems() {
     return items;
 }
 ```
-
-> We have also simplified **getItems** to return the array directly.
 
 Our list view expects strings, so we need to update it in the same step or it will render `[object Object]`.
 
