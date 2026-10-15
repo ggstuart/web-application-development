@@ -66,7 +66,7 @@ It should look something like this.
 
 {{<figure src="images/experiment.png" caption="A minimal HTML document">}}
 
-The document includes a [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) in the [`<head>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head) element and a [paragraph](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p) in the [`<body>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body) of the document.
+The document includes a [`<title>`][title element] in the [`<head>`][head element] element and a [paragraph][p element] in the [`<body>`][body element] of the document.
 
 
 It's important that the top-level folder in the VSCode explorer window is your new folder.
@@ -363,3 +363,8 @@ In this exercise we have seen that we can use *VSCode* and the *Chrome* browser 
 1. We added *CSS rulesets* to provide different styles on each page.
 1. We saw how linking each page to the same *CSS* file allowed pages to share the same stylesheet.
 1. We saw that more complex websites have many documents that may share common content such as headers and footers.
+
+[p element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+[title element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title
+[head element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head
+[body element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body

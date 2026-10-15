@@ -14,20 +14,20 @@ Starting with simple variables and console output, you will gradually build a sm
 
 By completing this exercise you should be able to:
 
-- Use [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) 
-and [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) to store values.
-- Create and manipulate [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects) and [arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
-- Use [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to build formatted strings.
-- Use [`for...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) loops to process collections.
-- Write reusable [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
-- Apply object and array [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring).
+- Use [`const`][const] 
+and [`let`][let] to store values.
+- Create and manipulate [objects] and [arrays].
+- Use [template literals] to build formatted strings.
+- Use [`for...of`][for...of] loops to process collections.
+- Write reusable [functions].
+- Apply object and array [destructuring].
 - Use the array methods 
-[`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find), 
-[`filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), 
-[`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), and 
-[`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
-- Split a program across multiple [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
-- [Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with) JSON data files.
+[`find()`][find], 
+[`filter()`][filter], 
+[`map()`][map], and 
+[`reduce()`][reduce].
+- Split a program across multiple [modules].
+- [Import][import] JSON data files.
 - Produce useful console output from structured data.
 
 ## Introduction
@@ -207,7 +207,7 @@ Rating: 8.0
 --------------------
 ```
 
-> try [toFixed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) to format a number
+> try [toFixed][tofixed] to format a number
 
 ## Step 7: Building Reusable Functions
 
@@ -305,7 +305,7 @@ We will fix it.
 ## Step 10: Filtering Records
 
 We often need all ratings belonging to a movie.
-To do this, we can filter the list.
+To do this, we can filter the list using an [arrow function].
 
 ```JavaScript
 const movieRatings = ratings.filter(rating => rating.movieId === 1);
@@ -355,7 +355,7 @@ const moviesWithRatings = movies.map(movie => {
 console.log(moviesWithRatings);
 ```
 
-> This is using nested mapping and the [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) syntax.
+> This is using nested mapping and the [spread] syntax.
 Mapping converts one array to another by transforming each element. 
 The spread syntax expands the movie variable into multiple arguments (one per property) so they can be combined into a new object with the addition of the ratings. 
 It's a bit like anonymous destructuring.
@@ -510,7 +510,7 @@ export function searchByTitle(movies, searchTerm) {
 }
 ```
 
-Use prompt():
+Use [prompt()]:
 
 ```JavaScript
 const searchTerm = prompt("Search for a movie:") ?? "";
@@ -605,3 +605,22 @@ In this exercise you have used modern JavaScript to build a simple movie databas
 Along the way you practised object-oriented data structures, destructuring, functions, collection processing, aggregation, modules, and JSON imports. 
 These ideas will form the foundation for later exercises where JavaScript is used to build larger
 applications.
+
+[objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects
+[arrays]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[template literals]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+[functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+[destructuring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring
+[modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[import]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with
+[tofixed]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+[arrow function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+[spread]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+[prompt()]: https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
+[const]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+[let]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+[for...of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+[find]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+[filter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+[map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+[reduce]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce

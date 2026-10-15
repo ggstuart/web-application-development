@@ -38,7 +38,7 @@ We need a hypermedia control to allow the user to make a POST request to the ser
 
 ### Create the basic form with an input
 
-Since we want a POST request, we need a form. 
+Since we want a [POST][post] request, we need a [form]. 
 We can test the form in GET mode (the default) before we change it to POST.
 
 At a minimum, we need a form with an input and a button (to submit the form).
@@ -106,7 +106,7 @@ This is because we are not sending any data with the request.
 
 ### Add a name attribute to the data we want to send
 
-If we want to attach data to the request, we need to use the [name](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#name) attribute.
+If we want to attach data to the request, we need to use the [name][input name] attribute.
 
 ```JavaScript{hl_lines=9}
 export default function itemsView(ctx) { 
@@ -197,9 +197,9 @@ You should see, if you click the **items** link in the menu, that the terminal s
 
 ### Log the incoming data
 
-We can adapt the function to detect the POST request and extract the form data from the incoming request.
+We can adapt the function to detect the POST request and extract the [form data][Request.formData] from the incoming request.
 
-> Notice the async/await keywords here.
+> Notice the [async]/[await] keywords here.
 > Don't worry too much about these. 
 > By default the server only consumes the first line of the request. 
 > In order to access the request body we must **await** it being fully consumed.
@@ -231,8 +231,8 @@ FormData { item: "test" }
 
 ### Add the "item" entry to our model
 
-We can also extract the specific value we want using the [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) API.
-Specifically we will use the [get](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get) method.
+We can also extract the specific value we want using the [FormData][formdata] API.
+Specifically we will use the [get][FormData.get] method.
 
 So, let's pass the value directly into the new **createItem** function.
 
@@ -260,7 +260,7 @@ When handling a POST request, we now call **createItem** and then call **getItem
 > At this point it is crucial to understand why we have introduced a problem.
 When a user reloads a webpage in the browser (e.g. using **CTRL + R**) the browser reissues the last request.
 This is fine if the request is a GET request. 
-This is what we mean by [idempotent](https://developer.mozilla.org/en-US/docs/Glossary/Idempotent).
+This is what we mean by [idempotent].
 It doesn't matter if a GET request is repeated multiple times, the result is the same.
 >
 > A POST request is not guaranteed to be idempotent. 
@@ -279,8 +279,8 @@ A new item is added every time we do this because we are POSTing to the collecti
 ### Return a redirect response
 
 To fix the problem, we must avoid returning an HTML response when we update our items model with the new item.
-Rather, we should return a response with a **303** status code. 
-The 303 status means "See Other" and is associated with a **Location** header which points to a location where the result of the operation can be seen.
+Rather, we should return a response with a [**303**][303] status code. 
+The 303 status means "See Other" and is associated with a [**Location**][location] header which points to a location where the result of the operation can be seen.
 
 > When the web browser receives a response with a 303 status code, it will look for the location header and make a GET  request to the specified resource.
 
@@ -408,3 +408,15 @@ We needed to extract the form data from the request, pass it into our model and 
 
 > We decide where to redirect the browser. 
 For example, we could have redirected to the newly created resource rather than to the collection in which it appears.
+
+[post]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST
+[form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form
+[input name]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#name
+[async]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+[await]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+[Request.formData]: https://developer.mozilla.org/en-US/docs/Web/API/Request/formData
+[formdata]: https://developer.mozilla.org/en-US/docs/Web/API/FormData
+[FormData.get]: https://developer.mozilla.org/en-US/docs/Web/API/FormData/get
+[idempotent]: https://developer.mozilla.org/en-US/docs/Glossary/Idempotent
+[303]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/303
+[location]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Location
