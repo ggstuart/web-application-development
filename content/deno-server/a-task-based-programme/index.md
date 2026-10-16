@@ -3,7 +3,6 @@ type: exercise
 title: A task-based programme
 weight: 2
 author: Dr Graeme Stuart
-draft: false
 ---
 
 > **TODO: This exercise is a stub.**
