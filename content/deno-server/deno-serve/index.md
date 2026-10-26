@@ -153,7 +153,11 @@ Now visit [http://localhost:8000/][localhost].
 
 You should see an error page.
 In Chrome it says **This site can't be reached** and **localhost refused to connect**.
-The **network** panel shows a single **localhost** request which failed, with no status code.
+In the **network** panel, the **localhost** row is red.
+Its status is **(failed)** because no response came back.
+Select it and you will see `net::ERR_CONNECTION_REFUSED`.
+
+> Firefox shows **Unable to connect** instead.
 
 > The browser sent its request, but no programme on your computer was listening for it, so nothing replied.
 
@@ -226,7 +230,7 @@ Now you should be able to start the server like this.
 deno task serve
 ```
 
-All this does is lookup the command in **deno.json** and executes it.
+All this does is look up the command in **deno.json** and execute it.
 
 ```plaintext {linenos=false}
 Task serve deno -A tasks/server.js
@@ -235,13 +239,10 @@ Listening on http://0.0.0.0:8000/ (http://localhost:8000/)
 
 Notice, you were not prompted for permission because you gave explicit permission within the command.
 
-> In this module, every task in **deno.json** will point to a module in the **tasks** folder.
-> This means the **tasks** folder tells us all the ways our project can be run.
-
 ### Make a request with the browser
 
 The server should be running again.
-So we can see the result by refreshing the tab we opened earlier, at [http://localhost:8000/][localhost].
+So we can see the result by refreshing the tab we opened earlier, at `http://localhost:8000/`.
 You should see a completely blank page.
 No errors.
 Just a blank page.
@@ -353,13 +354,16 @@ Watcher Process started.
 Listening on http://0.0.0.0:8000/ (http://localhost:8000/)
 ```
 
+Refresh the browser and you should now see our message.
+Watch mode restarts the server, but we still need to refresh the page to send a new request.
+
 > Watch mode follows our imports, so changes to **server/main.js** also cause a restart.
 
 Of course, we can also run the server in production mode with the `serve` task.
 
 #### Hello world!
 
-You should now see our message appears in the browser!
+You should now see our message appear in the browser!
 
 The HTTP response is a bit more interesting.
 
@@ -511,7 +515,7 @@ The `Request` object puts them together into a full URL for us.
 
 The second line is a request we never asked for.
 Browsers automatically request `/favicon.ico`, looking for a small [icon][favicon] to show in the tab.
-It may not appear in the **network** panel, but our server still receives it.
+Depending on your browser, it may not appear in the **network** panel, but our server still receives it.
 
 Loading the page once can result in multiple requests.
 Every request receives the same response from our server.
