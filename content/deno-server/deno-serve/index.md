@@ -363,8 +363,6 @@ Of course, we can also run the server in production mode with the `serve` task.
 
 #### Hello world!
 
-You should now see our message appear in the browser!
-
 The HTTP response is a bit more interesting.
 
 ```http
