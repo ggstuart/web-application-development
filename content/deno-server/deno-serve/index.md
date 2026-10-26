@@ -10,23 +10,42 @@ We will create an HTTP request handler function in a new **server** folder and s
 
 <!--more-->
 
-> Before you start, make sure everything is committed to your git repository. 
-You should have a working **hello** task from the [first exercise]({{< ref "/deno-server/hello-task" >}}).
+> You will need deno installed and working.
+> See the [Deno setup][deno setup] exercise for details.
 
 ## Learning objectives
 
 Primarily, we will be exploring the various ways we can use the [Response constructor][response constructor] and the [Headers constructor][headers constructor] to create [Response][response] objects that can be returned to the browser.
-We will also see how to keep our server code in a **server** folder and start it with a task.
+We will also see how to configure tasks in a deno project, keep our server code in a **server** folder and start it with a task.
 
 ## Setup
 
-### Install the Deno Extension
+This will be the first of a long series of exercises which build towards a complex and fully featured web application.
+
+> By the end of the module we will have *Bookshelves*, an application for sharing shelves of books.
+> For now, we will settle for hello world.
+
+### Create a project folder
+
+Create a new, empty folder for this project and open it in VSCode (**File** > **Open Folder...**).
+
+**Make sure you open the folder, not a file.**
+If you only open a file, VSCode won't show your project in the **Explorer** panel and the Deno extension will have nowhere to save its settings.
+
+Then initialise a git repository in the folder.
+
+> See [Getting Started with Git and Github][git in vscode] for details.
+
+### Install the Deno Extension {#deno-extension}
 
 Web servers themselves (programmes which listen for HTTP requests) are not built into JavaScript as a language and there is no web standard for them.
-However, Deno does provide the non-standard [Deno.serve][deno.serve] API. 
+However, Deno does provide the non-standard [Deno.serve][deno.serve] API.
 
-Type **Deno** into your **tasks/hello.js** file and add a dot.
+Create a **tasks** folder with a new file inside it called **server.js**.
+This is where we will eventually start our server.
+Type **Deno** into your **tasks/server.js** file and add a dot.
 
+**tasks/server.js**
 ```js {linenos=false}
 Deno.
 ```
@@ -35,23 +54,22 @@ Notice that you don't get any autocomplete suggestions for the Deno namespace.
 We need to install and activate the deno language server for this.
 
 1. In VSCode, open the Extensions sidebar (**Ctrl + Shift + X**)
-2. Search for **"Deno"** 
+2. Search for **"Deno"**
 3. Click the official **Deno** extension (by the Deno Land company) and select **Install**
 
 ![deno extension](/images/vscode/deno-extension.png)
 
-> Remember to remove the `Deno.` line from **tasks/hello.js** when you are done.
-
 ### Activate the Deno extension
 
-The Deno extension adds knowledge of the APIs and coding conventions from the deno environment to VSCode.
+The [Deno extension][deno extension] adds knowledge of the APIs and coding conventions from the deno environment to VSCode.
 However, installing the deno extension doesn't automatically activate it because if you were writing browser-based JavaScript, you would not want the deno extension activated.
 
 Activate it by typing **Ctrl + Shift + P** to open the VSCode command palette and search for **Deno: Enable**.
 Select the enable option.
 
-You should see a new file has been created at *.vscode/settings.json* with the following content.
+You should see a new file has been created at **.vscode/settings.json** with the following content.
 
+**.vscode/settings.json**
 ```json
 {
     "deno.enable": true
@@ -60,9 +78,12 @@ You should see a new file has been created at *.vscode/settings.json* with the f
 
 This indicates that the deno extension is active.
 You should now have autocompletion activated.
+Try deleting the dot after `Deno` and typing it again, you should see `serve` among the suggestions.
 
 > The `Deno.serve` API **will** work without the extension.
-> The extension just provides a better developer experience. 
+> The extension just provides a better developer experience.
+
+> Remember to remove the `Deno.` line from **tasks/server.js** when you are done.
 
 ## Create our first web server
 
@@ -70,7 +91,7 @@ The `Deno.serve` API requires that we pass in a request handler.
 
 > A request handler is a function that takes a standard [Request][request] object as an argument and returns a standard [Response][response] object.
 > This is exactly what a web server should do.
-Deno implements the standard [fetch API][fetch api].
+> Deno implements the standard [fetch API][fetch api].
 
 ### The **server** folder
 
@@ -93,8 +114,11 @@ Notice that we [export][export] the function so it can be imported by other modu
 
 ### The **server** task
 
-Our convention is that every task points to a module in the **tasks** folder.
+Our project will have several *entry points*, i.e. modules that we execute directly.
+We will keep all of them together in the **tasks** folder.
 So we need a small entry point which imports our request handler and passes it to `Deno.serve`.
+
+Update **tasks/server.js** as follows.
 
 **tasks/server.js**
 ```JavaScript
@@ -107,6 +131,33 @@ Deno.serve(server);
 
 > The **tasks/server.js** module only *starts* the server.
 > The request handler itself knows nothing about how it is being run.
+
+Our project now looks like this.
+
+```plaintext {linenos=false}
+my-app/
+├── .vscode/
+│   └── settings.json
+├── server/
+│   └── main.js
+└── tasks/
+    └── server.js
+```
+
+### Before we start
+
+Before we start the server, let's see what the browser does when there is nothing to talk to.
+
+Open a new browser tab, open the developer tools (**F12**) and select the **network** panel.
+Now visit [http://localhost:8000/][localhost].
+
+You should see an error page.
+In Chrome it says **This site can't be reached** and **localhost refused to connect**.
+The **network** panel shows a single **localhost** request which failed, with no status code.
+
+> The browser sent its request, but no programme on your computer was listening for it, so nothing replied.
+
+Keep this tab open, we will come back to it.
 
 ### Start the server
 
@@ -129,9 +180,9 @@ You should get the following warning.
 
 The warning shows that deno wants to get permission from you before it allows the programme to access the network.
 
-#### Give permission to access the network
+#### Give permission to access the network {#permissions}
 
-Type **y** for **"yes, allow"** and press enter, the server should start with this message.
+Type `y` for **"yes, allow"** and press **Enter**, the server should start with this message.
 
 ```plaintext {linenos=false}
 ✅ Granted net access to "0.0.0.0:8000".
@@ -140,24 +191,30 @@ Listening on http://0.0.0.0:8000/ (http://localhost:8000/)
 
 The server is now running and will continue to run until you close the programme with **Ctrl + C**.
 
-#### Give permission via a task
+> Deno is *secure by default*.
+> A script cannot access the network, the file system or the environment unless we give it [permission][permissions].
+
+#### Give permission via a task {#tasks}
 
 Stop the server with **Ctrl + C**.
-Since we will often need to start our server, we can create a `start` task to make life easier. 
 
-Add a `start` task to **deno.json**.
+Deno can be configured by creating a [**deno.json**][deno.json] file in the root of the project.
+One of the important uses of this file is to create [*tasks*][tasks] which are essentially shortcuts for complex commands.
+Since we will often need to start our server, we can create a `serve` task to make life easier.
+
+Create a **deno.json** file in the root of the project and add a `serve` task.
 
 **deno.json**
-```json{hl_lines=[3, 4]}
+```json
 {
     "tasks": {
-        "hello": "deno tasks/hello.js",
-        "start": "deno -A tasks/server.js"
+        "serve": "deno -A tasks/server.js"
     }
 }
 ```
 
-> Make sure you add the comma at the end of the hello task. 
+> The `"tasks"` property is an object.
+> Each key is the name of a task and each value is the command that will be executed.
 
 The only permission our server actually needs is network access, so `deno --allow-net tasks/server.js` would be enough.
 We have used `-A` (short for `--allow-all`) which grants **every** permission.
@@ -166,17 +223,27 @@ This keeps our tasks simple as the project grows, but it means the script now ha
 Now you should be able to start the server like this.
 
 ```bash{linenos=false}
-deno task start
+deno task serve
+```
+
+All this does is lookup the command in **deno.json** and executes it.
+
+```plaintext {linenos=false}
+Task serve deno -A tasks/server.js
+Listening on http://0.0.0.0:8000/ (http://localhost:8000/)
 ```
 
 Notice, you were not prompted for permission because you gave explicit permission within the command.
 
+> In this module, every task in **deno.json** will point to a module in the **tasks** folder.
+> This means the **tasks** folder tells us all the ways our project can be run.
+
 ### Make a request with the browser
 
-The server should be running again. 
-So we can see the result by visiting [http://localhost:8000/][localhost].
-You should see a completely blank page. 
-No errors. 
+The server should be running again.
+So we can see the result by refreshing the tab we opened earlier, at [http://localhost:8000/][localhost].
+You should see a completely blank page.
+No errors.
 Just a blank page.
 
 {{<iframe src="examples/hello-server/blank.html" width="800" height="200">}}{{</iframe>}}
@@ -187,12 +254,13 @@ To see what happened, we can look a bit deeper.
 
 #### Inspecting the network traffic
 
-Open up the developer tools in your browser and view the network panel.
+Look at the **network** panel again.
+This time the request succeeded.
 Click on the **localhost** entry and it should look something like this, although yours will be somewhat different.
 
 ![the network panel shows a blank response](/images/blank-response.png)
 
-My browser issued the following HTTP request. 
+My browser issued the following HTTP request.
 Understanding all this is not necessary.
 
 ```http {hl_lines=[1, 6]}
@@ -210,7 +278,7 @@ Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
 ```
 
-> Check the "raw" option in the devtools to see this version. 
+> Check the "raw" option in the devtools to see this version.
 
 The key points to note are that it is a `GET` request to the path `/` on the host `localhost:8000`.
 
@@ -237,38 +305,40 @@ export function server() {
 
 Refresh the browser and... nothing happens?
 
-The problem here is that the server is still running the old version of the code. 
+The problem here is that the server is still running the old version of the code.
 In order to update the server with the new code, we need to stop the programme and restart.
-You can do this with *Ctrl + C* in the terminal and restarting the server with:
+You can do this with **Ctrl + C** in the terminal and restarting the server with:
 
 ```bash{linenos=false}
-deno task start
+deno task serve
 ```
 
-> Hint: press the up arrow in the terminal to bring up previous commands and press enter to execute them. 
+> Hint: press the up arrow in the terminal to bring up previous commands and press enter to execute them.
 
 However, to make our life easier, we can enable watch mode.
 
-#### Enable watch mode
+#### Enable watch mode {#watch-mode}
 
-Watch mode will stop and restart the server if we change a file.
+[Watch mode][watch mode] will stop and restart the server if we change a file.
 To enable it, we need to add the `--watch` flag.
 
-We can add a new task **dev** for development, in which we switch on the watch flag.
+We can add a new task `dev` for development, in which we switch on the watch flag.
 
 **deno.json**
-```json{hl_lines="4-5"}
+```json{hl_lines="3-4"}
 {
     "tasks": {
-        "hello": "deno tasks/hello.js",
-        "start": "deno -A tasks/server.js",
+        "serve": "deno -A tasks/server.js",
         "dev": "deno --watch -A tasks/server.js"
     }
 }
 ```
 
+> Make sure you add the comma at the end of the serve task.
+
 > Again, the dev task only needs `--allow-net`, i.e. `deno --watch --allow-net tasks/server.js`.
 
+Stop the server with **Ctrl + C**.
 Now starting the server in developer mode is easy.
 
 ```bash {linenos=false}
@@ -285,7 +355,7 @@ Listening on http://0.0.0.0:8000/ (http://localhost:8000/)
 
 > Watch mode follows our imports, so changes to **server/main.js** also cause a restart.
 
-Of course, we can also run the server in production mode with the `start` task.
+Of course, we can also run the server in production mode with the `serve` task.
 
 #### Hello world!
 
@@ -300,17 +370,17 @@ content-length: 11
 date: Fri, 02 Oct 2026 13:56:21 GMT
 ```
 
-We now have a `content-length` of **11** and a `content-type` of **text/plain;charset=UTF-8**.
+We now have a `content-length` of `11` and a `content-type` of `text/plain;charset=UTF-8`.
 These were added automatically.
 
 > The body of the response can be viewed by switching from the **headers** panel (within the network panel) to the **response** panel.
-You should see the raw plaintext string we returned.
+> You should see the raw plaintext string we returned.
 
 ### An HTML response?
 
 We might think we can just give the browser HTML code and it will render a page for us.
-Unfortunately, its not quite as easy as that. 
-We need to set the **content-type** header to tell the browser how the body of the response should be interpreted.
+Unfortunately, it's not quite as easy as that.
+We need to set the `content-type` header to tell the browser how the body of the response should be interpreted.
 
 We can demonstrate this with a minor change.
 
@@ -337,14 +407,15 @@ date: Fri, 02 Oct 2026 14:11:32 GMT
 
 Still clearly showing plain text, this time with 20 characters.
 
-### Setting the **content-type** header
+### Setting the `content-type` header {#content-type}
 
-For the browser to understand that the response body should be interpreted as an HTML document, we need to set the [**content-type**][content-type] header to `text/html`.
+For the browser to understand that the response body should be interpreted as an HTML document, we need to set the [`content-type`][content-type] header to `text/html`.
 We can use the [headers] API for this.
 
 **server/main.js**
-```JavaScript{hl_lines=[2, 3]}
+```JavaScript{hl_lines="2-4"}
 export function server() {
+    // Placeholder: this will need to change when we add HTML views
     const headers = new Headers({ "content-type": "text/html" });
     return new Response("<h1>hello world</h1>", { headers });
 }
@@ -356,6 +427,10 @@ We then pass the headers object as a property (the "headers" property) on the [o
 > Make sure that makes sense to you.
 > Passing an object as a "bag of options" is a common JavaScript pattern.
 > Study the linked MDN documentation for details.
+
+> The comment marks these lines as a *placeholder*, code we know will be replaced.
+> Writing HTML strings directly into our request handler is fine for one heading, but it won't scale to whole pages.
+> When we add HTML *views*, functions which build complete documents, a small helper will set the `content-type` header for us and these lines will be replaced.
 
 You should now see that the browser is properly interpreting our HTML fragment as an HTML document.
 
@@ -370,14 +445,15 @@ content-length: 20
 date: Fri, 02 Oct 2026 14:21:49 GMT
 ```
 
-### Setting the status code
+### Setting the status code {#status-codes}
 
-We can also set the status code for the response. 
+We can also set the [status code][status codes] for the response.
 Just add a [status][response status] property to the Response options.
 
 **server/main.js**
-```JavaScript{hl_lines=3}
+```JavaScript{hl_lines=4}
 export function server() {
+    // Placeholder: this will need to change when we add HTML views
     const headers = new Headers({ "content-type": "text/html" });
     return new Response("<h1>hello world</h1>", { headers, status: 404 });
 }
@@ -397,21 +473,27 @@ date: Fri, 02 Oct 2026 14:25:12 GMT
 > The status code tells the browser (and any other client) what happened.
 > The body is just for humans.
 
-Remove the status property again before moving on, so our server returns the default **200 OK**.
+Remove the status property again before moving on, so our server returns the default `200 OK`.
 
-### Looking at the request
+### Looking at the request {#request-logging}
 
 `Deno.serve` passes the incoming [Request][request] object into our function, but we have been ignoring it until now.
-Let's add a `request` parameter and log the request method and URL.
+Let's add a `request` parameter and [log][console.log] the request [method][request method] and [URL][request url].
 
 **server/main.js**
-```JavaScript{hl_lines="1-2"}
+```JavaScript{hl_lines="1-3"}
 export function server(request) {
+    // Placeholder: this will need to change when we add middleware
     console.log(request.method, request.url);
+    // Placeholder: this will need to change when we add HTML views
     const headers = new Headers({ "content-type": "text/html" });
     return new Response("<h1>hello world</h1>", { headers });
 }
 ```
+
+> Another placeholder.
+> Logging every request is useful, but it isn't really the job of our request handler.
+> When we add *middleware*, functions which run on every request before and after our handlers, the logging will move into its own middleware and this line will be replaced.
 
 Refresh the page and look at the terminal.
 
@@ -420,12 +502,20 @@ GET http://localhost:8000/
 GET http://localhost:8000/favicon.ico
 ```
 
-> You may not get the same result. 
+> You may not get the same result.
 > The browser cache can mean some files are only requested occasionally.
+
+Compare the first line with the raw request we saw in the **network** panel.
+The browser sent `GET /` with the host in a separate `Host: localhost:8000` header.
+The `Request` object puts them together into a full URL for us.
+
+The second line is a request we never asked for.
+Browsers automatically request `/favicon.ico`, looking for a small [icon][favicon] to show in the tab.
+It may not appear in the **network** panel, but our server still receives it.
 
 Loading the page once can result in multiple requests.
 Every request receives the same response from our server.
-We will deal with this in the next exercise.
+We will deal with this when we add routing.
 
 ## Challenge: Experiment with responses
 
@@ -433,43 +523,55 @@ Try a few experiments with the Response and Headers constructors.
 
 - Set the status to 500 to indicate an unknown server error.
 - Try various [4xx] codes to indicate client errors
-- Return a [JSON][response json] response using the static `Response.json()` method and see how the **content-type** changes.
+- Return a [JSON][response json] response using the static `Response.json()` method and see how the `content-type` changes.
 - Add a custom header of your own to the Headers object and find it in the network panel.
 
 > Make sure your server returns the simple HTML response above before moving on.
 
 ## Conclusion
 
-We have created a **server** folder containing a request handler which receives a **Request** object and returns a **Response** object.
+We have created a **server** folder containing a request handler which receives a `Request` object and returns a `Response` object.
 The **tasks/server.js** module imports our request handler and passes it to `Deno.serve`.
-We have `start` and `dev` tasks to run the server.
+We have `serve` and `dev` tasks to run the server.
 
 Our project now looks like this.
 
-```plaintext{linenos=false}
-.vscode/
-    settings.json
-deno.json
-server/
-    main.js
-tasks/
-    hello.js
-    server.js
+```plaintext {linenos=false, hl_lines="8"}
+my-app/
+├── .vscode/
+│   └── settings.json
+├── server/
+│   └── main.js
+├── tasks/
+│   └── server.js
+└── deno.json
 ```
 
+[deno setup]: javascript-fundamentals/deno-setup/
+[git in vscode]: extras/git-in-vscode/
 [response]: https://developer.mozilla.org/en-US/docs/Web/API/Response
 [deno.serve]: https://docs.deno.com/api/deno/~/Deno.serve
+[deno extension]: https://docs.deno.com/runtime/reference/vscode/
 [request]: https://developer.mozilla.org/en-US/docs/Web/API/Request
 [fetch api]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 [export]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 [localhost]: http://localhost:8000/
+[permissions]: https://docs.deno.com/runtime/fundamentals/security/
+[deno.json]: https://docs.deno.com/runtime/fundamentals/configuration/
+[tasks]: https://docs.deno.com/runtime/reference/cli/task/
 [response body]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#body
 [response constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
 [headers constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers
+[watch mode]: https://docs.deno.com/runtime/getting_started/command_line_interface/#reload-on-change-with-watch-mode
 [content-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type
 [headers]: https://developer.mozilla.org/en-US/docs/Web/API/Headers
 [headers init]: https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers#init
 [response options]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#options
+[status codes]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 [response status]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response#status
+[console.log]: https://developer.mozilla.org/en-US/docs/Web/API/console/log_static
+[request method]: https://developer.mozilla.org/en-US/docs/Web/API/Request/method
+[request url]: https://developer.mozilla.org/en-US/docs/Web/API/Request/url
+[favicon]: https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 [response json]: https://developer.mozilla.org/en-US/docs/Web/API/Response/json_static
 [4xx]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status#client_error_responses
