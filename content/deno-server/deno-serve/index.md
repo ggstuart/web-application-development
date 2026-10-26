@@ -483,10 +483,11 @@ Remove the status property again before moving on, so our server returns the def
 Let's add a `request` parameter and [log][console.log] the request [method][request method] and [URL][request url].
 
 **server/main.js**
-```JavaScript{hl_lines="1-3"}
+```JavaScript{hl_lines="1-4"}
 export function server(request) {
     // Placeholder: this will need to change when we add middleware
     console.log(request.method, request.url);
+
     // Placeholder: this will need to change when we add HTML views
     const headers = new Headers({ "content-type": "text/html" });
     return new Response("<h1>hello world</h1>", { headers });
