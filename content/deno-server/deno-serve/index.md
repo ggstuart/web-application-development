@@ -24,6 +24,7 @@ By the end of this exercise you should be able to:
 - Inspect requests and responses in the browser's **network** panel
 - Set the body, `content-type` header and status code of a response
 - Log incoming requests and spot the automatic favicon request
+- Return a complete HTML document with a doctype, a language, a character set and a title
 
 ## Setup
 
@@ -527,9 +528,72 @@ Loading the page once can result in multiple requests.
 Every request receives the same response from our server.
 We will deal with this when we add routing.
 
+### A complete HTML document {#html-document}
+
+Our response body is just a fragment of HTML, a single heading.
+Browsers are very forgiving, so this works, but a proper HTML document has a bit more structure.
+
+Update **server/main.js** to build a complete document.
+
+**server/main.js**
+```JavaScript{hl_lines="7-20"}
+export function server(request) {
+    // Placeholder: this will need to change when we add middleware
+    console.log(request.method, request.url);
+
+    // Placeholder: this will need to change when we add HTML views
+    const headers = new Headers({ "content-type": "text/html" });
+    const document = `
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <title>Bookshelves</title>
+            </head>
+            <body>
+                <h1>hello world</h1>
+            </body>
+        </html>
+    `;
+    return new Response(document, { headers });
+}
+```
+
+We have used a [template literal][template literal] (with backticks) so our document can span several lines.
+The `content-type` header is unchanged.
+
+You should recognise this structure from the [Hello world][hello world] exercise.
+
+- The [`<!DOCTYPE html>`][doctype] line tells the browser this is a modern HTML document.
+- The [`<html>`][html element] element wraps everything and its [`lang`][lang] attribute says the page is in English.
+- The [`<head>`][head element] contains information *about* the page, the [character encoding][meta charset] and a [`<title>`][title element].
+- The [`<body>`][body element] contains the content we actually see, our heading.
+
+> The `document` variable is just a name we chose for our string.
+> In browser-based JavaScript there is a built-in `document` object which represents the page, and we will meet it later.
+> It doesn't exist in deno, so there is no clash.
+
+> The spaces and the newline before `<!DOCTYPE html>` come from indenting our template literal.
+> They are harmless, the browser ignores whitespace before the doctype.
+
+Refresh the page.
+The heading looks the same, but the browser tab now shows **Bookshelves** as the page title.
+
+The response in the **network** panel has the same headers, with a bigger `content-length`.
+
+```http
+HTTP/1.1 200 OK
+content-type: text/html
+content-length: 267
+date: Fri, 02 Oct 2026 14:31:05 GMT
+```
+
+> The placeholder comment now covers the document too.
+> When we add HTML views, building the document will move out of our request handler.
+
 ## Conclusion
 
-We have created a **server** folder containing a request handler which receives a `Request` object and returns a `Response` object.
+We have created a **server** folder containing a request handler which receives a `Request` object and returns a `Response` object containing a complete HTML document.
 The **tasks/server.js** module imports our request handler and passes it to `Deno.serve`.
 We have `serve` and `dev` tasks to run the server.
 
@@ -555,7 +619,7 @@ Try a few experiments with the Response and Headers constructors.
 - Return a [JSON][response json] response using the static `Response.json()` method and see how the `content-type` changes.
 - Add a custom header of your own to the Headers object and find it in the network panel.
 
-> Make sure your server returns the simple HTML response above before moving on.
+> Make sure your server returns the HTML document above before moving on.
 
 Finally, something to think about.
 Every request receives the same response from our server.
@@ -589,3 +653,12 @@ How might we send something different for `/books`?
 [favicon]: https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 [response json]: https://developer.mozilla.org/en-US/docs/Web/API/Response/json_static
 [4xx]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status#client_error_responses
+[template literal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+[hello world]: welcome/hello-world/
+[doctype]: https://developer.mozilla.org/en-US/docs/Glossary/Doctype
+[html element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html
+[lang]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang
+[head element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/head
+[meta charset]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
+[title element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/title
+[body element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/body
