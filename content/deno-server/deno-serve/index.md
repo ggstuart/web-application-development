@@ -16,7 +16,14 @@ We will create an HTTP request handler function in a new **server** folder and s
 ## Learning objectives
 
 Primarily, we will be exploring the various ways we can use the [Response constructor][response constructor] and the [Headers constructor][headers constructor] to create [Response][response] objects that can be returned to the browser.
-We will also see how to configure tasks in a deno project, keep our server code in a **server** folder and start it with a task.
+By the end of this exercise you should be able to:
+
+- Create a deno project in an empty folder and open it in VS Code with the Deno extension
+- Write a request handler that receives a Request and returns a Response
+- Give deno permission to use the network, and run the server with the `serve` and `dev` tasks
+- Inspect requests and responses in the browser's **network** panel
+- Set the body, `content-type` header and status code of a response
+- Log incoming requests and spot the automatic favicon request
 
 ## Setup
 
@@ -483,7 +490,7 @@ Remove the status property again before moving on, so our server returns the def
 Let's add a `request` parameter and [log][console.log] the request [method][request method] and [URL][request url].
 
 **server/main.js**
-```JavaScript{hl_lines="1-4"}
+```JavaScript{hl_lines="1-3"}
 export function server(request) {
     // Placeholder: this will need to change when we add middleware
     console.log(request.method, request.url);
@@ -520,17 +527,6 @@ Loading the page once can result in multiple requests.
 Every request receives the same response from our server.
 We will deal with this when we add routing.
 
-## Challenge: Experiment with responses
-
-Try a few experiments with the Response and Headers constructors.
-
-- Set the status to 500 to indicate an unknown server error.
-- Try various [4xx] codes to indicate client errors
-- Return a [JSON][response json] response using the static `Response.json()` method and see how the `content-type` changes.
-- Add a custom header of your own to the Headers object and find it in the network panel.
-
-> Make sure your server returns the simple HTML response above before moving on.
-
 ## Conclusion
 
 We have created a **server** folder containing a request handler which receives a `Request` object and returns a `Response` object.
@@ -549,6 +545,21 @@ my-app/
 │   └── server.js
 └── deno.json
 ```
+
+## Challenge: Experiment with responses
+
+Try a few experiments with the Response and Headers constructors.
+
+- Set the status to 500 to indicate an unknown server error.
+- Try various [4xx] codes to indicate client errors
+- Return a [JSON][response json] response using the static `Response.json()` method and see how the `content-type` changes.
+- Add a custom header of your own to the Headers object and find it in the network panel.
+
+> Make sure your server returns the simple HTML response above before moving on.
+
+Finally, something to think about.
+Every request receives the same response from our server.
+How might we send something different for `/books`?
 
 [deno setup]: javascript-fundamentals/deno-setup/
 [git in vscode]: extras/git-in-vscode/
