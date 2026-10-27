@@ -129,32 +129,7 @@ It can't use that, so the tab has no icon.
 
 Rather than relying on the browser to guess, we can tell it where our icon is.
 
-Create a file called **icon.svg** in the root of the project with the following content.
-
-**icon.svg**
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <title>Bookshelves</title>
-    <style>
-    rect {
-        fill: black;
-    }
-    @media (prefers-color-scheme: dark) {
-        rect {
-            fill: white;
-        }
-    }
-    </style>
-    <rect x="4" y="8" width="6" height="16" />
-    <rect x="12" y="4" width="6" height="20" />
-    <rect x="20" y="8" width="6" height="16" transform="rotate(12 26 24)" />
-    <rect x="2" y="26" width="28" height="4" />
-</svg>
-```
-
-> This is an [SVG][svg] image, a picture described in code.
-> It draws four rectangles, a few books on a shelf.
-> Don't worry about the details, you can just copy it.
+Save {{<a href="images/icon.svg" download="icon.svg" >}}this icon{{< /a >}} as **icon.svg** in the root of the project.
 
 Now add a [`<link>`][link element] element to the `<head>` of our document.
 
@@ -486,6 +461,8 @@ body > * {
 }
 ```
 
+There is nothing new here, these are the same kind of rules we wrote in the [Hello world][hello world] exercise.
+
 Refresh the page.
 The heading and paragraph should have a new font and some space around them.
 In the terminal, you should see the browser request **styles.css** as well as the icon.
@@ -502,7 +479,7 @@ GET /assets/icon.svg
 > This isn't a bug.
 > The [*color-scheme*][color-scheme] property tells the browser our page works in both *light* and *dark*, so it uses the default colours for whichever your operating system prefers.
 > We haven't written a single colour.
-> The icon does something similar with [*prefers-color-scheme*][prefers-color-scheme], so it is white on a dark tab.
+> The icon adapts in the same way, so it is white on a dark tab.
 
 A pretty nice result.
 
@@ -536,9 +513,8 @@ Try a few experiments with `serveDir` and the stylesheet.
 - Visit [http://localhost:8000/assets/nope.css][nope] and look at the status code in the **network** panel.
 - Add a picture of your own to the **public** folder and view it in the browser by its `/assets/` path.
 - Change the styles in **public/styles.css** and switch your operating system between light and dark mode.
-- Change the *fill* colours in **public/icon.svg** and watch the icon in the browser tab.
 
-> Make sure **public/styles.css** and **public/icon.svg** are back to the versions above before moving on.
+> Make sure **public/styles.css** is back to the version above before moving on.
 > You can remove any extra files you added to **public**.
 
 Finally, something to think about.
@@ -553,7 +529,6 @@ Is that really the right response for a path that doesn't exist?
 [url pathname]: https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname
 [favicon.ico]: http://localhost:8000/favicon.ico
 [anything]: http://localhost:8000/anything/you/like
-[svg]: https://developer.mozilla.org/en-US/docs/Web/SVG
 [link element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link
 [rel]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
 [icon.svg root]: http://localhost:8000/icon.svg
@@ -568,5 +543,4 @@ Is that really the right response for a path that doesn't exist?
 [permissions]: https://docs.deno.com/runtime/fundamentals/security/#permissions
 [hello world]: welcome/hello-world/
 [color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
-[prefers-color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme
 [nope]: http://localhost:8000/assets/nope.css

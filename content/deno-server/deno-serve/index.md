@@ -526,7 +526,7 @@ Depending on your browser, it may not appear in the **network** panel, but our s
 
 Loading the page once can result in multiple requests.
 Every request receives the same response from our server.
-We will deal with this when we add routing.
+We will deal with this shortly.
 
 ### A complete HTML document {#html-document}
 
