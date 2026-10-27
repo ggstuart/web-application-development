@@ -250,7 +250,7 @@ Notice, you were not prompted for permission because you gave explicit permissio
 ### Make a request with the browser
 
 The server should be running again.
-So we can see the result by refreshing the tab we opened earlier, at `http://localhost:8000/`.
+So we can see the result by refreshing the tab we opened earlier, at [http://localhost:8000/][localhost].
 You should see a completely blank page.
 No errors.
 Just a blank page.

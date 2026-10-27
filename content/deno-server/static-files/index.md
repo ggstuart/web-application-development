@@ -378,6 +378,7 @@ We pass `serveDir` a configuration object which specifies
 
 Refresh the page (with a hard refresh if necessary).
 The icon should still be there, and the second request has changed from `GET /favicon.ico` at the start of this exercise to `GET /assets/icon.svg`.
+You can also open [http://localhost:8000/assets/icon.svg][assets icon] to see the icon on its own.
 
 ```plaintext {linenos=false}
 GET /
@@ -466,6 +467,7 @@ There is nothing new here, these are the same kind of rules we wrote in the [Hel
 Refresh the page.
 The heading and paragraph should have a new font and some space around them.
 In the terminal, you should see the browser request **styles.css** as well as the icon.
+You can open [http://localhost:8000/assets/styles.css][assets styles] to see the stylesheet itself.
 
 ```plaintext {linenos=false}
 GET /
@@ -544,3 +546,5 @@ Is that really the right response for a path that doesn't exist?
 [hello world]: welcome/hello-world/
 [color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
 [nope]: http://localhost:8000/assets/nope.css
+[assets icon]: http://localhost:8000/assets/icon.svg
+[assets styles]: http://localhost:8000/assets/styles.css
