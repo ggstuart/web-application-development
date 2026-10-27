@@ -1,7 +1,7 @@
 ---
 type: exercise
 title: Adding a second page
-weight: 4
+weight: 5
 author: Dr Graeme Stuart
 ---
 
