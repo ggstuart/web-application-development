@@ -316,9 +316,10 @@ my-app/
 
 ## Challenge: Experiment with status codes
 
-- Visit [http://localhost:8000/books/][books slash] (with a slash at the end). Is it the same path as `/books`?
 - Visit [http://localhost:8000/?search=deno][search]. Which `if` handles it, and why? Hint: log `url.search` as well as `url.pathname`.
-- Temporarily add a second page of your own with another `if`, and check its status in the **network** panel.
+- Temporarily add a second page at `/temporary` with another `if`, and check its status in the **network** panel.
+  Now visit [http://localhost:8000/temporary/][temporary slash], with a slash at the end.
+  Why does it get a 404?
 
 > Make sure **server/main.js** is back to the version above before moving on.
 
@@ -341,5 +342,5 @@ How could we make the not-found page look like the rest of the site?
 [undefined]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined
 [500]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500
 [favicon.ico]: http://localhost:8000/favicon.ico
-[books slash]: http://localhost:8000/books/
 [search]: http://localhost:8000/?search=deno
+[temporary slash]: http://localhost:8000/temporary/
