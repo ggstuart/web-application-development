@@ -16,12 +16,13 @@ We will send the home page only for `/` and a `404 Not Found` response for anyth
 ## Learning objectives
 
 This is a short exercise with one problem to solve: our server answers every path with the home page.
+We will start by exploring all the responses our server can generate, and then fix the problem.
 By the end of this exercise you should be able to:
 
+- Use the **network** panel to explore the responses our server generates
 - Use an `if` statement and `===` to send a response for one path only
 - Explain why a function that reaches its end without returning causes a `500 Internal Server Error`
 - Return a `404 Not Found` response for any path we don't recognise
-- Check status codes in the **network** panel
 
 ## Setup
 
@@ -34,7 +35,12 @@ deno task dev
 Open [http://localhost:8000/][localhost] with the developer tools (**F12**) open on the **network** panel.
 You should see our home page with its icon and stylesheet.
 
-## Every page exists?
+## Exploring our responses
+
+Before we change anything, let's explore all the responses our server can currently generate.
+Keep the **network** panel open and check the status and `content-type` of each request.
+
+### Pages
 
 Our app will eventually have a page listing all the books.
 It doesn't exist yet, so let's see what happens if we visit it.
@@ -49,18 +55,64 @@ The status is `200 OK`.
 HTTP/1.1 200 OK
 content-type: text/html
 content-length: 463
-date: Tue, 27 Oct 2026 17:47:18 GMT
+date: Wed, 28 Oct 2026 09:21:50 GMT
 ```
 
 Try [http://localhost:8000/anything/you/like][anything] too.
 Same page, same status.
+In fact, every path that doesn't start with `/assets/` gets our home page, exactly as [http://localhost:8000/][localhost] does.
 
-Our server is telling the browser (and anyone else who asks) that every path is a real page.
+### Static files
+
+Paths that start with `/assets/` are different, they are passed to `serveDir`.
+
+- [http://localhost:8000/assets/icon.svg][assets icon] is `200 OK` with a `content-type` of `image/svg+xml`.
+- [http://localhost:8000/assets/styles.css][assets styles] is `200 OK` with a `content-type` of `text/css; charset=UTF-8`.
+
+`serveDir` finds each file in the **public** folder and sends it with the right `content-type`.
+It will deliver any file we put in that folder.
+
+### A missing file
+
+Now ask for a file that isn't there.
+Click [http://localhost:8000/assets/missing.css][missing].
+
+The browser shows **Not Found** and the **network** panel shows a `404 Not Found` status.
+
+```http
+HTTP/1.1 404 Not Found
+Content-Type: text/plain;charset=UTF-8
+content-length: 9
+date: Wed, 28 Oct 2026 09:21:51 GMT
+```
+
+The terminal explains what happened.
+
+```plaintext {linenos=false}
+GET /assets/missing.css
+No such file or directory (os error 2): stat 'public/missing.css'
+[2026-10-28 09:21:51] [GET] /assets/missing.css 404
+```
+
+`serveDir` looked in the **public** folder for **missing.css** and didn't find it.
+So it told the browser, with a [`404 Not Found`][404] response.
+This is exactly the right thing to do.
+
+### Missing pages
+
+Our application pages should do the same.
+At the moment our server is telling the browser (and anyone else who asks) that every path is a real page.
 That isn't true and it's confusing for our users.
 It also means a typo in a link would never be noticed.
 
-> Notice the path doesn't start with `/assets/`, so it never reaches `serveDir`.
-> Every other path gets our home page.
+So the overall picture is this.
+
+1. We serve the same home page for every path except those under `/assets/`.
+1. `serveDir` delivers any requested file from the **public** folder.
+1. Requests for missing files get a `404 Not Found` response.
+1. Requests for missing pages should also get a `404 Not Found` response, rather than the home page.
+
+The rest of this exercise fixes the last point.
 
 ## Only the home page at `/`
 
@@ -163,7 +215,7 @@ The fix is to make sure our function always returns a response.
 ## A fallback response {#not-found}
 
 If the request didn't match any of our `if` statements, the path is one we don't recognise.
-Add a final `return` statement to send a [`404 Not Found`][404] response.
+Add a final `return` statement to send a `404 Not Found` response.
 
 **server/main.js**
 ```JavaScript{hl_lines="36"}
@@ -225,17 +277,18 @@ date: Tue, 27 Oct 2026 17:47:46 GMT
 > We didn't set a `content-type` header, so the response constructor added `text/plain` for us, as it did for our first hello world.
 
 Try a few more paths and check the status of each in the **network** panel.
+We should now have both kinds of 404.
 
 - [http://localhost:8000/][localhost] should still be `200 OK`.
 - [http://localhost:8000/anything/you/like][anything] should be `404 Not Found`.
 - [http://localhost:8000/favicon.ico][favicon.ico] should be `404 Not Found` too.
-- [http://localhost:8000/assets/nope.css][nope] should be `404 Not Found`, with the text **Not Found**.
+- [http://localhost:8000/assets/missing.css][missing] should still be `404 Not Found`, from `serveDir`.
 
 The `/favicon.ico` 404 is fine.
 Our document links to `/assets/icon.svg`, so the browser doesn't need to ask for `/favicon.ico` any more.
 
-> The capital **F** in **Not Found** is a clue.
-> Missing files in `/assets/` never reach our fallback, because `serveDir` sends its own 404 response.
+> Look closely at the text of the two 404 responses.
+> The capital **F** in **Not Found** is a clue: that one comes from `serveDir`, and **Not found** comes from our fallback.
 
 ## Conclusion
 
@@ -278,13 +331,15 @@ How could we make the not-found page look like the rest of the site?
 [localhost]: http://localhost:8000/
 [books]: http://localhost:8000/books
 [anything]: http://localhost:8000/anything/you/like
+[assets icon]: http://localhost:8000/assets/icon.svg
+[assets styles]: http://localhost:8000/assets/styles.css
+[missing]: http://localhost:8000/assets/missing.css
+[404]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404
 [strict equality]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
 [serve dir]: deno-server/static-files/#serve-dir
 [equality]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
 [undefined]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined
 [500]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500
-[404]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404
 [favicon.ico]: http://localhost:8000/favicon.ico
-[nope]: http://localhost:8000/assets/nope.css
 [books slash]: http://localhost:8000/books/
 [search]: http://localhost:8000/?search=deno
