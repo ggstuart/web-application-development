@@ -318,6 +318,13 @@ Seeding adds to whatever is already there.
 That's what `db:reset` is for.
 It drops the table, creates it again and seeds it once.
 
+> Running `db:create` twice is safe, because it drops the table and creates it again.
+> However many times we run it, we end up with the same empty table.
+> An operation like this is called [*idempotent*][idempotent].
+> `db:seed` is not idempotent, running it twice gave us 40 rows.
+> That's why `db:reset` runs `db:create` before `db:seed`, so the whole reset is safe to repeat.
+> Idempotency is an important concept in HTTP, and we will come across it again later.
+
 ```bash {linenos=false}
 deno task db:reset
 ```
@@ -506,3 +513,4 @@ What would a controller and a view for the books page need to do?
 [import attributes]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with
 [for of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
 [select]: https://www.sqlite.org/lang_select.html
+[idempotent]: https://developer.mozilla.org/en-US/docs/Glossary/Idempotent
