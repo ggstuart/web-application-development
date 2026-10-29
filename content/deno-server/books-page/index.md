@@ -244,6 +244,8 @@ All three parts of [model-view-controller][mvc] now work together.
 The controller asks the model for the books, and gives them to the view.
 The view doesn't know where the books came from, and the model doesn't know anything about HTML.
 
+{{<figure src="images/books-list.webp" alt="A Bookshelves page headed Books, with a bulleted list of 20 book titles" caption="The books page shows our 20 titles as a bulleted list.">}}
+
 ### Removing the books task {#remove-books-task}
 
 When we [listed the books in the terminal][get books] we promised that the `books` task was temporary.
@@ -349,6 +351,8 @@ The number of columns changes to fit.
 > `class="grid"` describes the layout, not the books.
 > Any list we want to show as a grid can use it.
 
+{{<figure src="images/books-grid.webp" alt="The books page with the 20 titles laid out in four columns" caption="The books page now shows the titles in a grid.">}}
+
 ## A card for each book {#partials}
 
 Each book will be a *card*, a box with the book's details in it.
@@ -452,6 +456,8 @@ The headings and paragraphs inside a card lose their margins and are all the sam
 Refresh [http://localhost:8000/books][books].
 Each book is now a bordered box with its title, author and year.
 
+{{<figure src="images/books-cards.webp" alt="The books page with each book in a bordered box showing its title, author and year" caption="Each book is now a card with its title, author and year.">}}
+
 ## Covers {#cover}
 
 Books are easier to find by their covers.
@@ -529,6 +535,8 @@ Then add `overflow: clip` to `.card`, and a `.cover` rule after it.
 
 Refresh [http://localhost:8000/books][books].
 Each card now has its cover at the top, the full width of the card.
+
+{{<figure src="images/books-covers.webp" alt="The top of the books page, with each card showing a large cover above the title, author and year" caption="Each card now has its cover at the top.">}}
 
 ## A grid inside each card {#card-grid}
 
@@ -610,6 +618,8 @@ Our books page is finished, for now.
 
 > Make the window narrow and wide again.
 > The cards and the columns all adjust together.
+
+{{<figure src="images/books-finished.webp" alt="The finished books page, with each card showing a cover on the left and the title, author and year on the right" caption="The finished books page, with each cover beside its title, author and year.">}}
 
 ### Lazy loading {#lazy-loading}
 
