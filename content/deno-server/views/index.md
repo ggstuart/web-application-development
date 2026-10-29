@@ -116,6 +116,8 @@ Click [http://localhost:8000/books][books] again.
 Now we get a proper page, with our font, our stylesheet and the icon in the tab.
 Select the **books** row in the **network** panel.
 
+{{<figure src="images/not-found-styled.webp" alt="The not-found page with the heading Not found, in the same font and spacing as the home page" caption="Our not-found page is now a proper HTML page, with our stylesheet.">}}
+
 ```http
 HTTP/1.1 404 Not Found
 content-type: text/html
@@ -524,6 +526,8 @@ A couple of things are new.
 Click [http://localhost:8000/][localhost] and then [http://localhost:8000/books][books].
 **Both pages have changed**, and we only changed one function.
 They share the same header and footer, and only the content in between is different.
+
+{{<figure src="images/shared-layout.webp" alt="The home page and the not-found page, one above the other, both with the same dark header and footer" caption="The home page and the not-found page now share a header and footer.">}}
 
 Click the **books** link in the header.
 We get our not-found page, with a `404 Not Found` status in the **network** panel.
