@@ -183,7 +183,7 @@ The controller asks the model for the books with `getBooks`, and passes them to 
 Finally, update **server/views/books.js** to use the books.
 
 **server/views/books.js**
-```JavaScript{hl_lines="1 7-9 14-16"}
+```JavaScript{hl_lines="1 7-9 14-18"}
 export function booksView({ data: { books } }) {
     return `
         <section>
@@ -198,7 +198,9 @@ export function booksView({ data: { books } }) {
 }
 
 function bookItem(book) {
-    return `<li>${book.title}</li>`;
+    return `
+        <li>${book.title}</li>
+    `;
 }
 ```
 
@@ -223,14 +225,20 @@ We give it `""` so that nothing goes between them.
 Refresh [http://localhost:8000/books][books].
 You should see a bulleted list of our 20 titles.
 View the page source (**Ctrl + U**) and look at the list.
+Here's the start of it.
 
 ```html {linenos=false}
             <ul>
-                <li>The Hunger Games</li><li>Harry Potter and the Sorcerer's Stone</li><li>Twilight</li><li>To Kill a Mockingbird</li><li>The Great Gatsby</li><li>The Fault in Our Stars</li><li>The Hobbit</li><li>The Catcher in the Rye</li><li>Pride and Prejudice</li><li>Angels & Demons</li><li>The Diary of a Young Girl</li><li>1984</li><li>Divergent</li><li>Animal Farm</li><li>Harry Potter and the Prisoner of Azkaban</li><li>Catching Fire</li><li>The Kite Runner</li><li>The Girl with the Dragon Tattoo</li><li>Harry Potter and the Chamber of Secrets</li><li>The Fellowship of the Ring</li>
-            </ul>
+                
+        <li>The Hunger Games</li>
+    
+        <li>Harry Potter and the Sorcerer's Stone</li>
+    
+        <li>Twilight</li>
 ```
 
 Each `<li>` is one string from `map`, joined with nothing between them.
+The extra lines and spaces come from the template in `bookItem`, and the browser ignores them.
 
 All three parts of [model-view-controller][mvc] now work together.
 The controller asks the model for the books, and gives them to the view.
@@ -306,7 +314,9 @@ export function booksView({ data: { books } }) {
 }
 
 function bookItem(book) {
-    return `<li>${book.title}</li>`;
+    return `
+        <li>${book.title}</li>
+    `;
 }
 ```
 
@@ -359,6 +369,8 @@ export function bookCard(book) {
     `;
 }
 ```
+
+It has the same shape as `bookItem`, with a `class` on the `<li>` and the author and year added.
 
 `bookCard` is a *partial*.
 A partial is a small view used inside other views.
