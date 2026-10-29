@@ -571,6 +571,24 @@ my-app/
 
 > Make sure **public/styles.css** and **server/views/layout.js** are back to the versions above before moving on.
 
+### An about page
+
+Try the [about page challenge][about challenge] from the previous exercise again, now that we have views.
+
+- Create **server/views/about.js** with an `aboutView`, based on the not-found view.
+- Import it into **server/main.js** and add another `if` which sends `layout(aboutView())`, just like the home page.
+- Check that [http://localhost:8000/about][about] is `200 OK` in the **network** panel.
+- Count the files you touched and the lines you added or changed, and compare with your previous count.
+
+Notice the difference.
+How many of your lines are a copy of the document this time?
+If we changed the layout, would your about page need to change?
+
+> When I did this, I touched two files and added 16 lines.
+
+> **Remove your about page before moving on.**
+> Delete **server/views/about.js** and undo your changes to **server/main.js**.
+
 Finally, something to think about.
 Our request handler still has an `if` for each page, and repeats the same `headers` line for each one.
 What would **server/main.js** look like with twenty pages?
@@ -589,3 +607,5 @@ What would **server/main.js** look like with twenty pages?
 [custom properties]: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties
 [prefers-color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme
 [filter]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/filter
+[about challenge]: deno-server/missing-pages/#about-challenge
+[about]: http://localhost:8000/about
