@@ -82,7 +82,8 @@ Every new page will need another copy.
 
 This is an example of [*technical debt*][technical debt].
 Taking a shortcut got our features working quickly, but we will pay for it later, every time we add a page or need to change how responses are built.
-Like real debt, the longer we leave it the more it costs.
+If we add ten pages in this way, that requires ten copies of the same simple pattern.
+If we then change the pattern, we need to change it in ten places.
 
 We pay off technical debt by [refactoring][refactoring].
 A *refactor* changes how our code is organised without changing what it does.
@@ -109,7 +110,7 @@ export function render(content) {
 `render` takes some content, wraps it in our layout and returns a `Response` with the `content-type` header.
 Notice that **server/tools/render.js** now imports `layout`, rather than **server/main.js**.
 
-> `ctx` will be a *context* object, carrying information about the request through our code.
+> The `ctx` mentioned in the comment will be a *context* object, carrying information about the request through our code.
 > Like `layout`, `render` will need some of that information later, so this line will change when we add it.
 
 Now use `render` for both routes in **server/main.js**.
@@ -618,14 +619,13 @@ Add an about page at `/about`, with its own title.
 You will need a view, a controller and one more `if` in **server/main.js**.
 
 - Base your view and controller on the not-found ones. Your page should be `200 OK`, with **About | Bookshelves** in the tab.
-- Add a link to it in the `<nav>` in **server/views/layout.js**, if you like.
 - When it works, count how many files you touched and how many lines you added or changed. The **source control** panel lists the files.
 
 Keep a note of your count.
 We will set this same challenge again after later changes to the structure of our code, so that you can see how much easier it gets.
 
 > **Remove your about page before moving on.**
-> Delete the two new files and undo your changes to **server/main.js** and **server/views/layout.js**.
+> Delete the two new files and undo your changes to **server/main.js**.
 > If you committed before you started, the **source control** panel can discard the changes for you.
 
 Finally, something to think about.
