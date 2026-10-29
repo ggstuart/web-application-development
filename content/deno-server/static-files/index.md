@@ -66,6 +66,8 @@ export function server(request) {
 
 Refresh the page and you should see the new heading and a short paragraph.
 
+{{<figure src="images/welcome-unstyled.webp" alt="A plain page with the heading Welcome to Bookshelves and the line Organise your books with bookshelves, in the browser's default font" caption="Our new heading and paragraph, in the browser's default style.">}}
+
 ## Which file was requested? {#url-pathname}
 
 In the [previous exercise][request logging] we saw that the browser requests `/favicon.ico` by itself.
@@ -304,6 +306,8 @@ Then try [http://localhost:8000/server/main.js][main.js path].
 
 **Our code is readable by anyone who can reach our server.**
 
+{{<figure src="images/main-js-exposed.webp" alt="The browser showing the code from server/main.js as plain text" caption="Anyone can read our server code at /server/main.js.">}}
+
 `serveDir` is doing exactly what we asked, serving the whole project folder.
 That includes our configuration and all our server code.
 In a real application this could expose passwords, database files and the details of how our security works.
@@ -484,6 +488,8 @@ GET /assets/icon.svg
 > The icon adapts in the same way, so it is white on a dark tab.
 
 A pretty nice result.
+
+{{<figure src="images/welcome-styled.webp" alt="The welcome page with a new font and some space around the heading and paragraph" caption="With our stylesheet, the page has a new font and some space around it.">}}
 
 ## Conclusion
 
