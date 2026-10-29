@@ -472,6 +472,8 @@ TypeError: view is not a function
 
 > The path to your project will be different.
 
+{{<figure src="images/internal-server-error.webp" alt="A blank page with the words Internal Server Error in small plain text" caption="Passing `homeView()` instead of `homeView` gives a 500 Internal Server Error.">}}
+
 This time the `at ...` lines are useful.
 The first two are our own code.
 The error happened on line 6 of **render.js**, which was called from line 21 of **main.js**.
