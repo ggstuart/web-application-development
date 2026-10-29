@@ -281,6 +281,8 @@ You should see our icon in the browser tab.
 
 > Again, you might need a hard refresh (**Ctrl + Shift + R**).
 
+{{<figure src="images/tab-icon.webp" alt="The top of the browser window, with our Bookshelves icon and title in the tab above the welcome heading" caption="Our icon now appears in the browser tab.">}}
+
 Check the terminal.
 
 ```plaintext {linenos=false}
