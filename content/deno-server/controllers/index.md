@@ -615,14 +615,18 @@ my-app/
 
 ## Challenge: Add an About page
 
-Add an about page at `/about`, with its own title.
+Try the [about page challenge][about challenge] once more, now that we have controllers.
 You will need a view, a controller and one more `if` in **server/main.js**.
 
-- Base your view and controller on the not-found ones. Your page should be `200 OK`, with **About | Bookshelves** in the tab.
+- Base your view and controller on the not-found ones. Your page should be `200 OK` at [http://localhost:8000/about][about], with **About | Bookshelves** in the tab.
 - When it works, count how many files you touched and how many lines you added or changed. The **source control** panel lists the files.
+- Compare with your counts from the previous two exercises and notice the difference.
 
-Keep a note of your count.
-We will set this same challenge again after later changes to the structure of our code, so that you can see how much easier it gets.
+> When I did this, I touched three files and added 20 lines.
+> The count isn't smaller, so look at what the lines do.
+> Which of them are your page's own content, and what does **server/main.js** need to know about your page now?
+
+We will set this same challenge again after later changes to the structure of our code, so that you can see how the tooling improves.
 
 > **Remove your about page before moving on.**
 > Delete the two new files and undo your changes to **server/main.js**.
@@ -644,3 +648,5 @@ How could we describe our routes as data, rather than as code?
 [first-class function]: https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
 [not a function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_function
 [mvc]: deno-server/views/#mvc
+[about challenge]: deno-server/missing-pages/#about-challenge
+[about]: http://localhost:8000/about
