@@ -79,6 +79,8 @@ Click [http://localhost:8000/assets/missing.css][missing].
 
 The browser shows **Not Found** and the **network** panel shows a `404 Not Found` status.
 
+{{<figure src="images/servedir-not-found.webp" alt="A blank page with the words Not Found in small plain text" caption="`serveDir` sends a plain-text Not Found for a missing file.">}}
+
 ```http
 HTTP/1.1 404 Not Found
 Content-Type: text/plain;charset=UTF-8
