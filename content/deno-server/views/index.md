@@ -571,6 +571,22 @@ my-app/
 
 > Make sure **public/styles.css** and **server/views/layout.js** are back to the versions above before moving on.
 
+### An about page
+
+Try the [about page challenge][about challenge] from the previous exercise again, now that we have views.
+
+- Create **server/views/about.js** with an `aboutView`, based on the not-found view.
+- Import it into **server/main.js** and add another `if` which sends `layout(aboutView())`, just like the home page.
+- Check that [http://localhost:8000/about][about] is `200 OK` in the **network** panel.
+- If you like, add a link to it in the `<nav>` in **server/views/layout.js**. Leave the link out of your count, so that it compares with the other exercises.
+- Count the files you touched and the lines you added or changed.
+
+Compare with your previous count.
+Think about the number of lines, the effort involved and the quality of the code, and draw your own conclusions.
+
+> **Remove your about page before moving on.**
+> Delete **server/views/about.js** and undo your changes to **server/main.js** (and **server/views/layout.js**, if you added a link), so that your code matches the starting point of the next exercise.
+
 Finally, something to think about.
 Our request handler still has an `if` for each page, and repeats the same `headers` line for each one.
 What would **server/main.js** look like with twenty pages?
@@ -589,3 +605,5 @@ What would **server/main.js** look like with twenty pages?
 [custom properties]: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties
 [prefers-color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme
 [filter]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/filter
+[about challenge]: deno-server/missing-pages/#about-challenge
+[about]: http://localhost:8000/about

@@ -323,6 +323,21 @@ my-app/
 
 > Make sure **server/main.js** is back to the version above before moving on.
 
+### An about page {#about-challenge}
+
+Every time we change the way our code is organised, we will set the same small challenge: add an about page.
+Doing the same job each time lets us compare.
+
+- Add an about page at [http://localhost:8000/about][about] with another `if` in **server/main.js**. Copy the home page `if` and change the path, the heading and the paragraph.
+- Check that it is `200 OK` in the **network** panel.
+- Count how many files you touched and how many lines you added or changed.
+
+Keep a note of your count, and of how the job felt.
+We will compare them with the same challenge in later exercises.
+
+> **Remove your about page before moving on.**
+> Undo your changes to **server/main.js**, so that your code matches the starting point of the next exercise.
+
 Finally, something to think about.
 Our 404 response is just the words **Not found** in plain text.
 It doesn't have our stylesheet, our icon or a link back to the home page.
@@ -344,3 +359,4 @@ How could we make the not-found page look like the rest of the site?
 [favicon.ico]: http://localhost:8000/favicon.ico
 [search]: http://localhost:8000/?search=deno
 [temporary slash]: http://localhost:8000/temporary/
+[about]: http://localhost:8000/about
