@@ -578,16 +578,14 @@ Try the [about page challenge][about challenge] from the previous exercise again
 - Create **server/views/about.js** with an `aboutView`, based on the not-found view.
 - Import it into **server/main.js** and add another `if` which sends `layout(aboutView())`, just like the home page.
 - Check that [http://localhost:8000/about][about] is `200 OK` in the **network** panel.
-- Count the files you touched and the lines you added or changed, and compare with your previous count.
+- If you like, add a link to it in the `<nav>` in **server/views/layout.js**. Leave the link out of your count, so that it compares with the other exercises.
+- Count the files you touched and the lines you added or changed.
 
-Notice the difference.
-How many of your lines are a copy of the document this time?
-If we changed the layout, would your about page need to change?
-
-> When I did this, I touched two files and added 16 lines.
+Compare with your previous count.
+Think about the number of lines, the effort involved and the quality of the code, and draw your own conclusions.
 
 > **Remove your about page before moving on.**
-> Delete **server/views/about.js** and undo your changes to **server/main.js**.
+> Delete **server/views/about.js** and undo your changes to **server/main.js** (and **server/views/layout.js**, if you added a link), so that your code matches the starting point of the next exercise.
 
 Finally, something to think about.
 Our request handler still has an `if` for each page, and repeats the same `headers` line for each one.
