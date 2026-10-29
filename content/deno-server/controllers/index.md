@@ -84,6 +84,7 @@ This is an example of [*technical debt*][technical debt].
 Taking a shortcut got our features working quickly, but we will pay for it later, every time we add a page or need to change how responses are built.
 If we add ten pages in this way, that requires ten copies of the same simple pattern.
 If we then change the pattern, we need to change it in ten places.
+Like real debt, the longer we leave it the more it costs.
 
 We pay off technical debt by [refactoring][refactoring].
 A *refactor* changes how our code is organised without changing what it does.
@@ -619,17 +620,16 @@ Try the [about page challenge][about challenge] once more, now that we have cont
 You will need a view, a controller and one more `if` in **server/main.js**.
 
 - Base your view and controller on the not-found ones. Your page should be `200 OK` at [http://localhost:8000/about][about], with **About | Bookshelves** in the tab.
+- If you like, add a link to it in the `<nav>` in **server/views/layout.js**. Leave the link out of your count, so that it compares with the other exercises.
 - When it works, count how many files you touched and how many lines you added or changed. The **source control** panel lists the files.
-- Compare with your counts from the previous two exercises and notice the difference.
 
-> When I did this, I touched three files and added 20 lines.
-> The count isn't smaller, so look at what the lines do.
-> Which of them are your page's own content, and what does **server/main.js** need to know about your page now?
+Compare with your counts from the previous two exercises.
+Think about the number of lines, the effort involved, the quality of the code and any technical debt, and draw your own conclusions.
 
-We will set this same challenge again after later changes to the structure of our code, so that you can see how the tooling improves.
+We will set this same challenge again after later changes to the structure of our code, so that you can compare again.
 
 > **Remove your about page before moving on.**
-> Delete the two new files and undo your changes to **server/main.js**.
+> Delete the two new files and undo your changes to **server/main.js** (and **server/views/layout.js**, if you added a link), so that your code matches the starting point of the next exercise.
 > If you committed before you started, the **source control** panel can discard the changes for you.
 
 Finally, something to think about.
