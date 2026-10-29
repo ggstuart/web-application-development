@@ -229,11 +229,6 @@ All three parts of [model-view-controller][mvc] now work together.
 The controller asks the model for the books, and gives them to the view.
 The view doesn't know where the books came from, and the model doesn't know anything about HTML.
 
-> Look closely at the tenth book, **Angels & Demons**.
-> In HTML, `&` begins a [character reference][character reference], like the `&copy;` in our footer, so strictly this `&` should be written `&amp;`.
-> Browsers cope with it here, so the title looks fine.
-> This is a known issue, and we will fix it when our pages start to show text typed in by users.
-
 ### Removing the books task {#remove-books-task}
 
 When we [listed the books in the terminal][get books] we promised that the `books` task was temporary.
@@ -644,7 +639,7 @@ We turned the books into HTML with `map` and `join`, moved each book's HTML into
 The temporary `books` task has gone.
 
 We also added some debt.
-Our `if` chain is longer, and the `&` in **Angels & Demons** isn't escaped yet.
+Our `if` chain is longer.
 
 Our project now looks like this.
 
@@ -711,7 +706,6 @@ What would happen with all 1,000?
 [array map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 [arrow functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 [array join]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
-[character reference]: https://developer.mozilla.org/en-US/docs/Glossary/Character_reference
 [get books]: deno-server/database/#get-books
 [first-class function]: deno-server/controllers/#view-functions
 [refactoring]: deno-server/views/#refactoring
