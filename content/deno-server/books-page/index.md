@@ -463,7 +463,7 @@ export function bookCard(book) {
 - `class="cover"` lets us style book covers.
 - `alt=""` tells screen readers the image is decorative, because the title is right next to it.
 - `width` and `height` tell the browser the shape of the image before it arrives, so the page doesn't jump about as covers load.
-- [`loading="lazy"`][lazy loading] waits to load a cover until it is near the visible part of the page.
+- [`loading="lazy"`][lazy loading] waits to load a cover until it is near the visible part of the page. We will [watch it at work][lazy demo] once our cards are finished.
 
 > Some books in **books.json** have no cover, so their `coverUrl` is `null`.
 > None of our 20 books are like that, so we can leave them for now.
@@ -599,6 +599,22 @@ Our books page is finished, for now.
 > Make the window narrow and wide again.
 > The cards and the columns all adjust together.
 
+### Lazy loading {#lazy-loading}
+
+Now that our cards are finished, let's watch our covers' `loading="lazy"` at work.
+Open the developer tools (**F12**) on the **network** panel and click the **Img** filter, so that it only lists images.
+
+Make the page narrow enough for a single column of books.
+If your window won't go that narrow, drag the edge of the developer tools across, or open the device toolbar (**Ctrl + Shift + M**) and choose a phone.
+
+Reload [http://localhost:8000/books][books].
+Only the first few covers are requested.
+Now scroll down slowly and watch the **network** panel.
+Each cover is requested just before it comes into view.
+
+> The browser starts loading a lazy image while it is still some distance below the window, so it's usually ready by the time you get there.
+> With two or more columns, our 20 books fit near enough to the top that the browser loads nearly all the covers straight away.
+
 ## Conclusion
 
 We added a books page, our first page to show data from the database.
@@ -683,6 +699,7 @@ What would happen with all 1,000?
 [last-child]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:last-child
 [img]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img
 [lazy loading]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
+[lazy demo]: deno-server/books-page/#lazy-loading
 [aspect-ratio]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio
 [object-fit]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/object-fit
 [overflow-wrap]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-wrap
