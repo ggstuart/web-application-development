@@ -183,19 +183,22 @@ The controller asks the model for the books with `getBooks`, and passes them to 
 Finally, update **server/views/books.js** to use the books.
 
 **server/views/books.js**
-```JavaScript{hl_lines="1-2 8-10"}
+```JavaScript{hl_lines="1 7-9 14-16"}
 export function booksView({ data: { books } }) {
-    const items = books.map((book) => `<li>${book.title}</li>`);
     return `
         <section>
             <header>
                 <h1>Books</h1>
             </header>
             <ul>
-                ${items.join("")}
+                ${books.map(bookItem).join("")}
             </ul>
         </section>
     `;
+}
+
+function bookItem(book) {
+    return `<li>${book.title}</li>`;
 }
 ```
 
@@ -203,10 +206,14 @@ export function booksView({ data: { books } }) {
 It takes the `data` property from the argument, and then the `books` property from `data`.
 So inside the view, `books` is our array of books.
 
+`bookItem` takes one book and returns a list item containing its title.
+
 [`map`][array map] calls a function on every item in an array and gives us a new array of the results.
-The function here is an [*arrow function*][arrow functions], a short way to write a function.
-``(book) => `<li>${book.title}</li>` `` takes a book and returns a list item containing its title.
-So `items` is an array of 20 strings, one for each book.
+We pass `bookItem` itself to `map`, without brackets, just as we [passed views to render][first-class function].
+So `books.map(bookItem)` is an array of 20 strings, one for each book.
+
+> `bookItem` isn't exported.
+> It is only used by the books view, so it stays in this module.
 
 [`join`][array join] joins the strings in an array into one string.
 We give it `""` so that nothing goes between them.
@@ -275,44 +282,6 @@ Available tasks:
 ```
 
 The task has gone.
-
-## A function for each book {#book-item}
-
-Our arrow function is fine for a title, but each book will soon need much more HTML.
-Let's give it a name and a place of its own.
-
-Update **server/views/books.js**.
-
-**server/views/books.js**
-```JavaScript{hl_lines="8 14-16"}
-export function booksView({ data: { books } }) {
-    return `
-        <section>
-            <header>
-                <h1>Books</h1>
-            </header>
-            <ul>
-                ${books.map(bookItem).join("")}
-            </ul>
-        </section>
-    `;
-}
-
-function bookItem(book) {
-    return `<li>${book.title}</li>`;
-}
-```
-
-`bookItem` takes one book and returns its list item.
-We pass `bookItem` itself to `map`, without brackets, just as we [passed views to render][first-class function].
-`map` calls it once for each book.
-
-> `bookItem` isn't exported.
-> It is only used by the books view, so it stays in this module.
-
-Refresh [http://localhost:8000/books][books].
-Nothing has changed, and the response is still 1645 bytes.
-This was a [refactor][refactoring].
 
 ## A grid of books {#grid}
 
@@ -704,11 +673,9 @@ What would happen with all 1,000?
 [options]: deno-server/controllers/#options
 [destructuring]: deno-server/controllers/#title
 [array map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-[arrow functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 [array join]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 [get books]: deno-server/database/#get-books
 [first-class function]: deno-server/controllers/#view-functions
-[refactoring]: deno-server/views/#refactoring
 [styles]: deno-server/views/#styles
 [grid-template-columns]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-template-columns
 [repeat]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/repeat
