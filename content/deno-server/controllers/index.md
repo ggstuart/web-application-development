@@ -349,6 +349,8 @@ Refresh both pages and look at the tabs.
 - [http://localhost:8000/][localhost] passes no options, so it gets the default title, **Bookshelves**.
 - [http://localhost:8000/nope][nope] passes a title, so its tab says **Not found | Bookshelves**.
 
+{{<figure src="images/tab-titles.webp" alt="Two browser tabs titled Bookshelves and Not found | Bookshelves, with the not-found page open at localhost:8000/nope" caption="Each page now has its own title in the tab.">}}
+
 Both statuses are unchanged in the **network** panel.
 
 ## Letting render run the view {#view-functions}
