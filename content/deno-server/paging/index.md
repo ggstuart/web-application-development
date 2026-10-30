@@ -190,6 +190,9 @@ export function server(request) {
 It carries information about the request to the code that handles it.
 For now, it holds just the `request`.
 
+> This is the *context pattern*.
+> Rather than giving our functions a growing list of arguments, we pass one object that carries everything needed to handle the request.
+> It will be a core part of our architecture, and `ctx` will grow as our app does, for example to carry the user who is signed in.
 > Our placeholders in **server/tools/render.js** and **server/views/layout.js** mention `ctx` too.
 > They don't need it yet, so we leave them alone.
 
