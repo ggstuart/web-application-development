@@ -149,7 +149,7 @@ The part of the URL after the `?` is the [*query string*][url search].
 We log [`url.pathname`][url pathname], which doesn't include it.
 Our server ignores the query string, so `/books?page=2` gets exactly the same page as `/books`.
 
-To read the query string, the books controller needs the request.
+To read the query string, the books controller needs the `url`.
 
 ### A context object {#ctx}
 
@@ -164,7 +164,7 @@ import { notFoundController } from "./controllers/notFound.js";
 
 export function server(request) {
     const url = new URL(request.url);
-    const ctx = { request };
+    const ctx = { request, url };
 
     // Placeholder: this will need to change when we add middleware
     console.log(request.method, url.pathname);
@@ -188,7 +188,7 @@ export function server(request) {
 
 `ctx` is our *context* object.
 It carries information about the request to the code that handles it.
-For now, it holds just the `request`.
+For now, it holds the `request` and the `url` we have already made.
 
 > This is the *context pattern*.
 > Rather than giving our functions a growing list of arguments, we pass one object that carries everything needed to handle the request.
@@ -203,14 +203,13 @@ The books controller doesn't use `ctx` yet, so refresh [http://localhost:8000/bo
 Update **server/controllers/books.js** to take `ctx` and work out which page was asked for.
 
 **server/controllers/books.js**
-```JavaScript{hl_lines="5-10"}
+```JavaScript{hl_lines="5-9"}
 import { getBooks } from "../models/books.js";
 import { render } from "../tools/render.js";
 import { booksView } from "../views/books.js";
 
 export function booksController(ctx) {
-    const { request } = ctx;
-    const url = new URL(request.url);
+    const { url } = ctx;
     let page = Number(url.searchParams.get("page"));
     if (!Number.isSafeInteger(page) || page < 1) page = 1;
     const books = getBooks(page);
@@ -218,8 +217,7 @@ export function booksController(ctx) {
 }
 ```
 
-- `const { request } = ctx;` takes the request out of `ctx`, with [destructuring][destructuring].
-- We make a `URL` from the request, just as we do in **server/main.js**.
+- `const { url } = ctx;` takes the `url` out of `ctx`, with [destructuring][destructuring]. It is the same `URL` that **server/main.js** uses for `url.pathname`.
 - [`url.searchParams`][search params] reads the query string for us. `get("page")` gives us the string `"2"` for `?page=2`, and `null` if there is no `page` at all.
 - [`Number`][number] turns the string into a number.
 
@@ -339,14 +337,13 @@ export function countBooks() {
 Now update **server/controllers/books.js** to work out whether there is a next page, and pass `page` and `hasNext` to the view.
 
 **server/controllers/books.js**
-```JavaScript{hl_lines="1 11-12"}
+```JavaScript{hl_lines="1 10-11"}
 import { countBooks, getBooks, PAGE_SIZE } from "../models/books.js";
 import { render } from "../tools/render.js";
 import { booksView } from "../views/books.js";
 
 export function booksController(ctx) {
-    const { request } = ctx;
-    const url = new URL(request.url);
+    const { url } = ctx;
     let page = Number(url.searchParams.get("page"));
     if (!Number.isSafeInteger(page) || page < 1) page = 1;
     const books = getBooks(page);
