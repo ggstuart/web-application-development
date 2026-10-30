@@ -165,6 +165,8 @@ In the **network** panel, the **localhost** row is red.
 Its status is **(failed)** because no response came back.
 Select it and you will see `net::ERR_CONNECTION_REFUSED`.
 
+{{<figure src="images/connection-refused.webp" alt="Chrome showing This site can't be reached and localhost refused to connect, with the network panel below showing a red localhost row with the status (failed) net::ERR_CONNECTION_REFUSED" caption="With no server running, the browser can't connect and the request fails.">}}
+
 > Firefox shows **Unable to connect** instead.
 
 > The browser sent its request, but no programme on your computer was listening for it, so nothing replied.
@@ -386,6 +388,8 @@ These were added automatically.
 > The body of the response can be viewed by switching from the **headers** panel (within the network panel) to the **response** panel.
 > You should see the raw plaintext string we returned.
 
+{{<figure src="images/response-panel-hello-world.webp" alt="Chrome showing hello world as plain text, with the network panel open on the localhost request and its Response tab showing hello world" caption="The response panel shows the plain text we sent back.">}}
+
 ### An HTML response?
 
 We might think we can just give the browser HTML code and it will render a page for us.
@@ -483,6 +487,8 @@ date: Fri, 02 Oct 2026 14:25:12 GMT
 > The status code tells the browser (and any other client) what happened.
 > The body is just for humans.
 
+{{<figure src="images/network-status-404.webp" alt="Chrome showing the hello world heading, with the network panel open on the localhost request showing Status Code 404 Not Found and Content-Type text/html" caption="The page looks the same, but the network panel shows 404 Not Found.">}}
+
 Remove the status property again before moving on, so our server returns the default `200 OK`.
 
 ### Looking at the request {#request-logging}
@@ -578,6 +584,8 @@ You should recognise this structure from the [Hello world][hello world] exercise
 
 Refresh the page.
 The heading looks the same, but the browser tab now shows **Bookshelves** as the page title.
+
+{{<figure src="images/tab-title-bookshelves.webp" alt="The top of the browser window, with the tab titled Bookshelves above the hello world heading" caption="The tab now shows our page title, Bookshelves.">}}
 
 The response in the **network** panel has the same headers, with a bigger `content-length`.
 
